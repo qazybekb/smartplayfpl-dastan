@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import datetime as dt
+import tempfile
 import unittest
+from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
@@ -32,6 +34,14 @@ class MappingTests(unittest.TestCase):
         self.assertEqual(int(corrected.loc[437688]), 9216)
         self.assertEqual(int(training.loc[515501]), 5191)
         self.assertEqual(int(corrected.loc[515501]), 10576)
+
+    def test_operational_projection_fails_closed_after_hash_drift(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            changed = Path(directory) / mappings.OPERATIONAL_PLAYERS.name
+            changed.write_bytes(mappings.OPERATIONAL_PLAYERS.read_bytes() + b"\n")
+            with patch.object(mappings, "OPERATIONAL_PLAYERS", changed):
+                with self.assertRaisesRegex(RuntimeError, "accepted operational release"):
+                    mappings.verify_operational_release()
 
 
 class FeatureRebuildTests(unittest.TestCase):

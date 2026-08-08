@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-08T19:38:54.487968+00:00",
+  "generated_at": "2026-08-08T19:55:10.512121+00:00",
   "files": {
     "features.parquet": {
       "bytes": 38697486,
@@ -61,29 +61,7 @@
       "sha256": "1bb194d923817b58adf5f00f725d9bbec910d9d01d4050cf580bdcc03ce575f6",
       "rows": 3,
       "columns": 10
-    },
-    "mappings/fpl_players_current.csv": {
-      "bytes": 23435,
-      "sha256": "c1cd3d0147f491c57ece990e6eaeff5c420146b333f8d1ac16f704901d24b553",
-      "rows": 573,
-      "columns": 6
-    },
-    "mappings/fpl_understat_current_supplements.csv": {
-      "bytes": 3882,
-      "sha256": "243c630da875991b436825ccc022b3c983afbf8d05ce0cede5755f911ab5e54b",
-      "rows": 29,
-      "columns": 6
-    },
-    "mappings/fpl_understat_current.csv": {
-      "bytes": 54474,
-      "sha256": "a2d1b780c278b4cb88cc31b3867c268af1c1c08e46fef73d09ee25d8c7f7433c",
-      "rows": 573,
-      "columns": 11
-    },
-    "mappings/fpl_understat_current.json": {
-      "bytes": 370,
-      "sha256": "0cf0047ba4d78743abc0a97304986b1119bfd14546f7e5b0ea0e2777d9af3d93"
     }
   },
-  "note": "Checksums describe the immutable release. Raw-source rebuilds may differ after upstream statistical corrections; retain downloads.json for an exact record of a reconstruction run."
+  "note": "Checksums describe the immutable release. Raw-source rebuilds may differ after upstream statistical corrections; retain downloads.json for an exact record of a reconstruction run. Operational/current mappings are versioned separately by data/mappings/current_manifest.json."
 }

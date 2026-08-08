@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
@@ -35,9 +36,11 @@ TRAINING_ASSIGNMENTS = MAPPINGS / "fpl_understat_training_assignments.csv"
 CORRECTED_MAPPING = MAPPINGS / "fpl_understat_players.csv"
 IDENTITY_AUDIT = MAPPINGS / "fpl_understat_identity_audit.csv"
 CURRENT_ROSTER = MAPPINGS / "fpl_players_current.csv"
-CURRENT_SUPPLEMENTS = MAPPINGS / "fpl_understat_current_supplements.csv"
 CURRENT_MAPPING = MAPPINGS / "fpl_understat_current.csv"
 CURRENT_META = MAPPINGS / "fpl_understat_current.json"
+OPERATIONAL_PLAYERS = MAPPINGS / "current_fpl_understat_players.csv"
+OPERATIONAL_CLUBS = MAPPINGS / "current_fpl_understat_clubs.csv"
+OPERATIONAL_MANIFEST = MAPPINGS / "current_manifest.json"
 
 FPL_BOOTSTRAP_URL = "https://fantasy.premierleague.com/api/bootstrap-static/"
 
@@ -78,13 +81,21 @@ ROSTER_COLUMNS = [
     "position",
     "team_name",
 ]
-SUPPLEMENT_COLUMNS = [
+OPERATIONAL_PLAYER_COLUMNS = [
     "fpl_code",
-    "understat_id",
-    "understat_player_name",
-    "confidence",
-    "source",
-    "note",
+    "understat_player_id",
+    "fpl_player_name",
+    "fpl_position",
+    "confidence_level",
+    "mapping_status",
+]
+OPERATIONAL_CLUB_COLUMNS = [
+    "club_name",
+    "club_short",
+    "fpl_team_code",
+    "understat_name",
+    "understat_team_id",
+    "mapping_status",
 ]
 CURRENT_COLUMNS = ROSTER_COLUMNS + [
     "understat_id",
@@ -364,88 +375,120 @@ def load_roster(path: Path = CURRENT_ROSTER) -> pd.DataFrame:
     return out
 
 
-def load_supplements(path: Path = CURRENT_SUPPLEMENTS) -> pd.DataFrame:
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def load_operational_players(path: Path = OPERATIONAL_PLAYERS) -> pd.DataFrame:
+    """Load the generated projection of SmartPlayFPL's canonical registry."""
     out = pd.read_csv(path, keep_default_na=False)
-    if list(out.columns) != SUPPLEMENT_COLUMNS:
+    if list(out.columns) != OPERATIONAL_PLAYER_COLUMNS:
         raise RuntimeError(
-            f"unexpected current-supplement columns: {list(out.columns)}"
+            f"unexpected operational mapping columns: {list(out.columns)}"
         )
-    if out[SUPPLEMENT_COLUMNS].eq("").any().any():
-        raise RuntimeError("current supplements contain blank values")
-    for column in ("fpl_code", "understat_id"):
-        out[column] = pd.to_numeric(out[column], errors="raise").astype("int64")
-    if out["fpl_code"].duplicated().any():
-        raise RuntimeError("current supplements contain duplicate fpl_code values")
-    if (out[["fpl_code", "understat_id"]] <= 0).any().any():
-        raise RuntimeError("current supplements contain non-positive IDs")
+    out["fpl_code"] = pd.to_numeric(out["fpl_code"], errors="raise").astype("int64")
+    out["understat_player_id"] = pd.to_numeric(
+        out["understat_player_id"], errors="coerce"
+    ).astype("Int64")
+    if out["fpl_code"].duplicated().any() or (out["fpl_code"] <= 0).any():
+        raise RuntimeError("operational mapping contains invalid/duplicate FPL codes")
+    mapped = out["understat_player_id"].notna()
+    if (out.loc[mapped, "understat_player_id"] <= 0).any():
+        raise RuntimeError("operational mapping contains non-positive Understat IDs")
+    if not out.loc[~mapped, "mapping_status"].eq("unmapped").all():
+        raise RuntimeError("operational mapping labels missing IDs as mapped")
+    if out.loc[mapped, "mapping_status"].eq("unmapped").any():
+        raise RuntimeError("operational mapping labels populated IDs as unmapped")
+    if not out.loc[~mapped, "confidence_level"].eq("NONE").all():
+        raise RuntimeError("operational unmapped rows must have NONE confidence")
+    if out.loc[mapped, "confidence_level"].eq("NONE").any():
+        raise RuntimeError("operational mapped rows cannot have NONE confidence")
     return out
 
 
+def load_operational_clubs(path: Path = OPERATIONAL_CLUBS) -> pd.DataFrame:
+    out = pd.read_csv(path, keep_default_na=False)
+    if list(out.columns) != OPERATIONAL_CLUB_COLUMNS:
+        raise RuntimeError(
+            f"unexpected operational club columns: {list(out.columns)}"
+        )
+    out["fpl_team_code"] = pd.to_numeric(
+        out["fpl_team_code"], errors="raise"
+    ).astype("int64")
+    out["understat_team_id"] = pd.to_numeric(
+        out["understat_team_id"], errors="coerce"
+    ).astype("Int64")
+    if out["fpl_team_code"].duplicated().any() or (out["fpl_team_code"] <= 0).any():
+        raise RuntimeError("operational clubs contain invalid/duplicate FPL codes")
+    mapped = out["understat_team_id"].notna()
+    if (out.loc[mapped, "understat_team_id"] <= 0).any():
+        raise RuntimeError("operational clubs contain non-positive Understat IDs")
+    if not out.loc[mapped, "mapping_status"].eq("mapped").all() or not out.loc[
+        ~mapped, "mapping_status"
+    ].eq("unmapped").all():
+        raise RuntimeError("operational club mapping states are inconsistent")
+    return out
+
+
+def verify_operational_release() -> dict:
+    """Verify generated public files against their canonical release manifest."""
+    meta = json.loads(OPERATIONAL_MANIFEST.read_text(encoding="utf-8"))
+    if meta.get("schema_version") != 1:
+        raise RuntimeError("unsupported operational mapping manifest schema")
+    release_id = str(meta.get("release_id", ""))
+    canonical_sha = str(meta.get("canonical_sha256", ""))
+    if not re.fullmatch(r"[0-9a-f]{64}", canonical_sha) or not release_id.endswith(
+        canonical_sha[:12]
+    ):
+        raise RuntimeError("operational release ID/hash is malformed")
+    expected_files = {
+        OPERATIONAL_PLAYERS.name: OPERATIONAL_PLAYERS,
+        OPERATIONAL_CLUBS.name: OPERATIONAL_CLUBS,
+    }
+    if set(meta.get("files", {})) != set(expected_files):
+        raise RuntimeError("operational manifest has an unexpected file set")
+    for name, path in expected_files.items():
+        expected = meta["files"][name]
+        if path.stat().st_size != expected.get("bytes") or _sha256(path) != expected.get(
+            "sha256"
+        ):
+            raise RuntimeError(f"{name} differs from the accepted operational release")
+    players = load_operational_players()
+    clubs = load_operational_clubs()
+    player_coverage = meta.get("coverage", {}).get("players", {})
+    club_coverage = meta.get("coverage", {}).get("clubs", {})
+    if player_coverage.get("total") != len(players) or player_coverage.get(
+        "mapped"
+    ) != int(
+        players["understat_player_id"].notna().sum()
+    ):
+        raise RuntimeError("operational manifest player coverage has drifted")
+    if club_coverage.get("total") != len(clubs) or club_coverage.get("mapped") != int(
+        clubs["understat_team_id"].notna().sum()
+    ):
+        raise RuntimeError("operational manifest club coverage has drifted")
+    return meta
+
+
 def build_current() -> pd.DataFrame:
-    """Build a complete current roster, preserving unresolved identities."""
+    """Build the current roster from the versioned operational projection."""
     roster = load_roster()
-    historical = build_corrected()[["fpl_code", "understat_id"]]
-    audit = load_audit().set_index("fpl_code")
-    supplements = load_supplements()
-
-    out = roster.merge(historical, on="fpl_code", how="left", validate="one_to_one")
-    historical_codes = set(out.loc[out["understat_id"].notna(), "fpl_code"])
-    conflicts = sorted(historical_codes.intersection(supplements["fpl_code"]))
-    if conflicts:
+    operational = load_operational_players()
+    out = roster.merge(operational, on="fpl_code", how="left", validate="one_to_one")
+    missing_registry = out["mapping_status"].isna()
+    if missing_registry.any():
         raise RuntimeError(
-            f"current supplements overwrite historical mappings: {conflicts}"
+            "operational registry is missing current FPL codes: "
+            f"{out.loc[missing_registry, 'fpl_code'].astype(int).tolist()}"
         )
-    unknown = sorted(set(supplements["fpl_code"]) - set(out["fpl_code"]))
-    if unknown:
-        raise RuntimeError(
-            f"current supplements reference players outside the roster: {unknown}"
-        )
-
-    supplemental = supplements.set_index("fpl_code")
-    missing = out["understat_id"].isna() & out["fpl_code"].isin(supplemental.index)
-    out.loc[missing, "understat_id"] = out.loc[missing, "fpl_code"].map(
-        supplemental["understat_id"]
-    )
-
-    out["understat_player_name"] = ""
-    out["mapping_status"] = "unmapped"
-    out["confidence"] = "NONE"
-    out["source"] = "unresolved"
-
-    mapped_history = out["fpl_code"].isin(historical_codes)
-    out.loc[mapped_history, "mapping_status"] = "mapped_history"
-    out.loc[mapped_history, "confidence"] = "HISTORICAL"
-    out.loc[mapped_history, "source"] = "dastan_training_history"
-
-    audited = out["fpl_code"].isin(audit.index)
-    out.loc[audited, "mapping_status"] = "mapped_verified"
-    out.loc[audited, "confidence"] = "HIGH"
-    out.loc[audited, "source"] = "manual_understat_page_audit"
-    out.loc[audited, "understat_player_name"] = out.loc[audited, "fpl_code"].map(
-        audit["decision_identity"]
-    )
-
-    out.loc[missing, "understat_player_name"] = out.loc[missing, "fpl_code"].map(
-        supplemental["understat_player_name"]
-    )
-    out.loc[missing, "mapping_status"] = "mapped_curated"
-    out.loc[missing, "confidence"] = out.loc[missing, "fpl_code"].map(
-        supplemental["confidence"]
-    )
-    out.loc[missing, "source"] = out.loc[missing, "fpl_code"].map(
-        supplemental["source"]
-    )
-
-    out["understat_id"] = pd.to_numeric(out["understat_id"], errors="coerce").astype(
+    out["understat_id"] = pd.to_numeric(
+        out.pop("understat_player_id"), errors="coerce"
+    ).astype(
         "Int64"
     )
-    mapped = out["understat_id"].notna()
-    duplicate_ids = out.loc[mapped, "understat_id"].duplicated(keep=False)
-    if duplicate_ids.any():
-        ids = sorted(
-            out.loc[mapped].loc[duplicate_ids, "understat_id"].astype(int).unique()
-        )
-        raise RuntimeError(f"current mapping has shared Understat IDs: {ids}")
+    out["understat_player_name"] = ""
+    out["confidence"] = out.pop("confidence_level")
+    out["source"] = "smartplayfpl_mapping_release"
     return (
         out[CURRENT_COLUMNS]
         .sort_values("fpl_code", kind="mergesort")
@@ -472,12 +515,19 @@ def load_current(path: Path = CURRENT_MAPPING) -> pd.DataFrame:
     if out["fpl_code"].duplicated().any() or out["element"].duplicated().any():
         raise RuntimeError("current mapping contains duplicate FPL IDs")
     mapped = out["understat_id"].notna()
-    if out.loc[mapped, "understat_id"].duplicated().any():
-        raise RuntimeError("current mapping contains shared Understat IDs")
+    duplicate = out.loc[mapped, "understat_id"].duplicated(keep=False)
+    if duplicate.any() and not out.loc[mapped].loc[
+        duplicate, "mapping_status"
+    ].eq("shared_understat_id").all():
+        raise RuntimeError("current mapping contains an unreviewed shared Understat ID")
     if not out.loc[~mapped, "mapping_status"].eq("unmapped").all():
         raise RuntimeError("current mapping labels missing Understat IDs as mapped")
     if out.loc[mapped, "mapping_status"].eq("unmapped").any():
         raise RuntimeError("current mapping labels populated Understat IDs as unmapped")
+    if not out.loc[~mapped, "confidence"].eq("NONE").all():
+        raise RuntimeError("current unmapped rows must have NONE confidence")
+    if out.loc[mapped, "confidence"].eq("NONE").any():
+        raise RuntimeError("current mapped rows cannot have NONE confidence")
     return out
 
 
@@ -492,6 +542,7 @@ def _assert_equal(published: pd.DataFrame, expected: pd.DataFrame, label: str) -
 
 def verify() -> dict[str, pd.DataFrame]:
     """Verify exact training, corrected historical, and current-season maps."""
+    verify_operational_release()
     training = load_training()
     assignments = load_training_assignments()
     corrected = load()
@@ -509,6 +560,8 @@ def verify() -> dict[str, pd.DataFrame]:
         raise RuntimeError(
             "current mapping metadata does not match the roster snapshot"
         )
+    if meta.get("roster_sha256") != _sha256(CURRENT_ROSTER):
+        raise RuntimeError("current roster differs from its captured SHA256")
     return {
         "training": training,
         "assignments": assignments,
@@ -552,8 +605,9 @@ def refresh_current(bootstrap_path: Path | None = None) -> None:
                 "captured_at": captured_at,
                 "source": FPL_BOOTSTRAP_URL,
                 "bootstrap_sha256": hashlib.sha256(raw).hexdigest(),
+                "roster_sha256": _sha256(CURRENT_ROSTER),
                 "players": len(roster),
-                "note": "Roster snapshot only; Understat identities are built from audited history and curated supplements.",
+                "note": "Roster snapshot only; identities are joined from the versioned SmartPlayFPL operational mapping release.",
             },
             indent=2,
         )

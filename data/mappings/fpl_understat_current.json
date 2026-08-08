@@ -3,6 +3,7 @@
   "captured_at": "2026-08-08T18:51:42.144368+00:00",
   "source": "https://fantasy.premierleague.com/api/bootstrap-static/",
   "bootstrap_sha256": "ee359732c7c65536f84a321e4ef815b1caaeb9c9974da6cb3b7e3ed58cd89a76",
+  "roster_sha256": "c1cd3d0147f491c57ece990e6eaeff5c420146b333f8d1ac16f704901d24b553",
   "players": 573,
-  "note": "Roster snapshot only; Understat identities are built from audited history and curated supplements."
+  "note": "Roster snapshot only; identities are joined from the versioned SmartPlayFPL operational mapping release."
 }

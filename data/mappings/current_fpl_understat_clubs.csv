@@ -1,0 +1,31 @@
+club_name,club_short,fpl_team_code,understat_name,understat_team_id,mapping_status
+Man Utd,MUN,1,Manchester United,89,mapped
+Leeds,LEE,2,Leeds,245,mapped
+Arsenal,ARS,3,Arsenal,83,mapped
+Newcastle,NEW,4,Newcastle United,86,mapped
+Spurs,TOT,6,Tottenham,82,mapped
+Aston Villa,AVL,7,Aston Villa,71,mapped
+Chelsea,CHE,8,Chelsea,80,mapped
+Coventry City,COV,9,,,unmapped
+Everton,EVE,11,Everton,72,mapped
+Leicester,LEI,13,Leicester,75,mapped
+Liverpool,LIV,14,Liverpool,87,mapped
+Nott'm Forest,NFO,17,Nottingham Forest,249,mapped
+Southampton,SOU,20,Southampton,74,mapped
+West Ham,WHU,21,West Ham,81,mapped
+Crystal Palace,CRY,31,Crystal Palace,78,mapped
+West Brom,WBA,35,West Bromwich Albion,76,mapped
+Brighton,BHA,36,Brighton,220,mapped
+Wolves,WOL,39,Wolverhampton Wanderers,229,mapped
+Ipswich Town,IPS,40,Ipswich,285,mapped
+Man City,MCI,43,Manchester City,88,mapped
+Norwich,NOR,45,Norwich,79,mapped
+Sheffield Utd,SHU,49,Sheffield United,238,mapped
+Fulham,FUL,54,Fulham,228,mapped
+Sunderland,SUN,56,Sunderland,77,mapped
+Watford,WAT,57,Watford,90,mapped
+Hull City,HUL,88,,,unmapped
+Burnley,BUR,90,Burnley,92,mapped
+Bournemouth,BOU,91,Bournemouth,73,mapped
+Brentford,BRE,94,Brentford,244,mapped
+Luton,LUT,102,Luton,256,mapped

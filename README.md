@@ -229,6 +229,8 @@ position — never loaded from elsewhere, which would be model-selection leakage
 | `data/players.csv` | 4,717 | `fpl_code` → name and position, per season |
 | `data/mappings/fpl_understat_training_snapshot.csv` | 1,564 | exact historical IDs present in the release |
 | `data/mappings/fpl_understat_players.csv` | 1,564 | audited historical IDs recommended for new joins |
+| `data/mappings/current_fpl_understat_players.csv` | 1,681 | latest versioned operational player registry; 1,598 mapped |
+| `data/mappings/current_fpl_understat_clubs.csv` | 30 | latest versioned operational club registry; 28 mapped |
 | `data/mappings/fpl_understat_current.csv` | 573 | complete 2026-27 roster; 517 mapped, 56 unresolved |
 
 Sources and the provenance rules: [docs/DATA.md](docs/DATA.md).
