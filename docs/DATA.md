@@ -11,6 +11,7 @@ database.
 | `data/openfpl_predictions.csv` | 18,173 | 1.3 MB |
 | `data/openfpl_row_keys.csv` | 18,173 | 444 KB |
 | `data/players.csv` | 4,717 | 130 KB |
+| `data/mappings/fpl_understat_players.csv` | 1,564 | 84 KB |
 
 ---
 
@@ -47,6 +48,20 @@ seasons** — joining on it merges careers together.
 carries **no club column**: 3,683 rows belong to players who changed club mid-season, and
 the frame's own per-gameweek `team_name` is correct for those where a season-level
 lookup would not be. Use `team_name` from the frame.
+
+### FPL to Understat identities
+
+`data/mappings/fpl_understat_players.csv` publishes the exact `fpl_code` to
+`understat_id` joins used by the training frame. It covers 1,564 players, representing
+90.8% of player-fixture rows. Load it with `dastan.mappings.load()` or verify that it
+still matches the frame with `python -m dastan.mappings`. The ID is a join key, not a
+model feature.
+
+This is a snapshot of the model's historical joins, not a claim that every identity is
+globally one-to-one. Three Understat IDs are associated with multiple historical FPL
+codes; all six affected rows are flagged `shared_understat_id`. See
+[`data/mappings/README.md`](../data/mappings/README.md) before reverse-joining from
+Understat to FPL.
 
 ### Deadline anchoring
 
@@ -166,6 +181,8 @@ To extend to a new season:
 4. Assert that no accepted snapshot is post-deadline. **Do not relax this.** If a season
    resolves few gameweeks, drop those columns for that season rather than weakening the
    test.
+5. After extending `features.parquet`, regenerate the identity snapshot with
+   `python -m dastan.mappings --write` and review every `shared_understat_id` row.
 
 ---
 

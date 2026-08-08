@@ -22,6 +22,42 @@ Reproduce with `python -m dastan.evaluate --seeds 3`.
 
 ---
 
+## How to read the metrics
+
+The clean evaluation covers **24 gameweeks and 17,986 player-fixtures**. No single
+number is "accuracy":
+
+| metric | direction | interpretation |
+|---|---|---|
+| objective | higher | `0.5 × Spearman + 0.5 × NDCG@10`; the model-selection score |
+| Spearman | higher | quality of the full player ranking within each gameweek |
+| NDCG@10 | higher | quality of the ten players ranked highest |
+| MAE / RMSE | lower | points error; dominated by participation in the all-player cohort |
+| p60 AUC | higher | ranking quality for reaching 60 minutes; not classification accuracy |
+| Brier | lower | calibration and sharpness of the 60-minute probability |
+
+The objective is not a percentage and has no direct "60.72% correct" reading. For FPL,
+the practical questions are whether the ranking beats available alternatives, whether
+the top of the list contains actual high scorers, and whether participation risk is
+identified before the deadline.
+
+Headline practical results:
+
+| result | value |
+|---|---:|
+| all-player objective | **0.6072** |
+| starter-only objective | **0.3959** |
+| all-player MAE | **0.915 points** |
+| 60-minute AUC | **0.9539** |
+| actual top-ten players found in predicted top ten | **1.83 of 10** |
+| top prediction finishes in actual top ten | **9 of 24 GWs (37.5%)** |
+
+`python -m dastan.verify` reports numbers from the released fitting holdout. Those are
+serialization checks, **not accuracy claims**. The claims in this document come from
+the separate chronological blocks below.
+
+---
+
 ## 1. Headline
 
 Three chronological blocks of 2024-25, none of which was ever used to select a feature,
@@ -29,30 +65,36 @@ a fold or a hyperparameter.
 
 ### All players
 
-| model | objective | Spearman | NDCG@10 | MAE |
-|---|---|---|---|---|
-| **Dastan** | **0.6072** | 0.7464 | 0.4680 | **0.915** |
-| core feature set only | 0.5944 | — | — | — |
-| FPL's own `ep_next` | 0.5321 | — | — | 1.06 |
-| rolling-5 form | 0.5260 | — | — | — |
-| last gameweek's points | 0.4950 | — | — | — |
-| price | 0.3571 | — | — | — |
+| model | objective | Spearman | NDCG@10 | MAE | GWs scored |
+|---|---|---|---|---|---:|
+| **Dastan** | **0.6072** | 0.7464 | 0.4680 | **0.915** | 24 |
+| core feature set only | 0.5944 | — | — | — | 24 |
+| Dastan on FPL-covered rows | 0.6079 | — | — | — | 24 |
+| FPL's own `ep_next`, same rows | 0.5321 | — | — | 1.06 | 24 |
+| rolling-5 form | 0.5260 | — | — | — | 5 |
+| last gameweek's points | 0.4950 | — | — | — | 5 |
+| price | 0.3571 | — | — | — | 24 |
 
-**Dastan beats FPL's own published projection by +0.0751** — more than twelve times the
-noise floor. It beats the best naive baseline by +0.0812.
+**On identical rows, Dastan beats FPL's own published projection by +0.0758** — more
+than twelve times the keep margin. Rolling-form and last-week baselines have only five
+eligible all-player gameweeks, so their aggregate values are sanity checks rather than
+full-window head-to-head claims.
 
 ### Starters only (played 60+ minutes)
 
-| model | objective | Spearman | NDCG@10 | MAE |
-|---|---|---|---|---|
-| **Dastan** | **0.3959** | 0.2866 | 0.5051 | 2.172 |
-| core feature set only | 0.3949 | — | — | — |
-| price | 0.3584 | — | — | — |
-| FPL's own `ep_next` | 0.3139 | — | — | — |
-| rolling-5 form | 0.2820 | — | — | — |
-| last gameweek's points | 0.2404 | — | — | — |
+| model | objective | Spearman | NDCG@10 | MAE | GWs scored |
+|---|---|---|---|---|---:|
+| **Dastan** | **0.3959** | 0.2866 | 0.5051 | 2.172 | 24 |
+| core feature set only | 0.3949 | — | — | — | 24 |
+| price | 0.3584 | — | — | — | 24 |
+| Dastan on FPL-covered rows | 0.3944 | — | — | — | 24 |
+| FPL's own `ep_next`, same rows | 0.3139 | — | — | — | 24 |
+| rolling-5 form | 0.2820 | — | — | — | 21 |
+| last gameweek's points | 0.2404 | — | — | — | 21 |
 
-**Dastan beats `ep_next` by +0.0820 here too.** But note the second row.
+**On identical rows, Dastan beats `ep_next` by +0.0805 here too.** But note the core
+feature row: most of that is architecture and participation modelling, not the added
+feature families.
 
 ---
 
@@ -84,25 +126,25 @@ to be useful should be checked against it rather than only against form baseline
 
 ## 3. Per-block detail
 
-Objective, all players:
+Objective, all players. The two `ep_next` columns use identical rows:
 
-| block | Dastan | without availability | core only | FPL `ep_next` |
-|---|---|---|---|---|
-| 2024-25 GW15-22 | 0.6128 | 0.6063 | 0.5997 | 0.5416 |
-| 2024-25 GW23-30 | 0.6241 | 0.6196 | 0.6077 | 0.5442 |
-| 2024-25 GW31-38 | 0.5847 | 0.5785 | 0.5757 | 0.5105 |
-| 2025-26 GW23-30 † | 0.5794 | 0.5790 | 0.5573 | 0.5284 |
-| 2025-26 GW31-38 † | 0.5922 | 0.5881 | 0.5699 | 0.5246 |
+| block | Dastan | Dastan on `ep_next` rows | FPL `ep_next` | without availability | core only |
+|---|---:|---:|---:|---:|---:|
+| 2024-25 GW15-22 | 0.6128 | 0.6135 | 0.5416 | 0.6063 | 0.5997 |
+| 2024-25 GW23-30 | 0.6241 | 0.6246 | 0.5442 | 0.6196 | 0.6077 |
+| 2024-25 GW31-38 | 0.5847 | 0.5855 | 0.5105 | 0.5785 | 0.5757 |
+| 2025-26 GW23-30 † | 0.5794 | 0.5802 | 0.5284 | 0.5790 | 0.5573 |
+| 2025-26 GW31-38 † | 0.5922 | 0.5928 | 0.5246 | 0.5881 | 0.5699 |
 
-Objective, starters only:
+Objective, starters only. The two `ep_next` columns use identical rows:
 
-| block | Dastan | without availability | core only |
-|---|---|---|---|
-| 2024-25 GW15-22 | 0.4091 | 0.4011 | 0.4038 |
-| 2024-25 GW23-30 | 0.4105 | 0.4164 | 0.4047 |
-| 2024-25 GW31-38 | 0.3680 | 0.3689 | 0.3761 |
-| 2025-26 GW23-30 † | 0.3056 | 0.3003 | 0.2829 |
-| 2025-26 GW31-38 † | 0.3250 | 0.3271 | 0.3181 |
+| block | Dastan | Dastan on `ep_next` rows | FPL `ep_next` | without availability | core only |
+|---|---:|---:|---:|---:|---:|
+| 2024-25 GW15-22 | 0.4091 | 0.4072 | 0.3211 | 0.4011 | 0.4038 |
+| 2024-25 GW23-30 | 0.4105 | 0.4094 | 0.3131 | 0.4164 | 0.4047 |
+| 2024-25 GW31-38 | 0.3680 | 0.3665 | 0.3075 | 0.3689 | 0.3761 |
+| 2025-26 GW23-30 † | 0.3056 | 0.3056 | 0.2367 | 0.3003 | 0.2829 |
+| 2025-26 GW31-38 † | 0.3250 | 0.3232 | 0.2587 | 0.3271 | 0.3181 |
 
 † These two blocks were used during feature discovery, so they are **expected to read
 high** and are shown for completeness only. Quote the 2024-25 blocks.

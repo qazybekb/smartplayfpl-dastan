@@ -1,0 +1,1565 @@
+fpl_code,understat_id,player_name,position,first_season,last_season,mapping_status
+7645,587,Phil Jagielka,DEF,2020-21,2020-21,mapped
+9089,803,Ben Foster,GKP,2021-22,2021-22,mapped
+14937,2371,Cristiano Ronaldo dos Santos Aveiro,FWD,2021-22,2022-23,mapped
+15033,748,Wes Morgan,DEF,2020-21,2020-21,mapped
+15157,489,James Milner,MID,2020-21,2025-26,mapped
+15749,609,Joe Hart,GKP,2020-21,2021-22,mapped
+17349,593,Aaron Lennon,MID,2021-22,2021-22,mapped
+17601,8158,Scott Carson,GKP,2020-21,2024-25,mapped
+17745,745,Kasper Schmeichel,GKP,2020-21,2022-23,mapped
+17761,1665,James Tarkowski,DEF,2020-21,2025-26,mapped
+17997,857,Phil Bardsley,DEF,2020-21,2021-22,mapped
+18073,533,Mark Noble,MID,2020-21,2021-22,mapped
+18499,8022,Michael McGovern,GKP,2021-22,2021-22,mapped
+18507,802,Diego Da Silva Costa,FWD,2022-23,2022-23,mapped
+18867,7712,Billy Sharp,FWD,2020-21,2020-21,mapped
+18892,631,Ashley Young,DEF,2021-22,2024-25,mapped
+18987,1691,Robert Snodgrass,MID,2020-21,2020-21,mapped
+19188,512,Scott Dann,DEF,2020-21,2020-21,mapped
+19236,785,Ruddy,GKP,2020-21,2025-26,mapped
+19419,699,Gary Cahill,DEF,2020-21,2020-21,mapped
+19624,3422,João Filipe Iria Santos Moutinho,MID,2020-21,2022-23,mapped
+20066,509,Wayne Hennessey,GKP,2020-21,2024-25,mapped
+20310,624,Willy Caballero,GKP,2020-21,2022-23,mapped
+20452,839,Shane Long,FWD,2020-21,2021-22,mapped
+20467,503,Theo Walcott,MID,2020-21,2022-23,mapped
+20480,982,Tim Krul,GKP,2021-22,2023-24,mapped
+21205,1651,Tom Heaton,GKP,2020-21,2025-26,mapped
+27436,7711,David McGoldrick,FWD,2020-21,2020-21,mapped
+27789,614,Fernando Luiz Rosa,MID,2020-21,2021-22,mapped
+28411,2243,Keylor Navas,GKP,2022-23,2022-23,mapped
+28690,2164,Pablo Hernández Domínguez,MID,2020-21,2021-22,mapped
+32259,540,Darren Randolph,GKP,2020-21,2023-24,mapped
+36903,2251,Gareth Bale,MID,2020-21,2020-21,mapped
+37096,706,Lukasz Fabianski,GKP,2020-21,2025-26,mapped
+37339,1685,Ahmed El Mohamady,DEF,2020-21,2020-21,mapped
+37402,749,Christian Fuchs,DEF,2020-21,2020-21,mapped
+37572,619,Sergio Agüero,FWD,2020-21,2020-21,mapped
+37642,807,Jonny Evans,DEF,2020-21,2024-25,mapped
+37915,637,Hugo Lloris,GKP,2020-21,2023-24,mapped
+38290,641,Danny Rose,DEF,2020-21,2021-22,mapped
+38533,6849,Rui Pedro dos Santos Patrício,GKP,2020-21,2021-22,mapped
+38588,9423,Gaetano Berardi,DEF,2020-21,2020-21,mapped
+38716,6822,Lee Peltier,DEF,2020-21,2020-21,mapped
+39155,486,Adam Lallana,MID,2020-21,2024-25,mapped
+39487,887,Erik Pieters,DEF,2020-21,2021-22,mapped
+39790,2259,Francisco Casilla Cortés,GKP,2020-21,2021-22,mapped
+40142,537,Andy Carroll,FWD,2020-21,2020-21,mapped
+40145,712,Jack Cork,MID,2020-21,2023-24,mapped
+40146,835,Ryan Bertrand,DEF,2020-21,2022-23,mapped
+40349,694,Asmir Begovic,GKP,2021-22,2024-25,mapped
+40383,831,Forster,GKP,2020-21,2025-26,mapped
+40386,7704,Chris Basham,DEF,2020-21,2023-24,mapped
+40387,462,Dan Gosling,MID,2021-22,2021-22,mapped
+40669,528,Angelo Ogbonna,DEF,2020-21,2023-24,mapped
+40720,3294,Edinson Cavani,FWD,2020-21,2021-22,mapped
+40784,485,Mamadou Sakho,DEF,2020-21,2020-21,mapped
+40836,2190,Vicente Guaita,GKP,2020-21,2023-24,mapped
+40845,6051,Dale Stephens,MID,2020-21,2021-22,mapped
+41135,682,Branislav Ivanovic,DEF,2020-21,2020-21,mapped
+41270,1676,David Luiz Moreira Marinho,DEF,2020-21,2020-21,mapped
+41328,681,César Azpilicueta,DEF,2020-21,2023-24,mapped
+41338,581,Craig Cathcart,DEF,2021-22,2021-22,mapped
+41674,1747,Kevin Long,DEF,2020-21,2021-22,mapped
+41725,574,Troy Deeney,FWD,2021-22,2021-22,mapped
+41733,771,Georginio Wijnaldum,MID,2020-21,2020-21,mapped
+41823,876,Fabian Delph,MID,2020-21,2021-22,mapped
+42427,545,Kieran Gibbs,DEF,2020-21,2020-21,mapped
+43250,596,Tom Cleverley,MID,2021-22,2021-22,mapped
+43670,554,Juan Mata,MID,2020-21,2021-22,mapped
+44346,502,Olivier Giroud,FWD,2020-21,2021-22,mapped
+44683,844,Jay Rodriguez,FWD,2020-21,2023-24,mapped
+44699,4422,Ashley Barnes,FWD,2020-21,2025-26,mapped
+45034,448,Ivan Perišić,DEF,2022-23,2023-24,mapped
+45124,713,André Ayew,MID,2022-23,2022-23,mapped
+45268,772,Moussa Sissoko,MID,2020-21,2021-22,mapped
+47247,7709,John Fleck,MID,2020-21,2023-24,mapped
+47390,710,Neil Taylor,DEF,2020-21,2020-21,mapped
+47431,700,Willian Borges da Silva,MID,2020-21,2024-25,mapped
+48717,529,Winston Reid,DEF,2021-22,2021-22,mapped
+48760,6030,Mathias Jorgensen,DEF,2021-22,2024-25,mapped
+49262,7235,Jason Steele,GKP,2020-21,2025-26,mapped
+49413,530,James Tomkins,DEF,2020-21,2023-24,mapped
+49440,1738,Hal Robson-Kanu,FWD,2020-21,2020-21,mapped
+49944,1689,Jake Livermore,MID,2020-21,2020-21,mapped
+49957,3231,Kamil Grosicki,MID,2020-21,2020-21,mapped
+50093,6843,David Button,GKP,2020-21,2020-21,mapped
+50175,501,Danny Welbeck,FWD,2020-21,2025-26,mapped
+50229,1737,Matt Phillips,MID,2020-21,2020-21,mapped
+50232,769,Jonjo Shelvey,MID,2020-21,2023-24,mapped
+50471,633,James McArthur,MID,2020-21,2022-23,mapped
+50472,589,James McCarthy,MID,2020-21,2020-21,mapped
+51090,3288,Thiago Emiliano da Silva,DEF,2020-21,2023-24,mapped
+51927,1654,Ben Mee,DEF,2020-21,2024-25,mapped
+51938,753,Marc Albrighton,MID,2020-21,2022-23,mapped
+51940,546,David De Gea Quintana,GKP,2020-21,2022-23,mapped
+52775,3387,Nicolas Nkoulou,DEF,2021-22,2021-22,mapped
+54469,825,Adam Smith,DEF,2022-23,2025-26,mapped
+54484,5043,Francisco Femenía Far,DEF,2021-22,2021-22,mapped
+54694,318,Pierre-Emerick Aubameyang,FWD,2020-21,2023-24,mapped
+54738,11712,Thomas Kaminski,GKP,2023-24,2023-24,mapped
+54861,606,Christian Benteke,FWD,2020-21,2022-23,mapped
+55037,532,Cheikhou Kouyaté,MID,2020-21,2023-24,mapped
+55422,714,Gylfi Sigurdsson,MID,2020-21,2021-22,mapped
+55459,534,Aaron Cresswell,DEF,2020-21,2024-25,mapped
+55494,510,Joel Ward,DEF,2020-21,2024-25,mapped
+55605,639,Toby Alderweireld,DEF,2020-21,2021-22,mapped
+55914,8816,Liam Cooper,DEF,2020-21,2022-23,mapped
+56377,6274,Andriy Yarmolenko,MID,2020-21,2021-22,mapped
+56872,463,Junior Stanislas,MID,2022-23,2022-23,mapped
+56917,458,Steve Cook,DEF,2022-23,2023-24,mapped
+56979,605,Jordan Henderson,MID,2020-21,2025-26,mapped
+56983,461,Matt Ritchie,MID,2020-21,2023-24,mapped
+57127,7696,Teemu Pukki,FWD,2021-22,2021-22,mapped
+57134,813,Salomón Rondón,FWD,2021-22,2022-23,mapped
+57145,708,Federico Fernández,DEF,2020-21,2022-23,mapped
+57328,603,Nathaniel Clyne,DEF,2020-21,2025-26,mapped
+57513,3468,Jonas Lössl,GKP,2020-21,2021-22,mapped
+57531,531,Michail Antonio,FWD,2020-21,2024-25,mapped
+58376,635,Alex McCarthy,GKP,2020-21,2024-25,mapped
+58498,573,Odion Ighalo,FWD,2020-21,2020-21,mapped
+58621,638,Kyle Walker,DEF,2020-21,2025-26,mapped
+58771,767,Jack Colback,MID,2022-23,2022-23,mapped
+58786,525,Martin Kelly,DEF,2020-21,2021-22,mapped
+58822,847,Cédric Alves Soares,DEF,2020-21,2023-24,mapped
+58845,875,Ciaran Clark,DEF,2020-21,2022-23,mapped
+59735,780,Karl Darlow,GKP,2020-21,2025-26,mapped
+59859,314,İlkay Gündoğan,MID,2020-21,2025-26,mapped
+59940,964,Kyle Bartley,DEF,2020-21,2020-21,mapped
+59949,585,Séamus Coleman,DEF,2020-21,2025-26,mapped
+59966,3277,Alexandre Lacazette,FWD,2020-21,2021-22,mapped
+60025,2249,James Rodríguez,MID,2020-21,2021-22,mapped
+60232,804,Craig Dawson,DEF,2020-21,2024-25,mapped
+60252,775,Andros Townsend,MID,2020-21,2023-24,mapped
+60307,239,Groß,MID,2020-21,2025-26,mapped
+60551,669,Ashley Westwood,MID,2020-21,2021-22,mapped
+60586,1663,Jóhann Berg Gudmundsson,MID,2020-21,2023-24,mapped
+60689,4456,Chris Wood,FWD,2020-21,2025-26,mapped
+60706,527,Adrián San Miguel del Castillo,GKP,2020-21,2023-24,mapped
+60914,332,Joel Matip,DEF,2020-21,2023-24,mapped
+61256,2248,Carlos Henrique Casimiro,MID,2022-23,2025-26,mapped
+61366,447,Kevin De Bruyne,MID,2020-21,2024-25,mapped
+61558,229,Thiago Alcántara do Nascimento,MID,2020-21,2023-24,mapped
+61600,8757,Romaine Sawyers,MID,2020-21,2020-21,mapped
+61739,3304,Maxime Le Marchand,DEF,2020-21,2020-21,mapped
+61810,1801,Pontus Jansson,DEF,2021-22,2022-23,mapped
+61933,6047,Shane Duffy,DEF,2020-21,2022-23,mapped
+62398,697,Nemanja Matic,MID,2020-21,2021-22,mapped
+62974,644,Erik Lamela,MID,2020-21,2021-22,mapped
+63426,7707,Enda Stevens,DEF,2020-21,2020-21,mapped
+66242,6050,Davy Pröpper,MID,2020-21,2021-22,mapped
+66588,8716,Luke Ayling,DEF,2020-21,2022-23,mapped
+66749,594,Romelu Lukaku Bolingoli,FWD,2021-22,2024-25,mapped
+66838,6477,Cenk Tosun,FWD,2020-21,2021-22,mapped
+66975,5549,Luka Milivojevic,MID,2020-21,2022-23,mapped
+67089,6532,Martin Dúbravka,GKP,2020-21,2025-26,mapped
+68312,888,Xherdan Shaqiri,MID,2020-21,2021-22,mapped
+68983,1652,Matthew Lowton,DEF,2020-21,2021-22,mapped
+69140,1699,Shkodran Mustafi,DEF,2020-21,2020-21,mapped
+69143,1123,Juraj Kucka,MID,2021-22,2021-22,mapped
+69752,1297,Norberto Murara Neto,GKP,2022-23,2025-26,mapped
+71738,7694,Marco Stiepermann,MID,2021-22,2021-22,mapped
+72147,9614,Marco Bizot,GKP,2025-26,2025-26,mapped
+72222,4381,Mateusz Klich,MID,2020-21,2022-23,mapped
+72681,7077,Denis Odoi,DEF,2020-21,2020-21,mapped
+73314,2361,Willian José Da Silva,FWD,2020-21,2020-21,mapped
+73426,1660,Andre Gray,FWD,2021-22,2021-22,mapped
+74208,1740,Paul Pogba,MID,2020-21,2021-22,mapped
+74230,730,Patrick van Aanholt,DEF,2020-21,2020-21,mapped
+74854,7715,Simon Moore,GKP,2020-21,2025-26,mapped
+74944,12748,Sam Morsy,MID,2024-25,2024-25,mapped
+75115,468,Callum Wilson,FWD,2020-21,2025-26,mapped
+76306,62,Lukas Rupp,MID,2021-22,2021-22,mapped
+76357,6835,Tom Cairney,MID,2020-21,2025-26,mapped
+76359,951,Phil Jones,DEF,2020-21,2022-23,mapped
+77777,3979,Ahmed El-Sayed Hegazy,DEF,2020-21,2020-21,mapped
+77794,652,Kieran Trippier,DEF,2021-22,2025-26,mapped
+77818,11724,James Shea,GKP,2023-24,2023-24,mapped
+78007,465,Joshua King,FWD,2020-21,2021-22,mapped
+78056,842,Oriol Romeu Vidal,MID,2020-21,2022-23,mapped
+78315,584,Joel Robles,GKP,2022-23,2022-23,mapped
+78356,848,Charlie Austin,FWD,2020-21,2020-21,mapped
+78607,7693,Kenny McLean,MID,2021-22,2021-22,mapped
+78830,647,Harry Kane,FWD,2020-21,2023-24,mapped
+78916,7382,Dan Burn,DEF,2020-21,2025-26,mapped
+79602,11361,Daniel Bentley,GKP,2022-23,2025-26,mapped
+79852,4475,Jed Steer,GKP,2020-21,2021-22,mapped
+79934,7710,Oliver Norwood,MID,2020-21,2023-24,mapped
+80146,672,Jordan Ayew,MID,2020-21,2024-25,mapped
+80179,1711,Adam Forshaw,MID,2020-21,2022-23,mapped
+80201,181,Bernd Leno,GKP,2020-21,2025-26,mapped
+80226,3600,Serge Aurier,DEF,2020-21,2023-24,mapped
+80607,646,Christian Eriksen,MID,2021-22,2024-25,mapped
+80801,668,Idrissa Gana Gueye,MID,2022-23,2025-26,mapped
+80954,2381,Rodrigo Moreno,MID,2020-21,2022-23,mapped
+81012,6891,Ryan Fredericks,DEF,2020-21,2023-24,mapped
+81183,1017,Matej Vydra,FWD,2020-21,2021-22,mapped
+81205,11298,Mislav Orsic,MID,2022-23,2022-23,mapped
+81441,8729,Mark Gillespie,GKP,2020-21,2025-26,mapped
+81880,966,Alex Oxlade-Chamberlain,MID,2020-21,2022-23,mapped
+82143,8776,Wes Foderingham,GKP,2020-21,2025-26,mapped
+82263,1621,Marcos Alonso,DEF,2020-21,2022-23,mapped
+82403,522,Wilfried Zaha,MID,2020-21,2022-23,mapped
+82514,7184,Tim Ream,DEF,2020-21,2024-25,mapped
+82691,7706,George Baldock,DEF,2020-21,2023-24,mapped
+82738,11722,Luke Berry,MID,2023-24,2023-24,mapped
+83283,790,Nathan Redmond,MID,2020-21,2023-24,mapped
+83299,6048,Lewis Dunk,DEF,2020-21,2025-26,mapped
+83312,1707,Ben Gibson,DEF,2020-21,2021-22,mapped
+83314,1746,Jeff Hendrick,MID,2020-21,2023-24,mapped
+83427,8286,Jack Robinson,DEF,2020-21,2023-24,mapped
+83428,7690,Grant Hanley,DEF,2021-22,2021-22,mapped
+84182,2310,Alphonse Areola,GKP,2020-21,2025-26,mapped
+84450,204,Granit Xhaka,MID,2020-21,2025-26,mapped
+84583,488,Philippe Coutinho Correia,MID,2021-22,2023-24,mapped
+84915,5274,Michael Hector,DEF,2020-21,2020-21,mapped
+84939,986,Danny Ings,FWD,2020-21,2024-25,mapped
+85242,7721,Conor Hourihane,MID,2020-21,2021-22,mapped
+85624,1725,Christian Kabasele,DEF,2021-22,2021-22,mapped
+85633,6903,Matz Sels,GKP,2023-24,2025-26,mapped
+85955,1389,Jorge Luiz Frello Filho,MID,2020-21,2024-25,mapped
+85971,453,Son Heung-min,MID,2020-21,2025-26,mapped
+86129,1376,Kalidou Koulibaly,DEF,2022-23,2022-23,mapped
+86417,757,Jeffrey Schlupp,MID,2020-21,2024-25,mapped
+86873,3451,Benjamin Lecomte,GKP,2025-26,2025-26,mapped
+86881,1785,Nampalys Mendy,MID,2020-21,2022-23,mapped
+86934,535,Manuel Lanzini,MID,2020-21,2022-23,mapped
+87835,6852,Matt Doherty,DEF,2020-21,2025-26,mapped
+87873,8718,Stuart Dallas,DEF,2020-21,2022-23,mapped
+88248,8786,Stefan Ortega Moreno,GKP,2022-23,2025-26,mapped
+88484,2199,Pablo Sarabia,MID,2022-23,2024-25,mapped
+88894,592,Ross Barkley,MID,2020-21,2025-26,mapped
+88900,1735,Jack Stephens,DEF,2020-21,2024-25,mapped
+89068,3298,Layvin Kurzawa,DEF,2022-23,2022-23,mapped
+89076,1488,Remo Freuler,MID,2022-23,2023-24,mapped
+89085,1677,Nathaniel Chalobah,MID,2021-22,2022-23,mapped
+89335,2266,Saúl Ñíguez,MID,2021-22,2021-22,mapped
+89470,7697,Onel Hernández,MID,2021-22,2021-22,mapped
+90105,1683,Ryan Fraser,MID,2020-21,2024-25,mapped
+90152,2245,Raphaël Varane,DEF,2021-22,2023-24,mapped
+90517,789,Robbie Brady,MID,2020-21,2020-21,mapped
+90585,6850,Willy Boly,DEF,2020-21,2025-26,mapped
+91046,11721,Cauley Woodrow,FWD,2023-24,2023-24,mapped
+91047,6893,Stuart Armstrong,MID,2020-21,2022-23,mapped
+91651,2254,Mateo Kovačić,MID,2020-21,2025-26,mapped
+91889,6098,Niclas Füllkrug,FWD,2024-25,2025-26,mapped
+92217,482,Roberto Firmino,FWD,2020-21,2022-23,mapped
+92259,6840,Neeskens Kebano,MID,2020-21,2022-23,mapped
+92371,8380,Pablo Marí Villar,DEF,2020-21,2022-23,mapped
+93100,111,Jannik Vestergaard,DEF,2020-21,2024-25,mapped
+93264,643,Eric Dier,DEF,2020-21,2023-24,mapped
+93284,4068,Florin Andone,FWD,2020-21,2021-22,mapped
+94147,6851,Conor Coady,DEF,2020-21,2024-25,mapped
+94245,1678,Michy Batshuayi,FWD,2020-21,2021-22,mapped
+94926,1778,Freddie Ladapo,FWD,2024-25,2024-25,mapped
+95463,473,Danny Ward,GKP,2020-21,2024-25,mapped
+95658,1687,Harry Maguire,DEF,2020-21,2025-26,mapped
+95715,3293,Lucas Rodrigues Moura da Silva,MID,2020-21,2022-23,mapped
+96784,12187,Jordan Clark,MID,2023-24,2023-24,mapped
+96787,6894,Mohamed Elyounoussi,MID,2021-22,2022-23,mapped
+96994,6827,Bobby De Cordova-Reid,MID,2020-21,2024-25,mapped
+97032,833,Virgil van Dijk,DEF,2020-21,2025-26,mapped
+97299,586,John Stones,DEF,2020-21,2025-26,mapped
+98745,492,Héctor Bellerín,DEF,2020-21,2021-22,mapped
+98747,5552,Nick Pope,GKP,2020-21,2025-26,mapped
+98980,4401,Emiliano Martínez Romero,GKP,2020-21,2025-26,mapped
+100649,7063,Bernard Anício Caldeira Duarte,MID,2020-21,2021-22,mapped
+101105,6834,Joe Bryan,DEF,2020-21,2022-23,mapped
+101148,766,Jamaal Lascelles,DEF,2020-21,2025-26,mapped
+101178,843,James Ward-Prowse,MID,2020-21,2025-26,mapped
+101184,508,Calum Chambers,DEF,2020-21,2023-24,mapped
+101188,1823,Lucas Digne,DEF,2020-21,2025-26,mapped
+101338,5248,Marcel Sabitzer,MID,2022-23,2022-23,mapped
+101394,6932,Okay Yokuslu,MID,2020-21,2020-21,mapped
+101537,1208,Felipe Anderson Pereira Gomes,MID,2020-21,2020-21,mapped
+101582,6817,Frederico Rodrigues de Paula Santos,MID,2020-21,2023-24,mapped
+101668,755,Jamie Vardy,FWD,2020-21,2024-25,mapped
+101982,978,Sam Johnstone,GKP,2020-21,2025-26,mapped
+102057,4105,Raúl Jiménez Rodríguez,FWD,2020-21,2025-26,mapped
+102380,1822,Antonio Rüdiger,DEF,2020-21,2021-22,mapped
+102826,3389,Benjamin Mendy,DEF,2020-21,2021-22,mapped
+103025,750,Riyad Mahrez,MID,2020-21,2023-24,mapped
+103123,6144,Sébastien Haller,FWD,2020-21,2020-21,mapped
+103192,935,Kurt Zouma,DEF,2020-21,2024-25,mapped
+103914,6044,Charlie Taylor,DEF,2020-21,2024-25,mapped
+103955,618,Raheem Sterling,MID,2020-21,2024-25,mapped
+104047,11716,Pelly Ruddock Mpanzu,MID,2023-24,2023-24,mapped
+104542,37,Loris Karius,GKP,2022-23,2023-24,mapped
+104547,743,Dwight Gayle,FWD,2020-21,2022-23,mapped
+105377,8722,Ezgjan Alioski,DEF,2020-21,2020-21,mapped
+105666,856,Jack Butland,GKP,2020-21,2022-23,mapped
+105717,1760,Arthur Masuaku,DEF,2020-21,2025-26,mapped
+106468,4120,Álex Moreno Lopera,DEF,2022-23,2025-26,mapped
+106606,12747,Massimo Luongo,MID,2024-25,2024-25,mapped
+106611,1653,Michael Keane,DEF,2020-21,2025-26,mapped
+106617,822,Patrick Bamford,FWD,2020-21,2025-26,mapped
+106618,853,Paul Dummett,DEF,2020-21,2023-24,mapped
+106757,6542,Jürgen Locadia,FWD,2021-22,2021-22,mapped
+106760,1006,Luke Shaw,DEF,2020-21,2025-26,mapped
+106837,1234,Dennis Praet,MID,2020-21,2022-23,mapped
+107265,5544,Angus Gunn,GKP,2020-21,2025-26,mapped
+107613,3491,Romain Saïss,DEF,2020-21,2021-22,mapped
+108053,8905,Conor Townsend,DEF,2020-21,2024-25,mapped
+108156,7152,Björn Engels,DEF,2020-21,2021-22,mapped
+108413,6104,Will Hughes,MID,2021-22,2025-26,mapped
+108416,7703,John Egan,DEF,2020-21,2023-24,mapped
+108796,11714,Tom Lockyer,DEF,2023-24,2023-24,mapped
+108813,9251,Christian Walton,GKP,2020-21,2024-25,mapped
+108823,645,Dele Alli,MID,2020-21,2023-24,mapped
+109322,558,Jesse Lingard,MID,2020-21,2022-23,mapped
+109345,6049,Solly March,MID,2020-21,2025-26,mapped
+109434,6067,Terence Kongolo,DEF,2020-21,2023-24,mapped
+109528,1719,Javier Manquillo Gaitán,DEF,2020-21,2023-24,mapped
+109533,1245,Emerson Palmieri dos Santos,DEF,2020-21,2025-26,mapped
+109638,9163,Kean Bryan,DEF,2020-21,2020-21,mapped
+109646,5590,Tosin Adarabioyo,DEF,2020-21,2025-26,mapped
+109745,5061,Kepa Arrizabalaga Revuelta,GKP,2020-21,2025-26,mapped
+110504,695,Bertrand Traoré,MID,2020-21,2025-26,mapped
+110735,7699,Adam Webster,DEF,2020-21,2025-26,mapped
+110979,838,Sadio Mané,MID,2020-21,2021-22,mapped
+111234,741,Jordan Pickford,GKP,2020-21,2025-26,mapped
+111291,5708,Fernando Marçal,DEF,2020-21,2021-22,mapped
+111317,6820,David Brooks,MID,2022-23,2025-26,mapped
+111452,375,Odysseas Vlachodimos,GKP,2023-24,2025-26,mapped
+111457,342,Sead Kolasinac,DEF,2020-21,2021-22,mapped
+111478,8780,Joël Veltman,DEF,2020-21,2025-26,mapped
+111773,1545,Emil Krafth,DEF,2020-21,2025-26,mapped
+111782,6962,Robin Olsen,GKP,2020-21,2024-25,mapped
+111931,3303,Ricardo Barbosa Pereira,DEF,2020-21,2024-25,mapped
+112520,1038,Alex Palmer,GKP,2024-25,2024-25,mapped
+113564,902,Sam Byram,DEF,2021-22,2025-26,mapped
+114128,2280,Jonathan Castro Otto,DEF,2020-21,2023-24,mapped
+114241,10758,Harry Toffolo,DEF,2022-23,2024-25,mapped
+114243,6063,Jacob Murphy,MID,2020-21,2025-26,mapped
+114283,675,Jack Grealish,MID,2020-21,2025-26,mapped
+115382,3621,Neal Maupay,FWD,2020-21,2024-25,mapped
+115556,660,Ben Davies,DEF,2020-21,2025-26,mapped
+115918,6875,Rúnar Alex Rúnarsson,GKP,2020-21,2023-24,mapped
+116216,7698,Leandro Trossard,MID,2020-21,2025-26,mapped
+116404,7921,Felipe Augusto de Almeida Monteiro,DEF,2022-23,2023-24,mapped
+116535,1257,Alisson Becker,GKP,2020-21,2025-26,mapped
+116594,751,N'Golo Kanté,MID,2020-21,2022-23,mapped
+116643,3420,Fabio Henrique Tavares,MID,2020-21,2023-24,mapped
+118342,7047,Mark Flekken,GKP,2023-24,2024-25,mapped
+118748,1250,Mohamed Salah,MID,2020-21,2025-26,mapped
+119471,76,Fabian Schär,DEF,2020-21,2025-26,mapped
+119765,1379,Allan Marques Loureiro,MID,2020-21,2022-23,mapped
+120202,7052,Wout Weghorst,FWD,2021-22,2023-24,mapped
+120250,2383,André Tavares Gomes,MID,2020-21,2023-24,mapped
+120721,983,Kevin Mbabu,DEF,2022-23,2024-25,mapped
+121145,2379,João Cavaco Cancelo,DEF,2020-21,2024-25,mapped
+121160,6054,Ederson Santana de Moraes,GKP,2020-21,2025-26,mapped
+121599,1726,Abdoulaye Doucouré,MID,2020-21,2024-25,mapped
+121709,5652,Walter Benítez,GKP,2025-26,2025-26,mapped
+122074,7076,Marcus Bettinelli,GKP,2020-21,2025-26,mapped
+122411,12755,Cameron Burgess,DEF,2024-25,2024-25,mapped
+122775,3696,Morgan Sanson,MID,2020-21,2023-24,mapped
+122798,1688,Andrew Robertson,DEF,2020-21,2025-26,mapped
+122806,7723,John McGinn,MID,2020-21,2025-26,mapped
+123354,6859,Kortney Hause,DEF,2020-21,2024-25,mapped
+124165,925,Patrick Roberts,MID,2025-26,2025-26,mapped
+124183,8992,Hakim Ziyech,MID,2020-21,2023-24,mapped
+126184,579,Nathan Aké,DEF,2020-21,2025-26,mapped
+126187,688,Ruben Loftus-Cheek,MID,2020-21,2022-23,mapped
+128295,7083,Christian Nørgaard,MID,2021-22,2025-26,mapped
+128309,10865,Jamal Lowe,MID,2022-23,2023-24,mapped
+128340,10743,Kieffer Moore,FWD,2022-23,2023-24,mapped
+128389,773,Aleksandar Mitrović,FWD,2020-21,2023-24,mapped
+130036,9957,Ozan Tufan,MID,2021-22,2021-22,mapped
+131304,6996,William Troost-Ekong,DEF,2021-22,2021-22,mapped
+131897,2385,Mathew Ryan,GKP,2020-21,2021-22,mapped
+132015,343,Pierre-Emile Højbjerg,MID,2020-21,2024-25,mapped
+133845,10745,Emiliano Marcondes,MID,2022-23,2023-24,mapped
+135363,200,Andreas Christensen,DEF,2020-21,2021-22,mapped
+135720,5261,Kevin Danso,DEF,2024-25,2025-26,mapped
+138001,12245,Tom King,GKP,2023-24,2025-26,mapped
+140200,1214,Thomas Strakosha,GKP,2022-23,2023-24,mapped
+140941,1154,Stipe Perica,FWD,2021-22,2021-22,mapped
+141746,1228,Bruno Borges Fernandes,MID,2020-21,2025-26,mapped
+144485,998,Ivan Toney,FWD,2021-22,2024-25,mapped
+146426,4490,Oluwasemilogo Adesewo Ibidapo Ajayi,DEF,2020-21,2020-21,mapped
+146610,7705,Jack O'Connell,DEF,2020-21,2020-21,mapped
+146941,2498,Aymeric Laporte,DEF,2020-21,2023-24,mapped
+147611,11360,Paul Onuachu,FWD,2022-23,2024-25,mapped
+148225,553,Anthony Martial,FWD,2020-21,2023-24,mapped
+148508,7722,Mahmoud Ahmed Ibrahim Hassan,MID,2020-21,2021-22,mapped
+149065,9740,José Malheiro de Sá,GKP,2021-22,2025-26,mapped
+149484,1024,Tyrone Mings,DEF,2020-21,2025-26,mapped
+149519,3278,Maxwel Cornet,MID,2021-22,2025-26,mapped
+149828,1682,Islam Slimani,FWD,2020-21,2020-21,mapped
+149915,2163,Diego Llorente,DEF,2020-21,2022-23,mapped
+149929,12749,Wes Burns,MID,2024-25,2024-25,mapped
+151086,1299,Mario Lemina,MID,2020-21,2024-25,mapped
+151119,727,DeAndre Yedlin,DEF,2020-21,2020-21,mapped
+151589,7236,Leander Dendoncker,MID,2020-21,2025-26,mapped
+152551,2182,Jefferson Lerma Solís,MID,2022-23,2025-26,mapped
+152590,1828,Alex Telles,DEF,2020-21,2023-24,mapped
+152760,484,Divock Origi,FWD,2020-21,2023-24,mapped
+152898,9318,Ben Davies,DEF,2020-21,2022-23,mapped
+153127,6062,Isaac Hayden,MID,2020-21,2025-26,mapped
+153133,500,Alex Iwobi,MID,2020-21,2025-26,mapped
+153256,496,Mohamed Elneny,MID,2020-21,2023-24,mapped
+153366,910,Harrison Reed,MID,2020-21,2025-26,mapped
+153673,1084,Jonjoe Kenny,DEF,2020-21,2021-22,mapped
+153682,5596,Harry Wilson,MID,2020-21,2025-26,mapped
+153723,7708,John Lundstram,MID,2020-21,2020-21,mapped
+154043,1750,Ainsley Maitland-Niles,MID,2020-21,2022-23,mapped
+154048,7484,Stephy Mavididi,MID,2024-25,2024-25,mapped
+154131,7823,Jack Stacey,DEF,2022-23,2022-23,mapped
+154138,10092,Tariqe Fosu-Henry,MID,2021-22,2021-22,mapped
+154296,10715,João Maria Lobo Alves Palhares Costa Palhinha Gonçalves,MID,2022-23,2025-26,mapped
+154506,1025,Daniel Bachmann,GKP,2021-22,2021-22,mapped
+154561,9676,David Raya Martín,GKP,2021-22,2025-26,mapped
+154566,1679,Dominic Solanke-Mitchell,FWD,2022-23,2025-26,mapped
+155197,8918,Max Lowe,DEF,2020-21,2023-24,mapped
+155405,8719,Kalvin Phillips,MID,2020-21,2025-26,mapped
+155408,1789,Lewis Cook,MID,2022-23,2025-26,mapped
+155503,852,Freddie Woodman,GKP,2021-22,2025-26,mapped
+155511,4419,Armstrong,FWD,2021-22,2025-26,mapped
+155529,8704,Marek Rodák,GKP,2020-21,2023-24,mapped
+155561,6083,Ludwig Augustinsson,DEF,2022-23,2022-23,mapped
+155569,759,Daniel Amartey,DEF,2020-21,2022-23,mapped
+155651,1441,Adam Masina,DEF,2021-22,2021-22,mapped
+156074,1749,Rob Holding,DEF,2020-21,2025-26,mapped
+156658,1771,Reece Burke,DEF,2023-24,2023-24,mapped
+156683,1841,Pierluigi Gollini,GKP,2021-22,2021-22,mapped
+156685,561,Joe Rothwell,MID,2022-23,2023-24,mapped
+156687,10742,Ben Pearson,MID,2022-23,2023-24,mapped
+156689,922,Andreas Hoelgebaum Pereira,MID,2020-21,2025-26,mapped
+156700,11717,Carlton Morris,FWD,2023-24,2023-24,mapped
+157668,971,Harry Winks,MID,2020-21,2024-25,mapped
+157775,6841,Ken Sema,MID,2021-22,2021-22,mapped
+157882,8239,Takumi Minamino,MID,2020-21,2021-22,mapped
+158499,10744,Ryan Christie,MID,2022-23,2025-26,mapped
+158534,885,Kyle Walker-Peters,DEF,2020-21,2025-26,mapped
+158983,8808,Endo Wataru,MID,2023-24,2025-26,mapped
+159506,725,Ola Aina,DEF,2020-21,2025-26,mapped
+159533,900,Adama Traoré Diarra,MID,2020-21,2025-26,mapped
+160987,4764,Jean-Philippe Gbamin,MID,2020-21,2023-24,mapped
+162651,1142,Samir Caetano de Souza Santos,DEF,2021-22,2021-22,mapped
+164011,9290,Mbaye Diagne,FWD,2020-21,2020-21,mapped
+164484,7817,Zack Steffen,GKP,2020-21,2023-24,mapped
+164511,6521,Yerry Mina,DEF,2020-21,2022-23,mapped
+164555,8965,Vladimír Coufal,DEF,2020-21,2024-25,mapped
+165153,65,Timo Werner,MID,2020-21,2024-25,mapped
+165183,11713,Amari'i Bell,DEF,2023-24,2023-24,mapped
+165210,6842,Alireza Jahanbakhsh,MID,2020-21,2021-22,mapped
+165659,5712,Diego Carlos Santos Silva,DEF,2022-23,2024-25,mapped
+165808,3428,Hélder Wander Sousa de Azevedo e Costa,MID,2020-21,2021-22,mapped
+165809,3635,Bernardo Mota Veiga de Carvalho e Silva,MID,2020-21,2025-26,mapped
+166324,3683,Ivan Neves Abreu Cavaleiro,MID,2020-21,2023-24,mapped
+166325,5646,Carlos Ribeiro Dias,MID,2022-23,2022-23,mapped
+166477,6157,Timothy Castagne,DEF,2020-21,2025-26,mapped
+166640,6892,Fabián Balbuena,DEF,2020-21,2020-21,mapped
+166989,5956,Youri Tielemans,MID,2020-21,2025-26,mapped
+167074,5973,Kenny Tete,DEF,2020-21,2025-26,mapped
+167191,12753,Marcus Myers-Harness,MID,2024-25,2024-25,mapped
+167199,2328,Thomas Partey,MID,2020-21,2024-25,mapped
+167473,6231,José Izquierdo,MID,2020-21,2020-21,mapped
+167512,14099,Luke O'Nien,DEF,2025-26,2025-26,mapped
+167522,6526,Jordan Hugill,FWD,2020-21,2021-22,mapped
+167767,689,Robert Kenedy Nunes do Nascimento,DEF,2021-22,2022-23,mapped
+167878,7714,Ben Osborn,MID,2020-21,2023-24,mapped
+167887,13728,Josh Laurent,MID,2025-26,2025-26,mapped
+167888,12762,Joe Lumley,GKP,2024-25,2024-25,mapped
+168035,12549,Fred Onyedinma,MID,2023-24,2023-24,mapped
+168090,205,Mahmoud Dahoud,MID,2023-24,2024-25,mapped
+168281,10757,Scott McKenna,DEF,2022-23,2023-24,mapped
+168399,7459,Will Norris,GKP,2020-21,2021-22,mapped
+168580,770,Ayoze Pérez,MID,2020-21,2022-23,mapped
+168636,6219,Enes Ünal,FWD,2023-24,2025-26,mapped
+168765,661,Josh Onomah,MID,2020-21,2022-23,mapped
+168991,6034,Philip Billing,MID,2022-23,2025-26,mapped
+169187,1791,Trent Alexander-Arnold,DEF,2020-21,2024-25,mapped
+169359,884,Matt Targett,DEF,2020-21,2025-26,mapped
+169432,1736,Oliver McBurnie,FWD,2020-21,2023-24,mapped
+169528,8940,Antonee Robinson,DEF,2020-21,2025-26,mapped
+169593,9834,Remi Matthews,GKP,2021-22,2025-26,mapped
+170137,101,Allan Saint-Maximin,MID,2020-21,2023-24,mapped
+171099,3729,Hassane Kamara,DEF,2021-22,2021-22,mapped
+171101,5050,Clément Lenglet,DEF,2022-23,2023-24,mapped
+171270,1032,Kieran Dowell,MID,2021-22,2021-22,mapped
+171287,987,Joe Gomez,DEF,2020-21,2025-26,mapped
+171314,8961,Rúben dos Santos Gato Alves Dias,DEF,2020-21,2025-26,mapped
+171317,6853,Rúben da Silva Neves,MID,2020-21,2022-23,mapped
+171771,6042,Jan Bednarek,DEF,2020-21,2024-25,mapped
+171975,4476,Callum Robinson,FWD,2020-21,2020-21,mapped
+172453,12752,Sam Szmodics,MID,2024-25,2024-25,mapped
+172567,1018,Josh Cullen,MID,2023-24,2025-26,mapped
+172632,762,Demarai Gray,MID,2020-21,2023-24,mapped
+172649,7702,Dean Henderson,GKP,2020-21,2025-26,mapped
+172780,6818,James Maddison,MID,2020-21,2025-26,mapped
+172782,8323,Josh Brownhill,MID,2020-21,2023-24,mapped
+172841,3585,Saïd Benrahma,MID,2020-21,2023-24,mapped
+172850,782,Ben Chilwell,DEF,2020-21,2024-25,mapped
+172912,7927,Sofyan Amrabat,MID,2023-24,2023-24,mapped
+173268,8923,Ivo Grbic,GKP,2023-24,2023-24,mapped
+173271,7007,Duje Caleta-Car,DEF,2022-23,2022-23,mapped
+173514,1724,Isaac Success Ajayi,FWD,2021-22,2021-22,mapped
+173515,620,Kelechi Iheanacho,FWD,2020-21,2022-23,mapped
+173807,1042,Tom Davies,MID,2020-21,2023-24,mapped
+173818,9406,Nathan Broadhead,MID,2020-21,2024-25,mapped
+173821,1014,Tyler Roberts,MID,2020-21,2022-23,mapped
+173879,702,Abraham,FWD,2020-21,2025-26,mapped
+173904,6249,Davinson Sánchez,DEF,2020-21,2023-24,mapped
+173954,6027,Jairo Riedewald,MID,2020-21,2023-24,mapped
+174292,2117,Marco Asensio,MID,2024-25,2024-25,mapped
+174310,11718,Elijah Adebayo,FWD,2023-24,2023-24,mapped
+174592,13730,Marcus Edwards,MID,2025-26,2025-26,mapped
+174593,8758,Kyle Edwards,MID,2020-21,2020-21,mapped
+174594,6544,Lukas Nmecha,FWD,2025-26,2025-26,mapped
+174874,6314,Joachim Andersen,DEF,2020-21,2025-26,mapped
+174932,1078,Sergi Canós Tenés,MID,2021-22,2023-24,mapped
+175353,8162,Ayotomiwa Dele-Bashiru,MID,2021-22,2021-22,mapped
+175592,5247,Naby Keita,MID,2020-21,2022-23,mapped
+175941,6397,Alfie Whiteman,GKP,2023-24,2024-25,mapped
+176296,1675,Ashley Fletcher,FWD,2021-22,2021-22,mapped
+176297,556,Marcus Rashford,MID,2020-21,2025-26,mapped
+176413,2662,Christian Pulisic,MID,2020-21,2023-24,mapped
+176420,4391,Darnell Furlong,DEF,2020-21,2020-21,mapped
+177815,5555,Dominic Calvert-Lewin,FWD,2020-21,2025-26,mapped
+178186,1776,Jarrod Bowen,FWD,2020-21,2025-26,mapped
+178301,8865,Ollie Watkins,FWD,2020-21,2025-26,mapped
+178304,1748,Lys Mousset,FWD,2020-21,2020-21,mapped
+179018,7420,Miguel Almirón Rejala,MID,2020-21,2024-25,mapped
+179268,7134,Marc Cucurella Saseta,DEF,2021-22,2025-26,mapped
+179276,7470,Mathias Normann,MID,2021-22,2021-22,mapped
+179456,8227,Oskar Buur,DEF,2020-21,2020-21,mapped
+179458,5355,Jacob Bruun Larsen,MID,2023-24,2025-26,mapped
+179519,6088,Orel Mangala,MID,2022-23,2024-25,mapped
+179830,6651,Grady Diangana,MID,2020-21,2020-21,mapped
+180135,7078,Sean Longstaff,MID,2020-21,2025-26,mapped
+180151,6276,Nikola Vlašić,MID,2021-22,2023-24,mapped
+180184,8821,Donny van de Beek,MID,2020-21,2023-24,mapped
+180294,7390,Karlan Grant,FWD,2020-21,2020-21,mapped
+180736,6615,Trevoh Chalobah,DEF,2021-22,2025-26,mapped
+180804,934,Axel Tuanzebe,DEF,2020-21,2025-26,mapped
+180974,87,Joelinton Cássio Apolinário de Lira,MID,2020-21,2025-26,mapped
+181284,5682,Gonçalo Manuel Ganchinho Guedes,MID,2022-23,2025-26,mapped
+182539,2446,Daniel Ceballos Fernández,MID,2020-21,2020-21,mapped
+183656,10405,Dasilva,MID,2021-22,2025-26,mapped
+183751,11702,Manuel Benson Hedilazio,MID,2023-24,2025-26,mapped
+184029,2517,Martin Ødegaard,MID,2020-21,2025-26,mapped
+184254,8858,Guglielmo Vicario,GKP,2023-24,2025-26,mapped
+184341,7768,Mason Mount,MID,2020-21,2025-26,mapped
+184349,6837,Ryan Sessegnon,MID,2020-21,2025-26,mapped
+184386,11359,James Bree,DEF,2020-21,2024-25,mapped
+184667,6080,Victor Lindelöf,DEF,2020-21,2025-26,mapped
+184704,8040,Marvelous Nakamba,MID,2020-21,2023-24,mapped
+184754,8845,Hwang Hee-chan,MID,2021-22,2025-26,mapped
+185253,11284,Gustavo Henrique Furtado Scarpa,MID,2022-23,2023-24,mapped
+185478,6621,Jarosław Jach,DEF,2021-22,2021-22,mapped
+189627,9745,Dimitris Giannoulis,DEF,2021-22,2021-22,mapped
+191866,9677,Kristoffer Ajer,DEF,2021-22,2025-26,mapped
+192290,5568,Connor Roberts,DEF,2021-22,2025-26,mapped
+192303,7990,Christoph Zimmermann,DEF,2021-22,2021-22,mapped
+192895,8089,Kieran Tierney,DEF,2020-21,2024-25,mapped
+193111,7695,Todd Cantwell,MID,2021-22,2021-22,mapped
+193204,10766,Joe Aribo,MID,2022-23,2024-25,mapped
+193488,5612,Anwar El Ghazi,MID,2020-21,2022-23,mapped
+193645,6273,Robin Koch,DEF,2020-21,2022-23,mapped
+194010,9679,Rico Henry,DEF,2021-22,2025-26,mapped
+194164,985,Mason Holgate,DEF,2020-21,2024-25,mapped
+194190,6329,Harry Souttar,DEF,2022-23,2024-25,mapped
+194252,8300,Steven Bergwijn,MID,2020-21,2022-23,mapped
+194634,6854,Diogo Teixeira da Silva,MID,2020-21,2024-25,mapped
+194794,703,Fikayo Tomori,DEF,2020-21,2020-21,mapped
+194799,7691,Jamal Lewis,DEF,2020-21,2024-25,mapped
+195384,5304,Mikel Merino Zazón,MID,2024-25,2025-26,mapped
+195473,5569,Rhian Brewster,FWD,2020-21,2023-24,mapped
+195480,5587,Josh Maja,FWD,2020-21,2020-21,mapped
+195546,2203,Emiliano Buendía Stati,MID,2021-22,2025-26,mapped
+195728,8017,Alex Kral,MID,2021-22,2021-22,mapped
+195735,5656,Nicolas Pépé,MID,2020-21,2023-24,mapped
+195851,5560,Scott McTominay,MID,2020-21,2024-25,mapped
+195864,1013,Sam Field,MID,2020-21,2020-21,mapped
+195899,6253,Gianluca Scamacca,FWD,2022-23,2023-24,mapped
+196100,11839,Gustavo Hamer,MID,2023-24,2023-24,mapped
+196411,12750,Conor Chaplin,MID,2024-25,2024-25,mapped
+197024,8267,Guido Rodríguez,MID,2024-25,2025-26,mapped
+197030,4866,Aboubakar Kamara,MID,2020-21,2020-21,mapped
+197365,1739,Eric Bailly,DEF,2020-21,2023-24,mapped
+197464,8228,Nathaniel Phillips,DEF,2020-21,2024-25,mapped
+197469,6418,Hamza Choudhury,MID,2020-21,2024-25,mapped
+197937,5256,Oliver Burke,MID,2020-21,2020-21,mapped
+198826,7689,Ben Godfrey,DEF,2020-21,2024-25,mapped
+198842,10753,Connor Ronan,MID,2022-23,2022-23,mapped
+198849,1227,Lucas Torreira di Pascua,MID,2020-21,2022-23,mapped
+198869,7298,Benjamin White,DEF,2020-21,2025-26,mapped
+199056,12151,Gabriel Osho,DEF,2023-24,2023-24,mapped
+199170,5989,Moussa Niakhaté,DEF,2022-23,2023-24,mapped
+199249,7187,Sergio Reguilón,DEF,2020-21,2024-25,mapped
+199584,8222,Japhet Tanganga,DEF,2020-21,2023-24,mapped
+199598,6369,Ethan Ampadu,MID,2020-21,2025-26,mapped
+199670,3697,Odsonne Édouard,FWD,2021-22,2025-26,mapped
+199796,8864,Matty Cash,DEF,2020-21,2025-26,mapped
+199798,7726,Ezri Konsa Ngoyo,DEF,2020-21,2025-26,mapped
+200088,7983,Daniel N'Lundulu,FWD,2020-21,2021-22,mapped
+200089,6630,Joe Willock,MID,2020-21,2025-26,mapped
+200402,6163,Nélson Cabral Semedo,DEF,2020-21,2024-25,mapped
+200428,11103,Mateusz Lis,GKP,2022-23,2024-25,mapped
+200439,7700,Che Adams,FWD,2020-21,2022-23,mapped
+200600,8291,Daniel Castelo Podence,MID,2020-21,2024-25,mapped
+200617,5595,Daniel James,MID,2020-21,2025-26,mapped
+200641,6492,Reiss Nelson,MID,2020-21,2025-26,mapped
+200720,7904,Caoimhín Kelleher,GKP,2020-21,2025-26,mapped
+200785,7352,Tyler Adams,MID,2022-23,2025-26,mapped
+200826,5681,Giovani Lo Celso,MID,2020-21,2024-25,mapped
+200834,5659,Nordi Mukiele,DEF,2025-26,2025-26,mapped
+200878,8966,Filip Krovinovic,MID,2020-21,2020-21,mapped
+201057,2674,Thilo Kehrer,DEF,2022-23,2023-24,mapped
+201084,549,Timothy Fosu-Mensah,DEF,2020-21,2020-21,mapped
+201410,11732,Auston Trusty,DEF,2023-24,2023-24,mapped
+201440,7746,Hwang Ui-jo,FWD,2023-24,2024-25,mapped
+201595,12369,Lucas Estella Perri,GKP,2025-26,2025-26,mapped
+201658,10741,Marcus Tavernier,MID,2022-23,2025-26,mapped
+201666,6681,Harvey Barnes,MID,2020-21,2025-26,mapped
+201895,8986,Omar Alderete,DEF,2025-26,2025-26,mapped
+202641,10913,André Onana,GKP,2023-24,2025-26,mapped
+202993,6108,Rodrigo Bentancur,MID,2021-22,2025-26,mapped
+203325,6434,André-Frank Zambo Anguissa,MID,2020-21,2020-21,mapped
+203341,5545,Wilfred Ndidi,MID,2020-21,2024-25,mapped
+203368,3253,Frédéric Guilbert,DEF,2020-21,2022-23,mapped
+203389,8456,Nathan Tella,MID,2020-21,2022-23,mapped
+204120,3645,Olivier Boscagli,DEF,2025-26,2025-26,mapped
+204214,5136,Pervis Estupiñán Tenorio,DEF,2022-23,2025-26,mapped
+204480,5553,Declan Rice,MID,2020-21,2025-26,mapped
+204580,9680,Vitaly Janelt,MID,2021-22,2025-26,mapped
+204646,9749,Donyell Malen,MID,2024-25,2025-26,mapped
+204676,9099,Andi Zeqiri,FWD,2020-21,2023-24,mapped
+204716,6326,Ibrahima Konaté,DEF,2021-22,2025-26,mapped
+204727,5648,Malang Sarr,DEF,2021-22,2024-25,mapped
+204814,11815,Ben Brereton Díaz,MID,2023-24,2024-25,mapped
+204822,9675,Omar Richards,DEF,2022-23,2025-26,mapped
+204863,13134,Ryan Manning,DEF,2024-25,2024-25,mapped
+204936,1116,Gianluigi Donnarumma,GKP,2025-26,2025-26,mapped
+204968,11003,Ryan Yates,MID,2022-23,2025-26,mapped
+205533,6482,Eddie Nketiah,FWD,2020-21,2025-26,mapped
+205651,5543,Gabriel Fernando de Jesus,FWD,2020-21,2025-26,mapped
+205836,7069,Saman Ghoddos,MID,2021-22,2023-24,mapped
+206325,2958,Oleksandr Zinchenko,DEF,2020-21,2025-26,mapped
+206915,6665,Curtis Jones,MID,2020-21,2025-26,mapped
+207189,8285,Sander Berge,MID,2020-21,2025-26,mapped
+207270,10808,Daniel Iversen,GKP,2022-23,2024-25,mapped
+207283,7166,Mathias Jensen,MID,2021-22,2025-26,mapped
+208706,8327,Bruno Guimarães Rodriguez Moura,MID,2021-22,2025-26,mapped
+208904,11715,Mads Juel Andersen,DEF,2023-24,2023-24,mapped
+208912,10756,Joe Worrall,DEF,2022-23,2025-26,mapped
+208973,7081,Francisco Sierralta,DEF,2021-22,2021-22,mapped
+209035,7247,Jonathan Panzo,DEF,2022-23,2024-25,mapped
+209036,7603,Marc Guéhi,DEF,2021-22,2025-26,mapped
+209041,5598,Angel,MID,2025-26,2025-26,mapped
+209042,7198,Oliver Skipp,MID,2020-21,2024-25,mapped
+209045,9735,Taylor Richards,MID,2021-22,2022-23,mapped
+209046,6456,Callum Hudson-Odoi,MID,2020-21,2025-26,mapped
+209243,6345,Jadon Sancho,MID,2021-22,2025-26,mapped
+209244,6055,Phil Foden,MID,2020-21,2025-26,mapped
+209288,9319,Tom McGill,GKP,2020-21,2025-26,mapped
+209289,7230,Emile Smith Rowe,MID,2020-21,2025-26,mapped
+209293,12509,Daiki Hashioka,DEF,2023-24,2023-24,mapped
+209353,4918,Patrick Cutrone,FWD,2020-21,2021-22,mapped
+209362,5245,Bernardo Fernandes Da Silva Junior,DEF,2020-21,2021-22,mapped
+209365,7902,Matthijs de Ligt,DEF,2024-25,2025-26,mapped
+209400,6145,Daichi Kamada,MID,2024-25,2025-26,mapped
+210156,7814,Taiwo Awoniyi,FWD,2022-23,2025-26,mapped
+210407,7153,Matheus Pereira,MID,2020-21,2020-21,mapped
+210462,5722,Ibrahim Sangaré,MID,2023-24,2025-26,mapped
+210494,6935,Nayef Aguerd,DEF,2022-23,2025-26,mapped
+211975,6490,Manuel Akanji,DEF,2022-23,2025-26,mapped
+212314,1537,Saša Lukić,MID,2022-23,2025-26,mapped
+212319,6026,Richarlison de Andrade,FWD,2020-21,2025-26,mapped
+212325,5619,Pierre Lees-Melou,MID,2021-22,2021-22,mapped
+212701,6147,Denis Zakaria,MID,2022-23,2022-23,mapped
+212721,6252,Lyanco Silveira Neves Vojnovic,DEF,2021-22,2022-23,mapped
+212723,6523,Milot Rashica,MID,2021-22,2021-22,mapped
+213198,3300,Christopher Nkunku,MID,2023-24,2025-26,mapped
+213345,7724,Wesley Moraes Ferreira da Silva,FWD,2020-21,2023-24,mapped
+213482,7280,Yan Valery,DEF,2020-21,2022-23,mapped
+213687,9687,Charlie Goode,DEF,2021-22,2023-24,mapped
+213999,11926,Edson Álvarez Velázquez,MID,2023-24,2025-26,mapped
+214048,7332,Maximilian Kilman,DEF,2020-21,2025-26,mapped
+214225,6377,Joe Rodon,DEF,2020-21,2025-26,mapped
+214285,8852,Konstantinos Tsimikas,DEF,2020-21,2025-26,mapped
+214466,8224,Will Smallbone,MID,2020-21,2024-25,mapped
+214470,8493,Jake Vokins,DEF,2020-21,2020-21,mapped
+214572,8093,Brandon Austin,GKP,2021-22,2025-26,mapped
+214590,5584,Aaron Wan-Bissaka,DEF,2020-21,2025-26,mapped
+214964,12947,George Edmundson,DEF,2024-25,2024-25,mapped
+215059,9098,Robert Lynch Sánchez,GKP,2020-21,2025-26,mapped
+215136,8204,Neco Williams,DEF,2020-21,2025-26,mapped
+215379,9154,Elliot Anderson,MID,2020-21,2025-26,mapped
+215413,9739,Kiernan Dewsbury-Hall,MID,2021-22,2025-26,mapped
+215439,8288,Tomáš Souček,MID,2020-21,2025-26,mapped
+215460,8723,Ian Poveda-Ocampo,MID,2020-21,2025-26,mapped
+215476,7295,Joshua Sargent,FWD,2021-22,2021-22,mapped
+215531,1830,Ionuț Radu,GKP,2023-24,2023-24,mapped
+215711,5221,Leon Bailey,MID,2021-22,2025-26,mapped
+216051,7281,Diogo Dalot Teixeira,DEF,2020-21,2025-26,mapped
+216054,6856,Rúben Nascimento Vinagre,DEF,2020-21,2022-23,mapped
+216055,8969,Florentino Ibrain Morris Luís,MID,2025-26,2025-26,mapped
+216058,5573,Domingos Quina,MID,2021-22,2021-22,mapped
+216094,9328,Jeremie Frimpong,DEF,2025-26,2025-26,mapped
+216616,8756,Dara O'Shea,DEF,2020-21,2024-25,mapped
+216620,9684,Marcus Forss,FWD,2021-22,2022-23,mapped
+216646,5786,Yoane Wissa,FWD,2021-22,2025-26,mapped
+217331,5602,Sam Surridge,FWD,2022-23,2023-24,mapped
+217401,7383,Josh Benson,MID,2020-21,2021-22,mapped
+217487,8287,Mbwana Ally Samatta,FWD,2020-21,2021-22,mapped
+217593,2335,Pablo Fornals Malla,MID,2020-21,2023-24,mapped
+218023,8481,Jimmy Dunne,DEF,2020-21,2020-21,mapped
+218031,5264,Çaglar Söyüncü,DEF,2020-21,2022-23,mapped
+218218,8646,Wout Faes,DEF,2022-23,2024-25,mapped
+218328,7208,Samuel Chukwueze,MID,2025-26,2025-26,mapped
+218364,7075,Borna Sosa,DEF,2025-26,2025-26,mapped
+218430,9897,Gonzalo Montiel,DEF,2023-24,2023-24,mapped
+218997,8582,Ellis Simms,FWD,2020-21,2023-24,mapped
+219168,5232,Alexander Isak,FWD,2022-23,2025-26,mapped
+219249,13206,Matt O'Riley,MID,2024-25,2025-26,mapped
+219279,12761,Sugawara Yukinari,DEF,2024-25,2024-25,mapped
+219352,5556,Ademola Lookman,MID,2020-21,2021-22,mapped
+219847,5220,Kai Havertz,FWD,2020-21,2025-26,mapped
+219924,3203,Issa Diop,DEF,2020-21,2025-26,mapped
+219937,9086,Rhys Williams,DEF,2020-21,2025-26,mapped
+219961,8026,Raphael Dias Belloli,MID,2020-21,2022-23,mapped
+220037,8482,Bailey Peacock-Farrell,GKP,2020-21,2023-24,mapped
+220087,7366,Maximilian Wöber,DEF,2022-23,2022-23,mapped
+220166,5085,Marc Navarro,DEF,2021-22,2021-22,mapped
+220237,8635,Sven Botman,DEF,2022-23,2025-26,mapped
+220307,8066,Arnaut Danjuma Groeneveld,MID,2022-23,2023-24,mapped
+220362,6885,Disasi,DEF,2023-24,2025-26,mapped
+220394,8496,Tommy Doyle,MID,2020-21,2024-25,mapped
+220566,2496,Rodrigo 'Rodri' Hernandez Cascante,MID,2020-21,2025-26,mapped
+220583,12746,Luke Woolfenden,DEF,2024-25,2024-25,mapped
+220585,10845,Flynn Downes,MID,2022-23,2024-25,mapped
+220598,6504,Michael Obafemi,FWD,2020-21,2025-26,mapped
+220627,7753,James Justin,DEF,2020-21,2025-26,mapped
+220684,10165,Aji Alese,DEF,2021-22,2025-26,mapped
+220686,9747,Bali Mumba,DEF,2021-22,2021-22,mapped
+220688,7490,Mason Greenwood,MID,2020-21,2021-22,mapped
+220695,10053,Paris Maghoma,MID,2021-22,2025-26,mapped
+220738,6350,Jayson Molumby,MID,2020-21,2020-21,mapped
+221239,1053,Keinan Davis,FWD,2020-21,2023-24,mapped
+221389,14017,John Victor Maciel Furtado,GKP,2025-26,2025-26,mapped
+221399,8720,Jack Harrison,MID,2020-21,2025-26,mapped
+221466,10864,Marcos Senesi Barón,DEF,2022-23,2025-26,mapped
+221610,8721,Jamie Shackleton,MID,2020-21,2022-23,mapped
+221632,7218,Cristian Romero,DEF,2021-22,2025-26,mapped
+221820,10802,Lisandro Martínez,DEF,2022-23,2025-26,mapped
+222017,7239,Conor Coventry,MID,2020-21,2023-24,mapped
+222018,6424,Ben Johnson,DEF,2020-21,2024-25,mapped
+222531,6857,Morgan Gibbs-White,MID,2020-21,2025-26,mapped
+222564,8934,Francisco Machado Mota de Castro Trincão,MID,2021-22,2021-22,mapped
+222625,8563,George Hirst,FWD,2024-25,2024-25,mapped
+222627,8366,João Neves Virgínia,GKP,2020-21,2024-25,mapped
+222677,7439,Tahith Chong,MID,2020-21,2023-24,mapped
+222683,6963,Justin Kluivert,MID,2023-24,2025-26,mapped
+222690,10803,Tyrell Malacia,DEF,2022-23,2025-26,mapped
+222694,8717,Pascal Struijk,DEF,2020-21,2025-26,mapped
+223081,9700,Kristoffer Klaesson,GKP,2021-22,2022-23,mapped
+223094,8260,Erling Haaland,FWD,2022-23,2025-26,mapped
+223175,8016,Matthew Longstaff,MID,2020-21,2021-22,mapped
+223336,13720,Dan Neil,MID,2025-26,2025-26,mapped
+223340,7322,Bukayo Saka,MID,2020-21,2025-26,mapped
+223434,7943,Igor Julio dos Santos de Paulo,DEF,2023-24,2025-26,mapped
+223541,1433,Federico Chiesa,MID,2024-25,2025-26,mapped
+223723,7931,Tomiyasu Takehiro,DEF,2021-22,2024-25,mapped
+223827,13715,Daniel Ballard,DEF,2025-26,2025-26,mapped
+223911,7384,Chris Mepham,DEF,2022-23,2025-26,mapped
+224024,7365,Lucas Tolentino Coelho de Lima,MID,2022-23,2025-26,mapped
+224068,10700,Matt Turner,GKP,2022-23,2025-26,mapped
+224117,7254,Viktor Gyökeres,FWD,2025-26,2025-26,mapped
+224209,10750,Rasmus Kristensen,DEF,2022-23,2022-23,mapped
+224444,6441,Ferran Torres,MID,2020-21,2021-22,mapped
+224860,2478,Carlos Soler,MID,2024-25,2024-25,mapped
+224967,10291,Vitalii Mykolenko,DEF,2021-22,2025-26,mapped
+224995,10866,Luis Sinisterra Lucumí,MID,2022-23,2025-26,mapped
+225295,10536,Mateus Cardoso Lemos Martins,MID,2022-23,2022-23,mapped
+225321,5603,Aaron Ramsdale,GKP,2020-21,2025-26,mapped
+225702,6947,Samuel Kalu,MID,2021-22,2021-22,mapped
+225796,8067,Reece James,DEF,2020-21,2025-26,mapped
+225897,5803,Fodé Ballo-Touré,DEF,2023-24,2023-24,mapped
+225902,6310,Boubakary Soumaré,MID,2021-22,2024-25,mapped
+226182,9205,Jayden Bogle,DEF,2020-21,2025-26,mapped
+226597,5613,Gabriel dos Santos Magalhães,DEF,2020-21,2025-26,mapped
+226944,5789,Boubacar Kamara,MID,2022-23,2025-26,mapped
+226956,9685,Mads Roerslev Rasmussen,DEF,2021-22,2025-26,mapped
+227127,5609,Yves Bissouma,MID,2020-21,2025-26,mapped
+227444,6174,Nikola Milenković,DEF,2024-25,2025-26,mapped
+227560,6538,Oghenekaro Peter Etebo,MID,2021-22,2021-22,mapped
+228044,9683,Mads Bech Sørensen,DEF,2021-22,2023-24,mapped
+228286,6880,Edouard Mendy,GKP,2020-21,2022-23,mapped
+228798,6162,Cengiz Ünder,MID,2020-21,2020-21,mapped
+229164,11719,Chiedozie Ogbene,MID,2023-24,2024-25,mapped
+229384,12774,Andy Irving,MID,2024-25,2025-26,mapped
+229600,7582,Mark Travers,GKP,2022-23,2025-26,mapped
+230001,10696,Noussair Mazraoui,DEF,2024-25,2025-26,mapped
+230046,6122,Douglas Luiz Soares de Paulo,MID,2020-21,2025-26,mapped
+230127,9249,Percy Tau,MID,2020-21,2020-21,mapped
+230251,9301,Emmanuel Dennis,FWD,2021-22,2024-25,mapped
+230348,13060,Ross Stewart,FWD,2024-25,2024-25,mapped
+230376,13741,Jhon Arias,MID,2025-26,2025-26,mapped
+231057,7762,Jean-Ricner Bellegarde,MID,2023-24,2025-26,mapped
+231065,9678,Ethan Pinnock,DEF,2021-22,2025-26,mapped
+231372,5962,Tanguy Ndombélé Alvaro,MID,2020-21,2023-24,mapped
+231416,13066,Ferdi Kadıoğlu,DEF,2024-25,2025-26,mapped
+231480,10945,Santiago Ignacio Bueno,DEF,2023-24,2025-26,mapped
+231747,5735,Jean-Philippe Mateta,FWD,2020-21,2025-26,mapped
+231899,12754,Jack Taylor,MID,2024-25,2024-25,mapped
+232112,11766,Manuel Ugarte Ribeiro,MID,2024-25,2025-26,mapped
+232185,5675,Ismaïla Sarr,MID,2021-22,2025-26,mapped
+232223,9690,Folarin Balogun,FWD,2021-22,2023-24,mapped
+232228,13133,Harry Clarke,DEF,2024-25,2024-25,mapped
+232247,9915,Dominic Thompson,DEF,2021-22,2022-23,mapped
+232351,7277,Ryan Giles,DEF,2021-22,2023-24,mapped
+232356,14276,Jenson Jones,DEF,2025-26,2025-26,mapped
+232391,8235,Jeremy Ngakia,DEF,2021-22,2021-22,mapped
+232413,8706,Eberechi Eze,MID,2020-21,2025-26,mapped
+232423,6451,Nathan Ferguson,DEF,2020-21,2022-23,mapped
+232427,5562,Rekeem Harper,MID,2020-21,2020-21,mapped
+232571,13721,Anthony Patterson,GKP,2025-26,2025-26,mapped
+232620,10168,Lewis Brunt,DEF,2021-22,2022-23,mapped
+232653,8941,Jacob Ramsey,MID,2020-21,2025-26,mapped
+232787,9040,Gallagher,MID,2020-21,2025-26,mapped
+232792,8226,Tariq Lamptey,DEF,2020-21,2025-26,mapped
+232797,7326,Kayne Ramsay,DEF,2020-21,2020-21,mapped
+232826,8150,Anthony Gordon,MID,2020-21,2025-26,mapped
+232859,10764,Djed Spence,DEF,2022-23,2025-26,mapped
+232881,9311,Thakgalo Leshabela,MID,2020-21,2020-21,mapped
+232892,11728,Calvin Bassey,DEF,2023-24,2025-26,mapped
+232917,7027,Arijanet Muric,GKP,2023-24,2024-25,mapped
+232928,7438,James Garner,MID,2020-21,2025-26,mapped
+232937,8075,Brandon Williams,DEF,2020-21,2023-24,mapped
+232980,7688,Max Aarons,DEF,2021-22,2024-25,mapped
+233420,7891,Renan Augusto Lodi dos Santos,DEF,2022-23,2022-23,mapped
+233425,7991,Aaron Connolly,FWD,2020-21,2023-24,mapped
+233821,10386,Anel Ahmedhodžić,DEF,2023-24,2023-24,mapped
+233963,6722,Konstantinos Mavropanos,DEF,2021-22,2025-26,mapped
+234370,5086,Marc Roca Junqué,MID,2022-23,2022-23,mapped
+235382,8020,Steven Alzate,MID,2020-21,2023-24,mapped
+235448,11985,Ellery Balcombe,GKP,2021-22,2025-26,mapped
+235530,8090,Lloyd Kelly,DEF,2022-23,2024-25,mapped
+235546,9748,Jacob Sørensen,DEF,2021-22,2021-22,mapped
+235674,10716,Manor Solomon,MID,2022-23,2025-26,mapped
+235826,13835,Joël Piroe,FWD,2025-26,2025-26,mapped
+240143,6736,Ibrahima Diallo,MID,2020-21,2022-23,mapped
+240299,10755,Joe Hodge,MID,2022-23,2025-26,mapped
+240514,9960,Kjell Scherpen,GKP,2021-22,2025-26,mapped
+240796,5191,Álvaro Fernández,GKP,2021-22,2021-22,shared_understat_id
+241157,7430,Emerson Leite de Souza Junior,DEF,2021-22,2024-25,mapped
+241231,6557,Jordan Beyer,DEF,2023-24,2025-26,mapped
+241289,7216,Ben Wilmot,DEF,2021-22,2021-22,mapped
+241519,5360,Weston McKennie,MID,2022-23,2022-23,mapped
+242058,1304,Moise Kean,FWD,2020-21,2021-22,mapped
+242166,5759,Mattéo Guendouzi,MID,2020-21,2021-22,mapped
+242453,11720,Jacob Brown,FWD,2023-24,2023-24,mapped
+242880,7240,Benoît Badiashile Mukinayi,DEF,2022-23,2025-26,mapped
+242882,7268,Bafodé Diakité,DEF,2025-26,2025-26,mapped
+242898,10760,Brennan Johnson,MID,2022-23,2025-26,mapped
+243016,8379,Alexis Mac Allister,MID,2020-21,2025-26,mapped
+243298,11296,Cody Gakpo,MID,2022-23,2025-26,mapped
+243345,10759,Lewis O'Brien,MID,2022-23,2025-26,mapped
+243505,9284,Jakub Moder,MID,2020-21,2024-25,mapped
+243526,9944,Gabriel Gudmundsson,DEF,2025-26,2025-26,mapped
+243557,6556,Moussa Diaby,MID,2023-24,2024-25,mapped
+243568,7988,Billy Gilmour,MID,2020-21,2024-25,mapped
+243571,10292,Nathan Patterson,DEF,2021-22,2025-26,mapped
+244042,10717,Rodrigo Muniz Carvalho,FWD,2022-23,2025-26,mapped
+244085,10749,Siriki Dembélé,MID,2022-23,2023-24,mapped
+244262,11723,Alfie Doughty,DEF,2023-24,2023-24,mapped
+244560,6500,Romain Perraud,DEF,2021-22,2022-23,mapped
+244619,8562,Luke Thomas,DEF,2020-21,2024-25,mapped
+244704,9892,Matías Viña,DEF,2022-23,2022-23,mapped
+244716,6954,Juan Camilo Hernández Suárez,FWD,2021-22,2021-22,mapped
+244723,8214,Tyrick Mitchell,DEF,2020-21,2025-26,mapped
+244731,10408,Luis Díaz Marulanda,MID,2021-22,2025-26,mapped
+244845,12763,Nathan Wood-Gordon,DEF,2024-25,2024-25,mapped
+244850,12412,Morgan Rogers,MID,2023-24,2025-26,mapped
+244851,8497,Cole Palmer,MID,2020-21,2025-26,mapped
+244856,12073,Teden Mengi,DEF,2020-21,2023-24,mapped
+244858,9501,Fábio Freitas Gouveia Carvalho,MID,2020-21,2025-26,mapped
+244930,10761,Alex Mighten,MID,2022-23,2024-25,mapped
+244954,6221,Pau Torres,DEF,2023-24,2025-26,mapped
+245414,6686,Nicolò Zaniolo,MID,2023-24,2023-24,mapped
+245419,9738,Patson Daka,FWD,2021-22,2024-25,mapped
+245719,8495,Taylor Harwood-Bellis,DEF,2020-21,2024-25,mapped
+245824,7395,Carlos Vinícius Alves Morais,FWD,2020-21,2024-25,mapped
+245923,8179,Luke Cundle,MID,2020-21,2024-25,mapped
+246265,13876,Corrie Ndaba,DEF,2024-25,2024-25,mapped
+246301,8489,Jorge Cuenca Barreno,DEF,2024-25,2025-26,mapped
+247245,11998,Hannes Delcroix,DEF,2023-24,2025-26,mapped
+247348,12408,Daniel Muñoz Mejía,DEF,2023-24,2025-26,mapped
+247412,11070,Jørgen Strand Larsen,FWD,2024-25,2025-26,mapped
+247632,6382,Pedro Lomba Neto,MID,2020-21,2025-26,mapped
+247670,10948,Taty,FWD,2025-26,2025-26,mapped
+247693,5743,Randal Kolo Muani,FWD,2025-26,2025-26,mapped
+247955,13064,Lutsharel Geertruida,DEF,2025-26,2025-26,mapped
+248056,13834,Tanaka Ao,MID,2025-26,2025-26,mapped
+248164,9967,Viljami Sinisalo,GKP,2021-22,2024-25,mapped
+248857,11357,Noni Madueke,MID,2022-23,2025-26,mapped
+248859,12200,Amadou Diallo,MID,2023-24,2023-24,mapped
+248875,8981,Jérémy Doku,MID,2023-24,2025-26,mapped
+248937,9493,Sam Greenwood,MID,2020-21,2025-26,mapped
+249231,10809,Keane Lewis-Potter,DEF,2022-23,2025-26,mapped
+250199,8252,Nicolás Domínguez,MID,2023-24,2025-26,mapped
+250604,8180,Owen Otasowie,MID,2020-21,2021-22,mapped
+250735,7790,Darko Churlinov,MID,2023-24,2025-26,mapped
+421796,9395,Sidnei Tavares,MID,2020-21,2020-21,mapped
+423649,9734,Enock Mwepu,MID,2021-22,2022-23,mapped
+424001,10872,Vini de Souza Costa,MID,2023-24,2023-24,mapped
+424044,6986,Hamed Traorè,MID,2022-23,2025-26,mapped
+424876,9788,Dominik Szoboszlai,MID,2023-24,2025-26,mapped
+427420,8191,Giovanni Reyna,MID,2023-24,2023-24,mapped
+427623,8430,Chris Richards,DEF,2022-23,2025-26,mapped
+427637,10751,Brenden Aaronson,MID,2022-23,2025-26,mapped
+428399,7892,João Félix Sequeira,MID,2022-23,2024-25,mapped
+428580,9681,Frank Onyeka,MID,2021-22,2025-26,mapped
+428626,10097,Przemyslaw Placheta,MID,2021-22,2021-22,mapped
+428971,12735,Steven Benda,GKP,2023-24,2025-26,mapped
+429414,8812,Saša Kalajdžić,FWD,2022-23,2025-26,mapped
+430367,8566,Joel Mumbongo,FWD,2020-21,2020-21,mapped
+430871,7080,Matheus Santos Carneiro da Cunha,MID,2022-23,2025-26,mapped
+430992,10119,Owen Beck,DEF,2021-22,2023-24,mapped
+431131,7701,Moussa Djenepo,MID,2020-21,2022-23,mapped
+431248,12721,Ladislav Krejcí,DEF,2025-26,2025-26,mapped
+431639,13729,Zian Flemming,FWD,2025-26,2025-26,mapped
+432160,9914,Shandon Baptiste,MID,2021-22,2023-24,mapped
+432422,7958,Sandro Tonali,MID,2023-24,2025-26,mapped
+432656,8045,Eric Garcia,DEF,2020-21,2020-21,mapped
+432711,10174,CJ Egan-Riley,DEF,2021-22,2023-24,mapped
+432714,10126,James McAtee,MID,2021-22,2025-26,mapped
+432720,9077,James Trafford,GKP,2020-21,2025-26,mapped
+432735,8021,Adam Idah,FWD,2021-22,2021-22,mapped
+432830,9733,Nathan Collins,DEF,2021-22,2025-26,mapped
+432931,9552,Tyrese Francois,MID,2020-21,2023-24,mapped
+432987,13103,Vítezslav Jaros,GKP,2024-25,2024-25,mapped
+432990,10041,Yasser Larouci,DEF,2023-24,2023-24,mapped
+433036,11965,Tijjani Reijnders,MID,2025-26,2025-26,mapped
+433154,6756,Dwight McNeil,MID,2020-21,2025-26,mapped
+433312,7908,Marshall Munetsi,MID,2024-25,2025-26,mapped
+433590,9499,Cody Drameh,DEF,2020-21,2022-23,mapped
+433952,10975,Largie Ramazani,MID,2025-26,2025-26,mapped
+433979,9912,Cameron Archer,FWD,2021-22,2024-25,mapped
+434024,9688,Patrik Gunnarsson,GKP,2021-22,2021-22,mapped
+434044,10052,Cieran Slicker,GKP,2021-22,2024-25,mapped
+434399,7432,Reinildo Mandava,DEF,2025-26,2025-26,mapped
+434662,9686,Halil Dervişoğlu,FWD,2021-22,2023-24,mapped
+434752,6807,Jaka Bijol,DEF,2025-26,2025-26,mapped
+435973,7498,Lyle Foster,FWD,2023-24,2025-26,mapped
+435997,11966,Noah Okafor,MID,2025-26,2025-26,mapped
+436234,7338,Bryan Gil Salvatierra,MID,2021-22,2025-26,mapped
+436416,12043,Mandas,GKP,2025-26,2025-26,mapped
+436680,13301,Jakub Stolarczyk,GKP,2024-25,2024-25,mapped
+436893,11745,Julián Araujo Zúñiga,DEF,2024-25,2025-26,mapped
+437468,6656,Sergio Gómez,DEF,2022-23,2023-24,mapped
+437495,8715,Illan Meslier,GKP,2020-21,2025-26,mapped
+437499,8853,Maxence Lacroix,DEF,2024-25,2025-26,mapped
+437505,7148,Wilson Isidor,FWD,2025-26,2025-26,mapped
+437626,9691,Nuno Varela Tavares,DEF,2021-22,2023-24,mapped
+437688,9082,Lewis Richards,DEF,2020-21,2020-21,shared_understat_id
+437730,11363,Antoine Semenyo,MID,2022-23,2025-26,mapped
+437738,7791,Sebastiaan Bornauw,DEF,2025-26,2025-26,mapped
+437742,9689,Albert Sambi Lokonga,MID,2021-22,2025-26,mapped
+437748,12094,Mike Trésor Ndayishimiye,MID,2023-24,2025-26,mapped
+437753,7282,Giulian Biancone,DEF,2022-23,2023-24,mapped
+437757,7264,Han-Noah Massengo,MID,2023-24,2023-24,mapped
+437858,8777,Vitor Ferreira,MID,2020-21,2020-21,mapped
+438098,11007,Fábio Ferreira Vieira,MID,2022-23,2025-26,mapped
+438234,8393,Omar Marmoush,MID,2024-25,2025-26,mapped
+438277,7376,Ozan Kabak,DEF,2020-21,2021-22,mapped
+438464,8666,Cheick Doucouré,MID,2022-23,2025-26,mapped
+439135,13459,Eiran Cashin,DEF,2024-25,2025-26,mapped
+439485,8455,Josh Martin,MID,2021-22,2021-22,mapped
+439509,9746,Christos Tzolis,MID,2021-22,2021-22,mapped
+440089,8859,Mikkel Damsgaard,MID,2022-23,2025-26,mapped
+440120,10424,Daniel Chesters,MID,2021-22,2021-22,mapped
+440148,10091,Tyler Morton,MID,2021-22,2025-26,mapped
+440323,8384,Armando Broja,FWD,2021-22,2025-26,mapped
+440854,10012,Jakub Kiwior,DEF,2022-23,2025-26,mapped
+440993,9307,Iliman Ndiaye,MID,2020-21,2025-26,mapped
+441024,10061,Harrison Ashby,DEF,2021-22,2025-26,mapped
+441164,6912,Pedro Porro Sauceda,DEF,2022-23,2025-26,mapped
+441191,9512,Tino Livramento,DEF,2020-21,2025-26,mapped
+441192,10036,Jeremy Sarmiento Morante,MID,2021-22,2025-26,mapped
+441240,6420,Romain Faivre,MID,2023-24,2025-26,mapped
+441264,9789,Brian Brobbey,FWD,2025-26,2025-26,mapped
+441266,10697,Ryan Gravenberch,MID,2023-24,2025-26,mapped
+441271,8351,Ki-Jana Hoever,DEF,2020-21,2025-26,mapped
+441302,11807,Ian Maatsen,DEF,2023-24,2025-26,mapped
+441428,10187,Jarell Quansah,DEF,2021-22,2024-25,mapped
+441455,11700,Victor da Silva,DEF,2023-24,2023-24,mapped
+442335,10290,Edo Kayembe,MID,2021-22,2021-22,mapped
+443211,12291,Rhys Norrington-Davies,DEF,2023-24,2023-24,mapped
+443261,13019,Jack Clarke,MID,2024-25,2024-25,mapped
+443296,9209,Theo Corbeanu,MID,2020-21,2020-21,mapped
+443661,9948,Michael Olise,MID,2021-22,2023-24,mapped
+443967,6485,Junior Firpo Adames,DEF,2021-22,2022-23,mapped
+444102,12963,Francisco Evanilson de Lima Barbosa,FWD,2024-25,2025-26,mapped
+444145,7752,Gabriel Martinelli Silva,MID,2020-21,2025-26,mapped
+444172,10748,Will Dennis,GKP,2022-23,2025-26,mapped
+444180,10746,Jaidon Anthony,MID,2022-23,2025-26,mapped
+444463,7589,Wesley Fofana,DEF,2020-21,2025-26,mapped
+444765,10721,Sepp van den Berg,DEF,2022-23,2025-26,mapped
+444884,7546,Harvey Elliott,MID,2020-21,2025-26,mapped
+445044,6691,Dejan Kulusevski,MID,2021-22,2025-26,mapped
+445122,11707,Jurriën Timber,DEF,2023-24,2025-26,mapped
+445548,10453,Odeluga Offiah,DEF,2021-22,2024-25,mapped
+446008,6552,Bryan Mbeumo,MID,2021-22,2025-26,mapped
+446281,10525,Tony Springett,MID,2021-22,2021-22,mapped
+447093,9257,Allan Tchaptchet,DEF,2020-21,2020-21,mapped
+447203,10720,Darwin Núñez Ribeiro,FWD,2022-23,2025-26,mapped
+447325,9411,Harry Tyrer,GKP,2020-21,2025-26,mapped
+447715,9913,Aaron Ramsey,MID,2021-22,2025-26,mapped
+447720,11571,Imari Samuels,DEF,2022-23,2024-25,mapped
+447880,10005,Josh Wilson-Esbrand,DEF,2021-22,2024-25,mapped
+447932,10740,Jordan Zemura,DEF,2022-23,2022-23,mapped
+448047,11356,Enzo Fernández,MID,2022-23,2025-26,mapped
+448089,11384,João Victor Gomes da Silva,MID,2022-23,2025-26,mapped
+448104,9911,Piero Hincapié,DEF,2025-26,2025-26,mapped
+448487,9223,Andreas Söndergaard,GKP,2020-21,2021-22,mapped
+448514,6674,Rayan Aït-Nouri,DEF,2020-21,2025-26,mapped
+448791,8458,Harvey White,MID,2021-22,2022-23,mapped
+449027,9693,Giorgi Mamardashvili,GKP,2025-26,2025-26,mapped
+449429,12745,Jacob Greaves,DEF,2024-25,2024-25,mapped
+449434,9524,Anthony Elanga,MID,2020-21,2025-26,mapped
+449781,8511,Alexandre Jankewitz,MID,2020-21,2020-21,mapped
+449871,9667,Amadou Onana,MID,2022-23,2025-26,mapped
+449988,8778,Fábio Soares Silva,FWD,2020-21,2025-26,mapped
+450070,9492,Crysencio Summerville,MID,2020-21,2025-26,mapped
+450434,10804,Deniz Undav,FWD,2022-23,2024-25,mapped
+450527,6923,Mohammed Salisu,DEF,2020-21,2022-23,mapped
+450529,8544,Lewis Bate,MID,2021-22,2022-23,mapped
+450535,10698,Malcolm Ebiowei,MID,2022-23,2025-26,mapped
+450539,10205,Myles Peart-Harris,MID,2021-22,2025-26,mapped
+450542,9461,Jesurun Rak-Sakyi,MID,2020-21,2025-26,mapped
+450550,9916,Fin Stevens,DEF,2021-22,2022-23,mapped
+451302,12054,Altay Bayındır,GKP,2023-24,2025-26,mapped
+451340,10806,Mitoma Kaoru,MID,2022-23,2025-26,mapped
+454667,10301,Jens Cajuste,MID,2024-25,2024-25,mapped
+455084,8919,Leif Davis,DEF,2020-21,2024-25,mapped
+456350,10765,Gavin Bazunu,GKP,2022-23,2024-25,mapped
+456512,8662,Dan Ndoye,MID,2025-26,2025-26,mapped
+456966,9256,Caleb Watts,MID,2020-21,2020-21,mapped
+457569,12032,Đorđe Petrović,GKP,2023-24,2025-26,mapped
+458249,8044,Joshua Zirkzee,FWD,2024-25,2025-26,mapped
+458297,10284,Pierre Ekwah Elimby,MID,2021-22,2025-26,mapped
+460028,10805,Levi Samuels Colwill,DEF,2022-23,2025-26,mapped
+460029,10150,Nathan Young-Coombes,FWD,2021-22,2021-22,mapped
+460842,12027,Mohammed Kudus,MID,2023-24,2025-26,mapped
+461025,11272,Nathan Butler-Oyedeji,FWD,2022-23,2024-25,mapped
+461026,9741,Chem Campbell,MID,2021-22,2022-23,mapped
+461096,9082,Lewis Richardson,FWD,2020-21,2021-22,shared_understat_id
+461188,11243,Bashir Humphreys,DEF,2022-23,2025-26,mapped
+461195,8537,Dennis Cirkin,DEF,2025-26,2025-26,mapped
+461199,11461,Romaine Mundle,MID,2022-23,2025-26,mapped
+461201,10579,Matthew Craig,MID,2021-22,2022-23,mapped
+461358,10846,Julián Álvarez,FWD,2022-23,2024-25,mapped
+461416,11232,Tom Cannon,FWD,2022-23,2024-25,mapped
+461421,10027,Lewis Dobbin,MID,2021-22,2025-26,mapped
+461446,9287,Tyler Onyango,MID,2020-21,2025-26,mapped
+461453,10775,Lewis Warrington,MID,2022-23,2023-24,mapped
+461484,9959,Joe White,MID,2021-22,2025-26,mapped
+461537,12531,Dermot Mee,GKP,2023-24,2025-26,mapped
+461566,9557,William Fish,DEF,2020-21,2020-21,mapped
+461567,9827,Owen Dodgson,DEF,2021-22,2025-26,mapped
+461584,11368,Wanya Marçal-Madivádua,MID,2022-23,2024-25,mapped
+461587,10166,Kasey McAteer,MID,2021-22,2024-25,mapped
+461682,12034,Brandon Aguilera Zamora,MID,2023-24,2023-24,mapped
+462116,6816,Jean-Clair Todibo,DEF,2024-25,2025-26,mapped
+462381,10173,Filip Marschall,GKP,2021-22,2025-26,mapped
+462387,12751,Ali Al-Hamadi,FWD,2024-25,2024-25,mapped
+462424,6888,William Saliba,DEF,2020-21,2025-26,mapped
+462492,12445,Joe Gauci,GKP,2023-24,2025-26,mapped
+462635,9339,Joe Gelhardt,MID,2020-21,2025-26,mapped
+463034,8868,Liam Delap,FWD,2020-21,2025-26,mapped
+463067,6937,Georginio Rutter,MID,2022-23,2025-26,mapped
+463210,11594,Shea Charles,MID,2022-23,2024-25,mapped
+463212,13092,Carlos Roberto Forbs Borges,MID,2024-25,2024-25,mapped
+463748,9692,Karl Hein,GKP,2021-22,2025-26,mapped
+463903,9752,Jesper Lindstrøm,MID,2024-25,2024-25,mapped
+463936,10542,Jamie Bynoe-Gittens,MID,2025-26,2025-26,mapped
+463981,10747,James Hill,DEF,2022-23,2025-26,mapped
+464353,11028,Harvey Davies,GKP,2022-23,2024-25,mapped
+464618,9933,Liam McCarron,MID,2021-22,2021-22,mapped
+465247,14056,Senne Lammens,GKP,2025-26,2025-26,mapped
+465351,11000,Matheus Nunes,DEF,2022-23,2025-26,mapped
+465390,9409,Kaine Kesler-Hayden,DEF,2020-21,2024-25,shared_understat_id
+465527,9558,Hannibal Mejbri,MID,2020-21,2025-26,mapped
+465572,9250,Reda Khadra,MID,2020-21,2020-21,mapped
+465607,7967,Anssumane Fati Vieira,MID,2023-24,2023-24,mapped
+465642,8378,Malick Thiaw,DEF,2025-26,2025-26,mapped
+465680,8056,Arnaud Kalimuendo,FWD,2025-26,2025-26,mapped
+465694,9802,Nico González Iglesias,MID,2024-25,2025-26,mapped
+465702,8701,Timothée Pembélé,DEF,2025-26,2025-26,mapped
+465730,13711,Maxim De Cuyper,DEF,2025-26,2025-26,mapped
+465920,11305,Mykhailo Mudryk,MID,2022-23,2025-26,mapped
+466052,8094,Rayan Cherki,MID,2025-26,2025-26,mapped
+466075,8129,Riccardo Calafiori,DEF,2024-25,2025-26,mapped
+466117,9274,Naouirou Ahamada,MID,2022-23,2025-26,mapped
+466404,9833,Andrew Omobamidele,DEF,2021-22,2024-25,mapped
+466525,9910,Anton Stach,MID,2025-26,2025-26,mapped
+467169,11094,Antony dos Santos,MID,2022-23,2025-26,mapped
+467189,12910,Mads Hermansen,GKP,2024-25,2025-26,mapped
+467779,12758,Mats Wieffer,MID,2024-25,2025-26,mapped
+469130,11936,Lucca,FWD,2025-26,2025-26,mapped
+469142,10807,Jan Paul van Hecke,DEF,2022-23,2025-26,mapped
+469247,10616,Samuel Iling-Junior,MID,2024-25,2025-26,mapped
+469272,9977,Loum Tchaouna,MID,2025-26,2025-26,mapped
+470294,10752,Darko Gyabi,MID,2022-23,2025-26,mapped
+470313,8117,Nick Woltemade,FWD,2025-26,2025-26,mapped
+470315,8401,Netz,DEF,2025-26,2025-26,mapped
+471471,7278,Imrân Louza,MID,2021-22,2021-22,mapped
+471798,13854,Gabriel Słonina,GKP,2023-24,2025-26,mapped
+471848,9540,Femi Seriki,DEF,2020-21,2023-24,mapped
+472464,9359,Shola Shoretire,FWD,2020-21,2023-24,mapped
+472713,8942,Aaron Hickey,DEF,2022-23,2025-26,mapped
+472739,12760,Carl Rushworth,GKP,2024-25,2025-26,mapped
+472769,11592,Nico O'Reilly,DEF,2022-23,2025-26,mapped
+473341,7333,Caleb Okoli,DEF,2024-25,2024-25,mapped
+473342,10001,Stuart McKinstry,MID,2021-22,2021-22,mapped
+474120,11058,Julio Enciso Espínola,MID,2022-23,2025-26,mapped
+474907,9469,Reece Welch,DEF,2020-21,2025-26,mapped
+475123,12764,Carlos Miguel dos Santos Pereira,GKP,2024-25,2025-26,mapped
+475168,8272,João Pedro Junqueira de Jesus,FWD,2021-22,2025-26,mapped
+475480,12204,Benicio Baker-Boaitey,MID,2023-24,2024-25,mapped
+476344,11366,Jhon Durán,FWD,2022-23,2024-25,mapped
+476369,9619,Issa Kaboré,DEF,2023-24,2024-25,mapped
+476502,8119,Boubacar Traoré,MID,2022-23,2025-26,mapped
+476887,8920,Dilane Bakwa,MID,2025-26,2025-26,mapped
+476888,8970,Sékou Mara,FWD,2022-23,2024-25,mapped
+477064,10847,Rico Lewis,DEF,2022-23,2025-26,mapped
+477386,9710,Armel Bella-Kotchap,DEF,2022-23,2024-25,mapped
+477424,9790,Joško Gvardiol,DEF,2023-24,2025-26,mapped
+477547,10028,Leo Fuhr Hjelde,DEF,2021-22,2025-26,mapped
+477555,11903,Oscar Bobb,MID,2023-24,2025-26,mapped
+477580,11486,Illia Zabarnyi,DEF,2022-23,2025-26,mapped
+477717,9487,Maxime Estève,DEF,2023-24,2025-26,mapped
+478028,10203,Kayky da Silva Chagas,FWD,2021-22,2021-22,mapped
+478912,9356,Carney Chukwuemeka,MID,2020-21,2024-25,mapped
+478969,11704,Hjalmar Ekdal,DEF,2023-24,2025-26,mapped
+479683,11035,Marcus Oliveira Alencar,MID,2022-23,2023-24,mapped
+480455,8476,Jarrad Branthwaite,DEF,2020-21,2025-26,mapped
+481283,11488,James Wright,GKP,2022-23,2025-26,mapped
+481405,9682,Mads Bidstrup,MID,2021-22,2023-24,mapped
+481510,11367,Victor Kristiansen,DEF,2022-23,2024-25,mapped
+481624,9415,Jaden Philogene,MID,2020-21,2024-25,mapped
+481655,7526,Martín Zubimendi Ibáñez,MID,2025-26,2025-26,mapped
+482158,11809,Lucas Bergström,GKP,2023-24,2024-25,mapped
+482442,9021,Pape Matar Sarr,MID,2022-23,2025-26,mapped
+482609,9017,Malo Gusto,DEF,2023-24,2025-26,mapped
+482769,11378,Máximo Perrone,MID,2022-23,2023-24,mapped
+482973,13778,Igor Jesus Maciel da Cruz,FWD,2025-26,2025-26,mapped
+483081,12756,Rodrigo Martins Gomes,DEF,2024-25,2025-26,mapped
+483364,11369,Krisztián Hegyi,GKP,2022-23,2025-26,mapped
+483365,10172,Jonathan Rowe,MID,2021-22,2021-22,mapped
+484420,8651,Enzo Le Fée,MID,2025-26,2025-26,mapped
+485047,13068,Felipe Rodrigues da Silva,DEF,2024-25,2025-26,mapped
+485055,13348,Antonín Kinský,GKP,2024-25,2025-26,mapped
+485337,8006,Evann Guessand,MID,2025-26,2025-26,mapped
+485711,11974,Benjamin Sesko,FWD,2025-26,2025-26,mapped
+486385,9983,Norberto Bercique Gomes Betuncal,FWD,2023-24,2025-26,mapped
+486520,8000,Ilia Gruev,MID,2025-26,2025-26,mapped
+486672,9453,Moisés Caicedo Corozo,MID,2020-21,2025-26,mapped
+486870,9254,Frederik Alves,DEF,2020-21,2021-22,mapped
+487053,8831,Destiny Udogie,DEF,2023-24,2025-26,mapped
+487117,10177,Evan Ferguson,FWD,2021-22,2025-26,mapped
+487676,13713,Trai Hume,DEF,2025-26,2025-26,mapped
+487702,10620,Luca Koleosho,MID,2023-24,2025-26,mapped
+487818,11005,Joe Whitworth,GKP,2022-23,2023-24,mapped
+487828,12340,Omari Forson,MID,2023-24,2023-24,mapped
+487836,9222,Antwoine Hackford,FWD,2020-21,2023-24,mapped
+487837,11242,Divin Mubama,FWD,2022-23,2024-25,mapped
+487838,10216,Lewis Hall,DEF,2021-22,2025-26,mapped
+487968,11699,Ameen Al-Dakhil,DEF,2023-24,2023-24,mapped
+488024,9024,Yéremy Pino Santos,MID,2025-26,2025-26,mapped
+488213,8875,Tolu Arokodare,FWD,2025-26,2025-26,mapped
+488404,9324,Facundo Pellistri Rebollo,MID,2020-21,2024-25,mapped
+488439,12782,Woyo Coulibaly,DEF,2024-25,2024-25,mapped
+488464,12837,Caleb Wiley,DEF,2024-25,2024-25,mapped
+489571,9294,Etienne Green,GKP,2025-26,2025-26,mapped
+489580,11214,Calvin Ramsay,DEF,2022-23,2025-26,mapped
+489639,11711,Bart Verbruggen,GKP,2023-24,2025-26,mapped
+489706,13038,Justin Devenny,MID,2024-25,2025-26,mapped
+489888,8211,Amine Adli,MID,2025-26,2025-26,mapped
+490094,9554,Tim Iroegbunam,MID,2020-21,2025-26,mapped
+490142,13724,Freddie Potts,MID,2025-26,2025-26,mapped
+490145,9332,Dane Scarlett,FWD,2020-21,2025-26,mapped
+490146,10718,Jay Stansfield,FWD,2022-23,2024-25,mapped
+490150,12215,Michael Ndiweni,FWD,2023-24,2023-24,mapped
+490503,10072,Samuel Edozie,MID,2021-22,2024-25,mapped
+490721,10140,Hugo Bueno López,DEF,2020-21,2025-26,mapped
+490881,12461,Toby Collyer,MID,2023-24,2025-26,mapped
+490885,12474,George Earthy,MID,2023-24,2025-26,mapped
+491007,13094,Dário Luís Essugo,MID,2025-26,2025-26,mapped
+491012,11984,Youssef Ramalho Chermiti,FWD,2023-24,2025-26,mapped
+491279,10050,Micky van de Ven,DEF,2023-24,2025-26,mapped
+491287,11140,Enzo Barrenechea,MID,2024-25,2025-26,mapped
+491501,11811,James McConnell,MID,2023-24,2025-26,mapped
+491557,12269,Jenson Metcalfe,MID,2023-24,2025-26,mapped
+491559,9470,Isaac Price,MID,2020-21,2022-23,mapped
+491598,11544,Cameron Peupion,MID,2022-23,2024-25,mapped
+491745,12270,Elijah Campbell,DEF,2023-24,2025-26,mapped
+491970,10997,Bobby Clark,MID,2022-23,2024-25,mapped
+492066,9219,Niall Huggins,DEF,2020-21,2025-26,mapped
+492368,13974,Isaac Schmidt,DEF,2025-26,2025-26,mapped
+492373,9220,Charlie Cresswell,DEF,2020-21,2021-22,mapped
+492776,11233,Dexter Lembikisa,DEF,2022-23,2022-23,mapped
+492777,10120,Conor Bradley,DEF,2021-22,2025-26,mapped
+492831,11701,Zeki Amdouni,FWD,2023-24,2025-26,mapped
+492859,11155,Wilfried Gnonto,MID,2022-23,2025-26,mapped
+493105,10552,Alejandro Garnacho Ferreyra,MID,2021-22,2025-26,mapped
+493125,9105,Radu Drăgușin,DEF,2023-24,2025-26,mapped
+493250,8127,Amad Diallo,MID,2020-21,2025-26,mapped
+493362,8700,Xavi Simons,MID,2025-26,2025-26,mapped
+493934,9846,Kwadwo Baah,MID,2021-22,2021-22,mapped
+494041,11986,Ethan Brierley,MID,2023-24,2024-25,mapped
+494307,13298,Alleyne,DEF,2024-25,2025-26,mapped
+494521,8640,Adrien Truffert,DEF,2025-26,2025-26,mapped
+494541,11582,Kamari Doyle,MID,2022-23,2022-23,mapped
+494543,11583,Dominic Ballard,FWD,2022-23,2022-23,mapped
+494595,8397,Florian Wirtz,MID,2025-26,2025-26,mapped
+494779,12880,Albert Grønbæk,MID,2024-25,2024-25,mapped
+494960,13727,Quilindschy Hartman,DEF,2025-26,2025-26,mapped
+495024,13582,Jay Robinson,FWD,2024-25,2024-25,mapped
+495542,8109,Niels Nkounkou,DEF,2020-21,2022-23,mapped
+496178,12946,Roman Dixon,DEF,2024-25,2025-26,mapped
+496179,9306,Alfie Devine,MID,2020-21,2024-25,mapped
+496185,10118,Kaide Gordon,MID,2021-22,2023-24,mapped
+496208,11231,Ben Doak,MID,2022-23,2025-26,mapped
+496221,12409,Adam Wharton,MID,2023-24,2025-26,mapped
+496228,10141,Sonny Perkins,FWD,2021-22,2022-23,mapped
+496279,13457,Isaac Heath,MID,2024-25,2025-26,mapped
+496661,10586,Tyler Dibling,MID,2021-22,2025-26,mapped
+496683,11365,Max Kinsey,DEF,2022-23,2024-25,mapped
+497606,12234,Tawanda Chirewa,MID,2023-24,2025-26,mapped
+497894,11055,Rasmus Højlund,FWD,2023-24,2025-26,mapped
+497949,13740,David Møller Wolfe,DEF,2025-26,2025-26,mapped
+498016,13712,Robin Roefs,GKP,2025-26,2025-26,mapped
+498046,10351,Salah-Eddine Oulad M'hand,MID,2021-22,2024-25,mapped
+499167,13115,Josh Nichols,DEF,2024-25,2025-26,mapped
+499169,12272,Myles Lewis-Skelly,DEF,2023-24,2025-26,mapped
+499175,11132,Ethan Nwaneri,MID,2022-23,2025-26,mapped
+499300,12371,Adam Aznou,DEF,2025-26,2025-26,mapped
+499309,11633,Marc Guiu Paz,FWD,2024-25,2025-26,mapped
+499604,14395,Rayan,MID,2025-26,2025-26,mapped
+499716,14176,Rowswell,DEF,2025-26,2025-26,mapped
+499717,13067,Jayden Meghoma,DEF,2024-25,2025-26,mapped
+499721,12603,Mikey Moore,MID,2023-24,2025-26,mapped
+499724,11618,Samuel Amo-Ameyaw,MID,2022-23,2024-25,mapped
+499726,13224,Callum Olusesi,MID,2024-25,2025-26,mapped
+499857,12561,Sharman-Lowe,GKP,2023-24,2025-26,mapped
+500016,13403,Welington Damascena Santos,DEF,2024-25,2024-25,mapped
+500040,10024,Cristhian Mosquera,DEF,2025-26,2025-26,mapped
+500058,12455,Jayden Danns,FWD,2023-24,2025-26,mapped
+500151,12905,Nicolò Savona,DEF,2025-26,2025-26,mapped
+500926,13239,Ronnie Edwards,DEF,2024-25,2024-25,mapped
+501284,11487,Michale Olakigbe,MID,2022-23,2023-24,mapped
+501770,10167,Ben Nelson,DEF,2021-22,2024-25,mapped
+501837,9958,Yerson Mosquera Valdelamar,DEF,2021-22,2025-26,mapped
+502222,13021,Ramón Sosa,MID,2024-25,2024-25,mapped
+502500,13222,Igor Thiago Nascimento Rodrigues,FWD,2024-25,2025-26,mapped
+502697,11297,Carlos Alcaraz Durán,MID,2022-23,2025-26,mapped
+502988,14355,Imray,DEF,2025-26,2025-26,mapped
+503139,12149,Alex Scott,MID,2023-24,2025-26,mapped
+503300,10093,Matthew Cox,GKP,2021-22,2025-26,mapped
+503301,10348,Omari Hutchinson,MID,2021-22,2025-26,mapped
+503714,9451,Lesley Ugochukwu,MID,2023-24,2025-26,mapped
+503724,8973,Lorenz Assignon,DEF,2023-24,2023-24,mapped
+504198,11730,Anis Slimane,MID,2023-24,2023-24,mapped
+504296,13462,Coby Ebere,MID,2024-25,2025-26,mapped
+504598,11987,Daniel Gore,MID,2023-24,2023-24,mapped
+504783,9630,Kamaldeen Sulemana,MID,2022-23,2024-25,mapped
+505079,14308,McNally,GKP,2025-26,2025-26,mapped
+505187,10433,Cesare Casadei,MID,2023-24,2024-25,mapped
+507433,12595,Hákon Rafn Valdimarsson,GKP,2023-24,2025-26,mapped
+508395,11772,Yehor Yarmoliuk,MID,2023-24,2025-26,mapped
+508479,9272,Filip Jörgensen,GKP,2024-25,2025-26,mapped
+509291,13022,André Trindade da Costa Neto,MID,2024-25,2025-26,mapped
+509416,11385,Yasin Ayari,MID,2022-23,2025-26,mapped
+510281,11735,Sávio Moreira de Oliveira,MID,2024-25,2025-26,mapped
+510362,10293,Toti Gomes,DEF,2021-22,2025-26,mapped
+510363,10327,Francisco Jorge Tomás Oliveira,MID,2021-22,2024-25,mapped
+510500,12766,João Pedro Ferreira da Silva,MID,2024-25,2025-26,mapped
+510663,8995,Hugo Ekitiké,FWD,2025-26,2025-26,mapped
+511499,9780,Mathys Tel,MID,2024-25,2025-26,mapped
+511783,11703,Anass Zaroury,MID,2023-24,2023-24,mapped
+512462,12014,Jake O'Brien,DEF,2023-24,2025-26,mapped
+513046,11317,Danilo dos Santos de Oliveira,MID,2022-23,2024-25,mapped
+513418,9156,Kevin Schade,MID,2022-23,2025-26,mapped
+513433,11310,Brajan Gruda,MID,2024-25,2025-26,mapped
+513466,11331,Merlin Röhl,MID,2025-26,2025-26,mapped
+513527,13020,Bilal El Khannouss,MID,2024-25,2024-25,mapped
+513588,12118,Jamie Donley,FWD,2023-24,2023-24,mapped
+513834,11193,Andrew Moran,MID,2022-23,2025-26,mapped
+514254,13364,Diego Gómez Amarilla,MID,2024-25,2025-26,mapped
+514277,12497,Jimi Tauriainen,MID,2023-24,2023-24,mapped
+514280,11595,Alfie Gilchrist,DEF,2022-23,2024-25,mapped
+514287,11393,Sil Swinkels,DEF,2022-23,2024-25,mapped
+514315,11133,Lino da Cruz Sousa,DEF,2022-23,2025-26,mapped
+514356,10004,Roméo Lavia,MID,2021-22,2025-26,mapped
+514362,12575,Ojinnaka,MID,2023-24,2025-26,mapped
+515024,10719,Luke Harris,MID,2022-23,2025-26,mapped
+515501,5191,Álvaro Fernández Carreras,DEF,2021-22,2023-24,shared_understat_id
+515571,11078,Juan Larios López,DEF,2022-23,2024-25,mapped
+515597,10025,Lamare Bogarde,DEF,2021-22,2025-26,mapped
+515621,11167,Chadi Riad Dnanou,DEF,2024-25,2025-26,mapped
+516159,11394,Oliwier Zych,GKP,2022-23,2024-25,mapped
+516211,11046,Abdallah Sima,MID,2025-26,2025-26,mapped
+516234,14255,Gray,MID,2025-26,2025-26,mapped
+516250,12427,Jacob Wright,MID,2023-24,2024-25,mapped
+516875,14218,Hollingshead,GKP,2025-26,2025-26,mapped
+516895,11174,Kobbie Mainoo,MID,2022-23,2025-26,mapped
+516939,10856,Emmanuel Agbadou,DEF,2024-25,2025-26,mapped
+517052,10048,Nicolas Jackson,FWD,2023-24,2025-26,mapped
+517179,13117,Alfie Pond,DEF,2024-25,2025-26,mapped
+518030,13731,Max Weiß,GKP,2025-26,2025-26,mapped
+518335,14317,Merrick,GKP,2025-26,2025-26,mapped
+518438,11409,Kaelan Casey,DEF,2022-23,2025-26,mapped
+518442,12296,Lewis Orford,MID,2023-24,2025-26,mapped
+518466,12275,Willy Kambwala,DEF,2023-24,2023-24,mapped
+518620,11818,Ângelo Gabriel Borges Damaceno,MID,2023-24,2024-25,mapped
+518906,11034,Owen Bevan,DEF,2022-23,2025-26,mapped
+519198,12086,Alex Matos,MID,2023-24,2023-24,mapped
+519321,12193,Alfie Dorrington,DEF,2023-24,2024-25,mapped
+519324,11241,Amario Cozier-Duberry,MID,2022-23,2024-25,mapped
+519327,11509,George Abbott,MID,2022-23,2022-23,mapped
+519440,14236,Lucky,DEF,2025-26,2025-26,mapped
+519634,13714,Jenson Seelt,DEF,2025-26,2025-26,mapped
+519895,13726,Oliver Sonne,DEF,2025-26,2025-26,mapped
+519913,14272,Fletcher,MID,2025-26,2025-26,mapped
+520295,11295,David Datro Fofana,FWD,2022-23,2024-25,mapped
+521966,12581,Finley Munroe,DEF,2023-24,2023-24,mapped
+523700,9509,Daniel Jebbison,FWD,2020-21,2024-25,mapped
+523705,12113,Jackson Tchatchoua,DEF,2025-26,2025-26,mapped
+523957,11729,Bénie Traoré,FWD,2023-24,2023-24,mapped
+524180,1061,Cameron Humphreys,MID,2024-25,2024-25,mapped
+530121,13351,Zain Silcott-Duberry,MID,2024-25,2025-26,mapped
+530318,11033,Kaden Rodney,MID,2022-23,2025-26,mapped
+530335,14290,Pablo,FWD,2025-26,2025-26,mapped
+531170,13463,Nasser Djiga,DEF,2024-25,2024-25,mapped
+531363,11210,Nathan Fraser,FWD,2022-23,2025-26,mapped
+531442,12911,Abdul Fatawu,MID,2024-25,2024-25,mapped
+531989,11268,David Ozoh,MID,2022-23,2025-26,mapped
+531997,13273,Henry Cartwright,MID,2024-25,2024-25,mapped
+532372,12449,Oliver Arblaster,MID,2023-24,2023-24,mapped
+532529,11269,Jack Hinshelwood,MID,2022-23,2025-26,mapped
+532534,13302,Will Alves,MID,2024-25,2024-25,mapped
+532535,13304,Thomas Wilson-Brown,DEF,2024-25,2024-25,mapped
+532605,11808,Andrey Nascimento dos Santos,MID,2022-23,2025-26,mapped
+533463,9662,Dango Ouattara,MID,2022-23,2025-26,mapped
+533710,13472,Iwan Morgan,FWD,2024-25,2025-26,mapped
+534392,11810,Mason Burstow,FWD,2023-24,2023-24,mapped
+534836,11507,Travis Patterson,DEF,2022-23,2025-26,mapped
+535017,13408,Julian Eyestone,GKP,2024-25,2025-26,mapped
+535301,10527,Carlos Baleba,MID,2023-24,2025-26,mapped
+535818,11710,Simon Adingra,MID,2023-24,2025-26,mapped
+535928,10723,Stefan Bajčetić Maquieira,MID,2022-23,2025-26,mapped
+536109,12358,Ollie Scarles,DEF,2023-24,2025-26,mapped
+536134,14409,Kyerematen,MID,2025-26,2025-26,mapped
+536241,13345,Martin Sherif,FWD,2024-25,2025-26,mapped
+536694,12152,Matheus França de Oliveira,MID,2023-24,2025-26,mapped
+536908,12105,Alejo Véliz,FWD,2023-24,2024-25,mapped
+536916,11362,Facundo Buonanotte,MID,2022-23,2025-26,mapped
+537043,9409,Kaine Kesler Hayden,DEF,2022-23,2022-23,shared_understat_id
+537403,11240,Kadan Young,MID,2022-23,2025-26,mapped
+538207,9556,William Osula,FWD,2020-21,2025-26,mapped
+538210,11731,Andre Brooks,MID,2023-24,2023-24,mapped
+539721,13219,Ruairi McConville,DEF,2024-25,2024-25,mapped
+541462,13344,Matai Akinmboni,DEF,2024-25,2025-26,mapped
+543158,12498,Valentín Barco,DEF,2023-24,2024-25,mapped
+543295,13780,Antoni Milambo,MID,2025-26,2025-26,mapped
+544877,11709,Milos Kerkez,DEF,2023-24,2025-26,mapped
+545477,12199,Alex Murphy,DEF,2023-24,2025-26,mapped
+545508,13258,Joseph O'Brien-Whitmarsh,MID,2024-25,2024-25,mapped
+547027,9767,Habib Diarra,MID,2025-26,2025-26,mapped
+547037,13150,Jack Fletcher,MID,2024-25,2025-26,mapped
+547410,13722,Harrison Jones,MID,2025-26,2025-26,mapped
+547676,13467,Tyler Fredricson,DEF,2024-25,2025-26,mapped
+547692,13286,Samuel Rak-Sakyi,MID,2024-25,2024-25,mapped
+547701,10184,Archie Gray,MID,2021-22,2025-26,mapped
+547716,12198,Ben Parkinson,FWD,2023-24,2023-24,mapped
+547719,11386,Lewis Miley,MID,2022-23,2025-26,mapped
+547720,13570,Charlie Tasker,DEF,2024-25,2025-26,mapped
+547801,13204,Callum Bates,MID,2024-25,2025-26,mapped
+548308,12031,Ashley Phillips,DEF,2023-24,2025-26,mapped
+549067,13306,Zach Abbott,DEF,2024-25,2025-26,mapped
+549068,11739,Omari Kellyman,MID,2023-24,2024-25,mapped
+549074,14029,Tom Watson,MID,2025-26,2025-26,mapped
+549329,11824,Lucas Pires Silva,DEF,2025-26,2025-26,mapped
+549344,12465,Sam Curtis,DEF,2023-24,2023-24,mapped
+549640,13606,Michael Golding,MID,2024-25,2024-25,mapped
+549912,13717,Chemsdine Talbi,MID,2025-26,2025-26,mapped
+549939,13816,Mike Penders,GKP,2025-26,2025-26,mapped
+550090,10169,Diego Coppola,DEF,2025-26,2025-26,mapped
+550596,11300,Dominic Sadi,MID,2022-23,2025-26,mapped
+550615,12573,Tyrique George,MID,2023-24,2025-26,mapped
+550839,10822,Wilson Odobert,MID,2023-24,2025-26,mapped
+550864,10564,Leny Yoro,DEF,2024-25,2025-26,mapped
+551210,13776,Jorrel Hato,DEF,2025-26,2025-26,mapped
+551221,13011,Tommy Setford,GKP,2024-25,2025-26,mapped
+551226,12948,Mateus Gonçalo Espanha Fernandes,MID,2024-25,2025-26,mapped
+551230,11383,Renato Palma Veiga,MID,2024-25,2024-25,mapped
+551232,12418,Rodrigo Duarte Ribeiro,FWD,2023-24,2023-24,mapped
+551483,12168,Álex Jiménez Sánchez,DEF,2025-26,2025-26,mapped
+552425,12251,Sydie Peck,MID,2023-24,2023-24,mapped
+552427,13127,Will Lankshear,FWD,2024-25,2025-26,mapped
+553746,13572,Shahar,DEF,2025-26,2025-26,mapped
+554194,13185,Jahmai Simpson-Pusey,DEF,2024-25,2024-25,mapped
+554197,13719,Chris Rigg,MID,2025-26,2025-26,mapped
+554605,11943,Dean Huijsen,DEF,2024-25,2024-25,mapped
+556637,14127,Nehemiah Oriola,MID,2025-26,2025-26,mapped
+556639,13196,Jayce Fitzgerald,MID,2024-25,2025-26,mapped
+559610,14405,Bentt,MID,2025-26,2025-26,mapped
+559684,13468,Jack Moorhouse,MID,2024-25,2025-26,mapped
+559962,13310,Jamaldeen Jimoh-Aloba,MID,2024-25,2025-26,mapped
+560248,11775,Bastien Meupiyou Menadjou,DEF,2024-25,2025-26,mapped
+560262,11504,Eli Junior Kroupi,FWD,2025-26,2025-26,mapped
+560552,14030,Kevin Santos Lopes de Macedo,MID,2025-26,2025-26,mapped
+563324,13607,Brayden Clarke,DEF,2024-25,2025-26,mapped
+564406,13718,Eliezer Mayenda Dossou,FWD,2025-26,2025-26,mapped
+564505,12273,Sam Proctor,GKP,2023-24,2025-26,mapped
+564940,10770,Soungoutou Magassa,MID,2025-26,2025-26,mapped
+565297,11208,Mateo Joseph Fernández-Regatillo,FWD,2022-23,2025-26,mapped
+565431,12359,Callum Marshall,FWD,2023-24,2025-26,mapped
+565858,13170,Killian Cahill,GKP,2024-25,2024-25,mapped
+565863,14306,Chambers,MID,2025-26,2025-26,mapped
+566213,14054,Stephen Mfuni,DEF,2025-26,2025-26,mapped
+567119,13476,Mheuka,FWD,2024-25,2025-26,mapped
+567121,13399,Joe Knight,MID,2024-25,2025-26,mapped
+568791,12582,Callan McKenna,GKP,2023-24,2025-26,mapped
+569014,12765,Eric da Silva Moreira,MID,2024-25,2025-26,mapped
+569577,13869,Triston Rowe,DEF,2025-26,2025-26,mapped
+570241,12136,Kim Ji-soo,DEF,2023-24,2025-26,mapped
+570526,12912,Lucas Bergvall,MID,2024-25,2025-26,mapped
+573062,11164,Martial Godo,MID,2022-23,2025-26,mapped
+574398,12454,Franco Umeh-Chibueze,MID,2023-24,2025-26,mapped
+574402,12205,Mark O’Mahony,FWD,2023-24,2024-25,mapped
+574458,11253,Mamadou Sarr,DEF,2025-26,2025-26,mapped
+574799,13363,Damola Ajayi,MID,2024-25,2024-25,mapped
+575034,12568,Ethan Wheatley,FWD,2023-24,2025-26,mapped
+575204,13649,Claudio Echeverri,MID,2024-25,2025-26,mapped
+575458,13779,Jair Paula da Cunha Filho,DEF,2025-26,2025-26,mapped
+575476,12123,Murillo Costa dos Santos,DEF,2023-24,2025-26,mapped
+575901,13474,Julio Soler Barreto,DEF,2024-25,2025-26,mapped
+576620,14266,Bendito Mantato,MID,2025-26,2025-26,mapped
+576628,14198,Lacey,MID,2025-26,2025-26,mapped
+576637,13259,Kukonki,DEF,2024-25,2025-26,mapped
+576980,13203,Zach Marsh,FWD,2024-25,2025-26,mapped
+577016,12535,Josh Acheampong,DEF,2023-24,2025-26,mapped
+577114,13026,Luis Guilherme Lira dos Santos,MID,2024-25,2025-26,mapped
+577285,14193,George Hemmings,MID,2025-26,2025-26,mapped
+577669,13716,Noah Sadiki,MID,2025-26,2025-26,mapped
+577725,12410,Josh King,MID,2023-24,2025-26,mapped
+577731,13221,Ben Broggio,MID,2024-25,2025-26,mapped
+577974,12559,Harry Amass,DEF,2023-24,2025-26,mapped
+578153,11763,Abdukodir Khusanov,DEF,2024-25,2025-26,mapped
+578545,12775,Kosta Nedeljković,DEF,2024-25,2024-25,mapped
+578614,5563,Enock Agyei,MID,2023-24,2025-26,mapped
+579075,13039,Asher Agbinone,MID,2024-25,2025-26,mapped
+580921,14254,Heskey,MID,2025-26,2025-26,mapped
+585472,12158,Ryan Oné,MID,2023-24,2023-24,mapped
+586309,12916,Thierno Barry,FWD,2025-26,2025-26,mapped
+588555,13410,Elyh Harrison,GKP,2024-25,2025-26,mapped
+588793,13081,Maldini Kacurri,DEF,2024-25,2025-26,mapped
+588796,13082,Ismeal Kabia,MID,2024-25,2025-26,mapped
+589100,13238,Jacob Slater,DEF,2024-25,2025-26,mapped
+589114,12188,Zack Nelson,MID,2023-24,2023-24,mapped
+589121,14284,Sutherland,MID,2025-26,2025-26,mapped
+589507,12532,Leon Chiwome,FWD,2023-24,2025-26,mapped
+590012,13130,Caleb Kporha,DEF,2024-25,2025-26,mapped
+590014,13777,Rio Cardines,MID,2025-26,2025-26,mapped
+590035,14175,Akhamrich,MID,2025-26,2025-26,mapped
+590039,14055,Divine Mukasa,MID,2025-26,2025-26,mapped
+590760,11301,Daniel Adu-Adjei,FWD,2022-23,2025-26,mapped
+591357,11146,Ryan Trevitt,MID,2022-23,2025-26,mapped
+591384,14328,King,DEF,2025-26,2025-26,mapped
+591385,13250,Samuel Amissah,DEF,2024-25,2025-26,mapped
+591386,12203,Trey Nyoni,MID,2023-24,2025-26,mapped
+592031,12759,Yankuba Minteh,MID,2024-25,2025-26,mapped
+592662,13104,Tony Yogane,MID,2024-25,2024-25,mapped
+592736,13287,Maeson King,DEF,2024-25,2024-25,mapped
+593001,12047,Enso González Medina,MID,2023-24,2025-26,mapped
+593174,14356,Furo,FWD,2025-26,2025-26,mapped
+596042,14144,Kieran Morrison,MID,2025-26,2025-26,mapped
+596047,13466,Chido Obi,FWD,2024-25,2025-26,mapped
+596054,13220,Tom Edozie,MID,2024-25,2025-26,mapped
+596777,11944,Patrick Dorgu,DEF,2024-25,2025-26,mapped
+597320,13584,Howell,MID,2024-25,2025-26,mapped
+599303,13532,Sean Neave,FWD,2024-25,2025-26,mapped
+600882,14073,Harry Gray,FWD,2025-26,2025-26,mapped
+601956,14257,Olagunju,DEF,2025-26,2025-26,mapped
+602903,13247,Mayers,DEF,2024-25,2025-26,mapped
+604211,14277,Tutierov,MID,2025-26,2025-26,mapped
+604988,13583,Simmonds,DEF,2024-25,2025-26,mapped
+605319,14256,Rawlings,MID,2025-26,2025-26,mapped
+606745,13080,Ayden Heaven,DEF,2024-25,2025-26,mapped
+606774,13307,Remy Rees-Dottin,MID,2024-25,2025-26,mapped
+606775,13242,Ben Winterburn,MID,2024-25,2025-26,mapped
+606798,13392,Andrés García,DEF,2024-25,2025-26,mapped
+606921,13387,Romain Esse,MID,2024-25,2025-26,mapped
+607464,11281,Michael Kayode,DEF,2024-25,2025-26,mapped
+608181,14028,Stefanos Tzimas,FWD,2025-26,2025-26,mapped
+609640,12808,Mathis Amougou,MID,2024-25,2024-25,mapped
+609873,12757,Harrison Armstrong,MID,2024-25,2025-26,mapped
+610799,13725,Luka Vušković,DEF,2025-26,2025-26,mapped
+611011,11980,Joseph Johnson,DEF,2023-24,2023-24,mapped
+611134,13818,Kendry Páez Andrade,MID,2025-26,2025-26,mapped
+611912,14112,Emenalo,MID,2025-26,2025-26,mapped
+611917,13249,Williams-Barnett,MID,2024-25,2025-26,mapped
+611920,13225,Malachi Hardy,DEF,2024-25,2024-25,mapped
+611922,13692,Rio Ngumoha,MID,2025-26,2025-26,mapped
+611926,12534,Amara Nallo,DEF,2023-24,2025-26,mapped
+612534,12397,Benjamin Fredrick,DEF,2023-24,2025-26,mapped
+612855,13792,Ibrahim Osman,MID,2024-25,2024-25,mapped
+613120,13299,Spike Brits,GKP,2024-25,2024-25,mapped
+613467,12500,Wes Okoduwa,DEF,2023-24,2024-25,mapped
+613804,13723,El Hadji Malick Diouf,DEF,2025-26,2025-26,mapped
+614574,14374,Tóth.A,MID,2025-26,2025-26,mapped
+616059,13378,Jack Porter,GKP,2024-25,2024-25,mapped
+616065,14220,Salmon,DEF,2025-26,2025-26,mapped
+616077,13872,Max Dowman,MID,2025-26,2025-26,mapped
+616221,14410,Souza,DEF,2025-26,2025-26,mapped
+616222,13380,Vitor de Oliveira Nunes dos Reis,DEF,2024-25,2025-26,mapped
+616288,14097,Ryan McAidoo,MID,2025-26,2025-26,mapped
+617054,12033,Deivid Washington de Souza Eugênio,FWD,2023-24,2024-25,mapped
+618027,14288,Carroll,DEF,2025-26,2025-26,mapped
+618873,13469,Sékou Koné,MID,2024-25,2025-26,mapped
+619146,13586,Olabade Aluko,DEF,2024-25,2024-25,mapped
+619536,14270,Ridgeon,MID,2025-26,2025-26,mapped
+620408,13636,Joachim Kayi-Sanda,DEF,2024-25,2024-25,mapped
+620487,14027,Veljko Milosavljevic,DEF,2025-26,2025-26,mapped
+622536,12533,Benjamin Arthur,DEF,2023-24,2025-26,mapped
+622758,13460,Aarón Anselmino,DEF,2024-25,2025-26,mapped
+623095,13362,Yang Min-hyeok,MID,2024-25,2025-26,mapped
+623110,13710,Seung-Soo Park,MID,2025-26,2025-26,mapped
+624773,13775,Estêvão Almeida de Oliveira Gonçalves,MID,2025-26,2025-26,mapped
+626464,13588,Gustavo Nunes Fernandes Gomes,MID,2024-25,2025-26,mapped
+628204,12633,Yunus Emre Konak,MID,2023-24,2025-26,mapped
+629068,14283,Graham,FWD,2025-26,2025-26,mapped
+630664,13585,Jake Evans,MID,2024-25,2024-25,mapped
+630699,14219,Mohamadou Kanté,MID,2025-26,2025-26,mapped
+631106,14285,Casey,FWD,2025-26,2025-26,mapped
+631786,13262,Jonah Kusi-Asare,FWD,2025-26,2025-26,mapped
+632822,13300,Archie Harris,DEF,2024-25,2024-25,mapped
+640419,14134,Jun'ai Byfield,DEF,2025-26,2025-26,mapped
+641221,13156,Pedro Cardoso de Lima,DEF,2024-25,2025-26,mapped
+643135,13200,Fer López González,MID,2025-26,2025-26,mapped
+643426,14278,Benamar,DEF,2025-26,2025-26,mapped
+643473,14179,Golambeckis,DEF,2025-26,2025-26,mapped
+645618,13870,Bradley Burrowes,MID,2025-26,2025-26,mapped
+646243,14000,Andre Harriman-Annous,MID,2025-26,2025-26,mapped
+647671,13484,Mané,FWD,2024-25,2025-26,mapped
+647681,13031,Giovanni Leoni,DEF,2025-26,2025-26,mapped
+647850,14118,Charalampos Kostoulas,FWD,2025-26,2025-26,mapped
+647960,14282,Pimlott,MID,2025-26,2025-26,mapped
+649208,13579,Jeremy Monga,MID,2024-25,2024-25,mapped
+651426,13091,Jaydee Canvot,DEF,2025-26,2025-26,mapped
+658013,14367,Stevens,MID,2025-26,2025-26,mapped
+660392,12726,Christantus Uche,FWD,2025-26,2025-26,mapped
+661712,14057,Diego León Blanco,DEF,2025-26,2025-26,mapped
+664015,14265,Leon Routh,DEF,2025-26,2025-26,mapped
+666607,14273,Alabi,MID,2025-26,2025-26,mapped
+672492,14263,Drakes-Thomas,MID,2025-26,2025-26,mapped
+678552,14215,DaCosta,MID,2025-26,2025-26,mapped
+685628,14394,Abbey,MID,2025-26,2025-26,mapped
+704232,14292,Brierley,MID,2025-26,2025-26,mapped

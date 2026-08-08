@@ -71,38 +71,45 @@ is a steady five or a coin-flip between two and thirteen.
 
 ---
 
-## Results
+## Accuracy
 
-Walk-forward: the model is retrained from scratch for each block, so nothing in a test
-window existed when its model was fitted. Three seeds. Metrics computed **within each
-gameweek, then averaged** — never pooled across a season, which inflates rank
-correlation badly.
+The headline evaluation contains **24 clean gameweeks and 17,986 player-fixtures** from
+2024-25 GW15-38. Each block is walk-forward: Dastan is retrained without its test
+window, using three seeds whose predictions are averaged. Metrics are calculated inside
+each gameweek and then averaged, never pooled across a season.
 
-Objective is `0.5 × Spearman + 0.5 × NDCG@10`.
+### Dastan on every clean evaluation row
 
-### All players
+| metric | all players | starters only | what it means |
+|---|---:|---:|---|
+| objective | **0.6072** | **0.3959** | ranking score; higher is better, not a percentage |
+| Spearman | 0.7464 | 0.2866 | correlation of the full predicted and actual ranks |
+| NDCG@10 | 0.4680 | 0.5051 | quality of the predicted top ten |
+| MAE | **0.915 pts** | 2.172 pts | absolute points error; lower is better |
+| mean prediction / actual | 1.119 / 1.133 | 2.699 / 3.525 | calibration; starter projections are conservative |
 
-| model | objective | vs Dastan |
-|---|---|---|
-| **Dastan** | **0.6072** | — |
-| FPL's own `ep_next` | 0.5321 | **−0.0751** |
-| rolling-5 form | 0.5260 | −0.0812 |
-| last gameweek's points | 0.4950 | −0.1122 |
-| price | 0.3571 | −0.2501 |
+Objective is `0.5 × Spearman + 0.5 × NDCG@10`. It measures selection quality, not the
+probability that a forecast is "correct". MAE should not be compared across the two
+cohorts because the all-player pool contains many zero-minute rows.
 
-### Starters only (60+ minutes)
+### Against FPL on identical rows
 
-| model | objective | vs Dastan |
-|---|---|---|
-| **Dastan** | **0.3959** | — |
-| price | 0.3584 | −0.0375 |
-| FPL's own `ep_next` | 0.3139 | −0.0820 |
-| rolling-5 form | 0.2820 | −0.1139 |
-| last gameweek's points | 0.2404 | −0.1555 |
+FPL's `ep_next` is missing for a small part of the evaluation set, so this comparison
+restricts **both models to the rows where it exists**.
 
-**The minutes head is the strongest part of the model: AUC ≈ 0.95 out of sample.**
+| cohort | Dastan | FPL `ep_next` | delta |
+|---|---:|---:|---:|
+| all players | **0.6079** | 0.5321 | **+0.0758** |
+| starters only | **0.3944** | 0.3139 | **+0.0805** |
 
-Full tables, per-block detail, calibration and practical metrics:
+### Practical reading
+
+- The 60-minute head has **0.9539 AUC** out of sample. That is ranking AUC, not 95.39%
+  classification accuracy.
+- Dastan's predicted top ten contains **1.83 of the actual top ten** on average.
+- Its top-ranked player finishes in the actual top ten in **9 of 24 gameweeks (37.5%)**.
+
+Full baseline tables, per-block detail, calibration, coverage and caveats:
 [docs/ACCURACY.md](docs/ACCURACY.md).
 
 ### What we will not claim
@@ -220,6 +227,7 @@ position — never loaded from elsewhere, which would be model-selection leakage
 | `data/pre_deadline_signals.parquet` | 137,982 | status, chance of playing, set-piece order, age |
 | `data/openfpl_predictions.csv` | 18,173 | OpenFPL's predictions, for the head-to-head |
 | `data/players.csv` | 4,717 | `fpl_code` → name and position, per season |
+| `data/mappings/fpl_understat_players.csv` | 1,564 | exact FPL → Understat IDs used by the frame |
 
 Sources and the provenance rules: [docs/DATA.md](docs/DATA.md).
 
@@ -238,6 +246,7 @@ different events are the same.
 
 ```bash
 python -m dastan.verify                # reload and score the published weights
+python -m dastan.mappings              # verify the published FPL-to-Understat mapping
 python -m dastan.reproduce             # retrain and require equivalent holdout quality
 python -m dastan.reproduce --strict    # require identical artefacts on the release platform
 python -m dastan.train --out experiments/my-model

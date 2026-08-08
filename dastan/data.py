@@ -139,7 +139,7 @@ def feature_sets(df: pd.DataFrame, candidates=SHIPPED_CANDIDATES):
 
 
 def shipped_features(df: pd.DataFrame) -> list[str]:
-    """Exactly the 287 columns the released weights were trained on, in order."""
+    """Exactly the 286 columns the released weights were trained on, in order."""
     cols = json.loads(FEATURE_COLS.read_text())
     missing = [c for c in cols if c not in df.columns]
     if missing:

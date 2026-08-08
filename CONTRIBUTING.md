@@ -66,3 +66,4 @@ Include:
 
 Run `python -m dastan.verify` before opening the pull request. Changes to training code,
 dependencies, features, or released weights must also pass `python -m dastan.reproduce`.
+Changes to FPL/Understat identities must pass `python -m dastan.mappings`.
