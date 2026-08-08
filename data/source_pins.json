@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "vaastav": {
+    "repository": "vaastav/Fantasy-Premier-League",
+    "commit": "8c97b2adb123863c3dd581e730f1360e89815ac2"
+  },
+  "fplcache": {
+    "repository": "Randdalf/fplcache",
+    "commit": "6c364bfbd9914649dc5dec016e544be3ae4fe767"
+  },
+  "reviewed_at": "2026-08-08",
+  "note": "Advance pins only in a reviewed data-release candidate; downloads.json records the exact bytes fetched from them."
+}

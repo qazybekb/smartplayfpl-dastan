@@ -14,6 +14,7 @@ source .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m dastan.verify
 python -m dastan.datasets verify
+python -m dastan.artifacts
 python -m dastan.reproduce
 ```
 
@@ -56,6 +57,10 @@ New or updated data must document its source, join keys, capture time, deadline
 acceptance rule, coverage, missing-value policy, and licence. Never admit information
 captured after the FPL deadline for the gameweek being predicted.
 
+Seasonal model releases must follow [`docs/RETRAINING.md`](docs/RETRAINING.md). Data
+preparation and acceptance are separate actions, and a completed season is appended
+through the registry rather than by changing Python constants.
+
 ## Pull requests
 
 Include:
@@ -66,8 +71,9 @@ Include:
 4. Runtime or model-size changes.
 5. Any provenance or licensing implications.
 
-Run `python -m dastan.verify`, `python -m dastan.datasets verify`, and
-`python -m unittest discover -v` before opening the pull request. Changes to training
+Run `python -m dastan.verify`, `python -m dastan.artifacts`,
+`python -m dastan.datasets verify`, and `python -m unittest discover -v` before
+opening the pull request. Changes to training
 code, dependencies, features, or released weights must also pass
 `python -m dastan.reproduce`. Changes to FPL/Understat identities must pass
 `python -m dastan.mappings`.

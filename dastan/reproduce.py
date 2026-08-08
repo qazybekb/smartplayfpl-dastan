@@ -82,7 +82,7 @@ def main() -> int:
         & frame["gameweek"].between(*HOLDOUT)
     ]
     released = Dastan()
-    released_out = released.predict_frame(holdout)
+    released_out = released.predict_frame(holdout, with_parts=True)
 
     with tempfile.TemporaryDirectory(prefix="dastan-reproduce-") as tmp:
         candidate_dir = Path(tmp)
@@ -103,7 +103,7 @@ def main() -> int:
         )
 
         candidate = Dastan(candidate_dir)
-        candidate_out = candidate.predict_frame(holdout)
+        candidate_out = candidate.predict_frame(holdout, with_parts=True)
         if not released_out.index.equals(candidate_out.index):
             raise SystemExit("retrained predictions do not align with the released rows")
 
@@ -116,6 +116,9 @@ def main() -> int:
         calibration_matches = _json(
             released_models / "bucket_calibration.json"
         ) == _json(candidate_dir / "bucket_calibration.json")
+        minutes_matches = _json(
+            released_models / "minutes_calibration.json"
+        ) == _json(candidate_dir / "minutes_calibration.json")
 
         released_blend = _json(released_models / "blend.json")["per_position_direct_weight"]
         candidate_blend = _json(candidate_dir / "blend.json")["per_position_direct_weight"]
@@ -125,6 +128,21 @@ def main() -> int:
         candidate_xpts = candidate_out["xpts"].to_numpy(dtype=float)
         if not np.isfinite(candidate_xpts).all() or (candidate_xpts < 0).any():
             raise SystemExit("retrained model produced invalid xPts")
+        minute_values = candidate_out[
+            ["p60", "p_any", "expected_minutes"]
+        ].to_numpy(dtype=float)
+        minutes_coherent = bool(
+            np.isfinite(minute_values).all()
+            and candidate_out["p_any"].ge(candidate_out["p60"] - 1e-9).all()
+            and candidate_out["expected_minutes"]
+            .ge(60.0 * candidate_out["p60"] - 1e-6)
+            .all()
+            and candidate_out["p_any"]
+            .ge(candidate_out["expected_minutes"] / 90.0 - 1e-9)
+            .all()
+        )
+        if not minutes_coherent:
+            raise SystemExit("retrained model produced incoherent minutes outputs")
 
         delta = np.abs(released_xpts - candidate_xpts)
         exact_models = sum(
@@ -139,6 +157,7 @@ def main() -> int:
         print(f"holdout rows: {len(holdout):,}")
         print(f"model files byte-identical: {exact_models}/{len(_model_files())}")
         print(f"bucket calibration identical: {calibration_matches}")
+        print(f"minutes calibration identical: {minutes_matches}")
         print(f"release blend weights: {released_blend}")
         print(f"retrained blend weights: {candidate_blend}")
         print(f"prediction mean absolute delta: {float(delta.mean()):.12g}")
@@ -172,6 +191,8 @@ def main() -> int:
                 strict_failures.append("bucket calibration")
             if not blend_matches:
                 strict_failures.append("blend weights")
+            if not minutes_matches:
+                strict_failures.append("minutes calibration")
             if not np.allclose(released_xpts, candidate_xpts, rtol=0.0, atol=args.atol):
                 strict_failures.append("predictions")
             if strict_failures:

@@ -24,7 +24,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from . import data, mappings
+from . import data, mappings, seasons
 
 ROOT = data.ROOT
 RELEASE_MANIFEST = data.DATA / "release_manifest.json"
@@ -32,6 +32,8 @@ DEFAULT_RAW = ROOT / ".cache" / "dastan-raw"
 DEFAULT_OUTPUT = ROOT / ".cache" / "rebuilt-data"
 
 RELEASE_ARTIFACTS = [
+    "season_registry.json",
+    "source_pins.json",
     "features.parquet",
     "pre_deadline_ep_next.parquet",
     "pre_deadline_signals.parquet",
@@ -305,11 +307,13 @@ def compare(candidate_dir: Path, strict: bool = False) -> dict:
 
 
 def _seasons(value: str) -> list[str]:
-    seasons = [part.strip() for part in value.split(",") if part.strip()]
-    unknown = sorted(set(seasons) - set(data.SEASONS))
+    requested = [part.strip() for part in value.split(",") if part.strip()]
+    unknown = sorted(set(requested) - set(seasons.source_seasons()))
     if unknown:
-        raise argparse.ArgumentTypeError(f"unknown release seasons: {unknown}")
-    return seasons
+        raise argparse.ArgumentTypeError(
+            f"seasons are not registered/current: {unknown}; update the roster or registry first"
+        )
+    return requested
 
 
 def main() -> int:

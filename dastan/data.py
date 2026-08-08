@@ -16,6 +16,8 @@ from pathlib import Path
 
 import pandas as pd
 
+from .seasons import load_registry
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
@@ -24,8 +26,9 @@ EP_NEXT = DATA / "pre_deadline_ep_next.parquet"
 SIGNALS = DATA / "pre_deadline_signals.parquet"
 FEATURE_COLS = ROOT / "models" / "feature_cols.json"
 
-SEASONS = ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"]
-EXPECTED_ROWS = 163_072
+_REGISTRY = load_registry()
+SEASONS = list(_REGISTRY["release_seasons"])
+EXPECTED_ROWS = int(_REGISTRY["release_rows"])
 
 # Rolling-history columns. `opp_` is deliberately excluded: opponent form genuinely
 # differs between the two fixtures of a double gameweek and must not be flattened.
@@ -100,7 +103,11 @@ EP = {"art": EP_NEXT, "on": ["season", "gameweek", "fpl_code"], "cols": ["ep_nex
 SHIPPED_CANDIDATES = ["availability"]
 
 
-def load(candidates=tuple(CANDIDATES), check_rows: bool = True) -> pd.DataFrame:
+def load(
+    candidates=tuple(CANDIDATES),
+    check_rows: bool = True,
+    data_dir: Path | str | None = None,
+) -> pd.DataFrame:
     """The frame with every snapshot artefact joined.
 
     Missing values become **-1, never 0**. This matters more than it looks: 54,430
@@ -108,7 +115,9 @@ def load(candidates=tuple(CANDIDATES), check_rows: bool = True) -> pd.DataFrame:
     player), and filling absent snapshots with 0 would teach the model that "we have
     no data" and "FPL expects nothing" are the same event. They are not.
     """
-    df = pd.read_parquet(FRAME)
+    base = Path(data_dir) if data_dir is not None else DATA
+    frame_path = base / FRAME.name
+    df = pd.read_parquet(frame_path)
     if check_rows and len(df) != EXPECTED_ROWS:
         raise RuntimeError(f"expected {EXPECTED_ROWS:,} rows, got {len(df):,}")
     assert_deadline_anchored(df)
@@ -117,7 +126,8 @@ def load(candidates=tuple(CANDIDATES), check_rows: bool = True) -> pd.DataFrame:
     wanted: dict = {}
     for name in list(candidates) + ["__ep__"]:
         spec = EP if name == "__ep__" else CANDIDATES[name]
-        wanted.setdefault((spec["art"], tuple(spec["on"])), []).extend(spec["cols"])
+        artifact = base / Path(spec["art"]).name
+        wanted.setdefault((artifact, tuple(spec["on"])), []).extend(spec["cols"])
 
     for (art, on), cols in wanted.items():
         a = pd.read_parquet(art)[list(on) + cols].drop_duplicates(subset=list(on))

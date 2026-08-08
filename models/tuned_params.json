@@ -1,0 +1,59 @@
+{
+  "clf_params": {
+    "n_estimators": 2100,
+    "learning_rate": 0.014904269594422277,
+    "max_depth": 5,
+    "subsample": 0.725652229220473,
+    "min_child_weight": 1.2204861035325074,
+    "reg_lambda": 1.6364630927628068,
+    "colsample_bytree": 0.4939846148128961,
+    "tree_method": "hist",
+    "max_bin": 256,
+    "early_stopping_rounds": 20
+  },
+  "reg_params": {
+    "n_estimators": 1600,
+    "learning_rate": 0.008407398996147526,
+    "max_depth": 5,
+    "subsample": 0.8865835339214401,
+    "min_child_weight": 6.578824623459119,
+    "reg_lambda": 0.3696689456876593,
+    "colsample_bytree": 0.8270729209132417,
+    "tree_method": "hist",
+    "max_bin": 256,
+    "early_stopping_rounds": 120
+  },
+  "use_tuned": false,
+  "tuned_on": "2025-26 GW15-22",
+  "protocol": "500 single-seed exploration trials, top 12 re-ranked at 3 seeds; winner picked on the 3-seed mean",
+  "incumbent_v10": {
+    "all": 0.5676,
+    "starters": 0.259
+  },
+  "winner": {
+    "trial": 469,
+    "stage1_all": 0.5879,
+    "all": 0.5837,
+    "starters": 0.2749,
+    "bias": 0.0042
+  },
+  "median_selection_bias": 0.009,
+  "held_out_confirmation": {
+    "windows": {
+      "fold A  2025-26 GW31-38": {
+        "delta_all": 0.0058,
+        "delta_starters": 0.0085
+      },
+      "fold B  2025-26 GW23-30": {
+        "delta_all": -0.0082,
+        "delta_starters": -0.0048
+      },
+      "fresh   2024-25 GW31-38": {
+        "delta_all": -0.0022,
+        "delta_starters": -0.0002
+      }
+    },
+    "mean_delta_all": -0.0015,
+    "verdict": "REJECTED. The +0.0161 measured on the tuning window did not survive on any held-out window (mean -0.0015 over three). Two distinct selection biases were at work: seed-luck, worth +0.0090 and removed by re-ranking the top 12 at three seeds, and window-luck -- 500 trials selecting on one 8-gameweek block overfit that block. Only out-of-sample scoring exposes the second. v10 hyperparameters are retained; the tuned values are kept here as a record, not for use."
+  }
+}

@@ -19,7 +19,9 @@ import pandas as pd
 from .. import mappings
 from .features import fpl_to_understat, parse_ppda
 
-VAASTAV_COMMIT = "8c97b2adb123863c3dd581e730f1360e89815ac2"
+SOURCE_PINS = Path(__file__).resolve().parents[2] / "data" / "source_pins.json"
+_PINS = json.loads(SOURCE_PINS.read_text(encoding="utf-8"))
+VAASTAV_COMMIT = str(_PINS["vaastav"]["commit"])
 VAASTAV_RAW = (
     "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/"
     f"{VAASTAV_COMMIT}/"
@@ -106,7 +108,7 @@ def _core_path(raw_dir: Path, season: str, filename: str) -> Path:
 
 def _needed_understat_ids(raw_dir: Path, seasons: list[str]) -> set[int]:
     del raw_dir
-    assignments = mappings.load_training_assignments()
+    assignments = mappings.assignments_for_seasons(seasons)
     return set(
         assignments.loc[assignments["season"].isin(seasons), "understat_id"].astype(int)
     )
@@ -116,7 +118,7 @@ def _expected_understat_player_dates(
     raw_dir: Path, seasons: list[str]
 ) -> dict[int, set[object]]:
     """Played FPL dates that should have a matching Understat player row."""
-    assignments = mappings.load_training_assignments()
+    assignments = mappings.assignments_for_seasons(seasons)
     expected: dict[int, set[object]] = {}
     for season in seasons:
         players = pd.read_csv(
@@ -306,6 +308,10 @@ def write_download_manifest(raw_dir: Path, seasons: list[str]) -> Path:
             "vaastav": {
                 "repository": "https://github.com/vaastav/Fantasy-Premier-League",
                 "commit": VAASTAV_COMMIT,
+            },
+            "fplcache": {
+                "repository": f"https://github.com/{_PINS['fplcache']['repository']}",
+                "commit": str(_PINS["fplcache"]["commit"]),
             },
             "understat": {
                 "repository_cache": "Vaastav where available",
@@ -611,7 +617,7 @@ def build_canonical_matches(
     raw_dir: Path, seasons: list[str]
 ) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Return canonical player matches, team matches, and player lookup."""
-    assignments = mappings.load_training_assignments()
+    assignments = mappings.assignments_for_seasons(seasons)
     all_rows = []
     for season in seasons:
         gameweeks = pd.read_csv(

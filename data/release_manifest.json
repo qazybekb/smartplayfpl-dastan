@@ -1,7 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-08T19:55:10.512121+00:00",
+  "generated_at": "2026-08-08T21:33:41.479496+00:00",
   "files": {
+    "season_registry.json": {
+      "bytes": 1784,
+      "sha256": "72bb66a1e1187d053d4298f5710a4042208e3592d953ae445028549a5d4782a0"
+    },
+    "source_pins.json": {
+      "bytes": 430,
+      "sha256": "ace448af63ee190b26609d8d8735419151f8159e23aa74dd4b5fbbd4f798abc8"
+    },
     "features.parquet": {
       "bytes": 38697486,
       "sha256": "dcf8411d458e7b99b15472975280cf855e15de22070022fad6fce0f76f3f299c",
