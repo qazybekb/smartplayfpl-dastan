@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "completed_seasons": [
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "release_seasons": [
+    "2020-21",
+    "2021-22",
+    "2022-23",
+    "2023-24",
+    "2024-25",
+    "2025-26"
+  ],
+  "latest_completed_season": "2025-26",
+  "release_rows": 163072,
+  "published_retraining_plan": {
+    "mode": "annual",
+    "data_season": "2025-26",
+    "seasons": ["2020-21", "2021-22", "2022-23", "2023-24", "2024-25", "2025-26"],
+    "available_through_gw": 38,
+    "train_max_gw": 30,
+    "holdout": [31, 38],
+    "target_season": "2026-27",
+    "expected_rows": 163072,
+    "run_id": "annual-2025-26"
+  },
+  "season_coverage": {
+    "2020-21": {"rows": 24365, "gameweeks": 38, "min_gameweek": 1, "max_gameweek": 38, "fixtures": 380},
+    "2021-22": {"rows": 25447, "gameweeks": 38, "min_gameweek": 1, "max_gameweek": 38, "fixtures": 380},
+    "2022-23": {"rows": 26505, "gameweeks": 37, "min_gameweek": 1, "max_gameweek": 38, "fixtures": 380},
+    "2023-24": {"rows": 29725, "gameweeks": 38, "min_gameweek": 1, "max_gameweek": 38, "fixtures": 380},
+    "2024-25": {"rows": 27283, "gameweeks": 38, "min_gameweek": 1, "max_gameweek": 38, "fixtures": 380},
+    "2025-26": {"rows": 29747, "gameweeks": 38, "min_gameweek": 1, "max_gameweek": 38, "fixtures": 380}
+  },
+  "release_data_contract": {
+    "features.parquet": "dcf8411d458e7b99b15472975280cf855e15de22070022fad6fce0f76f3f299c",
+    "pre_deadline_ep_next.parquet": "f0087b83c279ab9655751b78f2a2fbac492d41e434346ba447e145cf1917fb4b",
+    "pre_deadline_signals.parquet": "1a0b4f4565f6097f6efb0c03a6e351742d88cd71671c5d900adcd28bc7436a54",
+    "mappings/fpl_understat_training_snapshot.csv": "e4f31547c76c5470ce1223adc476cc1f9fc2a9a97114c656f3fbe447f8d894d6"
+  }
+}

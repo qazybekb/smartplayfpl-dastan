@@ -14,8 +14,10 @@ from typing import Callable
 
 import pandas as pd
 
-FPLCACHE_COMMIT = "6c364bfbd9914649dc5dec016e544be3ae4fe767"
-FPLCACHE_REPO = "Randdalf/fplcache"
+SOURCE_PINS = Path(__file__).resolve().parents[2] / "data" / "source_pins.json"
+_PINS = json.loads(SOURCE_PINS.read_text(encoding="utf-8"))
+FPLCACHE_COMMIT = str(_PINS["fplcache"]["commit"])
+FPLCACHE_REPO = str(_PINS["fplcache"]["repository"])
 TREE_URL = (
     f"https://api.github.com/repos/{FPLCACHE_REPO}/git/trees/"
     f"{FPLCACHE_COMMIT}?recursive=1"

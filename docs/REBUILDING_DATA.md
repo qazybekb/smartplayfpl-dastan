@@ -62,10 +62,10 @@ keys and schema rather than expecting its long windows to equal the six-season r
 
 | input | reconstruction source | stability |
 |---|---|---|
-| FPL gameweek history, rosters, teams | `vaastav/Fantasy-Premier-League` at commit `8c97b2adb123863c3dd581e730f1360e89815ac2` | pinned |
+| FPL gameweek history, rosters, teams | `vaastav/Fantasy-Premier-League` at the commit in `data/source_pins.json` | pinned |
 | Understat player/team archives | the same pinned repository where coverage is complete | pinned |
 | incomplete Understat histories | Understat through `understatapi==0.7.1` | cached but provider-mutable |
-| pre-deadline FPL bootstrap | `Randdalf/fplcache` at commit `6c364bfbd9914649dc5dec016e544be3ae4fe767` | pinned |
+| pre-deadline FPL bootstrap | `Randdalf/fplcache` at the commit in `data/source_pins.json` | pinned |
 | release identity behavior | checked-in training snapshot and assignment timeline | immutable |
 
 The downloader percent-encodes non-ASCII archive paths, checks every mapped FPL
@@ -77,6 +77,13 @@ it for a reproduction claim.
 Every run writes `downloads.json` with source commits, byte sizes, and SHA-256 hashes.
 The build writes `rebuild_manifest.json` with output hashes and the exact source-manifest
 hash. Keep both manifests with any published reconstruction result.
+
+For a new season, advance the two source commits only after verifying they contain
+every gameweek through the intended cutoff. The dataset CLI accepts registered seasons
+plus the immediate season named by the checked-in FPL roster. New-season player joins
+derive from the versioned operational mapping, and the build stops until every current
+club has an Understat identity. The full maintenance sequence is in
+[`RETRAINING.md`](RETRAINING.md).
 
 ## Pipeline
 

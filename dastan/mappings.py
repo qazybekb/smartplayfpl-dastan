@@ -251,6 +251,71 @@ def load_training_assignments(
     return out
 
 
+def assert_operational_clubs_ready(season: str) -> None:
+    """Fail before new-season data joins while a live club lacks Understat identity."""
+    roster = load_roster()
+    roster_season = str(roster["season"].iat[0])
+    if season != roster_season:
+        raise RuntimeError(
+            f"new season {season} does not match the checked-in FPL roster {roster_season}"
+        )
+    clubs = load_operational_clubs().set_index("club_name")
+    current = sorted(set(roster["team_name"].astype(str)))
+    missing_rows = sorted(set(current) - set(clubs.index))
+    unmapped = [
+        name
+        for name in current
+        if name in clubs.index and pd.isna(clubs.loc[name, "understat_team_id"])
+    ]
+    if missing_rows or unmapped:
+        raise RuntimeError(
+            "current club mappings are not retraining-ready: "
+            f"missing={missing_rows}, awaiting_understat={unmapped}"
+        )
+
+
+def assignments_for_seasons(seasons: list[str]) -> pd.DataFrame:
+    """Use frozen assignments for released seasons and operational IDs for the next.
+
+    The immutable release assignments are never rewritten.  For the current active
+    season, stable FPL codes are joined to the accepted operational mapping release;
+    observed source rows determine the actual appearance interval downstream.
+    """
+    frozen = load_training_assignments()
+    registry = json.loads(
+        (DATA / "season_registry.json").read_text(encoding="utf-8")
+    )
+    completed = set(map(str, registry["completed_seasons"]))
+    requested = set(seasons)
+    active_seasons = sorted(requested - completed)
+    pieces = [frozen[frozen["season"].isin(requested & completed)].copy()]
+    if active_seasons:
+        roster = load_roster()
+        active = str(roster["season"].iat[0])
+        if active_seasons != [active]:
+            raise RuntimeError(
+                f"only checked-in current season {active} may extend frozen assignments; "
+                f"got {active_seasons}"
+            )
+        assert_operational_clubs_ready(active)
+        operational = load_operational_players().dropna(
+            subset=["understat_player_id"]
+        )[["fpl_code", "understat_player_id"]]
+        current = roster[["fpl_code"]].merge(
+            operational, on="fpl_code", how="inner", validate="one_to_one"
+        ).rename(columns={"understat_player_id": "understat_id"})
+        current.insert(0, "season", active)
+        current["first_gameweek"] = 1
+        current["last_gameweek"] = 38
+        current["mapped_rows"] = 0
+        current["understat_id"] = current["understat_id"].astype("int64")
+        pieces.append(current[ASSIGNMENT_COLUMNS])
+    out = pd.concat(pieces, ignore_index=True)
+    if out.duplicated(["season", "fpl_code"]).any():
+        raise RuntimeError("resolved assignments contain duplicate player-seasons")
+    return out.sort_values(["season", "fpl_code"], kind="mergesort").reset_index(drop=True)
+
+
 def load(path: Path = CORRECTED_MAPPING) -> pd.DataFrame:
     """Load the corrected historical mapping recommended for new joins."""
     return load_mapping(path)

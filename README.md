@@ -38,6 +38,7 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 
+python -m dastan.artifacts     # verify public/production artifact hashes
 python -m dastan.verify        # reload the released weights and score them
 ```
 
@@ -65,9 +66,10 @@ out = out.merge(players[["season", "fpl_code", "player_name"]],
 out.nlargest(10, "xpts")[["player_name", "team_name", "gameweek", "xpts", "p60"]]
 ```
 
-`with_parts=True` also returns `p60` (probability of 60+ minutes) and the four scoring
-band probabilities — which say something `xpts` alone cannot: whether a 5.0 projection
-is a steady five or a coin-flip between two and thirteen.
+`with_parts=True` also returns `p60`, coherent `p_any` and `expected_minutes`, and the
+four scoring-band probabilities. The three minutes values come from one calibrated
+curve and are constrained so `p_any >= p60`, `expected_minutes >= 60*p60`, and
+`p_any >= expected_minutes/90`.
 
 ---
 
@@ -232,6 +234,8 @@ position — never loaded from elsewhere, which would be model-selection leakage
 | `data/mappings/current_fpl_understat_players.csv` | 1,681 | latest versioned operational player registry; 1,598 mapped |
 | `data/mappings/current_fpl_understat_clubs.csv` | 30 | latest versioned operational club registry; 28 mapped |
 | `data/mappings/fpl_understat_current.csv` | 573 | complete 2026-27 roster; 517 mapped, 56 unresolved |
+| `data/season_registry.json` | — | completed-season coverage and immutable row/hash guards |
+| `data/source_pins.json` | — | reviewed source commits for future data rebuilds |
 
 Sources and the provenance rules: [docs/DATA.md](docs/DATA.md).
 
@@ -250,6 +254,7 @@ different events are the same.
 
 ```bash
 python -m dastan.verify                # reload and score the published weights
+python -m dastan.artifacts             # verify all 40 model-contract files
 python -m dastan.datasets verify       # verify release data hashes and invariants
 python -m dastan.mappings              # verify the published FPL-to-Understat mapping
 python -m dastan.reproduce             # retrain and require equivalent holdout quality
@@ -259,8 +264,13 @@ python -m dastan.evaluate --seeds 3    # walk-forward vs baselines (~90 min)
 python -m dastan.benchmark_openfpl     # head-to-head on identical rows
 ```
 
-`models/` contains 38 published files: 35 are required for inference; the remaining
-three record training hyperparameters, the core feature manifest, and release metadata.
+`models/` contains a 40-file public contract: the 38-file production contract plus
+the two public-only inputs needed for retraining (`hyperparameters.json` and
+`core_feature_cols.json`). Thirty-six files are required for inference, including the
+coherent minutes calibration. `models/artifact_manifest.json` fingerprints the full
+contract and records the corresponding production commit and mapping release. Trained
+heads, feature order, calibrations, blend weights, and serving metadata are byte-for-byte
+copies of the 38-file production contract recorded in that manifest.
 
 Model reproduction starts from the published, deadline-anchored feature frame. The
 optional public-source reconstruction is separate so provider corrections cannot
@@ -276,6 +286,10 @@ The raw cache and candidate outputs are gitignored. Each run records source and 
 SHA-256 manifests. See [`docs/REBUILDING_DATA.md`](docs/REBUILDING_DATA.md) for source
 pins, measured reconstruction coverage, and the boundary between exact release bytes
 and mutable Understat data.
+
+Mid-season and annual releases use a separate prepare → review → accept → train →
+promote workflow. No season number is edited in Python, and candidate training refuses
+to start if an accepted hash changes. See [`docs/RETRAINING.md`](docs/RETRAINING.md).
 
 The default reproduction threshold is the documented 0.0106 single-seed objective
 noise for both evaluation cohorts. Exact model bytes and prediction deltas are always

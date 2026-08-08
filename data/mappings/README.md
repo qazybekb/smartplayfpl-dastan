@@ -52,6 +52,12 @@ Use `dastan.mappings.load_operational_players()` for the latest complete registr
 573 players; the other 56 are explicit `unmapped`/`NONE` records. Absence is safer
 than a name-based guess.
 
+For a newly active season, `assignments_for_seasons()` combines immutable assignments
+for released seasons with stable-code identities from the accepted operational
+release. It filters the operational registry to the captured FPL roster and refuses
+to proceed until all current clubs have Understat identities. This is the only public
+data-builder path for adding a season; do not extend the frozen assignment CSV by hand.
+
 ## Coverage and reverse joins
 
 The immutable training snapshot contains 1,564 FPL codes and 1,561 unique Understat

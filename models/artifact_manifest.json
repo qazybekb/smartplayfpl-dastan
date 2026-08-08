@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-08T22:03:19.183183+00:00",
+  "model_version": "dastan",
+  "public_version": "1.1.0",
+  "production_source": {
+    "repository": "qazybekb/smartplayfplv2",
+    "commit": "081566ac76af582588e1a9f01d125e90dff90b9b",
+    "artifact_directory": "python/ml/model/artifacts/dastan_production",
+    "equivalence": "all 38 runtime files are byte-for-byte copies of the production artifact contract at this commit"
+  },
+  "mapping_release": {
+    "release_id": "mapping-2026-08-08-39670a709787",
+    "canonical_sha256": "39670a7097874b787b327661f7fbf818d508510399e28612dde785d8b7b2dc93"
+  },
+  "contract": {
+    "files": 40,
+    "runtime_files": 38,
+    "features": 286,
+    "target_season": "2026-27"
+  },
+  "files": {
+    "blend.json": {
+      "bytes": 302,
+      "sha256": "181e5a22cace43a222ea90486483c9cc594406b677189aea18c02c180ad275a0",
+      "role": "runtime"
+    },
+    "bucket_DEF.json": {
+      "bytes": 5811036,
+      "sha256": "5502709fce2990e3c43d9f7ca7b34ad494301d491310f8472fd9e0c787764491",
+      "role": "runtime"
+    },
+    "bucket_FWD.json": {
+      "bytes": 1059536,
+      "sha256": "101f96cbd5e5d8a09df4a352b65640a7882c0b4e40d3084f3eae6d2845f020ad",
+      "role": "runtime"
+    },
+    "bucket_GKP.json": {
+      "bytes": 2019573,
+      "sha256": "3898195ed65dfbdbf9d52c5572f5c7d61ce099437ec62c00f31308477c6304b4",
+      "role": "runtime"
+    },
+    "bucket_MID.json": {
+      "bytes": 5971811,
+      "sha256": "4e7f86d9f060a30f96d79fb53eb345d3b34d84ebc6ade7e7c44beeed515bf469",
+      "role": "runtime"
+    },
+    "bucket_calibration.json": {
+      "bytes": 375,
+      "sha256": "b76c471fec4e5457ddf863092e3e9343da0aaa7c57f895037880c4f13358be30",
+      "role": "runtime"
+    },
+    "bucketreg_DEF_0.json": {
+      "bytes": 914072,
+      "sha256": "1f186b3185a2449e987f339ca8066869c5a4ccf4abaf63a430edd771b8cb640f",
+      "role": "runtime"
+    },
+    "bucketreg_DEF_1.json": {
+      "bytes": 483538,
+      "sha256": "8cc1df82416e6f4e860e1d037aa3223de84345c4c2ed3db31bd0c0f9edf57b57",
+      "role": "runtime"
+    },
+    "bucketreg_DEF_2.json": {
+      "bytes": 767492,
+      "sha256": "c0f7a6300b8a692a9c5dc30560d455d2a3dbf5e7b8276d19bcdfbe5712994f4d",
+      "role": "runtime"
+    },
+    "bucketreg_DEF_3.json": {
+      "bytes": 500036,
+      "sha256": "df9d8cd267c54b866f46ca63d82eeb47f76a455360ada4e0260a2a410c73f993",
+      "role": "runtime"
+    },
+    "bucketreg_FWD_0.json": {
+      "bytes": 261768,
+      "sha256": "1e2238a66f444fb0ecf4eff1491c3c996761a2a0ac5e35910a63ff007dfbb5cc",
+      "role": "runtime"
+    },
+    "bucketreg_FWD_1.json": {
+      "bytes": 294110,
+      "sha256": "996b0740da41e95b4d9c9195db7307a69074a057aa60c42259fdaf6f5497d7a3",
+      "role": "runtime"
+    },
+    "bucketreg_FWD_2.json": {
+      "bytes": 498388,
+      "sha256": "25fe8848613269d937e76a39f5ae3ddd9d5b42a99d371fa78a3293e49fad9327",
+      "role": "runtime"
+    },
+    "bucketreg_FWD_3.json": {
+      "bytes": 344068,
+      "sha256": "28b53dd971303bf7e026142a1adfe61c922dcb2bf6bd81aa11de1c23bd967d0f",
+      "role": "runtime"
+    },
+    "bucketreg_GKP_0.json": {
+      "bytes": 125329,
+      "sha256": "2fbf8e46c7f618659fb7bc0912e873407ab9eb556ea24bab97c50bcdcf80826a",
+      "role": "runtime"
+    },
+    "bucketreg_GKP_1.json": {
+      "bytes": 323638,
+      "sha256": "59dfb77d678d1a13f296f7a4276bd11618d816497bb80c6e7f278ba675344652",
+      "role": "runtime"
+    },
+    "bucketreg_GKP_2.json": {
+      "bytes": 472817,
+      "sha256": "cffdda48b7ad83e5994636b0e97c9b63a0b81f259393d2eaff08dfaac4baa943",
+      "role": "runtime"
+    },
+    "bucketreg_GKP_3.json": {
+      "bytes": 561542,
+      "sha256": "b47f879362665fa054e2fc813dd6c7eb2bdf73cd0cce6e2b0fd984448c772a10",
+      "role": "runtime"
+    },
+    "bucketreg_MID_0.json": {
+      "bytes": 167761,
+      "sha256": "0fe1d17530c3325042c756d4215df94ff5b3511ec9cb746f82f457ceb38b140c",
+      "role": "runtime"
+    },
+    "bucketreg_MID_1.json": {
+      "bytes": 535727,
+      "sha256": "e7c4b24b393f08d5df1ed8ab26879cb4960019207111317d44f9c96a0663f968",
+      "role": "runtime"
+    },
+    "bucketreg_MID_2.json": {
+      "bytes": 499964,
+      "sha256": "a090b3c206da319de1b4d63fd23965729b75ee788583286acfa0e094f9c8eb84",
+      "role": "runtime"
+    },
+    "bucketreg_MID_3.json": {
+      "bytes": 707389,
+      "sha256": "ee51b4e0001b2d51e2c8ad97d88a8bd6d7e11f04cc34d3f80e96f71c3c9d2d24",
+      "role": "runtime"
+    },
+    "core_feature_cols.json": {
+      "bytes": 5929,
+      "sha256": "88764ffd5743b2e8d664841ee8a3279b2d0af2517eead4b2fc77877c6d734d2c",
+      "role": "public_retraining"
+    },
+    "direct_DEF.json": {
+      "bytes": 953060,
+      "sha256": "d5925758a5974a800d18626624868b7f25db583b5d432563f4bf2aa0728519fb",
+      "role": "runtime"
+    },
+    "direct_FWD.json": {
+      "bytes": 704504,
+      "sha256": "d9f54d5866083277da18352e5e55de706a85d99c63e9eaa18aad59faf7bc4450",
+      "role": "runtime"
+    },
+    "direct_GKP.json": {
+      "bytes": 700250,
+      "sha256": "68c16b5e8565799eb9d50189bf4231f495e03a9ab9c05269241f6d8bb2c8e962",
+      "role": "runtime"
+    },
+    "direct_MID.json": {
+      "bytes": 1281741,
+      "sha256": "5b7f8ab0cf1dc5ca4afb25765a849369b5102f0ce8fe868be424b1eb3665c24b",
+      "role": "runtime"
+    },
+    "feature_cols.json": {
+      "bytes": 6720,
+      "sha256": "021447c478a6909f68457e9ce6c695e94328548d40f0604d3970f15ee4acce52",
+      "role": "runtime"
+    },
+    "hyperparameters.json": {
+      "bytes": 670,
+      "sha256": "292acdc35444dedabe747d2e4ef6fdddbb8dc9c4b87ee6e17f268b3521556afc",
+      "role": "public_retraining"
+    },
+    "minutes_calibration.json": {
+      "bytes": 3385,
+      "sha256": "93410cb80f99a5bac10778c1f58d576b09a04979467ebffe9cd458d79c3eafa2",
+      "role": "runtime"
+    },
+    "non60_DEF.json": {
+      "bytes": 572716,
+      "sha256": "1914a6524fe69867d0c072bff80171b9746567e940ad028cfc44bc957efc4b0f",
+      "role": "runtime"
+    },
+    "non60_FWD.json": {
+      "bytes": 547666,
+      "sha256": "ca33cd26261216e09c6108738c2b257f4b888163bf7f748552cddf25ac80d2c5",
+      "role": "runtime"
+    },
+    "non60_GKP.json": {
+      "bytes": 132882,
+      "sha256": "05a66c3ced50a18f4614b2c40b95568d772cb063cd42a6f0323fdd41e408534a",
+      "role": "runtime"
+    },
+    "non60_MID.json": {
+      "bytes": 908522,
+      "sha256": "4339d7c133011547c32e83b25139ec11d47d54c9535d2a4a2d6b2d00f5bbd3ef",
+      "role": "runtime"
+    },
+    "p60_DEF.json": {
+      "bytes": 2959939,
+      "sha256": "1ac1276c61ef364c8b7a3983ad5e71412ab665444a3bdd91c3c684cd92c4097c",
+      "role": "runtime"
+    },
+    "p60_FWD.json": {
+      "bytes": 1684096,
+      "sha256": "25bb3816ad6f053260d3c18bc787d3405523a2326fc1c3de0abf696109e5002f",
+      "role": "runtime"
+    },
+    "p60_GKP.json": {
+      "bytes": 2259868,
+      "sha256": "50a6edbb5c58366b60d6dcea011f374fff092576f66583cc6321b1318d998ac2",
+      "role": "runtime"
+    },
+    "p60_MID.json": {
+      "bytes": 3453400,
+      "sha256": "b799865eaabbebf592d13db41e2a0696fe780f6ec715d7c33a5db7c6852820b5",
+      "role": "runtime"
+    },
+    "train_metadata.json": {
+      "bytes": 3466,
+      "sha256": "e6302a2cd160b452d7f91a15423212ae749c7c59193a3cb7f445af79dd07b389",
+      "role": "runtime"
+    },
+    "tuned_params.json": {
+      "bytes": 1995,
+      "sha256": "32e77af561caffa0673d7a043660a041d93024934352359929a4fc4f0969a4c1",
+      "role": "runtime"
+    }
+  }
+}

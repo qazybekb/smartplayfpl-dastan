@@ -34,6 +34,7 @@
   "fitted_here": [
     "heads",
     "bucket_calibration",
+    "minutes_calibration",
     "blend_weights"
   ],
   "evidence": {
@@ -86,5 +87,12 @@
       "blend_weight": 0.5,
       "p60_best_iteration": 439
     }
-  }
+  },
+  "scenario": {
+    "base_model": "dastan_production"
+  },
+  "model_version": "dastan",
+  "target_season": "2026-27",
+  "public_name": "Dastan",
+  "public_repo": "https://github.com/qazybekb/smartplayfpl-dastan"
 }
