@@ -1,17 +1,21 @@
 # Data
 
-Everything needed to retrain Dastan is in this repository. No API keys, no scraping, no
-database.
+Everything needed to retrain Dastan is in this repository. No API keys or database are
+required. Optional public-source reconstruction code is documented in
+[`REBUILDING_DATA.md`](REBUILDING_DATA.md).
 
 | file | rows | size |
 |---|---|---|
 | `data/features.parquet` | 163,072 | 37 MB |
-| `data/pre_deadline_ep_next.parquet` | 137,610 | 362 KB |
+| `data/pre_deadline_ep_next.parquet` | 142,173 | 362 KB |
 | `data/pre_deadline_signals.parquet` | 137,982 | 438 KB |
 | `data/openfpl_predictions.csv` | 18,173 | 1.3 MB |
 | `data/openfpl_row_keys.csv` | 18,173 | 444 KB |
 | `data/players.csv` | 4,717 | 130 KB |
+| `data/mappings/fpl_understat_training_snapshot.csv` | 1,564 | 84 KB |
+| `data/mappings/fpl_understat_training_assignments.csv` | 4,199 | 115 KB |
 | `data/mappings/fpl_understat_players.csv` | 1,564 | 84 KB |
+| `data/mappings/fpl_understat_current.csv` | 573 | 54 KB |
 
 ---
 
@@ -51,17 +55,23 @@ lookup would not be. Use `team_name` from the frame.
 
 ### FPL to Understat identities
 
-`data/mappings/fpl_understat_players.csv` publishes the exact `fpl_code` to
-`understat_id` joins used by the training frame. It covers 1,564 players, representing
-90.8% of player-fixture rows. Load it with `dastan.mappings.load()` or verify that it
-still matches the frame with `python -m dastan.mappings`. The ID is a join key, not a
-model feature.
+`data/mappings/fpl_understat_training_snapshot.csv` publishes the exact 1,564-player
+identity snapshot present in the release. It intentionally retains two identities later
+confirmed to be wrong. `fpl_understat_training_assignments.csv` records the precise
+season/gameweek intervals in which those IDs were attached to rows; use both artifacts
+for release reconstruction.
 
-This is a snapshot of the model's historical joins, not a claim that every identity is
-globally one-to-one. Three Understat IDs are associated with multiple historical FPL
-codes; all six affected rows are flagged `shared_understat_id`. See
-[`data/mappings/README.md`](../data/mappings/README.md) before reverse-joining from
-Understat to FPL.
+`data/mappings/fpl_understat_players.csv` applies the evidence-backed audit and is the
+map recommended for new joins. Load it with `dastan.mappings.load()`. Use
+`load_training()` and `load_training_assignments()` only when reproducing the historical
+release. The 2026-27 roster map covers 517 of 573 players and keeps 56 unresolved rather
+than guessing by name.
+
+The exact snapshot contains three Understat IDs associated with six FPL-code rows. Two
+shared IDs are the audited mistakes; the remaining pair is two FPL spellings of Kaine
+Kesler-Hayden. See [`data/mappings/README.md`](../data/mappings/README.md) for the audit,
+confidence levels, current-roster provenance, and reverse-join rules. `understat_id` is
+an identity key, not a model feature.
 
 ### Deadline anchoring
 
@@ -107,7 +117,7 @@ Resulting capture ages:
 
 | artefact | rows | median age before deadline | max | after deadline |
 |---|---|---|---|---|
-| `pre_deadline_ep_next` | 137,610 | 4.4 h | — | **0** |
+| `pre_deadline_ep_next` | 142,173 | 4.4 h | — | **0** |
 | `pre_deadline_signals` | 137,982 | 4.3 h | 6.2 h | **0** |
 
 ### `pre_deadline_ep_next.parquet`
@@ -119,8 +129,8 @@ Coverage is 2020-21 partially and ~99.4% for later seasons.
 
 ### `pre_deadline_signals.parquet`
 
-Eight fields from the same snapshots. Seasons 2021-22 onward (the archive does not reach
-2020-21).
+Eight fields from the same snapshots. The published artifact starts in 2021-22; the six
+2020-21 gameweeks available in the archive are deliberately excluded from this release.
 
 | column | meaning | informative on |
 |---|---|---|
@@ -168,21 +178,25 @@ the unchecked version scores an NDCG@10 of 0.4062 against the checked version's 
 
 ## 4. Rebuilding
 
-The builders that produced the pre-deadline artefacts are not in this repo, because they
-depend on a local mirror of the fplcache archive. The logic is short and fully described
-by §2 above — the acceptance test is the entire algorithm.
+The raw-source builders are included under `dastan/rebuild`. A full reconstruction uses
+pinned Vaastav and fplcache commits plus cached Understat fallbacks for incomplete
+histories:
 
-To extend to a new season:
+```bash
+python -m pip install -r requirements-data.txt
+python -m dastan.datasets verify
+python -m dastan.datasets all
+python -m dastan.datasets compare .cache/rebuilt-data
+```
 
-1. Pull the fplcache snapshots for that season.
-2. For each gameweek, find snapshots naming it `is_next`, agreeing on the deadline, and
-   predating it. Take the latest such snapshot.
-3. Extract the fields in §2, keyed by `(season, gameweek, fpl_code)`.
-4. Assert that no accepted snapshot is post-deadline. **Do not relax this.** If a season
-   resolves few gameweeks, drop those columns for that season rather than weakening the
-   test.
-5. After extending `features.parquet`, regenerate the identity snapshot with
-   `python -m dastan.mappings --write` and review every `shared_understat_id` row.
+`verify` is the exact offline release check. `all` reconstructs a candidate without
+overwriting `data/`. Understat can apply corrections after the release, so the comparison
+reports key/schema agreement, numeric drift, semantic equality, and byte equality
+separately. Source and output manifests contain SHA-256 hashes for every run.
+
+Commands, source pins, the 304-column pipeline, cache behavior, measured smoke-test
+counts, and exactness boundaries are in
+[`REBUILDING_DATA.md`](REBUILDING_DATA.md).
 
 ---
 
@@ -192,7 +206,9 @@ To extend to a new season:
 |---|---|
 | this repository (code, weights, derived data) | MIT |
 | OpenFPL feature engineering | MIT |
+| Vaastav FPL archive code/repository | MIT |
 | fplcache snapshot archive | Unlicense (public domain) |
+| understatAPI client | MIT |
 | FPL and Understat source data | see their respective terms |
 
 Not affiliated with the Premier League or Fantasy Premier League. The derived data here

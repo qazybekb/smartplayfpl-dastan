@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-08T19:38:54.487968+00:00",
+  "files": {
+    "features.parquet": {
+      "bytes": 38697486,
+      "sha256": "dcf8411d458e7b99b15472975280cf855e15de22070022fad6fce0f76f3f299c",
+      "rows": 163072,
+      "columns": 304
+    },
+    "pre_deadline_ep_next.parquet": {
+      "bytes": 371135,
+      "sha256": "f0087b83c279ab9655751b78f2a2fbac492d41e434346ba447e145cf1917fb4b",
+      "rows": 142173,
+      "columns": 10
+    },
+    "pre_deadline_signals.parquet": {
+      "bytes": 448316,
+      "sha256": "1a0b4f4565f6097f6efb0c03a6e351742d88cd71671c5d900adcd28bc7436a54",
+      "rows": 137982,
+      "columns": 16
+    },
+    "openfpl_predictions.csv": {
+      "bytes": 1414457,
+      "sha256": "8113cb86392d98000e84ae0b383c7871cf35bf74a08cd3042cb5c8d81eab3849",
+      "rows": 18173,
+      "columns": 11
+    },
+    "openfpl_row_keys.csv": {
+      "bytes": 454341,
+      "sha256": "8d11c37a7f7134a93324fdac979d38c3136f8831d3f627dbed8a4eabc5b8b492",
+      "rows": 18173,
+      "columns": 5
+    },
+    "players.csv": {
+      "bytes": 181778,
+      "sha256": "05272b638312ba0202be56ee436ba756ac2625a70300eed032cf30d5f3e71a97",
+      "rows": 4717,
+      "columns": 5
+    },
+    "mappings/fpl_understat_training_snapshot.csv": {
+      "bytes": 86087,
+      "sha256": "e4f31547c76c5470ce1223adc476cc1f9fc2a9a97114c656f3fbe447f8d894d6",
+      "rows": 1564,
+      "columns": 7
+    },
+    "mappings/fpl_understat_training_assignments.csv": {
+      "bytes": 117844,
+      "sha256": "3d8e22693569f1eb1cd72d49cb827b01b6d2fdb778e5b63c4a155e291f1da948",
+      "rows": 4199,
+      "columns": 6
+    },
+    "mappings/fpl_understat_players.csv": {
+      "bytes": 86036,
+      "sha256": "04d6f38c0b722960036db02a77625acdf08e3022c687709bd615c41ef61a8e7f",
+      "rows": 1564,
+      "columns": 7
+    },
+    "mappings/fpl_understat_identity_audit.csv": {
+      "bytes": 853,
+      "sha256": "1bb194d923817b58adf5f00f725d9bbec910d9d01d4050cf580bdcc03ce575f6",
+      "rows": 3,
+      "columns": 10
+    },
+    "mappings/fpl_players_current.csv": {
+      "bytes": 23435,
+      "sha256": "c1cd3d0147f491c57ece990e6eaeff5c420146b333f8d1ac16f704901d24b553",
+      "rows": 573,
+      "columns": 6
+    },
+    "mappings/fpl_understat_current_supplements.csv": {
+      "bytes": 3882,
+      "sha256": "243c630da875991b436825ccc022b3c983afbf8d05ce0cede5755f911ab5e54b",
+      "rows": 29,
+      "columns": 6
+    },
+    "mappings/fpl_understat_current.csv": {
+      "bytes": 54474,
+      "sha256": "a2d1b780c278b4cb88cc31b3867c268af1c1c08e46fef73d09ee25d8c7f7433c",
+      "rows": 573,
+      "columns": 11
+    },
+    "mappings/fpl_understat_current.json": {
+      "bytes": 370,
+      "sha256": "0cf0047ba4d78743abc0a97304986b1119bfd14546f7e5b0ea0e2777d9af3d93"
+    }
+  },
+  "note": "Checksums describe the immutable release. Raw-source rebuilds may differ after upstream statistical corrections; retain downloads.json for an exact record of a reconstruction run."
+}

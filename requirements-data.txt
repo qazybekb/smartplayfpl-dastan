@@ -1,0 +1,4 @@
+# Optional dependencies for rebuilding data from provider-level sources.
+# The released model and checked-in datasets do not need these packages.
+-r requirements.txt
+understatapi==0.7.1

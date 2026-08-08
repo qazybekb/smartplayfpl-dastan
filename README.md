@@ -223,11 +223,13 @@ position — never loaded from elsewhere, which would be model-selection leakage
 | file | rows | what |
 |---|---|---|
 | `data/features.parquet` | 163,072 | the training frame, six seasons, deadline-anchored |
-| `data/pre_deadline_ep_next.parquet` | 137,610 | FPL's own projection, provenance-checked |
+| `data/pre_deadline_ep_next.parquet` | 142,173 | FPL's own projection, provenance-checked |
 | `data/pre_deadline_signals.parquet` | 137,982 | status, chance of playing, set-piece order, age |
 | `data/openfpl_predictions.csv` | 18,173 | OpenFPL's predictions, for the head-to-head |
 | `data/players.csv` | 4,717 | `fpl_code` → name and position, per season |
-| `data/mappings/fpl_understat_players.csv` | 1,564 | exact FPL → Understat IDs used by the frame |
+| `data/mappings/fpl_understat_training_snapshot.csv` | 1,564 | exact historical IDs present in the release |
+| `data/mappings/fpl_understat_players.csv` | 1,564 | audited historical IDs recommended for new joins |
+| `data/mappings/fpl_understat_current.csv` | 573 | complete 2026-27 roster; 517 mapped, 56 unresolved |
 
 Sources and the provenance rules: [docs/DATA.md](docs/DATA.md).
 
@@ -246,6 +248,7 @@ different events are the same.
 
 ```bash
 python -m dastan.verify                # reload and score the published weights
+python -m dastan.datasets verify       # verify release data hashes and invariants
 python -m dastan.mappings              # verify the published FPL-to-Understat mapping
 python -m dastan.reproduce             # retrain and require equivalent holdout quality
 python -m dastan.reproduce --strict    # require identical artefacts on the release platform
@@ -257,10 +260,20 @@ python -m dastan.benchmark_openfpl     # head-to-head on identical rows
 `models/` contains 38 published files: 35 are required for inference; the remaining
 three record training hyperparameters, the core feature manifest, and release metadata.
 
-Reproduction starts from the published, deadline-anchored feature frame. It does not
-rebuild that frame from the providers' raw archives. Extending the data to a new season
-requires reconstructing the provenance-checked inputs described in
-[`docs/DATA.md`](docs/DATA.md#4-rebuilding).
+Model reproduction starts from the published, deadline-anchored feature frame. The
+optional public-source reconstruction is separate so provider corrections cannot
+silently overwrite the release:
+
+```bash
+python -m pip install -r requirements-data.txt
+python -m dastan.datasets all
+python -m dastan.datasets compare .cache/rebuilt-data
+```
+
+The raw cache and candidate outputs are gitignored. Each run records source and output
+SHA-256 manifests. See [`docs/REBUILDING_DATA.md`](docs/REBUILDING_DATA.md) for source
+pins, measured reconstruction coverage, and the boundary between exact release bytes
+and mutable Understat data.
 
 The default reproduction threshold is the documented 0.0106 single-seed objective
 noise for both evaluation cohorts. Exact model bytes and prediction deltas are always

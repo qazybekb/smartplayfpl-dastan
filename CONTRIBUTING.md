@@ -13,6 +13,7 @@ python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m dastan.verify
+python -m dastan.datasets verify
 python -m dastan.reproduce
 ```
 
@@ -49,8 +50,9 @@ and why it should remain rejected.
 
 ## New data
 
-The repository contains the complete derived training frame, not the full raw-data
-builder. New or updated data must document its source, join keys, capture time, deadline
+The repository contains both the immutable derived frame and the optional public-source
+builder. Read [`docs/REBUILDING_DATA.md`](docs/REBUILDING_DATA.md) before changing it.
+New or updated data must document its source, join keys, capture time, deadline
 acceptance rule, coverage, missing-value policy, and licence. Never admit information
 captured after the FPL deadline for the gameweek being predicted.
 
@@ -64,6 +66,8 @@ Include:
 4. Runtime or model-size changes.
 5. Any provenance or licensing implications.
 
-Run `python -m dastan.verify` before opening the pull request. Changes to training code,
-dependencies, features, or released weights must also pass `python -m dastan.reproduce`.
-Changes to FPL/Understat identities must pass `python -m dastan.mappings`.
+Run `python -m dastan.verify`, `python -m dastan.datasets verify`, and
+`python -m unittest discover -v` before opening the pull request. Changes to training
+code, dependencies, features, or released weights must also pass
+`python -m dastan.reproduce`. Changes to FPL/Understat identities must pass
+`python -m dastan.mappings`.

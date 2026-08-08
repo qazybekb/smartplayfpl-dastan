@@ -1,17 +1,27 @@
 #!/usr/bin/env python3
-"""Build or verify the published FPL-code-to-Understat-ID mapping.
+"""Build and verify Dastan's FPL-to-Understat identity artifacts.
 
-    python -m dastan.mappings
-    python -m dastan.mappings --write
+There are deliberately two historical mappings:
 
-The mapping is a projection of the joins already present in the published training
-frame. It therefore records exactly which identities Dastan used; it is not a live
-identity service or an independently re-matched third-party dataset.
+``training``
+    The immutable IDs present in the released feature frame. Use this to reproduce
+    the released model exactly, including two historical identity mistakes.
+
+``corrected``
+    The same population after applying the checked-in, evidence-backed identity
+    audit. Use this when joining new data.
+
+The current-season map is built separately from a captured FPL roster. It retains
+unresolved players instead of guessing an Understat ID.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
+import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -19,7 +29,18 @@ import pandas as pd
 from .data import DATA, FRAME, SEASONS
 
 PLAYERS = DATA / "players.csv"
-MAPPING = DATA / "mappings" / "fpl_understat_players.csv"
+MAPPINGS = DATA / "mappings"
+TRAINING_MAPPING = MAPPINGS / "fpl_understat_training_snapshot.csv"
+TRAINING_ASSIGNMENTS = MAPPINGS / "fpl_understat_training_assignments.csv"
+CORRECTED_MAPPING = MAPPINGS / "fpl_understat_players.csv"
+IDENTITY_AUDIT = MAPPINGS / "fpl_understat_identity_audit.csv"
+CURRENT_ROSTER = MAPPINGS / "fpl_players_current.csv"
+CURRENT_SUPPLEMENTS = MAPPINGS / "fpl_understat_current_supplements.csv"
+CURRENT_MAPPING = MAPPINGS / "fpl_understat_current.csv"
+CURRENT_META = MAPPINGS / "fpl_understat_current.json"
+
+FPL_BOOTSTRAP_URL = "https://fantasy.premierleague.com/api/bootstrap-static/"
+
 MAPPING_COLUMNS = [
     "fpl_code",
     "understat_id",
@@ -29,10 +50,61 @@ MAPPING_COLUMNS = [
     "last_season",
     "mapping_status",
 ]
+ASSIGNMENT_COLUMNS = [
+    "season",
+    "fpl_code",
+    "understat_id",
+    "first_gameweek",
+    "last_gameweek",
+    "mapped_rows",
+]
+AUDIT_COLUMNS = [
+    "fpl_code",
+    "release_understat_id",
+    "decision_understat_id",
+    "decision",
+    "verified_at",
+    "release_identity",
+    "decision_identity",
+    "release_evidence_url",
+    "decision_evidence_url",
+    "note",
+]
+ROSTER_COLUMNS = [
+    "season",
+    "fpl_code",
+    "element",
+    "player_name",
+    "position",
+    "team_name",
+]
+SUPPLEMENT_COLUMNS = [
+    "fpl_code",
+    "understat_id",
+    "understat_player_name",
+    "confidence",
+    "source",
+    "note",
+]
+CURRENT_COLUMNS = ROSTER_COLUMNS + [
+    "understat_id",
+    "understat_player_name",
+    "mapping_status",
+    "confidence",
+    "source",
+]
 
 
-def build() -> pd.DataFrame:
-    """Derive one row per mapped FPL code from the published training data."""
+def _shared_status(frame: pd.DataFrame) -> pd.Series:
+    return (
+        frame["understat_id"]
+        .duplicated(keep=False)
+        .map({False: "mapped", True: "shared_understat_id"})
+    )
+
+
+def build_training() -> pd.DataFrame:
+    """Derive the exact release mapping from the published training frame."""
     frame = pd.read_parquet(FRAME, columns=["fpl_code", "understat_id"])
     pairs = frame.dropna(subset=["understat_id"])[["fpl_code", "understat_id"]].copy()
     pairs["fpl_code"] = pairs["fpl_code"].astype("int64")
@@ -53,7 +125,9 @@ def build() -> pd.DataFrame:
     unknown_seasons = sorted(set(players["season"]) - set(SEASONS))
     if unknown_seasons:
         raise RuntimeError(f"players.csv contains unknown seasons: {unknown_seasons}")
-    players["season_order"] = players["season"].map({s: i for i, s in enumerate(SEASONS)})
+    players["season_order"] = players["season"].map(
+        {s: i for i, s in enumerate(SEASONS)}
+    )
     players = players.sort_values(["fpl_code", "season_order"], kind="mergesort")
     identity = players.groupby("fpl_code", as_index=False).agg(
         player_name=("player_name", "last"),
@@ -67,70 +141,472 @@ def build() -> pd.DataFrame:
         missing = out.loc[out["player_name"].isna(), "fpl_code"].tolist()
         raise RuntimeError(f"players.csv is missing mapped FPL codes: {missing[:5]}")
 
-    shared = out["understat_id"].duplicated(keep=False)
-    out["mapping_status"] = "mapped"
-    out.loc[shared, "mapping_status"] = "shared_understat_id"
-    return out[MAPPING_COLUMNS].sort_values("fpl_code", kind="mergesort").reset_index(drop=True)
+    out["mapping_status"] = _shared_status(out)
+    return (
+        out[MAPPING_COLUMNS]
+        .sort_values("fpl_code", kind="mergesort")
+        .reset_index(drop=True)
+    )
 
 
-def load(path: Path = MAPPING) -> pd.DataFrame:
-    """Load the published mapping and enforce its public schema."""
+def build_training_assignments() -> pd.DataFrame:
+    """Derive the exact season/gameweek intervals used by the release frame."""
+    frame = pd.read_parquet(
+        FRAME, columns=["season", "gameweek", "fpl_code", "understat_id"]
+    )
+    mapped = frame.dropna(subset=["understat_id"]).copy()
+    for column in ("gameweek", "fpl_code", "understat_id"):
+        mapped[column] = pd.to_numeric(mapped[column], errors="raise").astype("int64")
+    out = mapped.groupby(["season", "fpl_code", "understat_id"], as_index=False).agg(
+        first_gameweek=("gameweek", "min"),
+        last_gameweek=("gameweek", "max"),
+        mapped_rows=("gameweek", "size"),
+    )
+    if out.duplicated(["season", "fpl_code"]).any():
+        raise RuntimeError("release assignments contain multiple IDs per player-season")
+
+    expected = frame.merge(
+        out,
+        on=["season", "fpl_code"],
+        how="left",
+        suffixes=("_release", "_assignment"),
+        validate="many_to_one",
+    )
+    active = expected["gameweek"].between(
+        expected["first_gameweek"], expected["last_gameweek"]
+    )
+    assigned = expected["understat_id_assignment"].where(active)
+    release = expected["understat_id_release"]
+    same = (release.isna() & assigned.isna()) | release.eq(assigned)
+    if not same.all():
+        raise RuntimeError(
+            "release identity presence is not a single interval per player-season"
+        )
+    return (
+        out[ASSIGNMENT_COLUMNS]
+        .sort_values(["season", "fpl_code"], kind="mergesort")
+        .reset_index(drop=True)
+    )
+
+
+def load_mapping(path: Path) -> pd.DataFrame:
+    """Load a complete historical map and enforce its public schema."""
     out = pd.read_csv(path)
     if list(out.columns) != MAPPING_COLUMNS:
         raise RuntimeError(
-            f"unexpected mapping columns: expected {MAPPING_COLUMNS}, got {list(out.columns)}"
+            f"unexpected columns in {path.name}: expected {MAPPING_COLUMNS}, got {list(out.columns)}"
         )
     if out["fpl_code"].duplicated().any():
-        raise RuntimeError("published mapping contains duplicate fpl_code values")
+        raise RuntimeError(f"{path.name} contains duplicate fpl_code values")
     if out[MAPPING_COLUMNS].isna().any().any():
-        raise RuntimeError("published mapping contains missing values")
+        raise RuntimeError(f"{path.name} contains missing values")
     for column in ("fpl_code", "understat_id"):
         out[column] = pd.to_numeric(out[column], errors="raise").astype("int64")
     if (out[["fpl_code", "understat_id"]] <= 0).any().any():
-        raise RuntimeError("published mapping contains non-positive provider IDs")
-    expected_status = out["understat_id"].duplicated(keep=False).map(
-        {False: "mapped", True: "shared_understat_id"}
-    )
-    if not out["mapping_status"].equals(expected_status):
-        raise RuntimeError("published mapping has inconsistent mapping_status values")
+        raise RuntimeError(f"{path.name} contains non-positive provider IDs")
+    if not out["mapping_status"].equals(_shared_status(out)):
+        raise RuntimeError(f"{path.name} has inconsistent mapping_status values")
     return out
 
 
-def verify(path: Path = MAPPING) -> pd.DataFrame:
-    """Assert that the checked-in CSV exactly matches the published frame."""
-    expected = build()
-    published = load(path)
+def load_training(path: Path = TRAINING_MAPPING) -> pd.DataFrame:
+    """Load the immutable mapping used by the released feature frame."""
+    return load_mapping(path)
+
+
+def load_training_assignments(
+    path: Path = TRAINING_ASSIGNMENTS,
+) -> pd.DataFrame:
+    """Load the immutable season/gameweek mapping intervals used by the release."""
+    out = pd.read_csv(path)
+    if list(out.columns) != ASSIGNMENT_COLUMNS:
+        raise RuntimeError(
+            f"unexpected training-assignment columns: {list(out.columns)}"
+        )
+    if out[ASSIGNMENT_COLUMNS].isna().any().any():
+        raise RuntimeError("training assignments contain missing values")
+    for column in ASSIGNMENT_COLUMNS[1:]:
+        out[column] = pd.to_numeric(out[column], errors="raise").astype("int64")
+    if out.duplicated(["season", "fpl_code"]).any():
+        raise RuntimeError("training assignments contain duplicate player-seasons")
+    if (
+        (out[["fpl_code", "understat_id", "first_gameweek", "mapped_rows"]] <= 0)
+        .any()
+        .any()
+    ):
+        raise RuntimeError("training assignments contain non-positive values")
+    if out["first_gameweek"].gt(out["last_gameweek"]).any():
+        raise RuntimeError("training assignments contain reversed intervals")
+    return out
+
+
+def load(path: Path = CORRECTED_MAPPING) -> pd.DataFrame:
+    """Load the corrected historical mapping recommended for new joins."""
+    return load_mapping(path)
+
+
+def load_audit(path: Path = IDENTITY_AUDIT) -> pd.DataFrame:
+    out = pd.read_csv(path, keep_default_na=False)
+    if list(out.columns) != AUDIT_COLUMNS:
+        raise RuntimeError(f"unexpected identity-audit columns: {list(out.columns)}")
+    if out["fpl_code"].duplicated().any():
+        raise RuntimeError("identity audit contains duplicate fpl_code values")
+    if out[AUDIT_COLUMNS].eq("").any().any():
+        raise RuntimeError("identity audit contains blank values")
+    for column in ("fpl_code", "release_understat_id", "decision_understat_id"):
+        out[column] = pd.to_numeric(out[column], errors="raise").astype("int64")
+    allowed = {"keep", "replace"}
+    if not set(out["decision"]).issubset(allowed):
+        raise RuntimeError(f"identity audit decision must be one of {sorted(allowed)}")
+    inconsistent = out[
+        (
+            out["decision"].eq("keep")
+            & out["release_understat_id"].ne(out["decision_understat_id"])
+        )
+        | (
+            out["decision"].eq("replace")
+            & out["release_understat_id"].eq(out["decision_understat_id"])
+        )
+    ]
+    if len(inconsistent):
+        raise RuntimeError("identity audit has inconsistent keep/replace decisions")
+    return out
+
+
+def build_corrected() -> pd.DataFrame:
+    """Apply the evidence-backed audit without changing the release snapshot."""
+    out = build_training()
+    audit = load_audit()
+    release = out.set_index("fpl_code")["understat_id"]
+    missing = sorted(set(audit["fpl_code"]) - set(release.index))
+    if missing:
+        raise RuntimeError(
+            f"identity audit references unknown release codes: {missing}"
+        )
+    mismatches = audit[
+        audit.apply(
+            lambda row: int(release.loc[int(row["fpl_code"])])
+            != int(row["release_understat_id"]),
+            axis=1,
+        )
+    ]
+    if len(mismatches):
+        raise RuntimeError("identity audit no longer matches the immutable release IDs")
+
+    decisions = audit.set_index("fpl_code")["decision_understat_id"]
+    mask = out["fpl_code"].isin(decisions.index)
+    out.loc[mask, "understat_id"] = (
+        out.loc[mask, "fpl_code"].map(decisions).astype("int64")
+    )
+    out["mapping_status"] = _shared_status(out)
+    return (
+        out[MAPPING_COLUMNS]
+        .sort_values("fpl_code", kind="mergesort")
+        .reset_index(drop=True)
+    )
+
+
+def _season_label(events: list[dict]) -> str:
+    deadlines = pd.to_datetime(
+        [event.get("deadline_time") for event in events if event.get("deadline_time")],
+        utc=True,
+    )
+    if deadlines.empty:
+        raise RuntimeError("FPL bootstrap has no event deadlines")
+    start = int(deadlines.min().year)
+    return f"{start}-{str(start + 1)[-2:]}"
+
+
+def roster_from_bootstrap(payload: dict) -> pd.DataFrame:
+    """Project a bootstrap response into the stable current-roster schema."""
+    season = _season_label(payload.get("events", []))
+    teams = {int(team["id"]): str(team["name"]) for team in payload.get("teams", [])}
+    positions = {1: "GKP", 2: "DEF", 3: "MID", 4: "FWD"}
+    rows = []
+    for player in payload.get("elements", []):
+        position = positions.get(int(player["element_type"]))
+        if position is None:
+            continue
+        rows.append(
+            {
+                "season": season,
+                "fpl_code": int(player["code"]),
+                "element": int(player["id"]),
+                "player_name": str(player["web_name"]),
+                "position": position,
+                "team_name": teams[int(player["team"])],
+            }
+        )
+    out = pd.DataFrame(rows, columns=ROSTER_COLUMNS)
+    if (
+        out.empty
+        or out["fpl_code"].duplicated().any()
+        or out["element"].duplicated().any()
+    ):
+        raise RuntimeError(
+            "FPL bootstrap did not produce a unique, non-empty player roster"
+        )
+    return out.sort_values("fpl_code", kind="mergesort").reset_index(drop=True)
+
+
+def load_roster(path: Path = CURRENT_ROSTER) -> pd.DataFrame:
+    out = pd.read_csv(path, keep_default_na=False)
+    if list(out.columns) != ROSTER_COLUMNS:
+        raise RuntimeError(f"unexpected current-roster columns: {list(out.columns)}")
+    if out[ROSTER_COLUMNS].eq("").any().any():
+        raise RuntimeError("current roster contains blank values")
+    for column in ("fpl_code", "element"):
+        out[column] = pd.to_numeric(out[column], errors="raise").astype("int64")
+    if out["fpl_code"].duplicated().any() or out["element"].duplicated().any():
+        raise RuntimeError("current roster contains duplicate provider IDs")
+    if out["season"].nunique() != 1:
+        raise RuntimeError("current roster must contain exactly one season")
+    return out
+
+
+def load_supplements(path: Path = CURRENT_SUPPLEMENTS) -> pd.DataFrame:
+    out = pd.read_csv(path, keep_default_na=False)
+    if list(out.columns) != SUPPLEMENT_COLUMNS:
+        raise RuntimeError(
+            f"unexpected current-supplement columns: {list(out.columns)}"
+        )
+    if out[SUPPLEMENT_COLUMNS].eq("").any().any():
+        raise RuntimeError("current supplements contain blank values")
+    for column in ("fpl_code", "understat_id"):
+        out[column] = pd.to_numeric(out[column], errors="raise").astype("int64")
+    if out["fpl_code"].duplicated().any():
+        raise RuntimeError("current supplements contain duplicate fpl_code values")
+    if (out[["fpl_code", "understat_id"]] <= 0).any().any():
+        raise RuntimeError("current supplements contain non-positive IDs")
+    return out
+
+
+def build_current() -> pd.DataFrame:
+    """Build a complete current roster, preserving unresolved identities."""
+    roster = load_roster()
+    historical = build_corrected()[["fpl_code", "understat_id"]]
+    audit = load_audit().set_index("fpl_code")
+    supplements = load_supplements()
+
+    out = roster.merge(historical, on="fpl_code", how="left", validate="one_to_one")
+    historical_codes = set(out.loc[out["understat_id"].notna(), "fpl_code"])
+    conflicts = sorted(historical_codes.intersection(supplements["fpl_code"]))
+    if conflicts:
+        raise RuntimeError(
+            f"current supplements overwrite historical mappings: {conflicts}"
+        )
+    unknown = sorted(set(supplements["fpl_code"]) - set(out["fpl_code"]))
+    if unknown:
+        raise RuntimeError(
+            f"current supplements reference players outside the roster: {unknown}"
+        )
+
+    supplemental = supplements.set_index("fpl_code")
+    missing = out["understat_id"].isna() & out["fpl_code"].isin(supplemental.index)
+    out.loc[missing, "understat_id"] = out.loc[missing, "fpl_code"].map(
+        supplemental["understat_id"]
+    )
+
+    out["understat_player_name"] = ""
+    out["mapping_status"] = "unmapped"
+    out["confidence"] = "NONE"
+    out["source"] = "unresolved"
+
+    mapped_history = out["fpl_code"].isin(historical_codes)
+    out.loc[mapped_history, "mapping_status"] = "mapped_history"
+    out.loc[mapped_history, "confidence"] = "HISTORICAL"
+    out.loc[mapped_history, "source"] = "dastan_training_history"
+
+    audited = out["fpl_code"].isin(audit.index)
+    out.loc[audited, "mapping_status"] = "mapped_verified"
+    out.loc[audited, "confidence"] = "HIGH"
+    out.loc[audited, "source"] = "manual_understat_page_audit"
+    out.loc[audited, "understat_player_name"] = out.loc[audited, "fpl_code"].map(
+        audit["decision_identity"]
+    )
+
+    out.loc[missing, "understat_player_name"] = out.loc[missing, "fpl_code"].map(
+        supplemental["understat_player_name"]
+    )
+    out.loc[missing, "mapping_status"] = "mapped_curated"
+    out.loc[missing, "confidence"] = out.loc[missing, "fpl_code"].map(
+        supplemental["confidence"]
+    )
+    out.loc[missing, "source"] = out.loc[missing, "fpl_code"].map(
+        supplemental["source"]
+    )
+
+    out["understat_id"] = pd.to_numeric(out["understat_id"], errors="coerce").astype(
+        "Int64"
+    )
+    mapped = out["understat_id"].notna()
+    duplicate_ids = out.loc[mapped, "understat_id"].duplicated(keep=False)
+    if duplicate_ids.any():
+        ids = sorted(
+            out.loc[mapped].loc[duplicate_ids, "understat_id"].astype(int).unique()
+        )
+        raise RuntimeError(f"current mapping has shared Understat IDs: {ids}")
+    return (
+        out[CURRENT_COLUMNS]
+        .sort_values("fpl_code", kind="mergesort")
+        .reset_index(drop=True)
+    )
+
+
+def load_current(path: Path = CURRENT_MAPPING) -> pd.DataFrame:
+    out = pd.read_csv(path, keep_default_na=False)
+    if list(out.columns) != CURRENT_COLUMNS:
+        raise RuntimeError(f"unexpected current-mapping columns: {list(out.columns)}")
+    required = [column for column in CURRENT_COLUMNS if column != "understat_id"]
+    if out[required].eq("").any().any():
+        # An Understat display name is optional for historical mappings, but every
+        # operational/status field must be explicit.
+        bad = out[required].drop(columns=["understat_player_name"]).eq("").any().any()
+        if bad:
+            raise RuntimeError("current mapping contains blank required values")
+    for column in ("fpl_code", "element"):
+        out[column] = pd.to_numeric(out[column], errors="raise").astype("int64")
+    out["understat_id"] = pd.to_numeric(out["understat_id"], errors="coerce").astype(
+        "Int64"
+    )
+    if out["fpl_code"].duplicated().any() or out["element"].duplicated().any():
+        raise RuntimeError("current mapping contains duplicate FPL IDs")
+    mapped = out["understat_id"].notna()
+    if out.loc[mapped, "understat_id"].duplicated().any():
+        raise RuntimeError("current mapping contains shared Understat IDs")
+    if not out.loc[~mapped, "mapping_status"].eq("unmapped").all():
+        raise RuntimeError("current mapping labels missing Understat IDs as mapped")
+    if out.loc[mapped, "mapping_status"].eq("unmapped").any():
+        raise RuntimeError("current mapping labels populated Understat IDs as unmapped")
+    return out
+
+
+def _assert_equal(published: pd.DataFrame, expected: pd.DataFrame, label: str) -> None:
     try:
         pd.testing.assert_frame_equal(published, expected, check_dtype=False)
     except AssertionError as exc:
         raise RuntimeError(
-            "published mapping differs from the training frame; "
-            "run `python -m dastan.mappings --write`"
+            f"{label} differs from its checked-in inputs; run --write"
         ) from exc
-    return published
+
+
+def verify() -> dict[str, pd.DataFrame]:
+    """Verify exact training, corrected historical, and current-season maps."""
+    training = load_training()
+    assignments = load_training_assignments()
+    corrected = load()
+    current = load_current()
+    _assert_equal(training, build_training(), "training mapping")
+    _assert_equal(assignments, build_training_assignments(), "training assignments")
+    _assert_equal(corrected, build_corrected(), "corrected mapping")
+    _assert_equal(current, build_current(), "current mapping")
+
+    meta = json.loads(CURRENT_META.read_text(encoding="utf-8"))
+    roster = load_roster()
+    if meta.get("season") != roster["season"].iat[0] or meta.get("players") != len(
+        roster
+    ):
+        raise RuntimeError(
+            "current mapping metadata does not match the roster snapshot"
+        )
+    return {
+        "training": training,
+        "assignments": assignments,
+        "corrected": corrected,
+        "current": current,
+    }
+
+
+def write_all() -> dict[str, pd.DataFrame]:
+    MAPPINGS.mkdir(parents=True, exist_ok=True)
+    frames = {
+        "training": build_training(),
+        "assignments": build_training_assignments(),
+        "corrected": build_corrected(),
+        "current": build_current(),
+    }
+    frames["training"].to_csv(TRAINING_MAPPING, index=False, lineterminator="\n")
+    frames["assignments"].to_csv(TRAINING_ASSIGNMENTS, index=False, lineterminator="\n")
+    frames["corrected"].to_csv(CORRECTED_MAPPING, index=False, lineterminator="\n")
+    frames["current"].to_csv(CURRENT_MAPPING, index=False, lineterminator="\n")
+    return frames
+
+
+def refresh_current(bootstrap_path: Path | None = None) -> None:
+    """Capture the live FPL roster, then regenerate the current identity map."""
+    captured_at = datetime.now(timezone.utc).isoformat()
+    if bootstrap_path is None:
+        request = urllib.request.Request(
+            FPL_BOOTSTRAP_URL, headers={"User-Agent": "dastan-data-rebuild/1.0"}
+        )
+        raw = urllib.request.urlopen(request, timeout=60).read()
+    else:
+        raw = bootstrap_path.read_bytes()
+    payload = json.loads(raw)
+    roster = roster_from_bootstrap(payload)
+    roster.to_csv(CURRENT_ROSTER, index=False, lineterminator="\n")
+    CURRENT_META.write_text(
+        json.dumps(
+            {
+                "season": roster["season"].iat[0],
+                "captured_at": captured_at,
+                "source": FPL_BOOTSTRAP_URL,
+                "bootstrap_sha256": hashlib.sha256(raw).hexdigest(),
+                "players": len(roster),
+                "note": "Roster snapshot only; Understat identities are built from audited history and curated supplements.",
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    write_all()
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--write", action="store_true", help="regenerate the checked-in CSV")
-    args = ap.parse_args()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--write",
+        action="store_true",
+        help="regenerate all mappings from checked-in inputs",
+    )
+    parser.add_argument(
+        "--refresh-current",
+        action="store_true",
+        help="capture the live FPL roster before regenerating all mappings",
+    )
+    parser.add_argument(
+        "--bootstrap",
+        type=Path,
+        help="offline bootstrap-static JSON to use with --refresh-current",
+    )
+    args = parser.parse_args()
+    if args.bootstrap and not args.refresh_current:
+        parser.error("--bootstrap requires --refresh-current")
 
-    if args.write:
-        mapping = build()
-        MAPPING.parent.mkdir(parents=True, exist_ok=True)
-        mapping.to_csv(MAPPING, index=False)
+    if args.refresh_current:
+        refresh_current(args.bootstrap)
+        action = "refreshed"
+    elif args.write:
+        write_all()
         action = "wrote"
     else:
-        mapping = verify()
         action = "verified"
 
-    shared_ids = mapping.loc[
-        mapping["mapping_status"].eq("shared_understat_id"), "understat_id"
-    ].nunique()
+    frames = verify()
+    training = frames["training"]
+    corrected = frames["corrected"]
+    current = frames["current"]
+    corrected_ids = int(
+        (
+            training.set_index("fpl_code")["understat_id"]
+            != corrected.set_index("fpl_code")["understat_id"]
+        ).sum()
+    )
+    mapped_current = int(current["understat_id"].notna().sum())
     print(
-        f"{action} {len(mapping):,} FPL-to-Understat mappings | "
-        f"{mapping['understat_id'].nunique():,} Understat IDs | "
-        f"{shared_ids} shared IDs flagged"
+        f"{action} identity artifacts | training {len(training):,} mappings | "
+        f"{corrected_ids} audited corrections | current {mapped_current:,}/{len(current):,} mapped"
     )
     return 0
 

@@ -1,0 +1,4 @@
+fpl_code,release_understat_id,decision_understat_id,decision,verified_at,release_identity,decision_identity,release_evidence_url,decision_evidence_url,note
+431248,12721,12721,keep,2026-08-08,Ladislav Krejcí (Wolverhampton Wanderers),Ladislav Krejcí (Wolverhampton Wanderers),https://understat.com/player/12721,https://understat.com/player/12721,Understat 1447 is a different older player named Ladislav Krejci
+437688,9082,9216,replace,2026-08-08,Lewis Richardson (Burnley),Lewis Richards,https://understat.com/player/9082,https://understat.com/player/9216,The release joined a similarly named Burnley player
+515501,5191,10576,replace,2026-08-08,Álvaro Fernández (goalkeeper),Álvaro Fernández Carreras (defender),https://understat.com/player/5191,https://understat.com/player/10576,The release joined the Sevilla goalkeeper instead of the defender

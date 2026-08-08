@@ -1,60 +1,67 @@
-# FPL to Understat mapping
+# FPL to Understat identities
 
-`fpl_understat_players.csv` is the player identity crosswalk used by the published
-Dastan training frame. It maps FPL's cross-season `code` field to Understat's numeric
-player ID for 1,564 players across 2020-21 through 2025-26.
+Identity is versioned here because "the IDs used by the released model" and "the IDs
+recommended for a new join" are not the same artifact.
 
-This is a release snapshot, not a live identity service. It is derived from
-`data/features.parquet`, with display names and season coverage added from
-`data/players.csv`. That makes the artifact reproducible entirely from files in this
-repository and records the joins the model actually used. `understat_id` is an identity
-join key, not one of the 286 model features.
+## Files
 
-## Coverage
-
-- 1,564 of the 1,960 FPL codes in the frame are mapped (79.8%).
-- Mapped players account for 148,118 of 163,072 player-fixture rows (90.8%).
-- Three Understat IDs are shared by multiple historical FPL codes. Their six rows are
-  marked `shared_understat_id`; do not assume the reverse Understat-to-FPL join is
-  one-to-one.
-
-Unmapped players are not included in the CSV. Their `understat_id` remains null in the
-training frame, and their Understat-derived rolling features follow the frame's normal
-missing-data policy.
-
-## Columns
-
-| column | meaning |
+| file | purpose |
 |---|---|
-| `fpl_code` | FPL's cross-season player code; use this, not the season-local `element` ID |
-| `understat_id` | numeric Understat player ID |
-| `player_name` | latest FPL display name in this release |
-| `position` | latest FPL position in this release |
-| `first_season` | first season for this FPL code in the published frame |
-| `last_season` | last season for this FPL code in the published frame |
-| `mapping_status` | `mapped` or `shared_understat_id` |
+| `fpl_understat_training_snapshot.csv` | immutable 1,564-player identity snapshot present in `features.parquet` |
+| `fpl_understat_training_assignments.csv` | exact season/gameweek intervals in which those IDs were attached to training rows |
+| `fpl_understat_identity_audit.csv` | evidence and decisions for three manually checked identities |
+| `fpl_understat_players.csv` | corrected historical map recommended for new joins |
+| `fpl_players_current.csv` | captured 2026-27 FPL roster, including unresolved players |
+| `fpl_understat_current_supplements.csv` | reviewed current-only identities not present in training history |
+| `fpl_understat_current.csv` | complete current roster plus mapping status, confidence, and source |
+| `fpl_understat_current.json` | roster capture time, source URL, and bootstrap SHA-256 |
 
-## Usage
+## Which map to use
 
-```python
-import pandas as pd
+Use `dastan.mappings.load()` for new data. It returns the corrected historical map.
+Two release identities are replaced by evidence-backed Understat IDs:
 
-mapping = pd.read_csv("data/mappings/fpl_understat_players.csv")
-external_fpl_rows = external_fpl_rows.merge(
-    mapping[["fpl_code", "understat_id"]],
-    on="fpl_code",
-    how="left",
-    validate="many_to_one",
-)
-```
+| FPL code | player | release ID | corrected ID |
+|---:|---|---:|---:|
+| 437688 | Lewis Richards | 9082 | 9216 |
+| 515501 | Álvaro Fernández Carreras | 5191 | 10576 |
 
-The training frame already contains `understat_id`; this CSV is for joining other FPL
-data or auditing identities. Join from FPL to Understat. If you need to join in the
-opposite direction, handle rows marked `shared_understat_id` explicitly.
+The audit also records why FPL code 431248 remains mapped to Understat 12721. Evidence
+URLs and review notes are in `fpl_understat_identity_audit.csv`.
 
-## Rebuild and verify
+Use `dastan.mappings.load_training()` only to reproduce the published model. It retains
+the two mistakes because silently correcting them would change historical player
+grouping. Use `load_training_assignments()` when rebuilding raw data; the release did
+not attach every known identity to every historical row. The assignment table captures
+that timeline exactly.
+
+Use `dastan.mappings.load_current()` for the captured 2026-27 roster. It maps 517 of
+573 players. The remaining 56 rows are explicit `unmapped` records; absence is safer
+than a name-based guess. Of the 29 current-only supplements, 4 are `HIGH` confidence
+and 25 are `MEDIUM` confidence.
+
+## Coverage and reverse joins
+
+The immutable training snapshot contains 1,564 FPL codes and 1,561 unique Understat
+IDs. Three IDs are shared across six historical FPL-code rows, including the two errors
+above. The corrected historical map has 1,563 unique Understat IDs; its remaining shared
+ID represents two FPL spellings of Kaine Kesler-Hayden.
+
+Join from FPL to Understat on `fpl_code`. A reverse join is not globally one-to-one;
+handle `mapping_status == "shared_understat_id"` explicitly.
+
+`understat_id` is an identity key, not one of the model's 286 features. Unmapped rows
+remain null and follow the normal missing-data policy.
+
+## Verify and refresh
 
 ```bash
-python -m dastan.mappings --write  # regenerate from the published frame
-python -m dastan.mappings          # fail if the checked-in snapshot has drifted
+python -m dastan.mappings
+python -m dastan.mappings --write
+python -m dastan.mappings --refresh-current
+python -m dastan.mappings --refresh-current --bootstrap bootstrap-static.json
 ```
+
+`--write` regenerates derived maps from checked-in inputs. `--refresh-current` first
+captures a new official FPL roster; review unresolved and supplemental identities before
+committing the result.

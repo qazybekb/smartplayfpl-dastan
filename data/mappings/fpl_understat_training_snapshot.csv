@@ -845,7 +845,7 @@ fpl_code,understat_id,player_name,position,first_season,last_season,mapping_stat
 240143,6736,Ibrahima Diallo,MID,2020-21,2022-23,mapped
 240299,10755,Joe Hodge,MID,2022-23,2025-26,mapped
 240514,9960,Kjell Scherpen,GKP,2021-22,2025-26,mapped
-240796,5191,Álvaro Fernández,GKP,2021-22,2021-22,mapped
+240796,5191,Álvaro Fernández,GKP,2021-22,2021-22,shared_understat_id
 241157,7430,Emerson Leite de Souza Junior,DEF,2021-22,2024-25,mapped
 241231,6557,Jordan Beyer,DEF,2023-24,2025-26,mapped
 241289,7216,Ben Wilmot,DEF,2021-22,2021-22,mapped
@@ -956,7 +956,7 @@ fpl_code,understat_id,player_name,position,first_season,last_season,mapping_stat
 437499,8853,Maxence Lacroix,DEF,2024-25,2025-26,mapped
 437505,7148,Wilson Isidor,FWD,2025-26,2025-26,mapped
 437626,9691,Nuno Varela Tavares,DEF,2021-22,2023-24,mapped
-437688,9216,Lewis Richards,DEF,2020-21,2020-21,mapped
+437688,9082,Lewis Richards,DEF,2020-21,2020-21,shared_understat_id
 437730,11363,Antoine Semenyo,MID,2022-23,2025-26,mapped
 437738,7791,Sebastiaan Bornauw,DEF,2025-26,2025-26,mapped
 437742,9689,Albert Sambi Lokonga,MID,2021-22,2025-26,mapped
@@ -1048,7 +1048,7 @@ fpl_code,understat_id,player_name,position,first_season,last_season,mapping_stat
 460842,12027,Mohammed Kudus,MID,2023-24,2025-26,mapped
 461025,11272,Nathan Butler-Oyedeji,FWD,2022-23,2024-25,mapped
 461026,9741,Chem Campbell,MID,2021-22,2022-23,mapped
-461096,9082,Lewis Richardson,FWD,2020-21,2021-22,mapped
+461096,9082,Lewis Richardson,FWD,2020-21,2021-22,shared_understat_id
 461188,11243,Bashir Humphreys,DEF,2022-23,2025-26,mapped
 461195,8537,Dennis Cirkin,DEF,2025-26,2025-26,mapped
 461199,11461,Romaine Mundle,MID,2022-23,2025-26,mapped
@@ -1299,7 +1299,7 @@ fpl_code,understat_id,player_name,position,first_season,last_season,mapping_stat
 514356,10004,Roméo Lavia,MID,2021-22,2025-26,mapped
 514362,12575,Ojinnaka,MID,2023-24,2025-26,mapped
 515024,10719,Luke Harris,MID,2022-23,2025-26,mapped
-515501,10576,Álvaro Fernández Carreras,DEF,2021-22,2023-24,mapped
+515501,5191,Álvaro Fernández Carreras,DEF,2021-22,2023-24,shared_understat_id
 515571,11078,Juan Larios López,DEF,2022-23,2024-25,mapped
 515597,10025,Lamare Bogarde,DEF,2021-22,2025-26,mapped
 515621,11167,Chadi Riad Dnanou,DEF,2024-25,2025-26,mapped

@@ -1,0 +1,574 @@
+season,fpl_code,element,player_name,position,team_name,understat_id,understat_player_name,mapping_status,confidence,source
+2026-27,17761,229,Tarkowski,DEF,Everton,1665,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,21205,414,Heaton,GKP,Man Utd,1651,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,40383,58,Forster,GKP,Bournemouth,831,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,49262,111,Steele,GKP,Brighton,7235,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,50093,302,Button,GKP,Ipswich Town,6843,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,50175,136,Welbeck,FWD,Chelsea,501,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,54469,64,Smith,DEF,Bournemouth,825,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,56979,101,Henderson,MID,Chelsea,605,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,59735,325,Darlow,GKP,Man Utd,780,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,60307,124,Groß,MID,Brighton,239,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,60689,490,Wood,FWD,Nott'm Forest,4456,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,67089,497,Dubravka,GKP,Spurs,6532,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,72147,29,M.Bizot,GKP,Aston Villa,9614,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,75115,108,Wilson,FWD,Brentford,468,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,76357,266,Cairney,MID,Fulham,6835,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,78916,448,Burn,DEF,Newcastle,7382,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,80178,178,Bidwell,DEF,Coventry City,,,unmapped,NONE,unresolved
+2026-27,80201,250,Leno,GKP,Fulham,181,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,81441,443,Gillespie,GKP,Newcastle,8729,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,83299,116,Dunk,DEF,Brighton,6048,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,84450,544,Xhaka,MID,Sunderland,204,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,85633,467,Sels,GKP,Nott'm Forest,6903,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,86873,251,Lecomte,GKP,Fulham,3451,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,88894,46,Barkley,MID,Aston Villa,592,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,91651,406,Kovačić,MID,Man City,2254,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,93605,541,Meunier,DEF,Sunderland,5680,Thomas Meunier,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,95658,418,Maguire,DEF,Man Utd,1687,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,97032,356,Virgil,DEF,Liverpool,833,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,98747,442,Pope,GKP,Newcastle,5552,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,98980,28,Martinez,GKP,Aston Villa,4401,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,101188,30,Digne,DEF,Aston Villa,1823,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,101282,289,Crooks,MID,Hull City,,,unmapped,NONE,unresolved
+2026-27,105666,274,Butland,GKP,Hull City,856,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,105717,540,Masuaku,DEF,Sunderland,1760,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,106611,231,Keane,DEF,Everton,1653,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,106760,423,Shaw,DEF,Man Utd,1006,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,108413,212,Hughes,MID,Crystal Palace,6104,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,108416,277,Egan,DEF,Hull City,7703,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,108813,300,Walton,GKP,Ipswich Town,9251,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,109646,147,Tosin,DEF,Chelsea,5590,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,109745,2,Arrizabalaga,GKP,Arsenal,5061,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,110690,172,Wilson,GKP,Coventry City,,,unmapped,NONE,unresolved
+2026-27,111234,226,Pickford,GKP,Everton,741,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,111317,74,Brooks,MID,Bournemouth,6820,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,112520,301,Palmer,GKP,Ipswich Town,1038,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,114243,457,J.Murphy,MID,Newcastle,6063,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,114283,238,Grealish,MID,Man City,675,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,115556,508,Davies,DEF,Spurs,660,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,116535,350,A.Becker,GKP,Liverpool,1257,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,119471,446,Schär,DEF,Newcastle,76,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,121709,199,Benitez,GKP,Crystal Palace,5652,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,122074,386,Bettinelli,GKP,Man City,7076,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,122798,502,Robertson,DEF,Spurs,1688,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,122806,45,McGinn,MID,Aston Villa,7723,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,128295,21,Nørgaard,MID,Everton,7083,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,135720,501,Danso,DEF,Spurs,5261,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,138001,228,King,GKP,Everton,12245,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,141746,426,B.Fernandes,MID,Man Utd,1228,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,146426,279,Ajayi,DEF,Hull City,4490,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,147675,320,Akpom,FWD,Ipswich Town,1790,Chuba Akpom,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,149484,33,Mings,DEF,Aston Villa,1024,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,149929,311,Burns,MID,Ipswich Town,12749,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,152551,213,Lerma,MID,Crystal Palace,2182,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,153133,261,Iwobi,MID,Fulham,500,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,153366,270,Reed,MID,Fulham,910,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,153682,260,Wilson,MID,Leeds,5596,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,154561,1,Raya,GKP,Arsenal,9676,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,154566,526,Solanke,FWD,Spurs,1679,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,155405,408,Phillips,MID,Man City,8719,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,155408,71,Cook,MID,Bournemouth,1789,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,155503,352,Woodman,GKP,Liverpool,852,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,158499,75,Christie,MID,Bournemouth,10744,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,158983,374,Endo,MID,Liverpool,8808,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,159506,473,Aina,DEF,Nott'm Forest,725,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,160817,285,McNair,DEF,Hull City,559,Paddy McNair,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,166477,258,Castagne,DEF,Fulham,6157,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,166989,43,Tielemans,MID,Man Utd,5956,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,167074,256,Tete,DEF,Fulham,5973,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,167512,539,O'Nien,DEF,Sunderland,14099,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,167825,273,Phillips,GKP,Hull City,,,unmapped,NONE,unresolved
+2026-27,168144,184,Grimes,MID,Coventry City,1045,Matt Grimes,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,168636,80,Enes Ünal,FWD,Bournemouth,6219,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,169359,556,Targett,DEF,Hull City,884,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,169432,295,McBurnie,FWD,Hull City,1736,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,169528,254,Robinson,DEF,Fulham,8940,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,169593,555,Matthews,GKP,Crystal Palace,9834,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,171270,288,Dowell,MID,Hull City,1032,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,171287,359,Gomez,DEF,Liverpool,987,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,171314,390,Rúben,DEF,Man City,8961,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,172453,319,Szmodics,MID,Ipswich Town,12752,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,172649,198,Henderson,GKP,Crystal Palace,7702,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,172780,515,Maddison,MID,Spurs,6818,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,173878,176,Dasilva,DEF,Coventry City,,,unmapped,NONE,unresolved
+2026-27,173879,56,Abraham,FWD,Aston Villa,702,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,174594,347,Nmecha,FWD,Leeds,6544,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,174874,253,Andersen,DEF,Fulham,6314,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,176297,429,Rashford,MID,Man Utd,556,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,176412,193,Wright,FWD,Coventry City,5361,Haji Wright,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,176420,308,Furlong,DEF,Ipswich Town,4391,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,177815,346,Calvert-Lewin,FWD,Leeds,5555,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,178301,55,Watkins,FWD,Aston Villa,8865,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,180135,339,Longstaff,MID,Leeds,7078,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,180736,143,Chalobah,DEF,Chelsea,6615,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,180974,458,Joelinton,MID,Newcastle,87,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,183015,303,Kipré,DEF,Ipswich Town,8785,Cédric Kipré,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,183656,103,Dasilva,MID,Brentford,10405,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,184029,15,Ødegaard,MID,Arsenal,2517,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,184254,494,Vicario,GKP,Spurs,8858,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,184341,430,Mount,MID,Man Utd,7768,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,184349,269,Sessegnon,DEF,Fulham,6837,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,184667,37,Lindelöf,DEF,Aston Villa,6080,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,191866,87,Ajer,DEF,Brentford,9677,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,193278,280,Coyle,DEF,Hull City,,,unmapped,NONE,unresolved
+2026-27,194010,89,Henry,DEF,Brentford,9679,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,195384,17,Merino,MID,Arsenal,5304,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,195546,41,Buendía,MID,Aston Villa,2203,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,198869,10,White,DEF,Arsenal,7298,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,199598,338,Ampadu,MID,Leeds,6369,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,199796,32,Cash,DEF,Aston Villa,8864,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,199798,31,Konsa,DEF,Aston Villa,7726,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,200089,460,Willock,MID,Newcastle,6630,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,200617,343,James,MID,Leeds,5595,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,200641,24,Nelson,MID,Arsenal,6492,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,200720,82,Kelleher,GKP,Brentford,7904,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,200785,73,Adams,MID,Bournemouth,7352,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,200834,533,Mukiele,DEF,Sunderland,5659,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,201595,326,Perri,GKP,Leeds,12369,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,201658,68,Tavernier,MID,Bournemouth,10741,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,201666,453,Barnes,MID,Newcastle,6681,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,201895,535,Alderete,DEF,Sunderland,8986,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,202993,516,Bentancur,MID,Spurs,6108,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,204120,114,Boscagli,DEF,Brighton,3645,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,204480,13,Rice,MID,Arsenal,5553,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,204561,558,Schlager,MID,Nott'm Forest,7783,Xaver Schlager,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,204580,98,Janelt,MID,Brentford,9680,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,204813,179,Latibeaudiere,DEF,Coventry City,,,unmapped,NONE,unresolved
+2026-27,204822,476,O.Richards,DEF,Nott'm Forest,9675,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,204936,384,Donnarumma,GKP,Man City,1116,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,204968,489,Yates,MID,Nott'm Forest,11003,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,205533,224,Nketiah,FWD,Crystal Palace,6482,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,205651,27,G.Jesus,FWD,Arsenal,5543,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,206915,373,C.Jones,MID,Liverpool,6665,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,207189,265,Berge,MID,Fulham,8285,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,207283,97,Jensen,MID,Brentford,7166,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,208481,292,Ömür,MID,Hull City,,,unmapped,NONE,unresolved
+2026-27,208706,452,Bruno G.,MID,Newcastle,8327,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,209036,388,Guéhi,DEF,Man City,7603,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,209046,482,Hudson-Odoi,MID,Nott'm Forest,6456,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,209244,398,Foden,MID,Man City,6055,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,209289,262,Smith Rowe,MID,Fulham,7230,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,209365,416,De Ligt,DEF,Man Utd,7902,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,209400,214,Kamada,MID,Crystal Palace,6145,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,210156,492,Awoniyi,FWD,Nott'm Forest,7814,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,210462,488,Sangaré,MID,Nott'm Forest,5722,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,212314,267,Lukić,MID,Fulham,1537,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,212319,527,Richarlison,FWD,Spurs,6026,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,213292,296,Akintola,MID,Hull City,,,unmapped,NONE,unresolved
+2026-27,214225,329,Rodon,DEF,Leeds,6377,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,214285,364,Tsimikas,DEF,Liverpool,8852,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,214572,495,Austin,GKP,Spurs,8093,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,215059,140,Sánchez,GKP,Chelsea,9098,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,215136,469,N.Williams,DEF,Nott'm Forest,8204,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,215379,481,Anderson,MID,Man City,9154,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,215413,236,Dewsbury-Hall,MID,Everton,9739,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,215711,44,Bailey,MID,Aston Villa,5221,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,216051,417,Dalot,DEF,Man Utd,7281,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,216055,571,Florentino,MID,Ipswich Town,8969,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,216094,357,Frimpong,DEF,Liverpool,9328,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,216616,304,O'Shea,DEF,Ipswich Town,8756,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,216646,464,Wissa,FWD,Newcastle,5786,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,218364,205,Sosa,DEF,Crystal Palace,7075,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,218997,195,Simms,FWD,Coventry City,8582,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,219168,379,Isak,FWD,Liverpool,5232,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,219249,126,O'Riley,MID,Brighton,13206,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,219847,26,Havertz,FWD,Arsenal,5220,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,219924,259,Diop,DEF,Ipswich Town,3203,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,220237,447,Botman,DEF,Newcastle,8635,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,220362,153,Disasi,DEF,Chelsea,6885,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,220566,402,Rodrigo,MID,Man City,2496,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,220583,180,Woolfenden,DEF,Coventry City,12746,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,220627,332,Justin,DEF,Leeds,7753,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,221389,468,John,GKP,Nott'm Forest,14017,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,221399,342,Harrison,MID,Leeds,8720,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,221466,498,Senesi,DEF,Spurs,10864,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,221632,500,Romero,DEF,Spurs,7218,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,221820,419,Martinez,DEF,Man Utd,10802,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,222018,307,Johnson,DEF,Ipswich Town,6424,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,222531,480,Gibbs-White,MID,Nott'm Forest,6857,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,222625,317,Hirst,FWD,Ipswich Town,8563,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,222683,70,Kluivert,MID,Bournemouth,6963,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,222694,328,Struijk,DEF,Brighton,8717,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,223094,411,Haaland,FWD,Man City,8260,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,223340,12,Saka,MID,Arsenal,7322,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,223434,118,Igor,DEF,Brighton,7943,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,223541,370,Chiesa,MID,Liverpool,1433,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,223827,532,Ballard,DEF,Sunderland,13715,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,224117,25,Gyökeres,FWD,Arsenal,7254,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,224967,233,Mykolenko,DEF,Everton,10291,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,225796,142,James,DEF,Chelsea,8067,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,226182,330,Bogle,DEF,Leeds,9205,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,226597,4,Gabriel,DEF,Arsenal,5613,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,226944,47,Kamara,MID,Aston Villa,5789,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,226965,188,Torp,MID,Coventry City,,,unmapped,NONE,unresolved
+2026-27,227444,471,Milenković,DEF,Nott'm Forest,6174,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,229164,314,Ogbene,MID,Ipswich Town,11719,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,229600,227,Travers,GKP,Everton,7582,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,230001,422,Mazraoui,DEF,Man Utd,10696,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,230730,194,Thomas-Asante,FWD,Coventry City,,,unmapped,NONE,unresolved
+2026-27,231065,91,Pinnock,DEF,Brentford,9678,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,231416,113,F.Kadıoğlu,DEF,Brighton,13066,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,231747,223,Mateta,FWD,Crystal Palace,5735,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,231899,312,Taylor,MID,Ipswich Town,12754,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232112,433,Ugarte,MID,Man Utd,11766,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232185,208,Sarr,MID,Crystal Palace,5675,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232351,282,Giles,DEF,Hull City,7277,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232413,14,Eze,MID,Arsenal,8706,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232457,324,Mehmeti,MID,Ipswich Town,,,unmapped,NONE,unresolved
+2026-27,232571,530,Patterson,GKP,Sunderland,13721,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232653,456,J.Ramsey,MID,Newcastle,8941,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232787,519,Gallagher,MID,Spurs,9040,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232859,505,Spence,DEF,Spurs,10764,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232892,257,Bassey,DEF,Fulham,11728,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,232905,287,Millar,MID,Hull City,,,unmapped,NONE,unresolved
+2026-27,232928,239,Garner,MID,Everton,7438,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,235826,348,Piroe,FWD,Leeds,13835,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,240514,564,Scherpen,GKP,Ipswich Town,9960,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,241117,310,Matusiwa,MID,Ipswich Town,9978,Azor Matusiwa,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,241293,186,Mason-Clark,MID,Coventry City,,,unmapped,NONE,unresolved
+2026-27,242313,207,Mingueza,DEF,Crystal Palace,9011,Oscar Mingueza,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,242880,146,B.Badiashile,DEF,Chelsea,7240,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,242882,62,Diakité,DEF,Bournemouth,7268,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,242898,209,Johnson,MID,Crystal Palace,10760,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,243016,372,Mac Allister,MID,Liverpool,8379,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,243298,367,Gakpo,MID,Liverpool,11296,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,243413,290,Slater,MID,Hull City,,,unmapped,NONE,unresolved
+2026-27,243526,331,Gudmundsson,DEF,Leeds,9944,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,243571,234,Patterson,DEF,Everton,10292,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,244042,271,Muniz,FWD,Fulham,10717,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,244723,204,Mitchell,DEF,Crystal Palace,8214,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,244850,40,Rogers,MID,Chelsea,12412,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,244851,154,Palmer,MID,Chelsea,8497,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,244858,100,Carvalho,MID,Brentford,9501,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,244860,247,Hackney,MID,Everton,,,unmapped,NONE,unresolved
+2026-27,244954,34,Pau,DEF,Aston Villa,6221,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,246301,255,J.Cuenca,DEF,Fulham,8489,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,247348,201,Muñoz,DEF,Crystal Palace,12408,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,247412,222,Strand Larsen,FWD,Crystal Palace,11070,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,247632,156,Neto,MID,Chelsea,6382,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,248056,345,Tanaka,MID,Leeds,13834,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,248857,16,Madueke,MID,Arsenal,11357,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,248875,400,Doku,MID,Man City,8981,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,249231,86,Lewis-Potter,MID,Brentford,10809,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,250199,487,Dominguez,MID,Nott'm Forest,8252,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,424876,368,Szoboszlai,MID,Liverpool,9788,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,427623,202,Richards,DEF,Crystal Palace,8430,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,427637,337,Aaronson,MID,Leeds,10751,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,428580,104,Onyeka,MID,Coventry City,9681,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,430871,428,Cunha,MID,Man Utd,7080,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,432422,455,Tonali,MID,Spurs,7958,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,432714,486,McAtee,MID,Nott'm Forest,10126,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,432720,385,Trafford,GKP,Leeds,9077,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,432830,84,Collins,DEF,Brentford,9733,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,432987,354,Jaros,GKP,Liverpool,13103,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,433036,404,Reijnders,MID,Man City,11965,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,433154,241,McNeil,MID,Everton,6756,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,433590,281,Drameh,DEF,Hull City,9499,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,434399,536,Reinildo,DEF,Sunderland,7432,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,434752,327,Bijol,DEF,Leeds,6807,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,435997,336,Okafor,MID,Leeds,11966,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,436761,174,Kitching,DEF,Coventry City,,,unmapped,NONE,unresolved
+2026-27,436893,65,J.Araujo,DEF,Bournemouth,11745,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,437495,3,Meslier,GKP,Arsenal,8715,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,437499,200,Lacroix,DEF,Chelsea,8853,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,437505,553,Isidor,FWD,Sunderland,7148,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,437730,397,Semenyo,MID,Man City,11363,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,437738,333,Bornauw,DEF,Leeds,7791,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,438098,23,Fábio Vieira,MID,Arsenal,11007,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,438234,401,Marmoush,FWD,Man City,8393,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,438464,218,Doucouré,MID,Crystal Palace,8666,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,439509,557,Tzolis,MID,Arsenal,9746,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,439668,187,Eccles,MID,Coventry City,,,unmapped,NONE,unresolved
+2026-27,440089,96,Damsgaard,MID,Brentford,8859,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,440993,237,Ndiaye,MID,Everton,9307,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,441164,499,Pedro Porro,DEF,Spurs,6912,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,441191,450,Livramento,DEF,Newcastle,9512,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,441264,552,Brobbey,FWD,Sunderland,9789,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,441266,371,Gravenberch,MID,Liverpool,10697,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,441302,36,Maatsen,DEF,Aston Villa,11807,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,442967,562,Maeda,MID,Ipswich Town,,,unmapped,NONE,unresolved
+2026-27,443261,313,Clarke,MID,Ipswich Town,13019,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,444102,79,Evanilson,FWD,Bournemouth,12963,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,444145,18,Martinelli,MID,Arsenal,7752,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,444172,59,Dennis,GKP,Bournemouth,10748,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,444180,105,Anthony,MID,Brentford,10746,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,444307,276,Lo-Tutala,GKP,Hull City,,,unmapped,NONE,unresolved
+2026-27,444463,145,Fofana,DEF,Chelsea,7589,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,444765,85,Van den Berg,DEF,Brentford,10721,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,444884,383,Elliott,MID,Liverpool,7546,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,445028,563,Morita,MID,Hull City,,,unmapped,NONE,unresolved
+2026-27,445044,521,Kulusevski,MID,Spurs,6691,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,445122,5,J.Timber,DEF,Arsenal,11707,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,446008,427,Mbeumo,MID,Man Utd,6552,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,448047,155,Enzo,MID,Chelsea,11356,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,448089,54,Gomes,MID,Aston Villa,11384,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,448104,9,Hincapie,DEF,Arsenal,9911,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,448514,392,Aït-Nouri,DEF,Man City,6674,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,449027,351,Mamardashvili,GKP,Liverpool,9693,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,449428,283,Jacob,DEF,Hull City,,,unmapped,NONE,unresolved
+2026-27,449429,306,Greaves,DEF,Ipswich Town,12745,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,449434,454,Elanga,MID,Newcastle,9524,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,449871,48,Onana,MID,Aston Villa,9667,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,450542,219,J.Rak-Sakyi,MID,Crystal Palace,9461,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,451284,175,van Ewijk,DEF,Coventry City,,,unmapped,NONE,unresolved
+2026-27,451302,413,Bayindir,GKP,Man Utd,12054,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,451340,121,Mitoma,MID,Brighton,10806,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,451490,119,Costinha,DEF,Brighton,,,unmapped,NONE,unresolved
+2026-27,454490,120,Svoboda,DEF,Brighton,9887,Michael Svoboda,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,455084,305,Davis,DEF,Ipswich Town,8919,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,456512,483,Ndoye,MID,Nott'm Forest,8662,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,457569,57,Petrović,GKP,Bournemouth,12032,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,458249,440,Zirkzee,FWD,Man Utd,8044,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,460028,149,Colwill,DEF,Chelsea,10805,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,460842,512,Kudus,MID,Spurs,12027,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,461102,173,Thomas,DEF,Coventry City,8483,Bobby Thomas,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,461199,547,Mundle,MID,Sunderland,11461,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,461587,323,McAteer,MID,Ipswich Town,10166,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,462387,322,Al-Hamadi,FWD,Ipswich Town,12751,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,462424,6,Saliba,DEF,Arsenal,6888,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,462635,340,Gelhardt,MID,Leeds,9339,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,463034,167,Delap,FWD,Chelsea,8868,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,463067,125,Georginio,FWD,Brighton,6937,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,463936,158,Gittens,MID,Chelsea,10542,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,463981,60,Hill,DEF,Bournemouth,10747,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,464353,355,Davies,GKP,Liverpool,11028,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,465247,412,Lammens,GKP,Man Utd,14056,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,465351,389,Matheus N.,DEF,Man City,11000,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,465390,177,Kesler-Hayden,DEF,Coventry City,9409,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,465525,291,Matazo,MID,Hull City,8644,Eliot Matazo,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,465642,445,Thiaw,DEF,Newcastle,8378,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,465680,493,Kalimuendo,FWD,Nott'm Forest,8056,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,465694,405,N.Gonzalez,MID,Man City,9802,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,465730,115,De Cuyper,DEF,Brighton,13711,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,466052,399,Cherki,MID,Man City,8094,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,466075,8,Calafiori,DEF,Arsenal,8129,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,466525,335,Stach,MID,Leeds,9910,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,467779,130,Wieffer,DEF,Brighton,12758,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,469142,112,Van Hecke,DEF,Spurs,10807,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,469247,49,Iling Jr,MID,Aston Villa,10616,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,469272,190,Tchaouna,MID,Coventry City,9977,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,470294,297,Gyabi,MID,Hull City,10752,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,470313,463,Woltemade,FWD,Newcastle,8117,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,470315,478,Netz,DEF,Nott'm Forest,8401,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,470551,567,Horníček,GKP,Newcastle,,,unmapped,NONE,unresolved
+2026-27,472713,90,Hickey,DEF,Brentford,8942,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,472739,110,Rushworth,GKP,Coventry City,12760,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,472769,387,O'Reilly,DEF,Man City,11592,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,473284,572,Tzolakis,GKP,Hull City,,,unmapped,NONE,unresolved
+2026-27,475168,165,João Pedro,FWD,Chelsea,8272,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,476887,485,Bakwa,MID,Nott'm Forest,8920,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,477064,395,Lewis,DEF,Man City,10847,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,477424,391,Gvardiol,DEF,Man City,9790,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,477547,538,Hjelde,DEF,Sunderland,10028,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,477555,264,Bobb,MID,Fulham,11903,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,480455,230,Branthwaite,DEF,Everton,8476,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,480457,183,Rudoni,MID,Coventry City,,,unmapped,NONE,unresolved
+2026-27,481624,318,Philogene,MID,Ipswich Town,9415,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,481655,19,Zubimendi,MID,Arsenal,7526,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,482442,518,P.M.Sarr,MID,Spurs,9021,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,482609,144,Gusto,DEF,Chelsea,9017,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,482973,491,Igor Jesus,FWD,Nott'm Forest,13778,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,483067,566,Silva,DEF,Bournemouth,,,unmapped,NONE,unresolved
+2026-27,484389,171,Dovin,GKP,Coventry City,,,unmapped,NONE,unresolved
+2026-27,484420,542,E.Le Fée,MID,Sunderland,8651,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,485047,470,Morato,DEF,Nott'm Forest,13068,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,485055,496,Kinsky,GKP,Spurs,13348,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,485337,42,Guessand,MID,Aston Villa,8006,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,485711,439,Šeško,FWD,Man Utd,11974,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,486385,248,Beto,FWD,Everton,9983,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,486520,344,Gruev,MID,Leeds,8000,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,486672,159,Caicedo,MID,Chelsea,9453,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,487053,506,Udogie,DEF,Spurs,8831,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,487117,139,Ferguson,FWD,Brighton,10177,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,487676,534,Hume,DEF,Sunderland,13713,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,487838,449,Hall,DEF,Newcastle,10216,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,488024,211,Yeremy,MID,Crystal Palace,9024,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,489580,365,Ramsay,DEF,Liverpool,11214,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,489639,109,Verbruggen,GKP,Brighton,11711,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,489706,215,Devenny,MID,Crystal Palace,13038,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,489888,77,Adli,MID,Bournemouth,8211,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,490094,240,Iroegbunam,MID,Everton,9554,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,490145,528,Scarlett,FWD,Spurs,9332,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,490161,293,Kamara,MID,Hull City,10526,Abu Kamara,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,490881,436,Collyer,MID,Man Utd,12461,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,491007,163,D.Essugo,MID,Chelsea,13094,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,491279,503,Van de Ven,DEF,Spurs,10050,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,491501,378,McConnell,MID,Liverpool,11811,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,492498,191,Borges Rodrigues,MID,Coventry City,,,unmapped,NONE,unresolved
+2026-27,492777,360,Bradley,DEF,Liverpool,10120,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,492859,341,Gnonto,MID,Leeds,11155,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,493105,160,Garnacho,MID,Aston Villa,10552,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,493250,431,Amad,MID,Man Utd,8127,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,493362,513,Xavi,MID,Spurs,8700,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,494307,394,Alleyne,DEF,Man City,13298,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,494521,61,Truffert,DEF,Bournemouth,8640,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,494595,366,Wirtz,MID,Liverpool,8397,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,494928,573,Sanchez,DEF,Bournemouth,,,unmapped,NONE,unresolved
+2026-27,494950,275,Cartwright,GKP,Hull City,,,unmapped,NONE,unresolved
+2026-27,496208,72,Gannon-Doak,MID,Bournemouth,11231,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,496221,210,Wharton,MID,Crystal Palace,12409,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,496661,245,Dibling,MID,Everton,10586,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,498016,529,Roefs,GKP,Sunderland,13712,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,499169,7,Lewis-Skelly,MID,Arsenal,12272,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,499175,22,Nwaneri,MID,Arsenal,11132,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,499300,235,Aznou,DEF,Everton,12371,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,499309,168,Marc Guiu,FWD,Chelsea,11633,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,499604,67,Rayan,MID,Bournemouth,14395,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,499716,510,Rowswell,DEF,Spurs,14176,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,499721,523,Moore,MID,Spurs,12603,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,499726,524,Olusesi,MID,Spurs,13224,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,500040,11,Mosquera,DEF,Arsenal,10024,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,500058,382,Danns,FWD,Liverpool,12455,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,500151,475,Savona,DEF,Nott'm Forest,12905,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,500957,298,Destan,FWD,Hull City,,,unmapped,NONE,unresolved
+2026-27,501390,309,Núñez,MID,Ipswich Town,,,unmapped,NONE,unresolved
+2026-27,501459,185,Sakamoto,MID,Coventry City,,,unmapped,NONE,unresolved
+2026-27,501902,278,Hughes,DEF,Hull City,,,unmapped,NONE,unresolved
+2026-27,502500,106,Thiago,FWD,Brentford,13222,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,502697,243,Alcaraz,MID,Everton,11297,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,503037,170,Emegha,FWD,Chelsea,11817,Emmanuel Emegha,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,503139,69,Scott,MID,Bournemouth,12149,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,503301,484,Hutchinson,MID,Nott'm Forest,10348,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,505079,252,McNally,GKP,Fulham,14308,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,507433,83,Valdimarsson,GKP,Brentford,12595,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,508395,102,Yarmoliuk,MID,Brentford,11772,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,508479,141,Jörgensen,GKP,Chelsea,9272,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,509416,129,Ayari,MID,Brighton,11385,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,510281,403,Savinho,MID,Man City,11735,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,510663,380,Ekitiké,FWD,Liverpool,8995,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,511499,514,Tel,MID,Spurs,9780,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,512462,232,O'Brien,DEF,Everton,12014,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,513086,93,Schuster,DEF,Brentford,,,unmapped,NONE,unresolved
+2026-27,513418,94,Schade,MID,Brentford,9156,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,513466,246,Röhl,MID,Everton,11331,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,513545,565,Sangaré,MID,Brentford,,,unmapped,NONE,unresolved
+2026-27,514254,127,Gomez,MID,Brighton,13364,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,514356,161,Lavia,MID,Chelsea,10004,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,514514,381,Koumas,MID,Liverpool,12434,Lewis Koumas,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,515046,531,Ellborg,GKP,Sunderland,14425,Melker Ellborg,mapped_curated,HIGH,smartplay_curated_record
+2026-27,515597,35,Bogarde,MID,Aston Villa,10025,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,515621,206,Chadi Riad,DEF,Crystal Palace,11167,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,516895,432,Mainoo,MID,Man Utd,11174,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,517052,166,N.Jackson,FWD,Chelsea,10048,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,519440,361,Lucky,DEF,Liverpool,14236,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,519634,537,Seelt,DEF,Sunderland,13714,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,519913,438,Fletcher,MID,Man Utd,14272,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,522047,334,Muharemović,DEF,Leeds,13879,Tarik Muharemović,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,531442,315,Fatawu,MID,Ipswich Town,12911,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,532529,123,Hinshelwood,MID,Brighton,11269,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,532605,162,Andrey Santos,MID,Man Utd,11808,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,533463,95,O.Dango,MID,Brentford,9662,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,534392,299,Burstow,FWD,Hull City,11810,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,535301,131,Baleba,MID,Brighton,10527,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,535818,546,Adingra,MID,Sunderland,11710,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,535928,376,Bajcetic,MID,Liverpool,10723,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,536661,551,Angulo,MID,Sunderland,14424,Nilson Angulo,mapped_curated,HIGH,smartplay_curated_record
+2026-27,536694,217,M.França,MID,Crystal Palace,12152,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,536916,128,Buonanotte,MID,Brighton,11362,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,538207,465,Osula,FWD,Newcastle,9556,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,538638,479,Bindon,DEF,Nott'm Forest,,,unmapped,NONE,unresolved
+2026-27,539142,182,Amenda,DEF,Coventry City,12955,Aurèle Amenda,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,540324,286,Belloumi,MID,Hull City,,,unmapped,NONE,unresolved
+2026-27,543158,568,Barco,MID,Chelsea,12498,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,543295,99,Milambo,MID,Brentford,13780,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,543968,316,Emersonn,FWD,Ipswich Town,,,unmapped,NONE,unresolved
+2026-27,544877,358,Kerkez,DEF,Liverpool,11709,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,545477,451,A.Murphy,DEF,Newcastle,12199,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,546600,554,Van Oevelen,GKP,Ipswich Town,,,unmapped,NONE,unresolved
+2026-27,547027,543,Diarra,MID,Sunderland,9767,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,547037,434,J.Fletcher,MID,Man Utd,13150,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,547676,425,Fredricson,DEF,Man Utd,13467,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,547701,522,Gray,MID,Spurs,10184,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,547719,459,L.Miley,MID,Newcastle,11386,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,548308,507,Phillips,DEF,Spurs,12031,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,549067,477,Abbott,DEF,Nott'm Forest,13306,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,549074,133,Watson,MID,Brighton,14029,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,549653,197,Bassette,FWD,Coventry City,,,unmapped,NONE,unresolved
+2026-27,549912,549,Talbi,MID,Sunderland,13717,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,549939,560,Penders,GKP,Chelsea,13816,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,550090,117,Coppola,DEF,Brighton,10169,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,550615,242,George,MID,Everton,12573,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,550839,517,Odobert,MID,Spurs,10822,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,550864,420,Yoro,DEF,Man Utd,10564,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,551210,148,Hato,DEF,Chelsea,13776,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,551226,525,Fernandes,MID,Spurs,12948,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,551262,196,Markelo,FWD,Coventry City,,,unmapped,NONE,unresolved
+2026-27,551466,569,García,FWD,Fulham,,,unmapped,NONE,unresolved
+2026-27,551499,377,Munoz,MID,Liverpool,13279,Victor Munoz,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,553783,294,Zambrano,MID,Hull City,,,unmapped,NONE,unresolved
+2026-27,554197,548,Rigg,MID,Sunderland,13719,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,554578,444,Jaouen,GKP,Newcastle,,,unmapped,NONE,unresolved
+2026-27,556637,134,Oriola,MID,Brighton,14127,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,557012,321,Walle Egeli,FWD,Ipswich Town,,,unmapped,NONE,unresolved
+2026-27,560262,78,Kroupi.Jr,MID,Bournemouth,11504,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,560552,263,Kevin,MID,Fulham,14030,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,561245,81,Rodríguez,FWD,Bournemouth,11186,Álvaro Rodríguez,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,565297,349,Mateo Joseph,FWD,Leeds,11208,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,567119,169,Mheuka,FWD,Chelsea,13476,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,570241,92,Ji-soo,DEF,Brentford,12136,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,570526,520,Bergvall,MID,Spurs,12912,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,571779,570,Palacios,MID,Fulham,,,unmapped,NONE,unresolved
+2026-27,574458,150,M.Sarr,DEF,Chelsea,11253,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,575204,407,Echeverri,MID,Man City,13649,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,575458,474,Jair Cunha,DEF,Nott'm Forest,13779,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,575476,472,Murillo,DEF,Nott'm Forest,12123,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,575901,66,Soler,DEF,Bournemouth,13474,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,576620,437,Bendito Mantato,MID,Man Utd,14266,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,576628,435,Lacey,MID,Man Utd,14198,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,577016,151,Acheampong,DEF,Chelsea,12535,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,577285,51,George Hemmings,MID,Aston Villa,14193,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,577411,181,Brau,DEF,Coventry City,,,unmapped,NONE,unresolved
+2026-27,577669,545,Sadiki,MID,Sunderland,13716,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,577725,268,King,MID,Fulham,12410,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,577974,424,Amass,DEF,Man Utd,12559,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,578153,393,Khusanov,DEF,Man City,11763,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,578545,39,Nedeljkovic,DEF,Aston Villa,12775,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,586268,353,Pecsi,GKP,Liverpool,14168,Ármin Pécsi,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,586309,249,Barry,FWD,Everton,12916,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,590014,220,Cardines,DEF,Crystal Palace,13777,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,590039,409,Mukasa,MID,Man City,14055,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,591386,375,Nyoni,MID,Liverpool,12203,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,592031,122,Minteh,MID,Brighton,12759,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,593117,164,Quenda,MID,Chelsea,,,unmapped,NONE,unresolved
+2026-27,593174,107,Furo,FWD,Brentford,14356,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,596047,441,Obi,FWD,Man Utd,13466,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,596777,415,Dorgu,MID,Man Utd,11944,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,597320,132,Howell,MID,Brighton,13584,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,599303,466,Neave,FWD,Newcastle,13532,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,606702,362,Jacquet,DEF,Liverpool,11545,Jeremy Jacquet,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,606745,421,Heaven,DEF,Man Utd,13080,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,606798,38,A.García,DEF,Aston Villa,13392,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,606921,216,Esse,MID,Crystal Palace,13387,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,607464,88,Kayode,DEF,Brentford,11281,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,608181,137,Tzimas,FWD,Brighton,14028,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,609873,244,Armstrong,MID,Everton,12757,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,610799,504,Vuskovic,DEF,Brighton,13725,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,611665,461,Touré,MID,Newcastle,13427,Bazoumana Touré,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,611922,369,Ngumoha,MID,Liverpool,13692,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,614071,53,Manzambi,MID,Aston Villa,13102,Johan Manzambi,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,614574,76,Tóth.A,MID,Bournemouth,14374,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,616077,20,Dowman,MID,Arsenal,13872,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,616221,511,Souza,DEF,Spurs,14410,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,616222,396,Vitor Reis,DEF,Man City,13380,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,620109,152,Palestra,DEF,Chelsea,11551,Marco Palestra,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,620487,63,Milosavljević,DEF,Bournemouth,14027,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,622758,561,Anselmino,DEF,Chelsea,13460,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,624773,157,Estêvão,MID,Chelsea,13775,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,629397,192,Andrews,MID,Coventry City,,,unmapped,NONE,unresolved
+2026-27,631786,272,Kusi-Asare,FWD,Fulham,13262,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,632794,559,Bamba,MID,Newcastle,13214,Aladji Bamba,mapped_curated,MEDIUM,smartplay_curated_record
+2026-27,636852,462,Steur,MID,Newcastle,,,unmapped,NONE,unresolved
+2026-27,640419,509,Byfield,DEF,Spurs,14134,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,645618,50,Burrowes,MID,Aston Villa,13870,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,647681,363,Leoni,DEF,Liverpool,13031,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,647850,138,Kostoulas,FWD,Brighton,14118,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,649208,410,Monga,MID,Man City,13579,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,651426,203,Canvot,DEF,Crystal Palace,13091,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,653481,52,Alysson,MID,Aston Villa,14446,Alysson Edward,mapped_curated,HIGH,smartplay_curated_record
+2026-27,660392,225,Uche,FWD,Crystal Palace,12726,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,661800,284,McCarthy,DEF,Hull City,,,unmapped,NONE,unresolved
+2026-27,672492,221,Drakes-Thomas,MID,Crystal Palace,14263,,mapped_history,HISTORICAL,dastan_training_history
+2026-27,684268,189,Shepherd,MID,Coventry City,,,unmapped,NONE,unresolved
+2026-27,699989,550,Jocelin.T,MID,Sunderland,14460,Djiamgone Jocelin Ta Bi,mapped_curated,HIGH,smartplay_curated_record
+2026-27,700308,135,Yohanna,MID,Brighton,,,unmapped,NONE,unresolved
