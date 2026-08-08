@@ -42,10 +42,6 @@ RELEASE_ARTIFACTS = [
     "mappings/fpl_understat_training_assignments.csv",
     "mappings/fpl_understat_players.csv",
     "mappings/fpl_understat_identity_audit.csv",
-    "mappings/fpl_players_current.csv",
-    "mappings/fpl_understat_current_supplements.csv",
-    "mappings/fpl_understat_current.csv",
-    "mappings/fpl_understat_current.json",
 ]
 
 
@@ -85,7 +81,8 @@ def build_release_manifest() -> dict:
         "note": (
             "Checksums describe the immutable release. Raw-source rebuilds may differ "
             "after upstream statistical corrections; retain downloads.json for an exact "
-            "record of a reconstruction run."
+            "record of a reconstruction run. Operational/current mappings are versioned "
+            "separately by data/mappings/current_manifest.json."
         ),
     }
 
