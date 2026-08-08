@@ -214,6 +214,25 @@ Review both the all-player and starter cohorts. Run the stable multi-seed evalua
 before promotion; do not tune on a release holdout after inspecting it. The documented
 three-seed keep margin is 0.0061.
 
+Review every `paired_baselines` result too. FPL `ep_next`, previous-five form, and
+last-match points are only valid when Dastan is rescored on the exact same eligible
+player-gameweek rows; price is ranking-only. Missing forecasts must be excluded from
+both sides, never imputed as zero. Do not import FPL Review or any other published
+score from a different season, horizon, or row set and present it as a head-to-head.
+
+Before promotion, regenerate the checked evidence when its inputs changed:
+
+```bash
+python -m dastan.evaluate --scope clean --seeds 3
+python -m dastan.benchmark_openfpl --seeds 3
+```
+
+The OpenFPL benchmark is required when the recipe, feature contract, training data,
+or benchmark protocol changes. A weights-only release under an unchanged recipe may
+retain the existing controlled report, but reviewers must confirm its provenance and
+limitations. Commit `docs/evaluation.json`, `docs/openfpl_benchmark.json`, and the
+matching prose together; the documentation tests reject stale headline numbers.
+
 Public promotion is an atomic, explicit operation. Supply the exact SmartPlayFPL
 production commit that promoted the same model:
 
