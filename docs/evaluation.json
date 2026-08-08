@@ -1,1117 +1,1106 @@
 {
-  "seeds": [
-    42,
-    7,
-    2026
-  ],
+  "schema_version": 2,
+  "generated_at": "2026-08-08T23:19:08.153928+00:00",
+  "benchmark_id": "dastan-clean-walk-forward-v13",
+  "model": {
+    "features": 286,
+    "seeds": [
+      42,
+      7,
+      2026
+    ]
+  },
+  "protocol": {
+    "grain": "player-gameweek",
+    "metric_aggregation": "compute within gameweek, then average",
+    "comparison_rule": "Dastan and every baseline use identical eligible rows",
+    "scope": "clean"
+  },
+  "provenance": {
+    "data_release_manifest_sha256": "08111cac5252486192adfcc420c6a745f506777ab39b60297b0c3dbb7577830a",
+    "model_artifact_manifest_sha256": "dd26752f97a59c1558d1d3570c22b06adeb21111a27e56fc941dd614fead7a24",
+    "code": {
+      "evaluate": {
+        "path": "dastan/evaluate.py",
+        "sha256": "43ab9d22c5db34d184dd6d6fc113f3d965a70844aa1877ff85059f792a138180"
+      },
+      "metrics": {
+        "path": "dastan/metrics.py",
+        "sha256": "9faa7532f7842028f9984ad755fcf94792491679bc7484b4cdefaee1b04e509c"
+      },
+      "model": {
+        "path": "dastan/model.py",
+        "sha256": "a2830cc7e0422dce72562ccc33d2ca4a0b12b5ab8ac0f1cf66e66f93034c48a8"
+      },
+      "data": {
+        "path": "dastan/data.py",
+        "sha256": "9d6dd864959b06de474794188702eb9b37d23353439425763668bfcfb8319199"
+      }
+    }
+  },
   "blocks": {
     "2024-25 GW15-22": {
       "tag": "clean",
       "test_rows": 5610,
+      "player_gameweeks": 5610,
+      "starter_player_gameweeks": 1629,
       "arms": {
         "v13": {
           "all": {
-            "obj": 0.6128,
-            "sp": 0.7491,
-            "ndcg": 0.4764,
-            "mae": 0.9552,
-            "rmse": 1.8745,
-            "top10_overlap": 0.225,
+            "obj": 0.6073,
+            "spearman": 0.7489,
+            "ndcg@10": 0.4658,
+            "mae": 0.9542,
+            "rmse": 1.8751,
+            "top10_overlap": 0.2,
             "captain_in_top10": 0.5,
-            "mean_pred": 1.1473,
+            "mean_pred": 1.1441,
             "mean_actual": 1.1736,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 5610
           },
           "starters": {
-            "obj": 0.4091,
-            "sp": 0.2988,
-            "ndcg": 0.5193,
-            "mae": 2.1776,
-            "rmse": 3.143,
+            "obj": 0.4063,
+            "spearman": 0.3004,
+            "ndcg@10": 0.5121,
+            "mae": 2.1765,
+            "rmse": 3.1445,
             "top10_overlap": 0.225,
             "captain_in_top10": 0.5,
-            "mean_pred": 2.638,
+            "mean_pred": 2.6315,
             "mean_actual": 3.4443,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 1629
           }
         },
         "v13 - availability": {
           "all": {
-            "obj": 0.6063,
-            "sp": 0.7347,
-            "ndcg": 0.4779,
-            "mae": 0.9789,
-            "rmse": 1.8912,
+            "obj": 0.6078,
+            "spearman": 0.7344,
+            "ndcg@10": 0.4812,
+            "mae": 0.9787,
+            "rmse": 1.8896,
             "top10_overlap": 0.2125,
             "captain_in_top10": 0.5,
-            "mean_pred": 1.1457,
+            "mean_pred": 1.1472,
             "mean_actual": 1.1736,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 5610
           },
           "starters": {
-            "obj": 0.4011,
-            "sp": 0.2962,
-            "ndcg": 0.506,
-            "mae": 2.1867,
-            "rmse": 3.1642,
-            "top10_overlap": 0.225,
+            "obj": 0.4086,
+            "spearman": 0.2985,
+            "ndcg@10": 0.5187,
+            "mae": 2.1847,
+            "rmse": 3.1593,
+            "top10_overlap": 0.2375,
             "captain_in_top10": 0.5,
-            "mean_pred": 2.5835,
+            "mean_pred": 2.5848,
             "mean_actual": 3.4443,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 1629
           }
         },
         "v12": {
           "all": {
-            "obj": 0.5997,
-            "sp": 0.7207,
-            "ndcg": 0.4786,
-            "mae": 0.9907,
-            "rmse": 1.9056,
-            "top10_overlap": 0.225,
+            "obj": 0.5934,
+            "spearman": 0.7208,
+            "ndcg@10": 0.4659,
+            "mae": 0.9948,
+            "rmse": 1.9095,
+            "top10_overlap": 0.2,
             "captain_in_top10": 0.5,
-            "mean_pred": 1.1363,
+            "mean_pred": 1.1392,
             "mean_actual": 1.1736,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 5610
           },
           "starters": {
-            "obj": 0.4038,
-            "sp": 0.2943,
-            "ndcg": 0.5132,
-            "mae": 2.1839,
-            "rmse": 3.1775,
-            "top10_overlap": 0.2375,
+            "obj": 0.3978,
+            "spearman": 0.2895,
+            "ndcg@10": 0.5061,
+            "mae": 2.1898,
+            "rmse": 3.1865,
+            "top10_overlap": 0.225,
             "captain_in_top10": 0.5,
-            "mean_pred": 2.5246,
+            "mean_pred": 2.5256,
             "mean_actual": 3.4443,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 1629
           }
         }
       },
-      "baselines": {
+      "paired_baselines": {
         "FPL ep_next": {
-          "all": {
-            "obj": 0.5416,
-            "sp": 0.6758,
-            "ndcg": 0.4073,
-            "mae": 1.0912,
-            "rmse": 2.0836,
-            "top10_overlap": 0.1375,
-            "captain_in_top10": 0.375,
-            "mean_pred": 1.1491,
-            "mean_actual": 1.1934,
-            "gameweeks": 8
+          "kind": "point_forecast",
+          "rows": 5511,
+          "coverage": 0.982353,
+          "dastan": {
+            "all": {
+              "obj": 0.6081,
+              "spearman": 0.7504,
+              "ndcg@10": 0.4658,
+              "mae": 0.967,
+              "rmse": 1.8909,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "mean_pred": 1.1614,
+              "mean_actual": 1.1934,
+              "gameweeks": 8,
+              "rows": 5511
+            },
+            "starters": {
+              "obj": 0.4044,
+              "spearman": 0.2967,
+              "ndcg@10": 0.5121,
+              "mae": 2.1789,
+              "rmse": 3.1474,
+              "top10_overlap": 0.225,
+              "captain_in_top10": 0.5,
+              "mean_pred": 2.6365,
+              "mean_actual": 3.4514,
+              "gameweeks": 8,
+              "rows": 1625
+            }
           },
-          "starters": {
-            "obj": 0.3211,
-            "sp": 0.224,
-            "ndcg": 0.4182,
-            "mae": 2.4748,
-            "rmse": 3.4304,
-            "top10_overlap": 0.175,
-            "captain_in_top10": 0.375,
-            "mean_pred": 2.7803,
-            "mean_actual": 3.4514,
-            "gameweeks": 8
-          },
-          "rows": 5511
+          "baseline": {
+            "all": {
+              "obj": 0.5416,
+              "spearman": 0.6758,
+              "ndcg@10": 0.4073,
+              "mae": 1.0912,
+              "rmse": 2.0836,
+              "top10_overlap": 0.1375,
+              "captain_in_top10": 0.375,
+              "mean_pred": 1.1491,
+              "mean_actual": 1.1934,
+              "gameweeks": 8,
+              "rows": 5511
+            },
+            "starters": {
+              "obj": 0.3211,
+              "spearman": 0.224,
+              "ndcg@10": 0.4182,
+              "mae": 2.4748,
+              "rmse": 3.4304,
+              "top10_overlap": 0.175,
+              "captain_in_top10": 0.375,
+              "mean_pred": 2.7803,
+              "mean_actual": 3.4514,
+              "gameweeks": 8,
+              "rows": 1625
+            }
+          }
         },
         "last GW points": {
-          "all": {
-            "obj": 0.4767,
-            "sp": 0.6589,
-            "ndcg": 0.2944,
-            "mae": 1.2249,
-            "rmse": 2.7416,
-            "top10_overlap": 0.1,
-            "captain_in_top10": 0.0,
-            "mean_pred": 1.1754,
-            "mean_actual": 1.2197,
-            "gameweeks": 2
+          "kind": "point_forecast",
+          "rows": 5587,
+          "coverage": 0.9959,
+          "dastan": {
+            "all": {
+              "obj": 0.6075,
+              "spearman": 0.7492,
+              "ndcg@10": 0.4658,
+              "mae": 0.9567,
+              "rmse": 1.8786,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "mean_pred": 1.1475,
+              "mean_actual": 1.1779,
+              "gameweeks": 8,
+              "rows": 5587
+            },
+            "starters": {
+              "obj": 0.4058,
+              "spearman": 0.2994,
+              "ndcg@10": 0.5121,
+              "mae": 2.1781,
+              "rmse": 3.1462,
+              "top10_overlap": 0.225,
+              "captain_in_top10": 0.5,
+              "mean_pred": 2.634,
+              "mean_actual": 3.4471,
+              "gameweeks": 8,
+              "rows": 1627
+            }
           },
-          "starters": {
-            "obj": 0.2861,
-            "sp": 0.168,
-            "ndcg": 0.4042,
-            "mae": 2.8456,
-            "rmse": 4.1516,
-            "top10_overlap": 0.1429,
-            "captain_in_top10": 0.1429,
-            "mean_pred": 2.9961,
-            "mean_actual": 3.4613,
-            "gameweeks": 7
+          "baseline": {
+            "all": {
+              "obj": 0.5051,
+              "spearman": 0.6744,
+              "ndcg@10": 0.3358,
+              "mae": 1.1421,
+              "rmse": 2.5381,
+              "top10_overlap": 0.1125,
+              "captain_in_top10": 0.125,
+              "mean_pred": 1.1816,
+              "mean_actual": 1.1779,
+              "gameweeks": 8,
+              "rows": 5587
+            },
+            "starters": {
+              "obj": 0.2767,
+              "spearman": 0.1747,
+              "ndcg@10": 0.3788,
+              "mae": 2.8405,
+              "rmse": 4.1484,
+              "top10_overlap": 0.1375,
+              "captain_in_top10": 0.125,
+              "mean_pred": 2.9823,
+              "mean_actual": 3.4471,
+              "gameweeks": 8,
+              "rows": 1627
+            }
           }
         },
         "rolling-5 points": {
-          "all": {
-            "obj": 0.5474,
-            "sp": 0.6953,
-            "ndcg": 0.3995,
-            "mae": 1.129,
-            "rmse": 2.2161,
-            "top10_overlap": 0.1,
-            "captain_in_top10": 1.0,
-            "mean_pred": 1.1724,
-            "mean_actual": 1.2197,
-            "gameweeks": 2
+          "kind": "point_forecast",
+          "rows": 5587,
+          "coverage": 0.9959,
+          "dastan": {
+            "all": {
+              "obj": 0.6075,
+              "spearman": 0.7492,
+              "ndcg@10": 0.4658,
+              "mae": 0.9567,
+              "rmse": 1.8786,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "mean_pred": 1.1475,
+              "mean_actual": 1.1779,
+              "gameweeks": 8,
+              "rows": 5587
+            },
+            "starters": {
+              "obj": 0.4058,
+              "spearman": 0.2994,
+              "ndcg@10": 0.5121,
+              "mae": 2.1781,
+              "rmse": 3.1462,
+              "top10_overlap": 0.225,
+              "captain_in_top10": 0.5,
+              "mean_pred": 2.634,
+              "mean_actual": 3.4471,
+              "gameweeks": 8,
+              "rows": 1627
+            }
           },
-          "starters": {
-            "obj": 0.3309,
-            "sp": 0.2114,
-            "ndcg": 0.4503,
-            "mae": 2.449,
-            "rmse": 3.4049,
-            "top10_overlap": 0.1857,
-            "captain_in_top10": 0.5714,
-            "mean_pred": 2.7659,
-            "mean_actual": 3.4613,
-            "gameweeks": 7
+          "baseline": {
+            "all": {
+              "obj": 0.5573,
+              "spearman": 0.6932,
+              "ndcg@10": 0.4215,
+              "mae": 1.0658,
+              "rmse": 2.0822,
+              "top10_overlap": 0.15,
+              "captain_in_top10": 0.5,
+              "mean_pred": 1.1871,
+              "mean_actual": 1.1779,
+              "gameweeks": 8,
+              "rows": 5587
+            },
+            "starters": {
+              "obj": 0.3207,
+              "spearman": 0.202,
+              "ndcg@10": 0.4394,
+              "mae": 2.4376,
+              "rmse": 3.4042,
+              "top10_overlap": 0.175,
+              "captain_in_top10": 0.5,
+              "mean_pred": 2.7826,
+              "mean_actual": 3.4471,
+              "gameweeks": 8,
+              "rows": 1627
+            }
           }
         },
         "price": {
-          "all": {
-            "obj": 0.4057,
-            "sp": 0.4041,
-            "ndcg": 0.4073,
-            "mae": 47.8141,
-            "rmse": 48.8085,
-            "top10_overlap": 0.225,
-            "captain_in_top10": 0.125,
-            "mean_pred": 48.9876,
-            "mean_actual": 1.1736,
-            "gameweeks": 8
+          "kind": "rank_only",
+          "rows": 5610,
+          "coverage": 1.0,
+          "dastan": {
+            "all": {
+              "obj": 0.6073,
+              "spearman": 0.7489,
+              "ndcg@10": 0.4658,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "gameweeks": 8,
+              "rows": 5610
+            },
+            "starters": {
+              "obj": 0.4063,
+              "spearman": 0.3004,
+              "ndcg@10": 0.5121,
+              "top10_overlap": 0.225,
+              "captain_in_top10": 0.5,
+              "gameweeks": 8,
+              "rows": 1629
+            }
           },
-          "starters": {
-            "obj": 0.3915,
-            "sp": 0.3185,
-            "ndcg": 0.4644,
-            "mae": 49.8597,
-            "rmse": 51.7042,
-            "top10_overlap": 0.225,
-            "captain_in_top10": 0.125,
-            "mean_pred": 53.3041,
-            "mean_actual": 3.4443,
-            "gameweeks": 8
+          "baseline": {
+            "all": {
+              "obj": 0.4057,
+              "spearman": 0.4041,
+              "ndcg@10": 0.4073,
+              "top10_overlap": 0.225,
+              "captain_in_top10": 0.125,
+              "gameweeks": 8,
+              "rows": 5610
+            },
+            "starters": {
+              "obj": 0.3915,
+              "spearman": 0.3185,
+              "ndcg@10": 0.4644,
+              "top10_overlap": 0.225,
+              "captain_in_top10": 0.125,
+              "gameweeks": 8,
+              "rows": 1629
+            }
           }
         }
       },
       "p60": {
-        "auc": 0.9525,
+        "auc": 0.9526,
         "brier": 0.0784,
         "base_rate": 0.2904
       },
       "v13_on_ep_next_rows": {
         "all": {
-          "obj": 0.6135,
-          "sp": 0.7505,
-          "ndcg": 0.4764,
-          "mae": 0.968,
-          "rmse": 1.8903,
-          "top10_overlap": 0.225,
+          "obj": 0.6081,
+          "spearman": 0.7504,
+          "ndcg@10": 0.4658,
+          "mae": 0.967,
+          "rmse": 1.8909,
+          "top10_overlap": 0.2,
           "captain_in_top10": 0.5,
-          "mean_pred": 1.1646,
+          "mean_pred": 1.1614,
           "mean_actual": 1.1934,
-          "gameweeks": 8
+          "gameweeks": 8,
+          "rows": 5511
         },
         "starters": {
-          "obj": 0.4072,
-          "sp": 0.2951,
-          "ndcg": 0.5193,
-          "mae": 2.18,
-          "rmse": 3.1459,
+          "obj": 0.4044,
+          "spearman": 0.2967,
+          "ndcg@10": 0.5121,
+          "mae": 2.1789,
+          "rmse": 3.1474,
           "top10_overlap": 0.225,
           "captain_in_top10": 0.5,
-          "mean_pred": 2.6429,
+          "mean_pred": 2.6365,
           "mean_actual": 3.4514,
-          "gameweeks": 8
+          "gameweeks": 8,
+          "rows": 1625
         }
       }
     },
     "2024-25 GW23-30": {
       "tag": "clean",
       "test_rows": 6071,
+      "player_gameweeks": 5927,
+      "starter_player_gameweeks": 1614,
       "arms": {
         "v13": {
           "all": {
-            "obj": 0.6241,
-            "sp": 0.7505,
-            "ndcg": 0.4978,
-            "mae": 0.892,
-            "rmse": 1.8231,
-            "top10_overlap": 0.1875,
+            "obj": 0.6257,
+            "spearman": 0.7502,
+            "ndcg@10": 0.5012,
+            "mae": 0.8969,
+            "rmse": 1.8259,
+            "top10_overlap": 0.2,
             "captain_in_top10": 0.5,
-            "mean_pred": 1.1065,
+            "mean_pred": 1.1095,
             "mean_actual": 1.1206,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 5927
           },
           "starters": {
-            "obj": 0.4105,
-            "sp": 0.2804,
-            "ndcg": 0.5406,
-            "mae": 2.1652,
-            "rmse": 3.1545,
-            "top10_overlap": 0.2125,
+            "obj": 0.4089,
+            "spearman": 0.28,
+            "ndcg@10": 0.5379,
+            "mae": 2.169,
+            "rmse": 3.1603,
+            "top10_overlap": 0.2,
             "captain_in_top10": 0.5,
-            "mean_pred": 2.759,
+            "mean_pred": 2.7558,
             "mean_actual": 3.5601,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 1614
           }
         },
         "v13 - availability": {
           "all": {
-            "obj": 0.6196,
-            "sp": 0.7374,
-            "ndcg": 0.5019,
-            "mae": 0.9138,
-            "rmse": 1.8368,
+            "obj": 0.622,
+            "spearman": 0.7371,
+            "ndcg@10": 0.5069,
+            "mae": 0.9162,
+            "rmse": 1.8357,
             "top10_overlap": 0.1875,
             "captain_in_top10": 0.5,
-            "mean_pred": 1.1077,
+            "mean_pred": 1.111,
             "mean_actual": 1.1206,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 5927
           },
           "starters": {
-            "obj": 0.4164,
-            "sp": 0.2802,
-            "ndcg": 0.5526,
-            "mae": 2.1698,
-            "rmse": 3.1662,
-            "top10_overlap": 0.2125,
+            "obj": 0.4111,
+            "spearman": 0.2783,
+            "ndcg@10": 0.5438,
+            "mae": 2.1666,
+            "rmse": 3.1652,
+            "top10_overlap": 0.2,
             "captain_in_top10": 0.5,
-            "mean_pred": 2.711,
+            "mean_pred": 2.7089,
             "mean_actual": 3.5601,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 1614
           }
         },
         "v12": {
           "all": {
-            "obj": 0.6077,
-            "sp": 0.7218,
-            "ndcg": 0.4936,
-            "mae": 0.9403,
-            "rmse": 1.8571,
-            "top10_overlap": 0.1875,
+            "obj": 0.6023,
+            "spearman": 0.721,
+            "ndcg@10": 0.4835,
+            "mae": 0.9423,
+            "rmse": 1.8592,
+            "top10_overlap": 0.1625,
             "captain_in_top10": 0.5,
-            "mean_pred": 1.1194,
+            "mean_pred": 1.1165,
             "mean_actual": 1.1206,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 5927
           },
           "starters": {
-            "obj": 0.4047,
-            "sp": 0.2732,
-            "ndcg": 0.5362,
-            "mae": 2.1737,
-            "rmse": 3.187,
-            "top10_overlap": 0.2,
+            "obj": 0.3974,
+            "spearman": 0.2703,
+            "ndcg@10": 0.5244,
+            "mae": 2.1794,
+            "rmse": 3.1917,
+            "top10_overlap": 0.1875,
             "captain_in_top10": 0.5,
-            "mean_pred": 2.6746,
+            "mean_pred": 2.6645,
             "mean_actual": 3.5601,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 1614
           }
         }
       },
-      "baselines": {
+      "paired_baselines": {
         "FPL ep_next": {
-          "all": {
-            "obj": 0.5442,
-            "sp": 0.6698,
-            "ndcg": 0.4186,
-            "mae": 1.0585,
-            "rmse": 2.1177,
-            "top10_overlap": 0.1375,
-            "captain_in_top10": 0.375,
-            "mean_pred": 1.0975,
-            "mean_actual": 1.1333,
-            "gameweeks": 8
+          "kind": "point_forecast",
+          "rows": 5846,
+          "coverage": 0.986334,
+          "dastan": {
+            "all": {
+              "obj": 0.6262,
+              "spearman": 0.7512,
+              "ndcg@10": 0.5012,
+              "mae": 0.9052,
+              "rmse": 1.8373,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "mean_pred": 1.1213,
+              "mean_actual": 1.1333,
+              "gameweeks": 8,
+              "rows": 5846
+            },
+            "starters": {
+              "obj": 0.4079,
+              "spearman": 0.2779,
+              "ndcg@10": 0.5379,
+              "mae": 2.1696,
+              "rmse": 3.1623,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "mean_pred": 2.7583,
+              "mean_actual": 3.561,
+              "gameweeks": 8,
+              "rows": 1610
+            }
           },
-          "starters": {
-            "obj": 0.3131,
-            "sp": 0.1801,
-            "ndcg": 0.4461,
-            "mae": 2.6204,
-            "rmse": 3.617,
-            "top10_overlap": 0.15,
-            "captain_in_top10": 0.375,
-            "mean_pred": 2.9146,
-            "mean_actual": 3.561,
-            "gameweeks": 8
-          },
-          "rows": 5846
+          "baseline": {
+            "all": {
+              "obj": 0.5442,
+              "spearman": 0.6698,
+              "ndcg@10": 0.4186,
+              "mae": 1.0585,
+              "rmse": 2.1177,
+              "top10_overlap": 0.1375,
+              "captain_in_top10": 0.375,
+              "mean_pred": 1.0975,
+              "mean_actual": 1.1333,
+              "gameweeks": 8,
+              "rows": 5846
+            },
+            "starters": {
+              "obj": 0.3131,
+              "spearman": 0.1801,
+              "ndcg@10": 0.4461,
+              "mae": 2.6204,
+              "rmse": 3.617,
+              "top10_overlap": 0.15,
+              "captain_in_top10": 0.375,
+              "mean_pred": 2.9146,
+              "mean_actual": 3.561,
+              "gameweeks": 8,
+              "rows": 1610
+            }
+          }
         },
         "last GW points": {
-          "all": {
-            "obj": 0.4791,
-            "sp": 0.7305,
-            "ndcg": 0.2277,
-            "mae": 0.9502,
-            "rmse": 2.2812,
-            "top10_overlap": 0.1,
-            "captain_in_top10": 0.0,
-            "mean_pred": 0.9374,
-            "mean_actual": 1.053,
-            "gameweeks": 1
+          "kind": "point_forecast",
+          "rows": 5888,
+          "coverage": 0.99342,
+          "dastan": {
+            "all": {
+              "obj": 0.6261,
+              "spearman": 0.7511,
+              "ndcg@10": 0.5012,
+              "mae": 0.8976,
+              "rmse": 1.8274,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "mean_pred": 1.1138,
+              "mean_actual": 1.1231,
+              "gameweeks": 8,
+              "rows": 5888
+            },
+            "starters": {
+              "obj": 0.4105,
+              "spearman": 0.2831,
+              "ndcg@10": 0.5379,
+              "mae": 2.1689,
+              "rmse": 3.162,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "mean_pred": 2.7622,
+              "mean_actual": 3.5624,
+              "gameweeks": 8,
+              "rows": 1608
+            }
           },
-          "starters": {
-            "obj": 0.2352,
-            "sp": 0.0821,
-            "ndcg": 0.3883,
-            "mae": 2.983,
-            "rmse": 4.2801,
-            "top10_overlap": 0.15,
-            "captain_in_top10": 0.1667,
-            "mean_pred": 2.9752,
-            "mean_actual": 3.5333,
-            "gameweeks": 6
+          "baseline": {
+            "all": {
+              "obj": 0.5089,
+              "spearman": 0.673,
+              "ndcg@10": 0.3449,
+              "mae": 1.1314,
+              "rmse": 2.5538,
+              "top10_overlap": 0.125,
+              "captain_in_top10": 0.25,
+              "mean_pred": 1.093,
+              "mean_actual": 1.1231,
+              "gameweeks": 8,
+              "rows": 5888
+            },
+            "starters": {
+              "obj": 0.2262,
+              "spearman": 0.0638,
+              "ndcg@10": 0.3886,
+              "mae": 3.0487,
+              "rmse": 4.3718,
+              "top10_overlap": 0.1375,
+              "captain_in_top10": 0.25,
+              "mean_pred": 2.9745,
+              "mean_actual": 3.5624,
+              "gameweeks": 8,
+              "rows": 1608
+            }
           }
         },
         "rolling-5 points": {
-          "all": {
-            "obj": 0.5143,
-            "sp": 0.7574,
-            "ndcg": 0.2713,
-            "mae": 0.9135,
-            "rmse": 1.9174,
-            "top10_overlap": 0.1,
-            "captain_in_top10": 0.0,
-            "mean_pred": 1.0317,
-            "mean_actual": 1.053,
-            "gameweeks": 1
+          "kind": "point_forecast",
+          "rows": 5888,
+          "coverage": 0.99342,
+          "dastan": {
+            "all": {
+              "obj": 0.6261,
+              "spearman": 0.7511,
+              "ndcg@10": 0.5012,
+              "mae": 0.8976,
+              "rmse": 1.8274,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "mean_pred": 1.1138,
+              "mean_actual": 1.1231,
+              "gameweeks": 8,
+              "rows": 5888
+            },
+            "starters": {
+              "obj": 0.4105,
+              "spearman": 0.2831,
+              "ndcg@10": 0.5379,
+              "mae": 2.1689,
+              "rmse": 3.162,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "mean_pred": 2.7622,
+              "mean_actual": 3.5624,
+              "gameweeks": 8,
+              "rows": 1608
+            }
           },
-          "starters": {
-            "obj": 0.2788,
-            "sp": 0.1654,
-            "ndcg": 0.3922,
-            "mae": 2.4735,
-            "rmse": 3.4799,
-            "top10_overlap": 0.15,
-            "captain_in_top10": 0.3333,
-            "mean_pred": 2.7168,
-            "mean_actual": 3.5333,
-            "gameweeks": 6
+          "baseline": {
+            "all": {
+              "obj": 0.5361,
+              "spearman": 0.7037,
+              "ndcg@10": 0.3685,
+              "mae": 1.0131,
+              "rmse": 2.0672,
+              "top10_overlap": 0.1375,
+              "captain_in_top10": 0.25,
+              "mean_pred": 1.1022,
+              "mean_actual": 1.1231,
+              "gameweeks": 8,
+              "rows": 5888
+            },
+            "starters": {
+              "obj": 0.271,
+              "spearman": 0.1432,
+              "ndcg@10": 0.3987,
+              "mae": 2.5007,
+              "rmse": 3.5359,
+              "top10_overlap": 0.15,
+              "captain_in_top10": 0.25,
+              "mean_pred": 2.7485,
+              "mean_actual": 3.5624,
+              "gameweeks": 8,
+              "rows": 1608
+            }
           }
         },
         "price": {
-          "all": {
-            "obj": 0.3633,
-            "sp": 0.3749,
-            "ndcg": 0.3517,
-            "mae": 47.4113,
-            "rmse": 48.3934,
-            "top10_overlap": 0.125,
-            "captain_in_top10": 0.125,
-            "mean_pred": 48.532,
-            "mean_actual": 1.1206,
-            "gameweeks": 8
+          "kind": "rank_only",
+          "rows": 5927,
+          "coverage": 1.0,
+          "dastan": {
+            "all": {
+              "obj": 0.6257,
+              "spearman": 0.7502,
+              "ndcg@10": 0.5012,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "gameweeks": 8,
+              "rows": 5927
+            },
+            "starters": {
+              "obj": 0.4089,
+              "spearman": 0.28,
+              "ndcg@10": 0.5379,
+              "top10_overlap": 0.2,
+              "captain_in_top10": 0.5,
+              "gameweeks": 8,
+              "rows": 1614
+            }
           },
-          "starters": {
-            "obj": 0.3781,
-            "sp": 0.2896,
-            "ndcg": 0.4665,
-            "mae": 49.1878,
-            "rmse": 50.8353,
-            "top10_overlap": 0.175,
-            "captain_in_top10": 0.25,
-            "mean_pred": 52.7479,
-            "mean_actual": 3.5601,
-            "gameweeks": 8
+          "baseline": {
+            "all": {
+              "obj": 0.3633,
+              "spearman": 0.3749,
+              "ndcg@10": 0.3517,
+              "top10_overlap": 0.125,
+              "captain_in_top10": 0.125,
+              "gameweeks": 8,
+              "rows": 5927
+            },
+            "starters": {
+              "obj": 0.3781,
+              "spearman": 0.2896,
+              "ndcg@10": 0.4665,
+              "top10_overlap": 0.175,
+              "captain_in_top10": 0.25,
+              "gameweeks": 8,
+              "rows": 1614
+            }
           }
         }
       },
       "p60": {
-        "auc": 0.9588,
-        "brier": 0.0722,
+        "auc": 0.9587,
+        "brier": 0.0723,
         "base_rate": 0.2723
       },
       "v13_on_ep_next_rows": {
         "all": {
-          "obj": 0.6246,
-          "sp": 0.7515,
-          "ndcg": 0.4978,
-          "mae": 0.9005,
-          "rmse": 1.8346,
-          "top10_overlap": 0.1875,
+          "obj": 0.6262,
+          "spearman": 0.7512,
+          "ndcg@10": 0.5012,
+          "mae": 0.9052,
+          "rmse": 1.8373,
+          "top10_overlap": 0.2,
           "captain_in_top10": 0.5,
-          "mean_pred": 1.1184,
+          "mean_pred": 1.1213,
           "mean_actual": 1.1333,
-          "gameweeks": 8
+          "gameweeks": 8,
+          "rows": 5846
         },
         "starters": {
-          "obj": 0.4094,
-          "sp": 0.2783,
-          "ndcg": 0.5406,
-          "mae": 2.166,
-          "rmse": 3.1567,
-          "top10_overlap": 0.2125,
+          "obj": 0.4079,
+          "spearman": 0.2779,
+          "ndcg@10": 0.5379,
+          "mae": 2.1696,
+          "rmse": 3.1623,
+          "top10_overlap": 0.2,
           "captain_in_top10": 0.5,
-          "mean_pred": 2.7614,
+          "mean_pred": 2.7583,
           "mean_actual": 3.561,
-          "gameweeks": 8
+          "gameweeks": 8,
+          "rows": 1610
         }
       }
     },
     "2024-25 GW31-38": {
       "tag": "clean",
       "test_rows": 6305,
+      "player_gameweeks": 6085,
+      "starter_player_gameweeks": 1606,
       "arms": {
         "v13": {
           "all": {
-            "obj": 0.5847,
-            "sp": 0.7396,
-            "ndcg": 0.4299,
-            "mae": 0.8979,
-            "rmse": 1.8195,
-            "top10_overlap": 0.1375,
-            "captain_in_top10": 0.125,
-            "mean_pred": 1.103,
+            "obj": 0.5941,
+            "spearman": 0.7391,
+            "ndcg@10": 0.4491,
+            "mae": 0.9023,
+            "rmse": 1.8173,
+            "top10_overlap": 0.1625,
+            "captain_in_top10": 0.25,
+            "mean_pred": 1.1081,
             "mean_actual": 1.1058,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 6085
           },
           "starters": {
-            "obj": 0.368,
-            "sp": 0.2805,
-            "ndcg": 0.4555,
-            "mae": 2.1722,
-            "rmse": 3.1943,
-            "top10_overlap": 0.1625,
-            "captain_in_top10": 0.125,
-            "mean_pred": 2.7009,
+            "obj": 0.378,
+            "spearman": 0.2833,
+            "ndcg@10": 0.4727,
+            "mae": 2.1689,
+            "rmse": 3.1901,
+            "top10_overlap": 0.1875,
+            "captain_in_top10": 0.25,
+            "mean_pred": 2.6984,
             "mean_actual": 3.5691,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 1606
           }
         },
         "v13 - availability": {
           "all": {
-            "obj": 0.5785,
-            "sp": 0.7306,
-            "ndcg": 0.4264,
-            "mae": 0.9032,
-            "rmse": 1.8281,
-            "top10_overlap": 0.15,
-            "captain_in_top10": 0.125,
-            "mean_pred": 1.0882,
-            "mean_actual": 1.1058,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.3689,
-            "sp": 0.2898,
-            "ndcg": 0.4481,
-            "mae": 2.1721,
-            "rmse": 3.2087,
+            "obj": 0.5841,
+            "spearman": 0.7312,
+            "ndcg@10": 0.4371,
+            "mae": 0.9026,
+            "rmse": 1.827,
             "top10_overlap": 0.1625,
             "captain_in_top10": 0.125,
-            "mean_pred": 2.6429,
+            "mean_pred": 1.0893,
+            "mean_actual": 1.1058,
+            "gameweeks": 8,
+            "rows": 6085
+          },
+          "starters": {
+            "obj": 0.3732,
+            "spearman": 0.2888,
+            "ndcg@10": 0.4576,
+            "mae": 2.1714,
+            "rmse": 3.2051,
+            "top10_overlap": 0.175,
+            "captain_in_top10": 0.125,
+            "mean_pred": 2.6492,
             "mean_actual": 3.5691,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 1606
           }
         },
         "v12": {
           "all": {
-            "obj": 0.5757,
-            "sp": 0.7224,
-            "ndcg": 0.4289,
-            "mae": 0.9085,
-            "rmse": 1.8361,
+            "obj": 0.5855,
+            "spearman": 0.7216,
+            "ndcg@10": 0.4494,
+            "mae": 0.918,
+            "rmse": 1.8394,
             "top10_overlap": 0.1625,
-            "captain_in_top10": 0.0,
-            "mean_pred": 1.0818,
+            "captain_in_top10": 0.25,
+            "mean_pred": 1.0859,
             "mean_actual": 1.1058,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 6085
           },
           "starters": {
-            "obj": 0.3761,
-            "sp": 0.2879,
-            "ndcg": 0.4642,
-            "mae": 2.1695,
-            "rmse": 3.2163,
+            "obj": 0.3724,
+            "spearman": 0.2829,
+            "ndcg@10": 0.462,
+            "mae": 2.172,
+            "rmse": 3.2251,
             "top10_overlap": 0.175,
-            "captain_in_top10": 0.125,
-            "mean_pred": 2.6148,
+            "captain_in_top10": 0.25,
+            "mean_pred": 2.5951,
             "mean_actual": 3.5691,
-            "gameweeks": 8
+            "gameweeks": 8,
+            "rows": 1606
           }
         }
       },
-      "baselines": {
+      "paired_baselines": {
         "FPL ep_next": {
-          "all": {
-            "obj": 0.5105,
-            "sp": 0.6631,
-            "ndcg": 0.3579,
-            "mae": 1.0606,
-            "rmse": 2.0691,
-            "top10_overlap": 0.1125,
-            "captain_in_top10": 0.125,
-            "mean_pred": 1.0988,
-            "mean_actual": 1.128,
-            "gameweeks": 8
+          "kind": "point_forecast",
+          "rows": 5950,
+          "coverage": 0.977814,
+          "dastan": {
+            "all": {
+              "obj": 0.5949,
+              "spearman": 0.7407,
+              "ndcg@10": 0.4491,
+              "mae": 0.9168,
+              "rmse": 1.8366,
+              "top10_overlap": 0.1625,
+              "captain_in_top10": 0.25,
+              "mean_pred": 1.1273,
+              "mean_actual": 1.128,
+              "gameweeks": 8,
+              "rows": 5950
+            },
+            "starters": {
+              "obj": 0.3766,
+              "spearman": 0.2805,
+              "ndcg@10": 0.4727,
+              "mae": 2.1727,
+              "rmse": 3.1949,
+              "top10_overlap": 0.1875,
+              "captain_in_top10": 0.25,
+              "mean_pred": 2.7029,
+              "mean_actual": 3.5754,
+              "gameweeks": 8,
+              "rows": 1600
+            }
           },
-          "starters": {
-            "obj": 0.3075,
-            "sp": 0.2171,
-            "ndcg": 0.3979,
-            "mae": 2.5422,
-            "rmse": 3.522,
-            "top10_overlap": 0.125,
-            "captain_in_top10": 0.125,
-            "mean_pred": 2.8398,
-            "mean_actual": 3.5754,
-            "gameweeks": 8
-          },
-          "rows": 5950
+          "baseline": {
+            "all": {
+              "obj": 0.5105,
+              "spearman": 0.6631,
+              "ndcg@10": 0.3579,
+              "mae": 1.0606,
+              "rmse": 2.0691,
+              "top10_overlap": 0.1125,
+              "captain_in_top10": 0.125,
+              "mean_pred": 1.0988,
+              "mean_actual": 1.128,
+              "gameweeks": 8,
+              "rows": 5950
+            },
+            "starters": {
+              "obj": 0.3075,
+              "spearman": 0.2171,
+              "ndcg@10": 0.3979,
+              "mae": 2.5422,
+              "rmse": 3.522,
+              "top10_overlap": 0.125,
+              "captain_in_top10": 0.125,
+              "mean_pred": 2.8398,
+              "mean_actual": 3.5754,
+              "gameweeks": 8,
+              "rows": 1600
+            }
+          }
         },
         "last GW points": {
-          "all": {
-            "obj": 0.5293,
-            "sp": 0.691,
-            "ndcg": 0.3676,
-            "mae": 1.0736,
-            "rmse": 2.4013,
-            "top10_overlap": 0.15,
-            "captain_in_top10": 0.5,
-            "mean_pred": 1.0512,
-            "mean_actual": 1.0954,
-            "gameweeks": 2
+          "kind": "point_forecast",
+          "rows": 6072,
+          "coverage": 0.997864,
+          "dastan": {
+            "all": {
+              "obj": 0.5942,
+              "spearman": 0.7393,
+              "ndcg@10": 0.4491,
+              "mae": 0.9036,
+              "rmse": 1.8192,
+              "top10_overlap": 0.1625,
+              "captain_in_top10": 0.25,
+              "mean_pred": 1.1101,
+              "mean_actual": 1.1077,
+              "gameweeks": 8,
+              "rows": 6072
+            },
+            "starters": {
+              "obj": 0.378,
+              "spearman": 0.2833,
+              "ndcg@10": 0.4727,
+              "mae": 2.1689,
+              "rmse": 3.1901,
+              "top10_overlap": 0.1875,
+              "captain_in_top10": 0.25,
+              "mean_pred": 2.6984,
+              "mean_actual": 3.5691,
+              "gameweeks": 8,
+              "rows": 1606
+            }
           },
-          "starters": {
-            "obj": 0.1998,
-            "sp": 0.0857,
-            "ndcg": 0.3139,
-            "mae": 2.9853,
-            "rmse": 4.291,
-            "top10_overlap": 0.0875,
-            "captain_in_top10": 0.25,
-            "mean_pred": 2.8209,
-            "mean_actual": 3.5691,
-            "gameweeks": 8
+          "baseline": {
+            "all": {
+              "obj": 0.4793,
+              "spearman": 0.6756,
+              "ndcg@10": 0.2829,
+              "mae": 1.0918,
+              "rmse": 2.4784,
+              "top10_overlap": 0.0875,
+              "captain_in_top10": 0.125,
+              "mean_pred": 1.0427,
+              "mean_actual": 1.1077,
+              "gameweeks": 8,
+              "rows": 6072
+            },
+            "starters": {
+              "obj": 0.1998,
+              "spearman": 0.0857,
+              "ndcg@10": 0.3139,
+              "mae": 2.9853,
+              "rmse": 4.291,
+              "top10_overlap": 0.0875,
+              "captain_in_top10": 0.25,
+              "mean_pred": 2.8209,
+              "mean_actual": 3.5691,
+              "gameweeks": 8,
+              "rows": 1606
+            }
           }
         },
         "rolling-5 points": {
-          "all": {
-            "obj": 0.5162,
-            "sp": 0.7073,
-            "ndcg": 0.3251,
-            "mae": 0.99,
-            "rmse": 2.0079,
-            "top10_overlap": 0.0,
-            "captain_in_top10": 0.0,
-            "mean_pred": 1.0478,
-            "mean_actual": 1.0954,
-            "gameweeks": 2
+          "kind": "point_forecast",
+          "rows": 6072,
+          "coverage": 0.997864,
+          "dastan": {
+            "all": {
+              "obj": 0.5942,
+              "spearman": 0.7393,
+              "ndcg@10": 0.4491,
+              "mae": 0.9036,
+              "rmse": 1.8192,
+              "top10_overlap": 0.1625,
+              "captain_in_top10": 0.25,
+              "mean_pred": 1.1101,
+              "mean_actual": 1.1077,
+              "gameweeks": 8,
+              "rows": 6072
+            },
+            "starters": {
+              "obj": 0.378,
+              "spearman": 0.2833,
+              "ndcg@10": 0.4727,
+              "mae": 2.1689,
+              "rmse": 3.1901,
+              "top10_overlap": 0.1875,
+              "captain_in_top10": 0.25,
+              "mean_pred": 2.6984,
+              "mean_actual": 3.5691,
+              "gameweeks": 8,
+              "rows": 1606
+            }
           },
-          "starters": {
-            "obj": 0.2362,
-            "sp": 0.1598,
-            "ndcg": 0.3127,
-            "mae": 2.5074,
-            "rmse": 3.5754,
-            "top10_overlap": 0.05,
-            "captain_in_top10": 0.125,
-            "mean_pred": 2.6283,
-            "mean_actual": 3.5691,
-            "gameweeks": 8
+          "baseline": {
+            "all": {
+              "obj": 0.5017,
+              "spearman": 0.715,
+              "ndcg@10": 0.2883,
+              "mae": 0.9948,
+              "rmse": 2.0621,
+              "top10_overlap": 0.05,
+              "captain_in_top10": 0.125,
+              "mean_pred": 1.0547,
+              "mean_actual": 1.1077,
+              "gameweeks": 8,
+              "rows": 6072
+            },
+            "starters": {
+              "obj": 0.2362,
+              "spearman": 0.1598,
+              "ndcg@10": 0.3127,
+              "mae": 2.5074,
+              "rmse": 3.5754,
+              "top10_overlap": 0.05,
+              "captain_in_top10": 0.125,
+              "mean_pred": 2.6283,
+              "mean_actual": 3.5691,
+              "gameweeks": 8,
+              "rows": 1606
+            }
           }
         },
         "price": {
-          "all": {
-            "obj": 0.3023,
-            "sp": 0.3795,
-            "ndcg": 0.225,
-            "mae": 47.1805,
-            "rmse": 48.1735,
-            "top10_overlap": 0.075,
-            "captain_in_top10": 0.0,
-            "mean_pred": 48.2863,
-            "mean_actual": 1.1058,
-            "gameweeks": 8
+          "kind": "rank_only",
+          "rows": 6085,
+          "coverage": 1.0,
+          "dastan": {
+            "all": {
+              "obj": 0.5941,
+              "spearman": 0.7391,
+              "ndcg@10": 0.4491,
+              "top10_overlap": 0.1625,
+              "captain_in_top10": 0.25,
+              "gameweeks": 8,
+              "rows": 6085
+            },
+            "starters": {
+              "obj": 0.378,
+              "spearman": 0.2833,
+              "ndcg@10": 0.4727,
+              "top10_overlap": 0.1875,
+              "captain_in_top10": 0.25,
+              "gameweeks": 8,
+              "rows": 1606
+            }
           },
-          "starters": {
-            "obj": 0.3057,
-            "sp": 0.274,
-            "ndcg": 0.3374,
-            "mae": 48.6257,
-            "rmse": 50.3258,
-            "top10_overlap": 0.1125,
-            "captain_in_top10": 0.0,
-            "mean_pred": 52.1948,
-            "mean_actual": 3.5691,
-            "gameweeks": 8
+          "baseline": {
+            "all": {
+              "obj": 0.3023,
+              "spearman": 0.3795,
+              "ndcg@10": 0.225,
+              "top10_overlap": 0.075,
+              "captain_in_top10": 0.0,
+              "gameweeks": 8,
+              "rows": 6085
+            },
+            "starters": {
+              "obj": 0.3057,
+              "spearman": 0.274,
+              "ndcg@10": 0.3374,
+              "top10_overlap": 0.1125,
+              "captain_in_top10": 0.0,
+              "gameweeks": 8,
+              "rows": 1606
+            }
           }
         }
       },
       "p60": {
-        "auc": 0.9503,
-        "brier": 0.0796,
+        "auc": 0.9502,
+        "brier": 0.0797,
         "base_rate": 0.2639
       },
       "v13_on_ep_next_rows": {
         "all": {
-          "obj": 0.5855,
-          "sp": 0.7412,
-          "ndcg": 0.4299,
-          "mae": 0.9126,
-          "rmse": 1.8388,
-          "top10_overlap": 0.1375,
-          "captain_in_top10": 0.125,
-          "mean_pred": 1.1222,
+          "obj": 0.5949,
+          "spearman": 0.7407,
+          "ndcg@10": 0.4491,
+          "mae": 0.9168,
+          "rmse": 1.8366,
+          "top10_overlap": 0.1625,
+          "captain_in_top10": 0.25,
+          "mean_pred": 1.1273,
           "mean_actual": 1.128,
-          "gameweeks": 8
+          "gameweeks": 8,
+          "rows": 5950
         },
         "starters": {
-          "obj": 0.3665,
-          "sp": 0.2776,
-          "ndcg": 0.4555,
-          "mae": 2.1761,
-          "rmse": 3.1991,
-          "top10_overlap": 0.1625,
-          "captain_in_top10": 0.125,
-          "mean_pred": 2.7056,
+          "obj": 0.3766,
+          "spearman": 0.2805,
+          "ndcg@10": 0.4727,
+          "mae": 2.1727,
+          "rmse": 3.1949,
+          "top10_overlap": 0.1875,
+          "captain_in_top10": 0.25,
+          "mean_pred": 2.7029,
           "mean_actual": 3.5754,
-          "gameweeks": 8
-        }
-      }
-    },
-    "2025-26 GW23-30": {
-      "tag": "discovery",
-      "test_rows": 6606,
-      "arms": {
-        "v13": {
-          "all": {
-            "obj": 0.5794,
-            "sp": 0.7505,
-            "ndcg": 0.4083,
-            "mae": 0.8928,
-            "rmse": 1.7961,
-            "top10_overlap": 0.1375,
-            "captain_in_top10": 0.125,
-            "mean_pred": 1.1112,
-            "mean_actual": 1.1037,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.3056,
-            "sp": 0.1737,
-            "ndcg": 0.4376,
-            "mae": 2.3202,
-            "rmse": 3.2422,
-            "top10_overlap": 0.1625,
-            "captain_in_top10": 0.125,
-            "mean_pred": 2.945,
-            "mean_actual": 3.8333,
-            "gameweeks": 8
-          }
-        },
-        "v13 - availability": {
-          "all": {
-            "obj": 0.579,
-            "sp": 0.7406,
-            "ndcg": 0.4173,
-            "mae": 0.9111,
-            "rmse": 1.81,
-            "top10_overlap": 0.1375,
-            "captain_in_top10": 0.125,
-            "mean_pred": 1.1107,
-            "mean_actual": 1.1037,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.3003,
-            "sp": 0.1666,
-            "ndcg": 0.434,
-            "mae": 2.3411,
-            "rmse": 3.2646,
-            "top10_overlap": 0.15,
-            "captain_in_top10": 0.125,
-            "mean_pred": 2.9161,
-            "mean_actual": 3.8333,
-            "gameweeks": 8
-          }
-        },
-        "v12": {
-          "all": {
-            "obj": 0.5573,
-            "sp": 0.7326,
-            "ndcg": 0.3821,
-            "mae": 0.9186,
-            "rmse": 1.8335,
-            "top10_overlap": 0.075,
-            "captain_in_top10": 0.125,
-            "mean_pred": 1.071,
-            "mean_actual": 1.1037,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.2829,
-            "sp": 0.1425,
-            "ndcg": 0.4233,
-            "mae": 2.3544,
-            "rmse": 3.3242,
-            "top10_overlap": 0.1,
-            "captain_in_top10": 0.375,
-            "mean_pred": 2.759,
-            "mean_actual": 3.8333,
-            "gameweeks": 8
-          }
-        }
-      },
-      "baselines": {
-        "FPL ep_next": {
-          "all": {
-            "obj": 0.5284,
-            "sp": 0.6984,
-            "ndcg": 0.3585,
-            "mae": 1.0022,
-            "rmse": 2.0165,
-            "top10_overlap": 0.075,
-            "captain_in_top10": 0.125,
-            "mean_pred": 1.0734,
-            "mean_actual": 1.1175,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.2367,
-            "sp": 0.0942,
-            "ndcg": 0.3791,
-            "mae": 2.6752,
-            "rmse": 3.6125,
-            "top10_overlap": 0.1,
-            "captain_in_top10": 0.125,
-            "mean_pred": 3.0205,
-            "mean_actual": 3.8333,
-            "gameweeks": 8
-          },
-          "rows": 6438
-        },
-        "last GW points": {
-          "all": {
-            "obj": 0.531,
-            "sp": 0.7448,
-            "ndcg": 0.3171,
-            "mae": 1.131,
-            "rmse": 2.6446,
-            "top10_overlap": 0.0,
-            "captain_in_top10": 0.0,
-            "mean_pred": 1.06,
-            "mean_actual": 1.1506,
-            "gameweeks": 1
-          },
-          "starters": {
-            "obj": 0.1852,
-            "sp": 0.0202,
-            "ndcg": 0.3503,
-            "mae": 3.24,
-            "rmse": 4.4551,
-            "top10_overlap": 0.0429,
-            "captain_in_top10": 0.1429,
-            "mean_pred": 3.1979,
-            "mean_actual": 3.8548,
-            "gameweeks": 7
-          }
-        },
-        "rolling-5 points": {
-          "all": {
-            "obj": 0.5441,
-            "sp": 0.731,
-            "ndcg": 0.3572,
-            "mae": 1.0526,
-            "rmse": 2.1859,
-            "top10_overlap": 0.0,
-            "captain_in_top10": 0.0,
-            "mean_pred": 1.1084,
-            "mean_actual": 1.1506,
-            "gameweeks": 1
-          },
-          "starters": {
-            "obj": 0.1881,
-            "sp": 0.0373,
-            "ndcg": 0.3388,
-            "mae": 2.679,
-            "rmse": 3.6274,
-            "top10_overlap": 0.0429,
-            "captain_in_top10": 0.0,
-            "mean_pred": 2.9277,
-            "mean_actual": 3.8548,
-            "gameweeks": 7
-          }
-        },
-        "price": {
-          "all": {
-            "obj": 0.3519,
-            "sp": 0.3951,
-            "ndcg": 0.3086,
-            "mae": 47.8711,
-            "rmse": 48.9603,
-            "top10_overlap": 0.1125,
-            "captain_in_top10": 0.125,
-            "mean_pred": 48.9748,
-            "mean_actual": 1.1037,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.2847,
-            "sp": 0.1476,
-            "ndcg": 0.4218,
-            "mae": 50.269,
-            "rmse": 52.0953,
-            "top10_overlap": 0.1375,
-            "captain_in_top10": 0.125,
-            "mean_pred": 54.1023,
-            "mean_actual": 3.8333,
-            "gameweeks": 8
-          }
-        }
-      },
-      "p60": {
-        "auc": 0.9617,
-        "brier": 0.067,
-        "base_rate": 0.25
-      },
-      "v13_on_ep_next_rows": {
-        "all": {
-          "obj": 0.5802,
-          "sp": 0.7522,
-          "ndcg": 0.4083,
-          "mae": 0.9015,
-          "rmse": 1.8066,
-          "top10_overlap": 0.1375,
-          "captain_in_top10": 0.125,
-          "mean_pred": 1.1239,
-          "mean_actual": 1.1175,
-          "gameweeks": 8
-        },
-        "starters": {
-          "obj": 0.3056,
-          "sp": 0.1737,
-          "ndcg": 0.4376,
-          "mae": 2.3202,
-          "rmse": 3.2422,
-          "top10_overlap": 0.1625,
-          "captain_in_top10": 0.125,
-          "mean_pred": 2.945,
-          "mean_actual": 3.8333,
-          "gameweeks": 8
-        }
-      }
-    },
-    "2025-26 GW31-38": {
-      "tag": "discovery",
-      "test_rows": 6582,
-      "arms": {
-        "v13": {
-          "all": {
-            "obj": 0.5922,
-            "sp": 0.7465,
-            "ndcg": 0.438,
-            "mae": 0.9008,
-            "rmse": 1.8365,
-            "top10_overlap": 0.175,
-            "captain_in_top10": 0.0,
-            "mean_pred": 1.1449,
-            "mean_actual": 1.1325,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.325,
-            "sp": 0.1798,
-            "ndcg": 0.4701,
-            "mae": 2.3349,
-            "rmse": 3.3183,
-            "top10_overlap": 0.175,
-            "captain_in_top10": 0.125,
-            "mean_pred": 3.033,
-            "mean_actual": 3.9506,
-            "gameweeks": 8
-          }
-        },
-        "v13 - availability": {
-          "all": {
-            "obj": 0.5881,
-            "sp": 0.7385,
-            "ndcg": 0.4377,
-            "mae": 0.9074,
-            "rmse": 1.8453,
-            "top10_overlap": 0.175,
-            "captain_in_top10": 0.0,
-            "mean_pred": 1.124,
-            "mean_actual": 1.1325,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.3271,
-            "sp": 0.1848,
-            "ndcg": 0.4694,
-            "mae": 2.3415,
-            "rmse": 3.3392,
-            "top10_overlap": 0.175,
-            "captain_in_top10": 0.125,
-            "mean_pred": 2.9668,
-            "mean_actual": 3.9506,
-            "gameweeks": 8
-          }
-        },
-        "v12": {
-          "all": {
-            "obj": 0.5699,
-            "sp": 0.7323,
-            "ndcg": 0.4074,
-            "mae": 0.9075,
-            "rmse": 1.8626,
-            "top10_overlap": 0.15,
-            "captain_in_top10": 0.0,
-            "mean_pred": 1.079,
-            "mean_actual": 1.1325,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.3181,
-            "sp": 0.1815,
-            "ndcg": 0.4546,
-            "mae": 2.341,
-            "rmse": 3.3868,
-            "top10_overlap": 0.175,
-            "captain_in_top10": 0.125,
-            "mean_pred": 2.801,
-            "mean_actual": 3.9506,
-            "gameweeks": 8
-          }
-        }
-      },
-      "baselines": {
-        "FPL ep_next": {
-          "all": {
-            "obj": 0.5246,
-            "sp": 0.6769,
-            "ndcg": 0.3724,
-            "mae": 1.0694,
-            "rmse": 2.178,
-            "top10_overlap": 0.1375,
-            "captain_in_top10": 0.25,
-            "mean_pred": 1.1209,
-            "mean_actual": 1.1442,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.2587,
-            "sp": 0.12,
-            "ndcg": 0.3973,
-            "mae": 2.8602,
-            "rmse": 3.885,
-            "top10_overlap": 0.175,
-            "captain_in_top10": 0.25,
-            "mean_pred": 3.2227,
-            "mean_actual": 3.9584,
-            "gameweeks": 8
-          },
-          "rows": 6171
-        },
-        "last GW points": {
-          "all": {
-            "obj": NaN,
-            "sp": NaN,
-            "ndcg": NaN,
-            "mae": NaN,
-            "rmse": NaN,
-            "top10_overlap": NaN,
-            "captain_in_top10": NaN,
-            "mean_pred": NaN,
-            "mean_actual": NaN,
-            "gameweeks": 0
-          },
-          "starters": {
-            "obj": 0.1939,
-            "sp": 0.0621,
-            "ndcg": 0.3257,
-            "mae": 3.2452,
-            "rmse": 4.5051,
-            "top10_overlap": 0.1125,
-            "captain_in_top10": 0.25,
-            "mean_pred": 3.2098,
-            "mean_actual": 3.9506,
-            "gameweeks": 8
-          }
-        },
-        "rolling-5 points": {
-          "all": {
-            "obj": NaN,
-            "sp": NaN,
-            "ndcg": NaN,
-            "mae": NaN,
-            "rmse": NaN,
-            "top10_overlap": NaN,
-            "captain_in_top10": NaN,
-            "mean_pred": NaN,
-            "mean_actual": NaN,
-            "gameweeks": 0
-          },
-          "starters": {
-            "obj": 0.2125,
-            "sp": 0.0898,
-            "ndcg": 0.3352,
-            "mae": 2.6932,
-            "rmse": 3.7023,
-            "top10_overlap": 0.1125,
-            "captain_in_top10": 0.0,
-            "mean_pred": 2.8961,
-            "mean_actual": 3.9506,
-            "gameweeks": 8
-          }
-        },
-        "price": {
-          "all": {
-            "obj": 0.3357,
-            "sp": 0.392,
-            "ndcg": 0.2793,
-            "mae": 47.5842,
-            "rmse": 48.652,
-            "top10_overlap": 0.1,
-            "captain_in_top10": 0.125,
-            "mean_pred": 48.7167,
-            "mean_actual": 1.1325,
-            "gameweeks": 8
-          },
-          "starters": {
-            "obj": 0.2798,
-            "sp": 0.1155,
-            "ndcg": 0.4441,
-            "mae": 49.4467,
-            "rmse": 51.0469,
-            "top10_overlap": 0.1625,
-            "captain_in_top10": 0.125,
-            "mean_pred": 53.3973,
-            "mean_actual": 3.9506,
-            "gameweeks": 8
-          }
-        }
-      },
-      "p60": {
-        "auc": 0.9565,
-        "brier": 0.0725,
-        "base_rate": 0.2511
-      },
-      "v13_on_ep_next_rows": {
-        "all": {
-          "obj": 0.5928,
-          "sp": 0.7477,
-          "ndcg": 0.438,
-          "mae": 0.9094,
-          "rmse": 1.8478,
-          "top10_overlap": 0.175,
-          "captain_in_top10": 0.0,
-          "mean_pred": 1.1569,
-          "mean_actual": 1.1442,
-          "gameweeks": 8
-        },
-        "starters": {
-          "obj": 0.3232,
-          "sp": 0.1764,
-          "ndcg": 0.4701,
-          "mae": 2.3395,
-          "rmse": 3.3239,
-          "top10_overlap": 0.175,
-          "captain_in_top10": 0.125,
-          "mean_pred": 3.0416,
-          "mean_actual": 3.9584,
-          "gameweeks": 8
+          "gameweeks": 8,
+          "rows": 1600
         }
       }
     }

@@ -1,266 +1,245 @@
 # Accuracy
 
-Every number here comes from **walk-forward evaluation**: the model is retrained from
-scratch for each block, so nothing in a block's test window existed when its model was
-fitted. Three seeds (42, 7, 2026), predictions averaged. Metrics are computed **inside
-each gameweek and then averaged** — see [METHODOLOGY.md](METHODOLOGY.md) §2 for why that
-matters more than it sounds.
+Dastan is evaluated against things an FPL manager could actually use instead:
+FPL's official `ep_next`, OpenFPL, recent points, player price, and the previous
+Dastan recipe. A score without those references is not an accuracy claim.
 
-Reproduce with `python -m dastan.evaluate --seeds 3`.
+There are two controlled protocols. Do not compare a number from one protocol with a
+number from the other:
 
-> **One note on precision.** These blocks were scored with 287 features. The released
-> weights have 286: a column that was 95.2% exactly zero (a sparsely populated field
-> whose gaps had been filled with `0` rather than left absent) was removed afterwards.
-> Removing it measured **−0.0001 all / −0.0002 starters** across three windows, so the
-> tables below are unaffected at the precision shown. It was dropped not for accuracy
-> but to remove a train/serve skew: in production that column is fully populated with
-> real values, so a served row would land where the model had barely trained.
+| protocol | purpose | train / test | rows |
+|---|---|---|---:|
+| clean walk-forward | Dastan, `ep_next`, simple baselines, prior recipe | three unseen 2024-25 blocks | 17,622 player-GWs |
+| OpenFPL head-to-head | Dastan, OpenFPL, `ep_next`, simple baselines | train 2020-21..2023-24; test 2025-26 GW1-24 | 18,173 player-GWs |
 
-> **Read the two cohorts separately.** They tell genuinely different stories, and the
-> headline improvement lives almost entirely in one of them. That is stated plainly
-> below rather than averaged away.
+Both operate at **player-gameweek grain**. Metrics are computed inside each gameweek
+and then averaged. Every paired comparison restricts all methods to the exact same
+eligible rows. Dastan predictions are the arithmetic mean of seeds 42, 7, and 2026.
 
----
+The machine-readable evidence is [`evaluation.json`](evaluation.json) and
+[`openfpl_benchmark.json`](openfpl_benchmark.json). Both reports record their protocol,
+row counts, feature count, seeds, and input-manifest hashes.
+
+## The short answer
+
+On the clean 2024-25 walk-forward blocks, Dastan's decision score is **0.6090** over all
+players and **0.3977** over players who reached 60 minutes. The score is
+`0.5 × Spearman + 0.5 × NDCG@10`; it is a ranking score, not "60.90% accurate."
+
+Against FPL's official projection on the **same 17,307 rows**:
+
+| cohort | Dastan | FPL `ep_next` | delta |
+|---|---:|---:|---:|
+| all players | **0.6097** | 0.5321 | **+0.0776** |
+| 60+ minutes | **0.3963** | 0.3139 | **+0.0824** |
+
+Under the separate OpenFPL protocol, Dastan and OpenFPL are trained without the test
+season and scored on the same 18,173 rows:
+
+| cohort | Dastan | OpenFPL | delta | paired 95% interval |
+|---|---:|---:|---:|---:|
+| all players | **0.5641** | 0.5044 | **+0.0597** | **+0.0412 to +0.0798** |
+| 60+ minutes | 0.2626 | 0.2564 | +0.0062 | −0.0093 to +0.0224 |
+
+The interval resamples gameweeks while holding the fitted predictions fixed. It
+measures week-to-week variation, not all uncertainty in model training.
+
+The conclusion is narrower than "Dastan wins": **Dastan is clearly better over the
+full player pool, while Dastan and OpenFPL are not distinguishable among 60-minute
+players on this sample.** The return-band table below shows why.
 
 ## How to read the metrics
 
-The clean evaluation covers **24 gameweeks and 17,986 player-fixtures**. No single
-number is "accuracy":
-
 | metric | direction | interpretation |
 |---|---|---|
-| objective | higher | `0.5 × Spearman + 0.5 × NDCG@10`; the model-selection score |
+| decision score | higher | `0.5 × Spearman + 0.5 × NDCG@10`; model-selection score |
 | Spearman | higher | quality of the full player ranking within each gameweek |
 | NDCG@10 | higher | quality of the ten players ranked highest |
-| MAE / RMSE | lower | points error; dominated by participation in the all-player cohort |
+| MAE / RMSE | lower | absolute / squared points error |
+| top-10 overlap | higher | fraction of actual top ten found in predicted top ten |
 | p60 AUC | higher | ranking quality for reaching 60 minutes; not classification accuracy |
 | Brier | lower | calibration and sharpness of the 60-minute probability |
 
-The objective is not a percentage and has no direct "60.72% correct" reading. For FPL,
-the practical questions are whether the ranking beats available alternatives, whether
-the top of the list contains actual high scorers, and whether participation risk is
-identified before the deadline.
+Two cohorts are always shown:
 
-Headline practical results:
+| cohort | question | important caveat |
+|---|---|---|
+| all players | can the model rank the entire available pool? | most rows are non-players, so availability dominates |
+| 60+ minutes | can it rank players who actually played substantial minutes? | harder and much noisier; selected after the match only for diagnosis |
+
+MAE should not be compared across the cohorts. Removing non-players removes many easy
+zero-point rows.
+
+## Clean walk-forward evaluation
+
+Each eight-gameweek block is retrained from scratch using only earlier data. Later
+seasons are removed when an earlier window is evaluated. These results use the exact
+current **286-feature** public contract and three-seed prediction ensemble.
+
+### Dastan on every clean row
+
+| metric | all players | 60+ minutes |
+|---|---:|---:|
+| decision score | **0.6090** | **0.3977** |
+| Spearman | 0.7461 | 0.2879 |
+| NDCG@10 | 0.4720 | 0.5076 |
+| MAE | 0.918 | 2.172 |
+| RMSE | 1.839 | 3.165 |
+| mean prediction | 1.121 | 2.695 |
+| mean actual | 1.133 | 3.525 |
+| player-gameweeks | 17,622 | 4,849 |
+
+Dastan is well calibrated across the full pool (1.121 predicted versus 1.133 actual)
+and conservative among 60-minute players (2.695 versus 3.525). That is one reason to
+use it primarily as a ranking, not as a promise of an exact score.
+
+### Paired baselines
+
+Every row below is its own exact-row comparison. `ep_next` has 98.2% coverage; the
+recent-points baselines have 99.6%. Price covers the full frame but is **rank-only**:
+price is not measured in FPL points, so MAE or RMSE for it would be meaningless.
+
+All players:
+
+| baseline | Dastan, same rows | baseline | delta | rows | GWs |
+|---|---:|---:|---:|---:|---:|
+| FPL `ep_next` | **0.6097** | 0.5321 | **+0.0776** | 17,307 | 24 |
+| previous-five mean | **0.6093** | 0.5317 | **+0.0776** | 17,547 | 24 |
+| last match points | **0.6093** | 0.4978 | **+0.1115** | 17,547 | 24 |
+| price, rank-only | **0.6090** | 0.3571 | **+0.2519** | 17,622 | 24 |
+| v12 recipe | **0.6090** | 0.5937 | **+0.0153** | 17,622 | 24 |
+
+Players who reached 60 minutes:
+
+| baseline | Dastan, same rows | baseline | delta | rows | GWs |
+|---|---:|---:|---:|---:|---:|
+| FPL `ep_next` | **0.3963** | 0.3139 | **+0.0824** | 4,835 | 24 |
+| previous-five mean | **0.3981** | 0.2760 | **+0.1221** | 4,841 | 24 |
+| last match points | **0.3981** | 0.2342 | **+0.1639** | 4,841 | 24 |
+| price, rank-only | **0.3977** | 0.3584 | **+0.0393** | 4,849 | 24 |
+| v12 recipe | **0.3977** | 0.3892 | **+0.0085** | 4,849 | 24 |
+
+For point forecasts, the error comparison against `ep_next` is also favourable:
+
+| cohort | Dastan MAE | `ep_next` MAE | Dastan RMSE | `ep_next` RMSE |
+|---|---:|---:|---:|---:|
+| all players | **0.930** | 1.070 | **1.855** | 2.090 |
+| 60+ minutes | **2.174** | 2.546 | **3.168** | 3.523 |
+
+### Per-block decision score
+
+All players:
+
+| block | Dastan | on `ep_next` rows | FPL `ep_next` | no availability | v12 recipe |
+|---|---:|---:|---:|---:|---:|
+| 2024-25 GW15-22 | 0.6073 | 0.6081 | 0.5416 | 0.6078 | 0.5934 |
+| 2024-25 GW23-30 | 0.6257 | 0.6262 | 0.5442 | 0.6220 | 0.6023 |
+| 2024-25 GW31-38 | 0.5941 | 0.5949 | 0.5105 | 0.5841 | 0.5855 |
+
+Players who reached 60 minutes:
+
+| block | Dastan | on `ep_next` rows | FPL `ep_next` | no availability | v12 recipe |
+|---|---:|---:|---:|---:|---:|
+| 2024-25 GW15-22 | 0.4063 | 0.4044 | 0.3211 | 0.4086 | 0.3978 |
+| 2024-25 GW23-30 | 0.4089 | 0.4079 | 0.3131 | 0.4111 | 0.3974 |
+| 2024-25 GW31-38 | 0.3780 | 0.3766 | 0.3075 | 0.3732 | 0.3724 |
+
+Availability improves the all-player average by **+0.0044** here and the 60-minute
+average by **+0.0001**. Both are below the predeclared 0.0061 three-seed keep margin on
+these windows. That is consistent with the mechanism—availability helps identify who
+plays—but it is not evidence of a starter-ranking gain.
+
+### Practical and minutes metrics
 
 | result | value |
 |---|---:|
-| all-player objective | **0.6072** |
-| starter-only objective | **0.3959** |
-| all-player MAE | **0.915 points** |
-| 60-minute AUC | **0.9539** |
-| actual top-ten players found in predicted top ten | **1.83 of 10** |
-| top prediction finishes in actual top ten | **9 of 24 GWs (37.5%)** |
+| actual top-ten players found in predicted top ten | **1.88 of 10** |
+| top prediction finishes in actual top ten | **10 of 24 GWs (41.7%)** |
+| 60-minute AUC | **0.9538** |
+| 60-minute Brier score | **0.0768** |
 
-`python -m dastan.verify` reports numbers from the released fitting holdout. Those are
-serialization checks, **not accuracy claims**. The claims in this document come from
-the separate chronological blocks below.
+Actual top-ten scorers are dominated by difficult-to-predict hauls. The overlap is
+useful context for what a high rank correlation does—and does not—guarantee.
 
----
+## Controlled head-to-head with OpenFPL
 
-## 1. Headline
+[OpenFPL](https://github.com/daniegr/OpenFPL) is the fairest external reference because
+Dastan's rolling feature engineering originates there. To avoid scoring Dastan on a
+window its released weights saw, Dastan is retrained using OpenFPL's four-season
+development regime: 2020-21..2023-24 training, 2024-25 early stopping, and 2025-26
+GW1-24 testing. Dastan uses three seeds here; OpenFPL's stored predictions are fixed.
 
-Three chronological blocks of 2024-25, none of which was ever used to select a feature,
-a fold or a hyperparameter.
+### Primary exact-row result
 
-### All players
+| metric, all players | Dastan | OpenFPL | delta |
+|---|---:|---:|---:|
+| decision score | **0.5641** | 0.5044 | **+0.0597** |
+| Spearman | **0.7539** | 0.6961 | **+0.0578** |
+| NDCG@10 | **0.3744** | 0.3128 | **+0.0616** |
+| MAE | **0.948** | 1.167 | **−0.219** |
+| RMSE | **1.928** | 2.017 | **−0.088** |
 
-| model | objective | Spearman | NDCG@10 | MAE | GWs scored |
-|---|---|---|---|---|---:|
-| **Dastan** | **0.6072** | 0.7464 | 0.4680 | **0.915** | 24 |
-| core feature set only | 0.5944 | — | — | — | 24 |
-| Dastan on FPL-covered rows | 0.6079 | — | — | — | 24 |
-| FPL's own `ep_next`, same rows | 0.5321 | — | — | 1.06 | 24 |
-| rolling-5 form | 0.5260 | — | — | — | 5 |
-| last gameweek's points | 0.4950 | — | — | — | 5 |
-| price | 0.3571 | — | — | — | 24 |
+For 60-minute players, Dastan's decision-score delta is only +0.0062 and its paired
+95% interval crosses zero. OpenFPL has slightly better Spearman (0.1334 versus 0.1266)
+and MAE (2.319 versus 2.340); Dastan has better NDCG@10 (0.3987 versus 0.3794). Treat
+the two methods as tied in this cohort.
 
-**On identical rows, Dastan beats FPL's own published projection by +0.0758** — more
-than twelve times the keep margin. Rolling-form and last-week baselines have only five
-eligible all-player gameweeks, so their aggregate values are sanity checks rather than
-full-window head-to-head claims.
+### Three-way comparison with official FPL
 
-### Starters only (played 60+ minutes)
+The provenance-checked `ep_next` data cover 17,888 of the OpenFPL test rows. All three
+models are rescored on that subset:
 
-| model | objective | Spearman | NDCG@10 | MAE | GWs scored |
-|---|---|---|---|---|---:|
-| **Dastan** | **0.3959** | 0.2866 | 0.5051 | 2.172 | 24 |
-| core feature set only | 0.3949 | — | — | — | 24 |
-| price | 0.3584 | — | — | — | 24 |
-| Dastan on FPL-covered rows | 0.3944 | — | — | — | 24 |
-| FPL's own `ep_next`, same rows | 0.3139 | — | — | — | 24 |
-| rolling-5 form | 0.2820 | — | — | — | 21 |
-| last gameweek's points | 0.2404 | — | — | — | 21 |
+| cohort | Dastan | OpenFPL | FPL `ep_next` |
+|---|---:|---:|---:|
+| all players | **0.5648** | 0.5048 | 0.4946 |
+| 60+ minutes | **0.2628** | 0.2566 | 0.2123 |
 
-**On identical rows, Dastan beats `ep_next` by +0.0805 here too.** But note the core
-feature row: most of that is architecture and participation modelling, not the added
-feature families.
+The previous-five baseline covers 17,927 rows and scores 0.4883, versus Dastan at
+0.5652 and OpenFPL at 0.5072 on those same rows. Price covers all 18,173 rows and
+scores 0.3382 as a rank-only baseline.
 
----
+### Return bands, following OpenFPL
 
-## 2. The honest caveat
+OpenFPL reports error separately for non-players, blanks, 3–4 point returns, and
+haulers. Applying the same idea to the exact shared rows produces this RMSE table
+(lower is better):
 
-Against the core feature set, the added families are worth:
+| realized return | rows | Dastan | OpenFPL | lower error |
+|---|---:|---:|---:|---|
+| 0 minutes (`Zeros`) | 10,902 | **0.583** | 0.964 | Dastan |
+| played, ≤2 points (`Blanks`) | 4,562 | **1.381** | 1.518 | Dastan |
+| 3–4 points (`Tickers`) | 1,112 | 1.442 | **1.304** | OpenFPL |
+| ≥5 points (`Haulers`) | 1,597 | 5.756 | **5.675** | OpenFPL |
 
-| cohort | gain | noise floor | verdict |
-|---|---|---|---|
-| all players | **+0.0128** | 0.0061 | real |
-| starters only | **+0.0010** | 0.0061 | **indistinguishable from nothing** |
+This is the most important qualification in the report. **Dastan's overall advantage
+comes from non-players and low returns. OpenFPL is slightly better on tickers and
+haulers.** The JSON report also provides this split for GKP, DEF, MID, and FWD.
 
-**Everything the extra features buy is in knowing who will not play.** Among players who
-actually start, the enriched feature set is no better than the core one. The same is
-true of the availability family specifically: +0.0057 on all players, +0.0004 on
-starters.
+## What we do not claim
 
-This is consistent with the mechanism rather than a surprise — an injury flag tells you
-*whether* a player features, not how well he does — but it is a real limit and anyone
-building on this should know it. **If your use case is "rank the players I already know
-will start", the feature engineering here is not where the value is.** The architecture
-and the training protocol are.
+- We do not compare with FPL Review. Synchronized proprietary forecasts for these
+  rows are unavailable; copying numbers from OpenFPL's different 2024-25 sample would
+  not be a head-to-head comparison.
+- We do not claim two- or three-gameweek forecast accuracy. The controlled benchmark
+  here is one gameweek ahead.
+- The clean walk-forward suite covers 24 gameweeks of one season. The OpenFPL test adds
+  24 gameweeks of a second season, but neither substitutes for continued live tracking.
+- `ep_next` is also a Dastan input. The comparison asks whether Dastan adds value over
+  the free FPL projection; it is not evidence that Dastan is independent of it.
+- The 60-minute cohort is selected using realized minutes. It diagnoses ranking among
+  players who played; it is not a pre-deadline selection rule.
 
-Second honest note: **price alone scores 0.3584 on starters**, against the full model's
-0.3959. The market is a strong estimator among players who play, and any model claiming
-to be useful should be checked against it rather than only against form baselines.
+## Reproduce and audit
 
----
+```bash
+python -m dastan.datasets verify
+python -m dastan.artifacts
+python -m dastan.evaluate --scope clean --seeds 3
+python -m dastan.benchmark_openfpl --seeds 3
+python -m unittest discover -v
+```
 
-## 3. Per-block detail
-
-Objective, all players. The two `ep_next` columns use identical rows:
-
-| block | Dastan | Dastan on `ep_next` rows | FPL `ep_next` | without availability | core only |
-|---|---:|---:|---:|---:|---:|
-| 2024-25 GW15-22 | 0.6128 | 0.6135 | 0.5416 | 0.6063 | 0.5997 |
-| 2024-25 GW23-30 | 0.6241 | 0.6246 | 0.5442 | 0.6196 | 0.6077 |
-| 2024-25 GW31-38 | 0.5847 | 0.5855 | 0.5105 | 0.5785 | 0.5757 |
-| 2025-26 GW23-30 † | 0.5794 | 0.5802 | 0.5284 | 0.5790 | 0.5573 |
-| 2025-26 GW31-38 † | 0.5922 | 0.5928 | 0.5246 | 0.5881 | 0.5699 |
-
-Objective, starters only. The two `ep_next` columns use identical rows:
-
-| block | Dastan | Dastan on `ep_next` rows | FPL `ep_next` | without availability | core only |
-|---|---:|---:|---:|---:|---:|
-| 2024-25 GW15-22 | 0.4091 | 0.4072 | 0.3211 | 0.4011 | 0.4038 |
-| 2024-25 GW23-30 | 0.4105 | 0.4094 | 0.3131 | 0.4164 | 0.4047 |
-| 2024-25 GW31-38 | 0.3680 | 0.3665 | 0.3075 | 0.3689 | 0.3761 |
-| 2025-26 GW23-30 † | 0.3056 | 0.3056 | 0.2367 | 0.3003 | 0.2829 |
-| 2025-26 GW31-38 † | 0.3250 | 0.3232 | 0.2587 | 0.3271 | 0.3181 |
-
-† These two blocks were used during feature discovery, so they are **expected to read
-high** and are shown for completeness only. Quote the 2024-25 blocks.
-
-Note how the starters column moves around: the ablation *wins* on two of five blocks.
-That is what a difference smaller than the noise floor looks like, and it is why single
--block, single-seed comparisons are not evidence.
-
----
-
-## 4. Error and calibration
-
-Clean blocks, Dastan:
-
-| | all players | starters |
-|---|---|---|
-| MAE | 0.915 | 2.172 |
-| RMSE | 1.839 | 3.164 |
-| mean predicted | 1.119 | 2.699 |
-| mean actual | 1.133 | 3.525 |
-
-**Well calibrated on the full pool** (1.119 vs 1.133) and **under-predicts starters by
-0.83 points** (2.699 vs 3.525).
-
-That under-prediction is structural, not a bug to be tuned away. Points are clipped at
-zero and the distribution is violently right-skewed: a model minimising squared error
-across a population where the median starter returns 2 will not predict the 13 that
-occasionally happens. It matters for how you *use* the output — Dastan ranks well but
-its absolute values are conservative for starters, so do not read a 5.0 projection as a
-point estimate of a haul.
-
-Do not compare MAE across cohorts. The all-players MAE is low mostly because most
-players score nothing and the model correctly says so.
-
----
-
-## 5. Practical metrics
-
-How the model does at the decision a manager actually makes:
-
-| metric | value |
-|---|---|
-| top-10 overlap | **0.183** |
-| our top pick finishes in the actual top 10 | **37.5%** of gameweeks |
-
-Top-10 overlap of 0.183 means that of the ten highest-scoring players in a gameweek,
-**about 1.8 were in our predicted top ten**.
-
-That sounds poor and is roughly the ceiling anyone should expect. A gameweek's actual
-top ten is dominated by hauls — a defender scoring a header, a midfielder getting a
-brace — and those events are close to irreducibly random at the individual level. Any
-FPL model quoting a dramatically higher figure is either scoring pooled across
-gameweeks, scoring on a restricted pool, or leaking.
-
----
-
-## 6. The minutes gate
-
-The `p60` head predicts whether a player will reach 60 minutes. It is the strongest
-component of the model and is useful on its own.
-
-| block | AUC | Brier | base rate |
-|---|---|---|---|
-| 2024-25 GW15-22 | 0.9525 | 0.0784 | 0.290 |
-| 2024-25 GW23-30 | 0.9588 | 0.0722 | 0.272 |
-| 2024-25 GW31-38 | 0.9503 | 0.0796 | 0.264 |
-
-**AUC ≈ 0.95** out of sample. If you want one thing from this repository and do not care
-about points modelling, take this head: `predictor.Dastan().predict_position(...)`
-returns `p60` directly.
-
----
-
-## 7. Against OpenFPL
-
-Dastan's feature engineering is built on OpenFPL, so it is the fairest reference point.
-Both are scored on identical rows under the regime OpenFPL published for — train
-2020-21..2023-24, early stop 2024-25, test 2025-26 GW1-24, 18,173 player-fixtures.
-
-| cohort | Dastan | OpenFPL | delta |
-|---|---|---|---|
-| **all players** | **0.5602** | 0.5044 | **+0.0558** |
-| starters only | 0.2589 | 0.2564 | +0.0025 |
-
-| metric (all players) | Dastan | OpenFPL |
-|---|---|---|
-| Spearman | 0.7535 | 0.6961 |
-| NDCG@10 | 0.3669 | 0.3128 |
-| MAE | **0.950** | 1.167 |
-| RMSE | **1.929** | 2.017 |
-
-Both train on the same four seasons here, so Dastan's usual six-season advantage is not
-a factor.
-
-**All players: +0.0558**, nine times the noise floor, with MAE better by 0.22 points.
-
-**Starters: +0.0025**, below the noise floor — and OpenFPL is marginally better within
-that cohort on Spearman (0.1334 vs 0.1244) and MAE (2.319 vs 2.341). This reproduces
-§2's conclusion from a completely independent direction: the advantage is in predicting
-participation, not in ranking the players who play.
-
-These are lower than §1 because this regime trains on four seasons rather than five and
-tests on GW1-24, including the hard early-season weeks.
-
-Run `python -m dastan.benchmark_openfpl` to reproduce; results are written to
-`docs/openfpl_benchmark.json`.
-
----
-
-## 8. What would move these numbers
-
-Ranked by our estimate, all open:
-
-1. **All-competition minutes.** Congestion features here see Premier League fixtures
-   only, so a player who went 90 minutes in Europe on Thursday looks rested.
-2. **Better availability data.** The `all` cohort gain came entirely from knowing who
-   plays. Press-conference and lineup data closer to the deadline should extend that.
-3. **Anything that improves the starters cohort.** Nothing we added did. This is the
-   open problem, and it is where the remaining value is.
+The two training benchmarks are intentionally not part of normal CI because they fit
+dozens of XGBoost heads. CI verifies the checked-in evidence schema, row counts, input
+hashes, and release contracts. Regenerate and review both reports whenever data,
+features, model code, or the evaluation protocol changes.

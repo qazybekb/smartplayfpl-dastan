@@ -74,6 +74,55 @@ def collapse_to_player_gameweek(df: pd.DataFrame, pred_col: str = "pred") -> pd.
     )
 
 
+def score_by_gameweek(df: pd.DataFrame, col: str = "pred", cohort: str = "all",
+                      min_players: int = 20) -> pd.DataFrame:
+    """Return one metric row per scorable gameweek.
+
+    Missing and non-finite predictions are removed before a gameweek is scored. This
+    is important for rolling-history baselines: promoted players and early-season
+    rows legitimately have no five-match history. Letting one NaN reach Spearman
+    silently discarded the *whole* gameweek in earlier reports.
+    """
+    d = df if cohort == "all" else df[df["minutes"] >= 60]
+    numeric = d[[col, "actual"]].apply(pd.to_numeric, errors="coerce")
+    finite = np.isfinite(numeric[col].to_numpy()) & np.isfinite(
+        numeric["actual"].to_numpy()
+    )
+    d = d.loc[finite].copy()
+    d[col] = numeric.loc[finite, col]
+    d["actual"] = numeric.loc[finite, "actual"]
+    rows = []
+    group_keys = ["season", "gameweek"] if "season" in d.columns else ["gameweek"]
+    for group, g in d.groupby(group_keys, sort=True):
+        if len(g) < min_players:
+            continue
+        sp, nd = spearman(g[col], g["actual"]), ndcg(g[col], g["actual"])
+        if np.isnan(sp) or np.isnan(nd):
+            continue
+        pred_top = set(g.nlargest(10, col)["fpl_code"])
+        actual_top = set(g.nlargest(10, "actual")["fpl_code"])
+        gameweek = group[-1] if isinstance(group, tuple) else group
+        row = {
+            "gameweek": int(gameweek),
+            "rows": int(len(g)),
+            "obj": 0.5 * sp + 0.5 * nd,
+            "spearman": sp,
+            "ndcg@10": nd,
+            "mae": float((g[col] - g["actual"]).abs().mean()),
+            "rmse": float(np.sqrt(((g[col] - g["actual"]) ** 2).mean())),
+            "top10_overlap": len(pred_top & actual_top) / 10.0,
+            "captain_in_top10": float(
+                g.nlargest(1, col)["fpl_code"].iloc[0] in actual_top
+            ),
+            "mean_pred": float(g[col].mean()),
+            "mean_actual": float(g["actual"].mean()),
+        }
+        if "season" in d.columns:
+            row["season"] = str(group[0])
+        rows.append(row)
+    return pd.DataFrame(rows)
+
+
 def score(df: pd.DataFrame, col: str = "pred", cohort: str = "all",
           min_players: int = 20) -> dict:
     """Per-gameweek metrics, averaged. `df` must be at player-gameweek grain.
@@ -85,33 +134,21 @@ def score(df: pd.DataFrame, col: str = "pred", cohort: str = "all",
                         top 10 -- the closest thing here to a captaincy question.
     """
     d = df if cohort == "all" else df[df["minutes"] >= 60]
-    rows = []
-    for _, g in d.groupby("gameweek"):
-        if len(g) < min_players:
-            continue
-        sp, nd = spearman(g[col], g["actual"]), ndcg(g[col], g["actual"])
-        if np.isnan(sp) or np.isnan(nd):
-            continue
-        pred_top = set(g.nlargest(10, col)["fpl_code"])
-        actual_top = set(g.nlargest(10, "actual")["fpl_code"])
-        rows.append({
-            "obj": 0.5 * sp + 0.5 * nd,
-            "spearman": sp,
-            "ndcg@10": nd,
-            "mae": float((g[col] - g["actual"]).abs().mean()),
-            "rmse": float(np.sqrt(((g[col] - g["actual"]) ** 2).mean())),
-            "top10_overlap": len(pred_top & actual_top) / 10.0,
-            "captain_in_top10": float(g.nlargest(1, col)["fpl_code"].iloc[0] in actual_top),
-            "mean_pred": float(g[col].mean()),
-            "mean_actual": float(g["actual"].mean()),
-        })
+    numeric = d[[col, "actual"]].apply(pd.to_numeric, errors="coerce")
+    finite = np.isfinite(numeric[col].to_numpy()) & np.isfinite(
+        numeric["actual"].to_numpy()
+    )
+    scored_rows = int(finite.sum())
+    rows = score_by_gameweek(df, col, cohort, min_players)
     keys = ("obj", "spearman", "ndcg@10", "mae", "rmse", "top10_overlap",
             "captain_in_top10", "mean_pred", "mean_actual")
-    if not rows:
-        return {k: float("nan") for k in keys} | {"gameweeks": 0, "rows": int(len(d))}
-    m = pd.DataFrame(rows)
-    return ({k: round(float(m[k].mean()), 4) for k in keys}
-            | {"gameweeks": len(m), "rows": int(len(d))})
+    if rows.empty:
+        return {k: float("nan") for k in keys} | {
+            "gameweeks": 0,
+            "rows": scored_rows,
+        }
+    return ({k: round(float(rows[k].mean()), 4) for k in keys}
+            | {"gameweeks": len(rows), "rows": scored_rows})
 
 
 def auc(y_true, p) -> float:

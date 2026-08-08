@@ -1,4 +1,17 @@
 {
+  "schema_version": 2,
+  "generated_at": "2026-08-08T23:20:46.443374+00:00",
+  "benchmark_id": "dastan-openfpl-2025-26-gw1-24",
+  "model": {
+    "name": "Dastan",
+    "features": 286,
+    "seeds": [
+      42,
+      7,
+      2026
+    ],
+    "prediction_aggregation": "arithmetic mean across seeds"
+  },
   "regime": {
     "train": [
       "2020-21",
@@ -8,81 +21,833 @@
     ],
     "early_stopping": "2024-25",
     "test": "2025-26 GW1-24",
-    "rows": 18173,
-    "player_gameweeks": 18173
+    "fixture_rows": 18173,
+    "player_gameweeks": 18173,
+    "grain": "player-gameweek",
+    "join_keys": [
+      "season",
+      "gameweek",
+      "fixture",
+      "fpl_code"
+    ],
+    "comparison_rule": "all models are rescored on identical eligible rows"
   },
-  "results": {
-    "dastan": {
-      "all": {
-        "obj": 0.5602,
-        "spearman": 0.7535,
-        "ndcg@10": 0.3669,
-        "mae": 0.9504,
-        "rmse": 1.9291,
-        "top10_overlap": 0.1208,
-        "captain_in_top10": 0.2083,
-        "mean_pred": 1.0893,
-        "mean_actual": 1.2053,
-        "gameweeks": 24,
-        "rows": 18173
-      },
-      "starters": {
-        "obj": 0.2589,
-        "spearman": 0.1244,
-        "ndcg@10": 0.3935,
-        "mae": 2.341,
-        "rmse": 3.3991,
-        "top10_overlap": 0.1292,
-        "captain_in_top10": 0.2083,
-        "mean_pred": 2.6561,
-        "mean_actual": 3.84,
-        "gameweeks": 24,
-        "rows": 4938
-      }
+  "provenance": {
+    "openfpl_predictions": {
+      "path": "data/openfpl_predictions.csv",
+      "sha256": "8113cb86392d98000e84ae0b383c7871cf35bf74a08cd3042cb5c8d81eab3849"
     },
-    "openfpl": {
-      "all": {
-        "obj": 0.5044,
-        "spearman": 0.6961,
-        "ndcg@10": 0.3128,
-        "mae": 1.1671,
-        "rmse": 2.0166,
-        "top10_overlap": 0.1083,
-        "captain_in_top10": 0.125,
-        "mean_pred": 1.3591,
-        "mean_actual": 1.2053,
-        "gameweeks": 24,
-        "rows": 18173
+    "openfpl_row_keys": {
+      "path": "data/openfpl_row_keys.csv",
+      "sha256": "8d11c37a7f7134a93324fdac979d38c3136f8831d3f627dbed8a4eabc5b8b492"
+    },
+    "data_release_manifest_sha256": "08111cac5252486192adfcc420c6a745f506777ab39b60297b0c3dbb7577830a",
+    "model_artifact_manifest_sha256": "dd26752f97a59c1558d1d3570c22b06adeb21111a27e56fc941dd614fead7a24",
+    "ep_next_source": "data/pre_deadline_ep_next.parquet",
+    "code": {
+      "benchmark_openfpl": {
+        "path": "dastan/benchmark_openfpl.py",
+        "sha256": "73e39c7847950b0946514315b4a77995a74c961d2e798530ab6cfefd13537894"
       },
-      "starters": {
-        "obj": 0.2564,
-        "spearman": 0.1334,
-        "ndcg@10": 0.3794,
-        "mae": 2.3193,
-        "rmse": 3.3611,
-        "top10_overlap": 0.1333,
-        "captain_in_top10": 0.1667,
-        "mean_pred": 2.7746,
-        "mean_actual": 3.84,
-        "gameweeks": 24,
-        "rows": 4938
+      "metrics": {
+        "path": "dastan/metrics.py",
+        "sha256": "9faa7532f7842028f9984ad755fcf94792491679bc7484b4cdefaee1b04e509c"
+      },
+      "model": {
+        "path": "dastan/model.py",
+        "sha256": "a2830cc7e0422dce72562ccc33d2ca4a0b12b5ab8ac0f1cf66e66f93034c48a8"
+      },
+      "data": {
+        "path": "dastan/data.py",
+        "sha256": "9d6dd864959b06de474794188702eb9b37d23353439425763668bfcfb8319199"
       }
     }
   },
-  "delta": {
-    "all": {
-      "obj": 0.0558,
-      "spearman": 0.0574,
-      "ndcg@10": 0.0541,
-      "mae": -0.2167,
-      "rmse": -0.0875
+  "primary": {
+    "models": [
+      "dastan",
+      "openfpl"
+    ],
+    "results": {
+      "dastan": {
+        "all": {
+          "obj": 0.5641,
+          "spearman": 0.7539,
+          "ndcg@10": 0.3744,
+          "mae": 0.9482,
+          "rmse": 1.9283,
+          "top10_overlap": 0.125,
+          "captain_in_top10": 0.25,
+          "mean_pred": 1.0883,
+          "mean_actual": 1.2053,
+          "gameweeks": 24,
+          "rows": 18173
+        },
+        "starters": {
+          "obj": 0.2626,
+          "spearman": 0.1266,
+          "ndcg@10": 0.3987,
+          "mae": 2.3402,
+          "rmse": 3.397,
+          "top10_overlap": 0.1375,
+          "captain_in_top10": 0.25,
+          "mean_pred": 2.6596,
+          "mean_actual": 3.84,
+          "gameweeks": 24,
+          "rows": 4938
+        }
+      },
+      "openfpl": {
+        "all": {
+          "obj": 0.5044,
+          "spearman": 0.6961,
+          "ndcg@10": 0.3128,
+          "mae": 1.1671,
+          "rmse": 2.0166,
+          "top10_overlap": 0.1083,
+          "captain_in_top10": 0.125,
+          "mean_pred": 1.3591,
+          "mean_actual": 1.2053,
+          "gameweeks": 24,
+          "rows": 18173
+        },
+        "starters": {
+          "obj": 0.2564,
+          "spearman": 0.1334,
+          "ndcg@10": 0.3794,
+          "mae": 2.3193,
+          "rmse": 3.3611,
+          "top10_overlap": 0.1333,
+          "captain_in_top10": 0.1667,
+          "mean_pred": 2.7746,
+          "mean_actual": 3.84,
+          "gameweeks": 24,
+          "rows": 4938
+        }
+      }
     },
-    "starters": {
-      "obj": 0.0025,
-      "spearman": -0.009,
-      "ndcg@10": 0.0141,
-      "mae": 0.0217,
-      "rmse": 0.038
+    "delta_dastan_minus_openfpl": {
+      "all": {
+        "obj": 0.0597,
+        "spearman": 0.0578,
+        "ndcg@10": 0.0616,
+        "mae": -0.2189,
+        "rmse": -0.0883
+      },
+      "starters": {
+        "obj": 0.0062,
+        "spearman": -0.0068,
+        "ndcg@10": 0.0193,
+        "mae": 0.0209,
+        "rmse": 0.0359
+      }
+    },
+    "paired_gameweek_bootstrap": {
+      "all": {
+        "confidence": 0.95,
+        "resampling_unit": "gameweek",
+        "samples": 10000,
+        "gameweeks": 24,
+        "scope": "week-to-week variation with fitted predictions held fixed",
+        "obj": {
+          "delta": 0.0597,
+          "lower": 0.0412,
+          "upper": 0.0798
+        },
+        "spearman": {
+          "delta": 0.0578,
+          "lower": 0.0458,
+          "upper": 0.0736
+        },
+        "ndcg@10": {
+          "delta": 0.0616,
+          "lower": 0.0309,
+          "upper": 0.0934
+        },
+        "mae": {
+          "delta": -0.2189,
+          "lower": -0.2299,
+          "upper": -0.2083
+        },
+        "rmse": {
+          "delta": -0.0883,
+          "lower": -0.1071,
+          "upper": -0.072
+        }
+      },
+      "starters": {
+        "confidence": 0.95,
+        "resampling_unit": "gameweek",
+        "samples": 10000,
+        "gameweeks": 24,
+        "scope": "week-to-week variation with fitted predictions held fixed",
+        "obj": {
+          "delta": 0.0062,
+          "lower": -0.0093,
+          "upper": 0.0224
+        },
+        "spearman": {
+          "delta": -0.0068,
+          "lower": -0.0238,
+          "upper": 0.0117
+        },
+        "ndcg@10": {
+          "delta": 0.0193,
+          "lower": -0.006,
+          "upper": 0.0446
+        },
+        "mae": {
+          "delta": 0.0209,
+          "lower": -0.0035,
+          "upper": 0.04
+        },
+        "rmse": {
+          "delta": 0.0359,
+          "lower": 0.0089,
+          "upper": 0.0559
+        }
+      }
     }
-  }
+  },
+  "paired_baselines": {
+    "fpl_ep_next": {
+      "label": "FPL ep_next",
+      "kind": "point_forecast",
+      "note": "Official FPL projection captured before the deadline.",
+      "rows": 17888,
+      "coverage": 0.984317,
+      "gameweeks": 24,
+      "results": {
+        "dastan": {
+          "all": {
+            "obj": 0.5648,
+            "spearman": 0.7552,
+            "ndcg@10": 0.3744,
+            "mae": 0.959,
+            "rmse": 1.9422,
+            "top10_overlap": 0.125,
+            "captain_in_top10": 0.25,
+            "mean_pred": 1.1025,
+            "mean_actual": 1.222,
+            "gameweeks": 24,
+            "rows": 17888
+          },
+          "starters": {
+            "obj": 0.2628,
+            "spearman": 0.1268,
+            "ndcg@10": 0.3987,
+            "mae": 2.3405,
+            "rmse": 3.3984,
+            "top10_overlap": 0.1375,
+            "captain_in_top10": 0.25,
+            "mean_pred": 2.6631,
+            "mean_actual": 3.8416,
+            "gameweeks": 24,
+            "rows": 4929
+          }
+        },
+        "openfpl": {
+          "all": {
+            "obj": 0.5048,
+            "spearman": 0.6969,
+            "ndcg@10": 0.3128,
+            "mae": 1.1805,
+            "rmse": 2.0311,
+            "top10_overlap": 0.1083,
+            "captain_in_top10": 0.125,
+            "mean_pred": 1.3766,
+            "mean_actual": 1.222,
+            "gameweeks": 24,
+            "rows": 17888
+          },
+          "starters": {
+            "obj": 0.2566,
+            "spearman": 0.1337,
+            "ndcg@10": 0.3794,
+            "mae": 2.3195,
+            "rmse": 3.3624,
+            "top10_overlap": 0.1333,
+            "captain_in_top10": 0.1667,
+            "mean_pred": 2.7782,
+            "mean_actual": 3.8416,
+            "gameweeks": 24,
+            "rows": 4929
+          }
+        },
+        "ep_next": {
+          "all": {
+            "obj": 0.4946,
+            "spearman": 0.6943,
+            "ndcg@10": 0.2949,
+            "mae": 1.1176,
+            "rmse": 2.1661,
+            "top10_overlap": 0.0917,
+            "captain_in_top10": 0.2083,
+            "mean_pred": 1.1906,
+            "mean_actual": 1.222,
+            "gameweeks": 24,
+            "rows": 17888
+          },
+          "starters": {
+            "obj": 0.2123,
+            "spearman": 0.0768,
+            "ndcg@10": 0.3479,
+            "mae": 2.6772,
+            "rmse": 3.6872,
+            "top10_overlap": 0.1125,
+            "captain_in_top10": 0.2083,
+            "mean_pred": 3.0051,
+            "mean_actual": 3.8416,
+            "gameweeks": 24,
+            "rows": 4929
+          }
+        }
+      }
+    },
+    "last_five": {
+      "label": "Last-five mean points",
+      "kind": "point_forecast",
+      "note": "Mean FPL points over the previous five matches; OpenFPL's naive baseline.",
+      "rows": 17927,
+      "coverage": 0.986463,
+      "gameweeks": 24,
+      "results": {
+        "dastan": {
+          "all": {
+            "obj": 0.5652,
+            "spearman": 0.7548,
+            "ndcg@10": 0.3757,
+            "mae": 0.9514,
+            "rmse": 1.9291,
+            "top10_overlap": 0.1292,
+            "captain_in_top10": 0.25,
+            "mean_pred": 1.0979,
+            "mean_actual": 1.2115,
+            "gameweeks": 24,
+            "rows": 17927
+          },
+          "starters": {
+            "obj": 0.2638,
+            "spearman": 0.1275,
+            "ndcg@10": 0.4002,
+            "mae": 2.3299,
+            "rmse": 3.3827,
+            "top10_overlap": 0.1417,
+            "captain_in_top10": 0.25,
+            "mean_pred": 2.6669,
+            "mean_actual": 3.8326,
+            "gameweeks": 24,
+            "rows": 4905
+          }
+        },
+        "openfpl": {
+          "all": {
+            "obj": 0.5072,
+            "spearman": 0.7006,
+            "ndcg@10": 0.3137,
+            "mae": 1.1726,
+            "rmse": 2.0148,
+            "top10_overlap": 0.1083,
+            "captain_in_top10": 0.125,
+            "mean_pred": 1.3778,
+            "mean_actual": 1.2115,
+            "gameweeks": 24,
+            "rows": 17927
+          },
+          "starters": {
+            "obj": 0.259,
+            "spearman": 0.1375,
+            "ndcg@10": 0.3806,
+            "mae": 2.3034,
+            "rmse": 3.3372,
+            "top10_overlap": 0.1333,
+            "captain_in_top10": 0.1667,
+            "mean_pred": 2.7895,
+            "mean_actual": 3.8326,
+            "gameweeks": 24,
+            "rows": 4905
+          }
+        },
+        "last_five": {
+          "all": {
+            "obj": 0.4883,
+            "spearman": 0.6955,
+            "ndcg@10": 0.2811,
+            "mae": 1.1119,
+            "rmse": 2.176,
+            "top10_overlap": 0.0833,
+            "captain_in_top10": 0.2083,
+            "mean_pred": 1.2198,
+            "mean_actual": 1.2115,
+            "gameweeks": 24,
+            "rows": 17927
+          },
+          "starters": {
+            "obj": 0.1915,
+            "spearman": 0.0466,
+            "ndcg@10": 0.3363,
+            "mae": 2.6473,
+            "rmse": 3.6438,
+            "top10_overlap": 0.1,
+            "captain_in_top10": 0.25,
+            "mean_pred": 2.9527,
+            "mean_actual": 3.8326,
+            "gameweeks": 24,
+            "rows": 4905
+          }
+        }
+      }
+    },
+    "price": {
+      "label": "Player price",
+      "kind": "rank_only",
+      "note": "Market-cost sanity check; error metrics are invalid because price is not points.",
+      "rows": 18173,
+      "coverage": 1.0,
+      "gameweeks": 24,
+      "results": {
+        "dastan": {
+          "all": {
+            "obj": 0.5641,
+            "spearman": 0.7539,
+            "ndcg@10": 0.3744,
+            "top10_overlap": 0.125,
+            "captain_in_top10": 0.25,
+            "gameweeks": 24,
+            "rows": 18173
+          },
+          "starters": {
+            "obj": 0.2626,
+            "spearman": 0.1266,
+            "ndcg@10": 0.3987,
+            "top10_overlap": 0.1375,
+            "captain_in_top10": 0.25,
+            "gameweeks": 24,
+            "rows": 4938
+          }
+        },
+        "openfpl": {
+          "all": {
+            "obj": 0.5044,
+            "spearman": 0.6961,
+            "ndcg@10": 0.3128,
+            "top10_overlap": 0.1083,
+            "captain_in_top10": 0.125,
+            "gameweeks": 24,
+            "rows": 18173
+          },
+          "starters": {
+            "obj": 0.2564,
+            "spearman": 0.1334,
+            "ndcg@10": 0.3794,
+            "top10_overlap": 0.1333,
+            "captain_in_top10": 0.1667,
+            "gameweeks": 24,
+            "rows": 4938
+          }
+        },
+        "price": {
+          "all": {
+            "obj": 0.3382,
+            "spearman": 0.4122,
+            "ndcg@10": 0.2643,
+            "top10_overlap": 0.0875,
+            "captain_in_top10": 0.2083,
+            "gameweeks": 24,
+            "rows": 18173
+          },
+          "starters": {
+            "obj": 0.2749,
+            "spearman": 0.1612,
+            "ndcg@10": 0.3886,
+            "top10_overlap": 0.1417,
+            "captain_in_top10": 0.2083,
+            "gameweeks": 24,
+            "rows": 4938
+          }
+        }
+      }
+    }
+  },
+  "return_bands": {
+    "protocol": "OpenFPL one-gameweek return categories; RMSE/MAE are pooled within each category",
+    "overall": {
+      "zeros": {
+        "definition": "0 minutes (normally 0 points; includes scoring corrections)",
+        "rows": 10902,
+        "results": {
+          "dastan": {
+            "rows": 10902,
+            "mae": 0.2657,
+            "rmse": 0.5832,
+            "bias": 0.2657
+          },
+          "openfpl": {
+            "rows": 10902,
+            "mae": 0.5945,
+            "rmse": 0.9638,
+            "bias": 0.5945
+          }
+        }
+      },
+      "blanks": {
+        "definition": "played and scored at most 2 points",
+        "rows": 4562,
+        "results": {
+          "dastan": {
+            "rows": 4562,
+            "mae": 1.0883,
+            "rmse": 1.3813,
+            "bias": 0.8744
+          },
+          "openfpl": {
+            "rows": 4562,
+            "mae": 1.2406,
+            "rmse": 1.5181,
+            "bias": 1.0886
+          }
+        }
+      },
+      "tickers": {
+        "definition": "scored 3 or 4 points",
+        "rows": 1112,
+        "results": {
+          "dastan": {
+            "rows": 1112,
+            "mae": 1.1584,
+            "rmse": 1.4416,
+            "bias": -0.8827
+          },
+          "openfpl": {
+            "rows": 1112,
+            "mae": 1.0236,
+            "rmse": 1.3043,
+            "bias": -0.6874
+          }
+        }
+      },
+      "haulers": {
+        "definition": "scored at least 5 points",
+        "rows": 1597,
+        "results": {
+          "dastan": {
+            "rows": 1597,
+            "mae": 5.0293,
+            "rmse": 5.7562,
+            "bias": -5.0287
+          },
+          "openfpl": {
+            "rows": 1597,
+            "mae": 4.9356,
+            "rmse": 5.6751,
+            "bias": -4.9328
+          }
+        }
+      }
+    },
+    "by_position": {
+      "DEF": {
+        "zeros": {
+          "definition": "0 minutes (normally 0 points; includes scoring corrections)",
+          "rows": 3475,
+          "results": {
+            "dastan": {
+              "rows": 3475,
+              "mae": 0.3028,
+              "rmse": 0.6166,
+              "bias": 0.3028
+            },
+            "openfpl": {
+              "rows": 3475,
+              "mae": 0.6248,
+              "rmse": 0.9311,
+              "bias": 0.6248
+            }
+          }
+        },
+        "blanks": {
+          "definition": "played and scored at most 2 points",
+          "rows": 1529,
+          "results": {
+            "dastan": {
+              "rows": 1529,
+              "mae": 1.1228,
+              "rmse": 1.4102,
+              "bias": 0.8758
+            },
+            "openfpl": {
+              "rows": 1529,
+              "mae": 1.1933,
+              "rmse": 1.4918,
+              "bias": 1.0192
+            }
+          }
+        },
+        "tickers": {
+          "definition": "scored 3 or 4 points",
+          "rows": 348,
+          "results": {
+            "dastan": {
+              "rows": 348,
+              "mae": 1.304,
+              "rmse": 1.6137,
+              "bias": -1.2561
+            },
+            "openfpl": {
+              "rows": 348,
+              "mae": 1.2241,
+              "rmse": 1.5272,
+              "bias": -1.1678
+            }
+          }
+        },
+        "haulers": {
+          "definition": "scored at least 5 points",
+          "rows": 637,
+          "results": {
+            "dastan": {
+              "rows": 637,
+              "mae": 5.1246,
+              "rmse": 5.832,
+              "bias": -5.1246
+            },
+            "openfpl": {
+              "rows": 637,
+              "mae": 5.0635,
+              "rmse": 5.7841,
+              "bias": -5.0635
+            }
+          }
+        }
+      },
+      "FWD": {
+        "zeros": {
+          "definition": "0 minutes (normally 0 points; includes scoring corrections)",
+          "rows": 1127,
+          "results": {
+            "dastan": {
+              "rows": 1127,
+              "mae": 0.2802,
+              "rmse": 0.5403,
+              "bias": 0.2802
+            },
+            "openfpl": {
+              "rows": 1127,
+              "mae": 0.5787,
+              "rmse": 0.8528,
+              "bias": 0.5787
+            }
+          }
+        },
+        "blanks": {
+          "definition": "played and scored at most 2 points",
+          "rows": 638,
+          "results": {
+            "dastan": {
+              "rows": 638,
+              "mae": 1.0965,
+              "rmse": 1.3782,
+              "bias": 0.8874
+            },
+            "openfpl": {
+              "rows": 638,
+              "mae": 1.0629,
+              "rmse": 1.291,
+              "bias": 0.8587
+            }
+          }
+        },
+        "tickers": {
+          "definition": "scored 3 or 4 points",
+          "rows": 25,
+          "results": {
+            "dastan": {
+              "rows": 25,
+              "mae": 1.7682,
+              "rmse": 2.0677,
+              "bias": -1.5774
+            },
+            "openfpl": {
+              "rows": 25,
+              "mae": 1.6367,
+              "rmse": 1.8877,
+              "bias": -1.454
+            }
+          }
+        },
+        "haulers": {
+          "definition": "scored at least 5 points",
+          "rows": 194,
+          "results": {
+            "dastan": {
+              "rows": 194,
+              "mae": 4.9834,
+              "rmse": 5.6776,
+              "bias": -4.9834
+            },
+            "openfpl": {
+              "rows": 194,
+              "mae": 5.1343,
+              "rmse": 5.839,
+              "bias": -5.1343
+            }
+          }
+        }
+      },
+      "GKP": {
+        "zeros": {
+          "definition": "0 minutes (normally 0 points; includes scoring corrections)",
+          "rows": 1608,
+          "results": {
+            "dastan": {
+              "rows": 1608,
+              "mae": 0.1266,
+              "rmse": 0.3869,
+              "bias": 0.1266
+            },
+            "openfpl": {
+              "rows": 1608,
+              "mae": 0.1678,
+              "rmse": 0.4378,
+              "bias": 0.1678
+            }
+          }
+        },
+        "blanks": {
+          "definition": "played and scored at most 2 points",
+          "rows": 279,
+          "results": {
+            "dastan": {
+              "rows": 279,
+              "mae": 1.5741,
+              "rmse": 1.7548,
+              "bias": 1.4147
+            },
+            "openfpl": {
+              "rows": 279,
+              "mae": 1.4168,
+              "rmse": 1.6199,
+              "bias": 1.2213
+            }
+          }
+        },
+        "tickers": {
+          "definition": "scored 3 or 4 points",
+          "rows": 75,
+          "results": {
+            "dastan": {
+              "rows": 75,
+              "mae": 0.5851,
+              "rmse": 0.8143,
+              "bias": -0.0528
+            },
+            "openfpl": {
+              "rows": 75,
+              "mae": 0.579,
+              "rmse": 0.8443,
+              "bias": -0.2351
+            }
+          }
+        },
+        "haulers": {
+          "definition": "scored at least 5 points",
+          "rows": 131,
+          "results": {
+            "dastan": {
+              "rows": 131,
+              "mae": 4.1157,
+              "rmse": 4.6067,
+              "bias": -4.1157
+            },
+            "openfpl": {
+              "rows": 131,
+              "mae": 4.3657,
+              "rmse": 4.8356,
+              "bias": -4.3657
+            }
+          }
+        }
+      },
+      "MID": {
+        "zeros": {
+          "definition": "0 minutes (normally 0 points; includes scoring corrections)",
+          "rows": 4692,
+          "results": {
+            "dastan": {
+              "rows": 4692,
+              "mae": 0.2825,
+              "rmse": 0.6222,
+              "bias": 0.2825
+            },
+            "openfpl": {
+              "rows": 4692,
+              "mae": 0.7221,
+              "rmse": 1.1295,
+              "bias": 0.7221
+            }
+          }
+        },
+        "blanks": {
+          "definition": "played and scored at most 2 points",
+          "rows": 2116,
+          "results": {
+            "dastan": {
+              "rows": 2116,
+              "mae": 0.9969,
+              "rmse": 1.3031,
+              "bias": 0.7982
+            },
+            "openfpl": {
+              "rows": 2116,
+              "mae": 1.3051,
+              "rmse": 1.5849,
+              "bias": 1.1905
+            }
+          }
+        },
+        "tickers": {
+          "definition": "scored 3 or 4 points",
+          "rows": 664,
+          "results": {
+            "dastan": {
+              "rows": 664,
+              "mae": 1.1238,
+              "rmse": 1.3711,
+              "bias": -0.7546
+            },
+            "openfpl": {
+              "rows": 664,
+              "mae": 0.9456,
+              "rmse": 1.1882,
+              "bias": -0.4578
+            }
+          }
+        },
+        "haulers": {
+          "definition": "scored at least 5 points",
+          "rows": 635,
+          "results": {
+            "dastan": {
+              "rows": 635,
+              "mae": 5.1362,
+              "rmse": 5.9148,
+              "bias": -5.1346
+            },
+            "openfpl": {
+              "rows": 635,
+              "mae": 4.8643,
+              "rmse": 5.6743,
+              "bias": -4.8573
+            }
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "The OpenFPL comparison uses stored predictions and cannot measure later OpenFPL changes.",
+    "The bootstrap interval captures gameweek variation with fitted predictions held fixed; it is not a training-seed confidence interval.",
+    "This is a one-gameweek forecast benchmark. Two- and three-gameweek horizons are not claimed.",
+    "FPL Review is not included because synchronized proprietary predictions for these rows are unavailable."
+  ]
 }
