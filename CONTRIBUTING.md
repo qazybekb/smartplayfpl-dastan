@@ -18,8 +18,9 @@ python -m dastan.reproduce
 
 `verify` checks the published weights. `reproduce` retrains every model head in a
 temporary directory and requires equivalent holdout quality within the documented
-0.0061 keep margin. It also reports exact artefact and prediction differences. Use
-`python -m dastan.reproduce --strict` on the release platform when changing weights.
+0.0106 single-seed noise. It also reports exact artefact and prediction differences.
+Use `python -m dastan.reproduce --strict` on the release platform when changing
+weights. The three-seed evidence standard below uses the tighter 0.0061 keep margin.
 
 ## Run an experiment
 

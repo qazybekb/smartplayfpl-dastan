@@ -253,9 +253,10 @@ rebuild that frame from the providers' raw archives. Extending the data to a new
 requires reconstructing the provenance-checked inputs described in
 [`docs/DATA.md`](docs/DATA.md#4-rebuilding).
 
-The default reproduction threshold is the documented 0.0061 objective keep margin for
-both evaluation cohorts. Exact model bytes and prediction deltas are always reported;
-`--strict` makes those exact comparisons mandatory.
+The default reproduction threshold is the documented 0.0106 single-seed objective
+noise for both evaluation cohorts. Exact model bytes and prediction deltas are always
+reported; `--strict` makes those exact comparisons mandatory. The tighter 0.0061 keep
+margin applies to the three-seed experiment protocol, not this one-seed check.
 
 `notebook/dastan.ipynb` walks through the whole thing with explanations.
 

@@ -29,7 +29,8 @@ from .train import HOLDOUT, HOLDOUT_SEASON, ROOT
 
 EXPECTED_XGBOOST = "3.2.0"
 DEFAULT_ATOL = 1e-6
-DEFAULT_OBJECTIVE_ATOL = 0.0061
+# Reproduction fits one seed, so use the measured single-seed objective noise.
+DEFAULT_OBJECTIVE_ATOL = 0.0106
 
 
 def _json(path: Path):
@@ -156,6 +157,7 @@ def main() -> int:
                 quality_failures.append(cohort)
 
         if quality_failures:
+            sys.stdout.flush()
             raise SystemExit(
                 "retrained objective exceeds the "
                 f"{args.objective_atol:g} equivalence tolerance for: "
