@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "release_id": "mapping-2026-08-08-d816ed1a3069",
-  "generated_at": "2026-08-08T19:45:39.095733+00:00",
-  "canonical_sha256": "d816ed1a30695fa2c8c40c865b90798caa899af7888e381ba63415643d41f1ce",
+  "release_id": "mapping-2026-08-08-39670a709787",
+  "generated_at": "2026-08-08T20:05:28.614957+00:00",
+  "canonical_sha256": "39670a7097874b787b327661f7fbf818d508510399e28612dde785d8b7b2dc93",
   "files": {
     "current_fpl_understat_players.csv": {
       "sha256": "cd105f6293f2787ee4d5f19df912b90b7838b4ff05f6eef1af5c8ebac95b021b",
@@ -32,7 +32,8 @@
       "mapped": 28,
       "unmapped": 2
     },
-    "reviewed_overrides": 3
+    "reviewed_overrides": 3,
+    "reviewed_club_overrides": 0
   },
   "notice": "These are the latest approved operational mappings. fpl_understat_players.csv remains the frozen mapping used by the published Dastan training frame."
 }
