@@ -34,10 +34,16 @@ feature effect anyone will ever report on FPL data.
 ```bash
 git clone https://github.com/qazybekb/smartplayfpl-dastan
 cd smartplayfpl-dastan
-pip install -r requirements.txt
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 
 python -m dastan.verify        # reload the released weights and score them
 ```
+
+The dependency versions are pinned because XGBoost minor versions can fit different
+trees from the same data and seed. The published artefacts and reproduction check use
+Python 3.12 and XGBoost 3.2.0.
 
 Predicting:
 
@@ -230,11 +236,20 @@ different events are the same.
 ## Reproducing
 
 ```bash
-python -m dastan.train                 # retrain from the frame, writes models/
-python -m dastan.verify                # reload from disk and score
+python -m dastan.verify                # reload and score the published weights
+python -m dastan.reproduce             # retrain in isolation and compare to the release
+python -m dastan.train --out experiments/my-model
 python -m dastan.evaluate --seeds 3    # walk-forward vs baselines (~90 min)
 python -m dastan.benchmark_openfpl     # head-to-head on identical rows
 ```
+
+`models/` contains 38 published files: 35 are required for inference; the remaining
+three record training hyperparameters, the core feature manifest, and release metadata.
+
+Reproduction starts from the published, deadline-anchored feature frame. It does not
+rebuild that frame from the providers' raw archives. Extending the data to a new season
+requires reconstructing the provenance-checked inputs described in
+[`docs/DATA.md`](docs/DATA.md#4-rebuilding).
 
 `notebook/dastan.ipynb` walks through the whole thing with explanations.
 
@@ -288,6 +303,8 @@ The most useful contributions, in order:
 If you measure a feature effect, please report **seed count and noise floor** alongside
 it. A single-seed "+0.005" on this objective is indistinguishable from having changed
 nothing.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the experiment and pull-request workflow.
 
 ---
 

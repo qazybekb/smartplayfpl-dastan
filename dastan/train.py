@@ -79,10 +79,8 @@ def main() -> int:
         "per_position_direct_weight": blend_w,
         "formula": "xpts = (1 - w[pos]) * multibucket + w[pos] * direct",
         "output_clip_min": 0.0,
-        "note": ("Fitted on the held-out slice by the ranking objective. GKP lands near "
-                 "zero because the decomposition already handles goalkeepers well: their "
-                 "points come from saves and clean sheets, both of which the band "
-                 "structure captures directly."),
+        "note": ("Fitted on the held-out slice by the ranking objective. "
+                 f"Learned GKP direct weight: {blend_w['GKP']}."),
     }, indent=2) + "\n")
     (args.out / "train_metadata.json").write_text(json.dumps({
         "name": "Dastan",

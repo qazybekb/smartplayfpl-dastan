@@ -3,9 +3,10 @@
 
     python -m dastan.verify
 
-Training scripts report numbers from objects still in memory. This reloads all 37
-files the way an application would, so a model that trains correctly but serialises
-wrongly fails loudly rather than silently.
+Training scripts report numbers from objects still in memory. This reloads all 35
+inference artefacts from the 38-file published model directory the way an application
+would, so a model that trains correctly but serialises wrongly fails loudly rather
+than silently.
 
 Scored on the fitting holdout, so these numbers check that the artefacts *reproduce*
 -- not that the model generalises. Generalisation numbers are in docs/ACCURACY.md and

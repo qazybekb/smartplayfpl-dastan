@@ -25,7 +25,7 @@ MODELS = ROOT / "models"
 
 
 class Dastan:
-    """The released model. 37 artefacts, four positions, five heads each."""
+    """The released model: 35 inference artefacts, four positions, five head families."""
 
     def __init__(self, model_dir: Path | str = MODELS):
         self.dir = Path(model_dir)

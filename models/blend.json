@@ -7,5 +7,5 @@
   },
   "formula": "xpts = (1 - w[pos]) * multibucket + w[pos] * direct",
   "output_clip_min": 0.0,
-  "note": "Fitted on the held-out slice by the ranking objective, not inherited. GKP lands at 0.05, not v12's hand-set 0.0 -- near-exclusion recovered from data, but not the exclusion itself, so do not describe it as reproducing v12."
+  "note": "Fitted on the held-out slice by the ranking objective. Learned GKP direct weight: 0.15."
 }
