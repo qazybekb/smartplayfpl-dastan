@@ -17,8 +17,9 @@ python -m dastan.reproduce
 ```
 
 `verify` checks the published weights. `reproduce` retrains every model head in a
-temporary directory and compares its fitted configuration and holdout predictions
-with the release.
+temporary directory and requires equivalent holdout quality within the documented
+0.0061 keep margin. It also reports exact artefact and prediction differences. Use
+`python -m dastan.reproduce --strict` on the release platform when changing weights.
 
 ## Run an experiment
 

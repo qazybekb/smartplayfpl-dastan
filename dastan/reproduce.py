@@ -4,9 +4,9 @@
     python -m dastan.reproduce --n-jobs 8
 
 This is stronger than ``dastan.verify``: verify checks that the published weights
-reload and score, while this command starts from the published training frame, fits
-every head again, and compares the resulting holdout predictions and fitted numeric
-configuration with the checked-in release.
+reload and score, while this command starts from the published training frame and fits
+every head again. The default check requires equivalent holdout quality across CPU
+architectures; ``--strict`` additionally requires identical fitted artefacts.
 """
 
 from __future__ import annotations
@@ -22,12 +22,14 @@ import numpy as np
 import xgboost
 
 from . import data
+from .metrics import collapse_to_player_gameweek, score
 from .model import POSITIONS
 from .predictor import Dastan
 from .train import HOLDOUT, HOLDOUT_SEASON, ROOT
 
 EXPECTED_XGBOOST = "3.2.0"
 DEFAULT_ATOL = 1e-6
+DEFAULT_OBJECTIVE_ATOL = 0.0061
 
 
 def _json(path: Path):
@@ -47,11 +49,24 @@ def _model_files() -> list[str]:
     return names
 
 
+def _scores(out) -> dict[str, dict]:
+    players = collapse_to_player_gameweek(
+        out.assign(pred=out["xpts"], actual=out["target_points"]), "pred"
+    )
+    return {cohort: score(players, "pred", cohort) for cohort in ("all", "starters")}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--n-jobs", type=int, default=8)
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--atol", type=float, default=DEFAULT_ATOL)
+    ap.add_argument("--objective-atol", type=float, default=DEFAULT_OBJECTIVE_ATOL)
+    ap.add_argument(
+        "--strict",
+        action="store_true",
+        help="require byte-identical model files, fitted config, and predictions",
+    )
     args = ap.parse_args()
 
     if xgboost.__version__ != EXPECTED_XGBOOST:
@@ -92,43 +107,78 @@ def main() -> int:
             raise SystemExit("retrained predictions do not align with the released rows")
 
         released_models = ROOT / "models"
-        config_pairs = [
-            ("feature columns", "feature_cols.json"),
-            ("bucket calibration", "bucket_calibration.json"),
-        ]
-        for label, filename in config_pairs:
-            if _json(released_models / filename) != _json(candidate_dir / filename):
-                raise SystemExit(f"retrained {label} differs from the release")
+        if _json(released_models / "feature_cols.json") != _json(
+            candidate_dir / "feature_cols.json"
+        ):
+            raise SystemExit("retrained feature columns differ from the release")
+
+        calibration_matches = _json(
+            released_models / "bucket_calibration.json"
+        ) == _json(candidate_dir / "bucket_calibration.json")
 
         released_blend = _json(released_models / "blend.json")["per_position_direct_weight"]
         candidate_blend = _json(candidate_dir / "blend.json")["per_position_direct_weight"]
-        if released_blend != candidate_blend:
-            raise SystemExit(
-                f"retrained blend weights differ: release={released_blend}, "
-                f"candidate={candidate_blend}"
-            )
+        blend_matches = released_blend == candidate_blend
 
         released_xpts = released_out["xpts"].to_numpy(dtype=float)
         candidate_xpts = candidate_out["xpts"].to_numpy(dtype=float)
+        if not np.isfinite(candidate_xpts).all() or (candidate_xpts < 0).any():
+            raise SystemExit("retrained model produced invalid xPts")
+
         delta = np.abs(released_xpts - candidate_xpts)
         exact_models = sum(
             (released_models / filename).read_bytes()
             == (candidate_dir / filename).read_bytes()
             for filename in _model_files()
         )
+        released_scores = _scores(released_out)
+        candidate_scores = _scores(candidate_out)
 
         print(f"xgboost: {xgboost.__version__}")
         print(f"holdout rows: {len(holdout):,}")
         print(f"model files byte-identical: {exact_models}/{len(_model_files())}")
+        print(f"bucket calibration identical: {calibration_matches}")
+        print(f"release blend weights: {released_blend}")
+        print(f"retrained blend weights: {candidate_blend}")
         print(f"prediction mean absolute delta: {float(delta.mean()):.12g}")
         print(f"prediction max absolute delta: {float(delta.max()):.12g}")
 
-        if not np.allclose(released_xpts, candidate_xpts, rtol=0.0, atol=args.atol):
+        quality_failures = []
+        for cohort in ("all", "starters"):
+            released_obj = released_scores[cohort]["obj"]
+            candidate_obj = candidate_scores[cohort]["obj"]
+            objective_delta = candidate_obj - released_obj
+            print(
+                f"{cohort} objective: release={released_obj:.4f} "
+                f"retrained={candidate_obj:.4f} delta={objective_delta:+.4f}"
+            )
+            if not np.isfinite(candidate_obj) or abs(objective_delta) > args.objective_atol:
+                quality_failures.append(cohort)
+
+        if quality_failures:
             raise SystemExit(
-                f"retrained predictions exceed the {args.atol:g} absolute tolerance"
+                "retrained objective exceeds the "
+                f"{args.objective_atol:g} equivalence tolerance for: "
+                f"{', '.join(quality_failures)}"
             )
 
-    print("\nreleased model reproduced from the published training frame")
+        if args.strict:
+            strict_failures = []
+            if exact_models != len(_model_files()):
+                strict_failures.append("model files")
+            if not calibration_matches:
+                strict_failures.append("bucket calibration")
+            if not blend_matches:
+                strict_failures.append("blend weights")
+            if not np.allclose(released_xpts, candidate_xpts, rtol=0.0, atol=args.atol):
+                strict_failures.append("predictions")
+            if strict_failures:
+                raise SystemExit(
+                    "strict reproduction differs in: " + ", ".join(strict_failures)
+                )
+
+    mode = "strictly" if args.strict else "within the cross-platform quality tolerance"
+    print(f"\nreleased model reproduced {mode} from the published training frame")
     return 0
 
 

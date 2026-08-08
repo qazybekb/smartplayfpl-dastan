@@ -42,8 +42,9 @@ python -m dastan.verify        # reload the released weights and score them
 ```
 
 The dependency versions are pinned because XGBoost minor versions can fit different
-trees from the same data and seed. The published artefacts and reproduction check use
-Python 3.12 and XGBoost 3.2.0.
+trees from the same data and seed. CPU architectures can also produce numerically
+different, quality-equivalent trees. The published artefacts and reproduction check
+use Python 3.12 and XGBoost 3.2.0.
 
 Predicting:
 
@@ -237,7 +238,8 @@ different events are the same.
 
 ```bash
 python -m dastan.verify                # reload and score the published weights
-python -m dastan.reproduce             # retrain in isolation and compare to the release
+python -m dastan.reproduce             # retrain and require equivalent holdout quality
+python -m dastan.reproduce --strict    # require identical artefacts on the release platform
 python -m dastan.train --out experiments/my-model
 python -m dastan.evaluate --seeds 3    # walk-forward vs baselines (~90 min)
 python -m dastan.benchmark_openfpl     # head-to-head on identical rows
@@ -250,6 +252,10 @@ Reproduction starts from the published, deadline-anchored feature frame. It does
 rebuild that frame from the providers' raw archives. Extending the data to a new season
 requires reconstructing the provenance-checked inputs described in
 [`docs/DATA.md`](docs/DATA.md#4-rebuilding).
+
+The default reproduction threshold is the documented 0.0061 objective keep margin for
+both evaluation cohorts. Exact model bytes and prediction deltas are always reported;
+`--strict` makes those exact comparisons mandatory.
 
 `notebook/dastan.ipynb` walks through the whole thing with explanations.
 
