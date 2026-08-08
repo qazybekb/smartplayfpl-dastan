@@ -1,0 +1,30 @@
+{
+  "clf_params": {
+    "n_estimators": 2000,
+    "learning_rate": 0.014251,
+    "max_depth": 7,
+    "subsample": 0.6364,
+    "colsample_bytree": 0.6427,
+    "min_child_weight": 17.89,
+    "reg_lambda": 1.3015,
+    "early_stopping_rounds": 30,
+    "tree_method": "hist",
+    "max_bin": 256,
+    "n_jobs": 4,
+    "random_state": 42
+  },
+  "reg_params": {
+    "n_estimators": 6000,
+    "learning_rate": 0.035966,
+    "max_depth": 6,
+    "subsample": 0.7366,
+    "colsample_bytree": 0.6553,
+    "min_child_weight": 8.29,
+    "reg_lambda": 0.2567,
+    "early_stopping_rounds": 90,
+    "tree_method": "hist",
+    "max_bin": 256,
+    "n_jobs": 4,
+    "random_state": 42
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "name": "v13",
+  "generated_at": "2026-08-08T14:48:46.780291+00:00",
+  "architecture": "multibucket (p60 gate, calibrated 4-bucket mixture, non60 branch) + per-position fitted direct-auxiliary blend",
+  "train": "all seasons through 2025-26 GW30",
+  "holdout": "2025-26 GW31-38",
+  "frame": "deadline-anchored: all fixtures in a gameweek share one history snapshot",
+  "features": {
+    "total": 286,
+    "baseline_v13": 283,
+    "shipped_candidates": [
+      "availability"
+    ]
+  },
+  "hyperparameters": {
+    "source": "v10 inherited",
+    "tuning": {
+      "tuned_on": "2025-26 GW15-22",
+      "protocol": "500 single-seed exploration trials, top 12 re-ranked at 3 seeds; winner picked on the 3-seed mean",
+      "incumbent_v10": {
+        "all": 0.5676,
+        "starters": 0.259
+      },
+      "winner": {
+        "trial": 469,
+        "stage1_all": 0.5879,
+        "all": 0.5837,
+        "starters": 0.2749,
+        "bias": 0.0042
+      },
+      "median_selection_bias": 0.009
+    }
+  },
+  "fitted_here": [
+    "heads",
+    "bucket_calibration",
+    "blend_weights"
+  ],
+  "evidence": {
+    "protocol": "3 seeds (42, 7, 2026); keep margin 0.0061, set at the measured seed range 0.0106 / sqrt(3) rather than chosen.",
+    "availability_discovery_folds_A_B": {
+      "all": 0.0071,
+      "starters": 0.0042
+    },
+    "availability_fresh_2024_25_GW31_38": {
+      "all": 0.0057,
+      "starters": 0.0003
+    },
+    "availability_note": "Positive on all three independent windows (A +0.0036, B +0.0107, fresh +0.0057; pooled +0.0064). The gain sits in the all-players cohort, which is what the mechanism predicts: a flag tells you whether a player features, not how he ranks among those who do.",
+    "v13_vs_v12_sealed_fold_S": {
+      "all": 0.0026,
+      "starters": 0.0084
+    },
+    "rejected_families": {
+      "set_pieces": "+0.0003 all. Declared taker order is already implied by five windows of scoring history; coverage is only 7-10% of rows.",
+      "biographical": "+0.0021 all. birth_date is populated on 27% of rows.",
+      "crowd": "-0.0018 all. Home advantage really does invert in empty stadiums, but rolling team form computed during 2020-21 already encodes it.",
+      "kickoff": "-0.0057 all. Actively harmful.",
+      "travel": "-0.0041 all. Looked strong on fold A, reversed on fold B.",
+      "rest_diff": "-0.0064 all. Worst of the eight.",
+      "F4_congestion": "Retained, but on no evidence: it entered v13 at +0.0058 under a margin 5.3x below the seed noise, and re-screening put removal at +0.0010 on discovery and -0.0029 on the fresh window. Coin flip; kept because changing it costs a retrain and buys nothing."
+    }
+  },
+  "per_position": {
+    "GKP": {
+      "train_rows": 17415,
+      "holdout_rows": 763,
+      "blend_weight": 0.15,
+      "p60_best_iteration": 945
+    },
+    "DEF": {
+      "train_rows": 52796,
+      "holdout_rows": 2123,
+      "blend_weight": 0.2,
+      "p60_best_iteration": 474
+    },
+    "MID": {
+      "train_rows": 67239,
+      "holdout_rows": 2962,
+      "blend_weight": 0.45,
+      "p60_best_iteration": 572
+    },
+    "FWD": {
+      "train_rows": 19040,
+      "holdout_rows": 734,
+      "blend_weight": 0.5,
+      "p60_best_iteration": 439
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "regime": {
+    "train": [
+      "2020-21",
+      "2021-22",
+      "2022-23",
+      "2023-24"
+    ],
+    "early_stopping": "2024-25",
+    "test": "2025-26 GW1-24",
+    "rows": 18173,
+    "player_gameweeks": 18173
+  },
+  "results": {
+    "dastan": {
+      "all": {
+        "obj": 0.5602,
+        "spearman": 0.7535,
+        "ndcg@10": 0.3669,
+        "mae": 0.9504,
+        "rmse": 1.9291,
+        "top10_overlap": 0.1208,
+        "captain_in_top10": 0.2083,
+        "mean_pred": 1.0893,
+        "mean_actual": 1.2053,
+        "gameweeks": 24,
+        "rows": 18173
+      },
+      "starters": {
+        "obj": 0.2589,
+        "spearman": 0.1244,
+        "ndcg@10": 0.3935,
+        "mae": 2.341,
+        "rmse": 3.3991,
+        "top10_overlap": 0.1292,
+        "captain_in_top10": 0.2083,
+        "mean_pred": 2.6561,
+        "mean_actual": 3.84,
+        "gameweeks": 24,
+        "rows": 4938
+      }
+    },
+    "openfpl": {
+      "all": {
+        "obj": 0.5044,
+        "spearman": 0.6961,
+        "ndcg@10": 0.3128,
+        "mae": 1.1671,
+        "rmse": 2.0166,
+        "top10_overlap": 0.1083,
+        "captain_in_top10": 0.125,
+        "mean_pred": 1.3591,
+        "mean_actual": 1.2053,
+        "gameweeks": 24,
+        "rows": 18173
+      },
+      "starters": {
+        "obj": 0.2564,
+        "spearman": 0.1334,
+        "ndcg@10": 0.3794,
+        "mae": 2.3193,
+        "rmse": 3.3611,
+        "top10_overlap": 0.1333,
+        "captain_in_top10": 0.1667,
+        "mean_pred": 2.7746,
+        "mean_actual": 3.84,
+        "gameweeks": 24,
+        "rows": 4938
+      }
+    }
+  },
+  "delta": {
+    "all": {
+      "obj": 0.0558,
+      "spearman": 0.0574,
+      "ndcg@10": 0.0541,
+      "mae": -0.2167,
+      "rmse": -0.0875
+    },
+    "starters": {
+      "obj": 0.0025,
+      "spearman": -0.009,
+      "ndcg@10": 0.0141,
+      "mae": 0.0217,
+      "rmse": 0.038
+    }
+  }
+}
