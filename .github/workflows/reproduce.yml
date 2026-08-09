@@ -27,6 +27,8 @@ jobs:
         run: python -m dastan.datasets verify
       - name: Verify FPL-to-Understat mapping
         run: python -m dastan.mappings
+      - name: Verify published accuracy benchmark
+        run: python -m dastan.benchmark_baselines --check
       - name: Verify released weights
         run: python -m dastan.verify
       - name: Verify production/public artifact contract

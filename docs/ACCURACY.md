@@ -16,9 +16,11 @@ Both operate at **player-gameweek grain**. Metrics are computed inside each game
 and then averaged. Every paired comparison restricts all methods to the exact same
 eligible rows. Dastan predictions are the arithmetic mean of seeds 42, 7, and 2026.
 
-The machine-readable evidence is [`evaluation.json`](evaluation.json) and
-[`openfpl_benchmark.json`](openfpl_benchmark.json). Both reports record their protocol,
-row counts, feature count, seeds, and input-manifest hashes.
+The machine-readable evidence is [`evaluation.json`](evaluation.json),
+[`baseline_benchmark.json`](baseline_benchmark.json), and
+[`openfpl_benchmark.json`](openfpl_benchmark.json). The retained
+[`walkforward_predictions.parquet`](walkforward_predictions.parquet) can reproduce the
+clean baseline report without fitting models again.
 
 ## The short answer
 
@@ -126,6 +128,25 @@ For point forecasts, the error comparison against `ep_next` is also favourable:
 | all players | **0.930** | 1.070 | **1.855** | 2.090 |
 | 60+ minutes | **2.174** | 2.546 | **3.168** | 3.523 |
 
+### Independence from FPL's input
+
+`ep_next` is one of Dastan's 286 features, so the head-to-head alone cannot show that
+the gain is independent of FPL's forecast. A separate three-seed arm removes
+`ar_ep_next` and retrains the same architecture. On the 17,307 FPL-covered rows:
+
+| forecast | decision score | MAE | delta versus FPL |
+|---|---:|---:|---:|
+| Dastan | **0.6097** | 0.930 | **+0.0776** |
+| Dastan without `ep_next` | **0.6079** | **0.928** | **+0.0758** |
+| FPL `ep_next` | 0.5321 | 1.070 | - |
+
+The full-model advantage has a paired-gameweek 95% interval of **+0.0526 to +0.1033**;
+its MAE reduction is **0.121 to 0.161 points**. Across all 17,622 clean rows, adding
+`ep_next` back changes Dastan's decision score by **+0.0018**, with an interval of
+**-0.0065 to +0.0113**, and slightly worsens MAE. The observed lead over FPL remains
+when its projection is not an input. These intervals resample the 24 test gameweeks
+while holding each three-seed forecast ensemble fixed.
+
 ### Per-block decision score
 
 All players:
@@ -224,8 +245,8 @@ haulers.** The JSON report also provides this split for GKP, DEF, MID, and FWD.
   here is one gameweek ahead.
 - The clean walk-forward suite covers 24 gameweeks of one season. The OpenFPL test adds
   24 gameweeks of a second season, but neither substitutes for continued live tracking.
-- `ep_next` is also a Dastan input. The comparison asks whether Dastan adds value over
-  the free FPL projection; it is not evidence that Dastan is independent of it.
+- The no-`ep_next` arm establishes independence on this 24-gameweek sample, not every
+  future season. Continued prospective tracking remains necessary.
 - The 60-minute cohort is selected using realized minutes. It diagnoses ranking among
   players who played; it is not a pre-deadline selection rule.
 
@@ -234,12 +255,14 @@ haulers.** The JSON report also provides this split for GKP, DEF, MID, and FWD.
 ```bash
 python -m dastan.datasets verify
 python -m dastan.artifacts
+python -m dastan.benchmark_baselines --check
 python -m dastan.evaluate --scope clean --seeds 3
 python -m dastan.benchmark_openfpl --seeds 3
 python -m unittest discover -v
 ```
 
 The two training benchmarks are intentionally not part of normal CI because they fit
-dozens of XGBoost heads. CI verifies the checked-in evidence schema, row counts, input
-hashes, and release contracts. Regenerate and review both reports whenever data,
-features, model code, or the evaluation protocol changes.
+dozens of XGBoost heads. CI regenerates the clean baseline report from retained
+predictions, then verifies the evidence schema, row counts, input hashes, and release
+contracts. Regenerate and review all reports whenever data, features, model code, or
+the evaluation protocol changes.

@@ -16,6 +16,19 @@ required. Optional public-source reconstruction code is documented in
 | `data/mappings/fpl_understat_training_assignments.csv` | 4,199 | 115 KB |
 | `data/mappings/fpl_understat_players.csv` | 1,564 | 84 KB |
 | `data/mappings/fpl_understat_current.csv` | 573 | 54 KB |
+| `docs/walkforward_predictions.parquet` | 17,622 | 539 KB |
+
+The walk-forward file is an evaluation artifact rather than training input. It retains
+the three-seed averaged Dastan prediction, the separately fitted no-`ep_next` arm,
+`p60`, actual points/minutes, position, and each public baseline for every clean
+out-of-sample player-gameweek. It is the source for
+`docs/baseline_benchmark.json` and can regenerate the published tables without fitting
+the models again:
+
+```bash
+python -m dastan.benchmark_baselines \
+  --from-predictions docs/walkforward_predictions.parquet
+```
 
 ---
 

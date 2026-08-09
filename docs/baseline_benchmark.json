@@ -1,0 +1,1090 @@
+{
+  "schema_version": 2,
+  "command": "python -m dastan.benchmark_baselines --seeds 3 --n-jobs 8",
+  "protocol": {
+    "method": "clean chronological walk-forward",
+    "test": "2024-25 GW15-38 in three non-overlapping eight-GW blocks",
+    "seeds": [
+      42,
+      7,
+      2026
+    ],
+    "metric_aggregation": "score inside each gameweek, then average gameweeks",
+    "paired_comparisons": true,
+    "player_gameweeks": 17622,
+    "gameweeks": 24
+  },
+  "provenance": {
+    "prediction_rows_sha256": "5b93a7377a01d56533b56bfce6ce07720b896c0b0349843903b53c919a63b083",
+    "training_frame_sha256": "dcf8411d458e7b99b15472975280cf855e15de22070022fad6fce0f76f3f299c",
+    "feature_manifest_sha256": "021447c478a6909f68457e9ce6c695e94328548d40f0604d3970f15ee4acce52",
+    "ep_next_artifact_sha256": "f0087b83c279ab9655751b78f2a2fbac492d41e434346ba447e145cf1917fb4b"
+  },
+  "headline": {
+    "all": {
+      "obj": 0.609,
+      "spearman": 0.7461,
+      "ndcg@10": 0.472,
+      "mae": 0.9178,
+      "rmse": 1.8394,
+      "top10_overlap": 0.1875,
+      "captain_in_top10": 0.4167,
+      "mean_pred": 1.1206,
+      "mean_actual": 1.1333,
+      "gameweeks": 24,
+      "rows": 17622
+    },
+    "starters": {
+      "obj": 0.3977,
+      "spearman": 0.2879,
+      "ndcg@10": 0.5076,
+      "mae": 2.1715,
+      "rmse": 3.165,
+      "top10_overlap": 0.2042,
+      "captain_in_top10": 0.4167,
+      "mean_pred": 2.6952,
+      "mean_actual": 3.5245,
+      "gameweeks": 24,
+      "rows": 4849
+    }
+  },
+  "minutes_gate": {
+    "aggregation": "mean of the three block-level metrics",
+    "auc": 0.9538,
+    "brier": 0.0768,
+    "base_rate": 0.2755,
+    "blocks": {
+      "2024-25 GW15-22": {
+        "auc": 0.9526,
+        "brier": 0.0784,
+        "base_rate": 0.2904,
+        "rows": 5610
+      },
+      "2024-25 GW23-30": {
+        "auc": 0.9587,
+        "brier": 0.0723,
+        "base_rate": 0.2723,
+        "rows": 5927
+      },
+      "2024-25 GW31-38": {
+        "auc": 0.9502,
+        "brier": 0.0797,
+        "base_rate": 0.2639,
+        "rows": 6085
+      }
+    }
+  },
+  "comparisons": {
+    "FPL ep_next": {
+      "column": "ep_next",
+      "kind": "point forecast",
+      "coverage": {
+        "rows": 17307,
+        "total_rows": 17622,
+        "percent": 98.21,
+        "gameweeks": 24
+      },
+      "results": {
+        "all": {
+          "dastan": {
+            "obj": 0.6097,
+            "spearman": 0.7474,
+            "ndcg@10": 0.472,
+            "top10_overlap": 0.1875,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 17307,
+            "mae": 0.9297,
+            "rmse": 1.8549,
+            "mean_pred": 1.1367,
+            "mean_actual": 1.1516
+          },
+          "baseline": {
+            "obj": 0.5321,
+            "spearman": 0.6696,
+            "ndcg@10": 0.3946,
+            "top10_overlap": 0.1292,
+            "captain_in_top10": 0.2917,
+            "gameweeks": 24,
+            "rows": 17307,
+            "mae": 1.0701,
+            "rmse": 2.0902,
+            "mean_pred": 1.1151,
+            "mean_actual": 1.1516
+          },
+          "advantage": {
+            "objective": 0.0776,
+            "spearman": 0.0778,
+            "ndcg@10": 0.0774,
+            "mae_reduction": 0.1404,
+            "rmse_reduction": 0.2353
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.0526,
+                0.1033
+              ],
+              "spearman_advantage": [
+                0.0681,
+                0.0876
+              ],
+              "ndcg@10_advantage": [
+                0.0286,
+                0.1269
+              ],
+              "mae_reduction": [
+                0.121,
+                0.1607
+              ],
+              "rmse_reduction": [
+                0.1984,
+                0.2759
+              ]
+            }
+          }
+        },
+        "starters": {
+          "dastan": {
+            "obj": 0.3963,
+            "spearman": 0.2851,
+            "ndcg@10": 0.5076,
+            "top10_overlap": 0.2042,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 4835,
+            "mae": 2.1737,
+            "rmse": 3.1682,
+            "mean_pred": 2.6992,
+            "mean_actual": 3.5292
+          },
+          "baseline": {
+            "obj": 0.3139,
+            "spearman": 0.2071,
+            "ndcg@10": 0.4207,
+            "top10_overlap": 0.15,
+            "captain_in_top10": 0.2917,
+            "gameweeks": 24,
+            "rows": 4835,
+            "mae": 2.5458,
+            "rmse": 3.5231,
+            "mean_pred": 2.8449,
+            "mean_actual": 3.5292
+          },
+          "advantage": {
+            "objective": 0.0824,
+            "spearman": 0.078,
+            "ndcg@10": 0.0869,
+            "mae_reduction": 0.3721,
+            "rmse_reduction": 0.3549
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.0479,
+                0.1154
+              ],
+              "spearman_advantage": [
+                0.0431,
+                0.1116
+              ],
+              "ndcg@10_advantage": [
+                0.0392,
+                0.1342
+              ],
+              "mae_reduction": [
+                0.3098,
+                0.4354
+              ],
+              "rmse_reduction": [
+                0.283,
+                0.4307
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Last appearance points": {
+      "column": "player_fpl_points_1",
+      "kind": "point forecast",
+      "coverage": {
+        "rows": 17547,
+        "total_rows": 17622,
+        "percent": 99.57,
+        "gameweeks": 24
+      },
+      "results": {
+        "all": {
+          "dastan": {
+            "obj": 0.6093,
+            "spearman": 0.7465,
+            "ndcg@10": 0.472,
+            "top10_overlap": 0.1875,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 17547,
+            "mae": 0.9193,
+            "rmse": 1.8417,
+            "mean_pred": 1.1238,
+            "mean_actual": 1.1362
+          },
+          "baseline": {
+            "obj": 0.4977,
+            "spearman": 0.6743,
+            "ndcg@10": 0.3212,
+            "top10_overlap": 0.1083,
+            "captain_in_top10": 0.1667,
+            "gameweeks": 24,
+            "rows": 17547,
+            "mae": 1.1217,
+            "rmse": 2.5235,
+            "mean_pred": 1.1058,
+            "mean_actual": 1.1362
+          },
+          "advantage": {
+            "objective": 0.1116,
+            "spearman": 0.0722,
+            "ndcg@10": 0.1508,
+            "mae_reduction": 0.2024,
+            "rmse_reduction": 0.6818
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.0751,
+                0.1486
+              ],
+              "spearman_advantage": [
+                0.0623,
+                0.0825
+              ],
+              "ndcg@10_advantage": [
+                0.0832,
+                0.221
+              ],
+              "mae_reduction": [
+                0.1741,
+                0.2305
+              ],
+              "rmse_reduction": [
+                0.6238,
+                0.7407
+              ]
+            }
+          }
+        },
+        "starters": {
+          "dastan": {
+            "obj": 0.3981,
+            "spearman": 0.2886,
+            "ndcg@10": 0.5076,
+            "top10_overlap": 0.2042,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 4841,
+            "mae": 2.172,
+            "rmse": 3.1661,
+            "mean_pred": 2.6982,
+            "mean_actual": 3.5262
+          },
+          "baseline": {
+            "obj": 0.2343,
+            "spearman": 0.1081,
+            "ndcg@10": 0.3604,
+            "top10_overlap": 0.1208,
+            "captain_in_top10": 0.2083,
+            "gameweeks": 24,
+            "rows": 4841,
+            "mae": 2.9581,
+            "rmse": 4.2704,
+            "mean_pred": 2.9259,
+            "mean_actual": 3.5262
+          },
+          "advantage": {
+            "objective": 0.1638,
+            "spearman": 0.1805,
+            "ndcg@10": 0.1472,
+            "mae_reduction": 0.7861,
+            "rmse_reduction": 1.1043
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.1188,
+                0.211
+              ],
+              "spearman_advantage": [
+                0.1366,
+                0.2241
+              ],
+              "ndcg@10_advantage": [
+                0.0815,
+                0.214
+              ],
+              "mae_reduction": [
+                0.6954,
+                0.8816
+              ],
+              "rmse_reduction": [
+                0.994,
+                1.2205
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Last-5 appearance mean": {
+      "column": "player_fpl_points_5",
+      "kind": "point forecast",
+      "coverage": {
+        "rows": 17547,
+        "total_rows": 17622,
+        "percent": 99.57,
+        "gameweeks": 24
+      },
+      "results": {
+        "all": {
+          "dastan": {
+            "obj": 0.6093,
+            "spearman": 0.7465,
+            "ndcg@10": 0.472,
+            "top10_overlap": 0.1875,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 17547,
+            "mae": 0.9193,
+            "rmse": 1.8417,
+            "mean_pred": 1.1238,
+            "mean_actual": 1.1362
+          },
+          "baseline": {
+            "obj": 0.5317,
+            "spearman": 0.704,
+            "ndcg@10": 0.3595,
+            "top10_overlap": 0.1125,
+            "captain_in_top10": 0.2917,
+            "gameweeks": 24,
+            "rows": 17547,
+            "mae": 1.0246,
+            "rmse": 2.0705,
+            "mean_pred": 1.1147,
+            "mean_actual": 1.1362
+          },
+          "advantage": {
+            "objective": 0.0776,
+            "spearman": 0.0425,
+            "ndcg@10": 0.1125,
+            "mae_reduction": 0.1053,
+            "rmse_reduction": 0.2288
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.0517,
+                0.1061
+              ],
+              "spearman_advantage": [
+                0.0349,
+                0.05
+              ],
+              "ndcg@10_advantage": [
+                0.0608,
+                0.1698
+              ],
+              "mae_reduction": [
+                0.0918,
+                0.1178
+              ],
+              "rmse_reduction": [
+                0.1994,
+                0.261
+              ]
+            }
+          }
+        },
+        "starters": {
+          "dastan": {
+            "obj": 0.3981,
+            "spearman": 0.2886,
+            "ndcg@10": 0.5076,
+            "top10_overlap": 0.2042,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 4841,
+            "mae": 2.172,
+            "rmse": 3.1661,
+            "mean_pred": 2.6982,
+            "mean_actual": 3.5262
+          },
+          "baseline": {
+            "obj": 0.276,
+            "spearman": 0.1683,
+            "ndcg@10": 0.3836,
+            "top10_overlap": 0.125,
+            "captain_in_top10": 0.2917,
+            "gameweeks": 24,
+            "rows": 4841,
+            "mae": 2.4819,
+            "rmse": 3.5052,
+            "mean_pred": 2.7198,
+            "mean_actual": 3.5262
+          },
+          "advantage": {
+            "objective": 0.1221,
+            "spearman": 0.1203,
+            "ndcg@10": 0.124,
+            "mae_reduction": 0.3099,
+            "rmse_reduction": 0.3391
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.0824,
+                0.165
+              ],
+              "spearman_advantage": [
+                0.0794,
+                0.1609
+              ],
+              "ndcg@10_advantage": [
+                0.0767,
+                0.1768
+              ],
+              "mae_reduction": [
+                0.2573,
+                0.363
+              ],
+              "rmse_reduction": [
+                0.2736,
+                0.4136
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Price": {
+      "column": "value",
+      "kind": "ranking proxy",
+      "coverage": {
+        "rows": 17622,
+        "total_rows": 17622,
+        "percent": 100.0,
+        "gameweeks": 24
+      },
+      "results": {
+        "all": {
+          "dastan": {
+            "obj": 0.609,
+            "spearman": 0.7461,
+            "ndcg@10": 0.472,
+            "top10_overlap": 0.1875,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 17622
+          },
+          "baseline": {
+            "obj": 0.3571,
+            "spearman": 0.3861,
+            "ndcg@10": 0.328,
+            "top10_overlap": 0.1417,
+            "captain_in_top10": 0.0833,
+            "gameweeks": 24,
+            "rows": 17622
+          },
+          "advantage": {
+            "objective": 0.2519,
+            "spearman": 0.36,
+            "ndcg@10": 0.144
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.2269,
+                0.2782
+              ],
+              "spearman_advantage": [
+                0.3459,
+                0.3742
+              ],
+              "ndcg@10_advantage": [
+                0.0954,
+                0.1989
+              ]
+            }
+          }
+        },
+        "starters": {
+          "dastan": {
+            "obj": 0.3977,
+            "spearman": 0.2879,
+            "ndcg@10": 0.5076,
+            "top10_overlap": 0.2042,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 4849
+          },
+          "baseline": {
+            "obj": 0.3584,
+            "spearman": 0.2941,
+            "ndcg@10": 0.4228,
+            "top10_overlap": 0.1708,
+            "captain_in_top10": 0.125,
+            "gameweeks": 24,
+            "rows": 4849
+          },
+          "advantage": {
+            "objective": 0.0393,
+            "spearman": -0.0062,
+            "ndcg@10": 0.0848
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.0102,
+                0.0702
+              ],
+              "spearman_advantage": [
+                -0.0384,
+                0.0269
+              ],
+              "ndcg@10_advantage": [
+                0.0439,
+                0.1284
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "ep_next_feature_check": {
+    "without_ep_next_vs_fpl": {
+      "column": "ep_next",
+      "kind": "point forecast",
+      "coverage": {
+        "rows": 17307,
+        "total_rows": 17622,
+        "percent": 98.21,
+        "gameweeks": 24
+      },
+      "results": {
+        "all": {
+          "dastan_without_ep_next": {
+            "obj": 0.6079,
+            "spearman": 0.7475,
+            "ndcg@10": 0.4683,
+            "top10_overlap": 0.1958,
+            "captain_in_top10": 0.375,
+            "gameweeks": 24,
+            "rows": 17307,
+            "mae": 0.9284,
+            "rmse": 1.8548,
+            "mean_pred": 1.1354,
+            "mean_actual": 1.1516
+          },
+          "baseline": {
+            "obj": 0.5321,
+            "spearman": 0.6696,
+            "ndcg@10": 0.3946,
+            "top10_overlap": 0.1292,
+            "captain_in_top10": 0.2917,
+            "gameweeks": 24,
+            "rows": 17307,
+            "mae": 1.0701,
+            "rmse": 2.0902,
+            "mean_pred": 1.1151,
+            "mean_actual": 1.1516
+          },
+          "advantage": {
+            "objective": 0.0758,
+            "spearman": 0.0779,
+            "ndcg@10": 0.0737,
+            "mae_reduction": 0.1417,
+            "rmse_reduction": 0.2354
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.0533,
+                0.0982
+              ],
+              "spearman_advantage": [
+                0.0683,
+                0.0876
+              ],
+              "ndcg@10_advantage": [
+                0.0294,
+                0.1181
+              ],
+              "mae_reduction": [
+                0.1226,
+                0.1618
+              ],
+              "rmse_reduction": [
+                0.1989,
+                0.2755
+              ]
+            }
+          }
+        },
+        "starters": {
+          "dastan_without_ep_next": {
+            "obj": 0.3951,
+            "spearman": 0.2856,
+            "ndcg@10": 0.5046,
+            "top10_overlap": 0.2,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 4835,
+            "mae": 2.1715,
+            "rmse": 3.1671,
+            "mean_pred": 2.6967,
+            "mean_actual": 3.5292
+          },
+          "baseline": {
+            "obj": 0.3139,
+            "spearman": 0.2071,
+            "ndcg@10": 0.4207,
+            "top10_overlap": 0.15,
+            "captain_in_top10": 0.2917,
+            "gameweeks": 24,
+            "rows": 4835,
+            "mae": 2.5458,
+            "rmse": 3.5231,
+            "mean_pred": 2.8449,
+            "mean_actual": 3.5292
+          },
+          "advantage": {
+            "objective": 0.0812,
+            "spearman": 0.0785,
+            "ndcg@10": 0.0839,
+            "mae_reduction": 0.3743,
+            "rmse_reduction": 0.356
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                0.0471,
+                0.1139
+              ],
+              "spearman_advantage": [
+                0.0437,
+                0.1119
+              ],
+              "ndcg@10_advantage": [
+                0.0387,
+                0.1292
+              ],
+              "mae_reduction": [
+                0.3116,
+                0.4379
+              ],
+              "rmse_reduction": [
+                0.2835,
+                0.4319
+              ]
+            }
+          }
+        }
+      }
+    },
+    "full_vs_without_ep_next": {
+      "column": "dastan_without_ep_next",
+      "kind": "point forecast",
+      "coverage": {
+        "rows": 17622,
+        "total_rows": 17622,
+        "percent": 100.0,
+        "gameweeks": 24
+      },
+      "results": {
+        "all": {
+          "dastan": {
+            "obj": 0.609,
+            "spearman": 0.7461,
+            "ndcg@10": 0.472,
+            "top10_overlap": 0.1875,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 17622,
+            "mae": 0.9178,
+            "rmse": 1.8394,
+            "mean_pred": 1.1206,
+            "mean_actual": 1.1333
+          },
+          "baseline": {
+            "obj": 0.6072,
+            "spearman": 0.7461,
+            "ndcg@10": 0.4683,
+            "top10_overlap": 0.1958,
+            "captain_in_top10": 0.375,
+            "gameweeks": 24,
+            "rows": 17622,
+            "mae": 0.9165,
+            "rmse": 1.8392,
+            "mean_pred": 1.1194,
+            "mean_actual": 1.1333
+          },
+          "advantage": {
+            "objective": 0.0018,
+            "spearman": 0.0,
+            "ndcg@10": 0.0037,
+            "mae_reduction": -0.0013,
+            "rmse_reduction": -0.0002
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                -0.0065,
+                0.0113
+              ],
+              "spearman_advantage": [
+                -0.0007,
+                0.0006
+              ],
+              "ndcg@10_advantage": [
+                -0.0129,
+                0.0226
+              ],
+              "mae_reduction": [
+                -0.0029,
+                0.0003
+              ],
+              "rmse_reduction": [
+                -0.0024,
+                0.0022
+              ]
+            }
+          }
+        },
+        "starters": {
+          "dastan": {
+            "obj": 0.3977,
+            "spearman": 0.2879,
+            "ndcg@10": 0.5076,
+            "top10_overlap": 0.2042,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 4849,
+            "mae": 2.1715,
+            "rmse": 3.165,
+            "mean_pred": 2.6952,
+            "mean_actual": 3.5245
+          },
+          "baseline": {
+            "obj": 0.3966,
+            "spearman": 0.2885,
+            "ndcg@10": 0.5046,
+            "top10_overlap": 0.2,
+            "captain_in_top10": 0.4167,
+            "gameweeks": 24,
+            "rows": 4849,
+            "mae": 2.1692,
+            "rmse": 3.1638,
+            "mean_pred": 2.6928,
+            "mean_actual": 3.5245
+          },
+          "advantage": {
+            "objective": 0.0011,
+            "spearman": -0.0006,
+            "ndcg@10": 0.003,
+            "mae_reduction": -0.0023,
+            "rmse_reduction": -0.0012
+          },
+          "uncertainty": {
+            "method": "paired gameweek bootstrap, 95% percentile interval",
+            "gameweeks": 24,
+            "samples": 20000,
+            "seed": 2026,
+            "intervals": {
+              "objective_advantage": [
+                -0.0063,
+                0.0101
+              ],
+              "spearman_advantage": [
+                -0.0039,
+                0.0026
+              ],
+              "ndcg@10_advantage": [
+                -0.0123,
+                0.021
+              ],
+              "mae_reduction": [
+                -0.0049,
+                0.0005
+              ],
+              "rmse_reduction": [
+                -0.0051,
+                0.0029
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "error_references": {
+    "aggregation": "pooled player-gameweeks; error only, not a ranking benchmark",
+    "Dastan": {
+      "rows": 17622,
+      "mae": 0.9175,
+      "rmse": 1.8456,
+      "mean_prediction": 1.1203,
+      "mean_actual": 1.1331
+    },
+    "Always zero": {
+      "rows": 17622,
+      "mae": 1.145,
+      "rmse": 2.6047,
+      "mean_prediction": 0.0,
+      "mean_actual": 1.1331
+    }
+  },
+  "openfpl_style": {
+    "scope": "Dastan and ep_next on the same pre-deadline-covered rows",
+    "aggregation": "pooled player-gameweeks using the return and position presentation from OpenFPL Tables 4 and 5",
+    "return_buckets": {
+      "definitions": {
+        "zeros": "played 0 minutes",
+        "blanks": "played and scored at most 2",
+        "tickers": "scored 3 or 4",
+        "haulers": "scored at least 5"
+      },
+      "results": {
+        "blanks": {
+          "dastan": {
+            "rows": 4979,
+            "mae": 1.0765,
+            "rmse": 1.4054,
+            "mean_prediction": 2.083,
+            "mean_actual": 1.2436
+          },
+          "dastan_without_ep_next": {
+            "rows": 4979,
+            "mae": 1.0775,
+            "rmse": 1.4002,
+            "mean_prediction": 2.086,
+            "mean_actual": 1.2436
+          },
+          "ep_next": {
+            "rows": 4979,
+            "mae": 1.4428,
+            "rmse": 2.0341,
+            "mean_prediction": 2.0534,
+            "mean_actual": 1.2436
+          }
+        },
+        "haulers": {
+          "dastan": {
+            "rows": 1502,
+            "mae": 4.749,
+            "rmse": 5.4615,
+            "mean_prediction": 3.0456,
+            "mean_actual": 7.759
+          },
+          "dastan_without_ep_next": {
+            "rows": 1502,
+            "mae": 4.7517,
+            "rmse": 5.465,
+            "mean_prediction": 3.0386,
+            "mean_actual": 7.759
+          },
+          "ep_next": {
+            "rows": 1502,
+            "mae": 4.7703,
+            "rmse": 5.5724,
+            "mean_prediction": 3.3091,
+            "mean_actual": 7.759
+          }
+        },
+        "tickers": {
+          "dastan": {
+            "rows": 645,
+            "mae": 1.0892,
+            "rmse": 1.4038,
+            "mean_prediction": 2.8301,
+            "mean_actual": 3.2171
+          },
+          "dastan_without_ep_next": {
+            "rows": 645,
+            "mae": 1.0735,
+            "rmse": 1.3866,
+            "mean_prediction": 2.8245,
+            "mean_actual": 3.2171
+          },
+          "ep_next": {
+            "rows": 645,
+            "mae": 1.771,
+            "rmse": 2.29,
+            "mean_prediction": 3.0268,
+            "mean_actual": 3.2171
+          }
+        },
+        "zeros": {
+          "dastan": {
+            "rows": 10181,
+            "mae": 0.2838,
+            "rmse": 0.6303,
+            "mean_prediction": 0.2838,
+            "mean_actual": 0.0
+          },
+          "dastan_without_ep_next": {
+            "rows": 10181,
+            "mae": 0.2817,
+            "rmse": 0.6332,
+            "mean_prediction": 0.2817,
+            "mean_actual": 0.0
+          },
+          "ep_next": {
+            "rows": 10181,
+            "mae": 0.2998,
+            "rmse": 0.7401,
+            "mean_prediction": 0.2116,
+            "mean_actual": 0.0
+          }
+        }
+      }
+    },
+    "positions": {
+      "DEF": {
+        "dastan": {
+          "rows": 5853,
+          "mae": 0.9525,
+          "rmse": 1.8129,
+          "mean_prediction": 0.9784,
+          "mean_actual": 1.0219
+        },
+        "dastan_without_ep_next": {
+          "rows": 5853,
+          "mae": 0.9509,
+          "rmse": 1.8124,
+          "mean_prediction": 0.9796,
+          "mean_actual": 1.0219
+        },
+        "ep_next": {
+          "rows": 5853,
+          "mae": 1.0671,
+          "rmse": 2.008,
+          "mean_prediction": 0.9624,
+          "mean_actual": 1.0219
+        }
+      },
+      "FWD": {
+        "dastan": {
+          "rows": 1919,
+          "mae": 1.0666,
+          "rmse": 2.061,
+          "mean_prediction": 1.2862,
+          "mean_actual": 1.2731
+        },
+        "dastan_without_ep_next": {
+          "rows": 1919,
+          "mae": 1.0631,
+          "rmse": 2.065,
+          "mean_prediction": 1.2755,
+          "mean_actual": 1.2731
+        },
+        "ep_next": {
+          "rows": 1919,
+          "mae": 1.1378,
+          "rmse": 2.3399,
+          "mean_prediction": 1.2002,
+          "mean_actual": 1.2731
+        }
+      },
+      "GKP": {
+        "dastan": {
+          "rows": 1775,
+          "mae": 0.7223,
+          "rmse": 1.5858,
+          "mean_prediction": 0.9147,
+          "mean_actual": 0.9037
+        },
+        "dastan_without_ep_next": {
+          "rows": 1775,
+          "mae": 0.728,
+          "rmse": 1.5805,
+          "mean_prediction": 0.9194,
+          "mean_actual": 0.9037
+        },
+        "ep_next": {
+          "rows": 1775,
+          "mae": 0.9362,
+          "rmse": 1.8262,
+          "mean_prediction": 0.9474,
+          "mean_actual": 0.9037
+        }
+      },
+      "MID": {
+        "dastan": {
+          "rows": 7760,
+          "mae": 0.9254,
+          "rmse": 1.9029,
+          "mean_prediction": 1.2682,
+          "mean_actual": 1.2749
+        },
+        "dastan_without_ep_next": {
+          "rows": 7760,
+          "mae": 0.9232,
+          "rmse": 1.9029,
+          "mean_prediction": 1.2663,
+          "mean_actual": 1.2749
+        },
+        "ep_next": {
+          "rows": 7760,
+          "mae": 1.0893,
+          "rmse": 2.1591,
+          "mean_prediction": 1.2478,
+          "mean_actual": 1.2749
+        }
+      }
+    }
+  }
+}

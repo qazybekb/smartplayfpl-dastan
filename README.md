@@ -108,6 +108,14 @@ restricts **both models to the rows where it exists**.
 `ep_next` covers **17,307 player-gameweeks (98.2%)** here. Both methods are rescored
 on that subset; missing FPL forecasts are never turned into zero.
 
+Because `ep_next` is also an input, the same architecture was retrained without it.
+That arm still scores **0.6079** against FPL at 0.5321 on the identical rows, an
+advantage of **+0.0758**. Adding `ep_next` back changes Dastan's objective by only
+**+0.0018** across all 17,622 clean rows (paired 95% interval **-0.0065 to +0.0113**),
+so this benchmark win does not depend on echoing FPL's forecast. For the full model,
+the paired 95% interval is **+0.0526 to +0.1033** for objective and **0.121 to 0.161
+points** for MAE reduction.
+
 ### Other sanity checks, on paired rows
 
 | cohort | Dastan | previous-five mean | last match | price (rank-only) | v12 recipe |
@@ -126,8 +134,17 @@ nothing.
 - Dastan's predicted top ten contains **1.88 of the actual top ten** on average.
 - Its top-ranked player finishes in the actual top ten in **10 of 24 gameweeks (41.7%)**.
 
-Full baseline tables, per-block detail, calibration, coverage and caveats:
-[docs/ACCURACY.md](docs/ACCURACY.md).
+Full baseline tables, per-block detail, calibration, coverage and caveats are in
+[docs/ACCURACY.md](docs/ACCURACY.md). The generated
+[baseline report](docs/BASELINES.md), [machine-readable metrics](docs/baseline_benchmark.json),
+and [17,622 retained predictions](docs/walkforward_predictions.parquet) let reviewers
+audit the comparison without refitting the models.
+
+```bash
+python -m dastan.benchmark_baselines --check
+python -m dastan.benchmark_baselines \
+  --from-predictions docs/walkforward_predictions.parquet
+```
 
 ### What we will not claim
 
@@ -360,7 +377,7 @@ removal at a coin flip. It is documented rather than quietly left looking justif
 - **Starters cohort is not improved** by the added features. See above.
 - **Absolute values are conservative for starters** — the model under-predicts them by
   0.83 points on average. It ranks well; do not read the level as a point estimate.
-- **Top-10 overlap is 0.183.** Of the ten highest scorers in a gameweek, about 1.8 were
+- **Top-10 overlap is 0.188.** Of the ten highest scorers in a gameweek, about 1.9 were
   in our predicted ten. That is close to the realistic ceiling, and any FPL model
   claiming dramatically better is probably scoring pooled or leaking.
 - **Not a squad optimiser.** This produces expected points. Turning those into

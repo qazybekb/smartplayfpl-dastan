@@ -8,6 +8,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from dastan.benchmark_baselines import BASELINES, available_rows, return_bucket
 from dastan.benchmark_openfpl import (
     _eligible,
     _paired_bootstrap,
@@ -181,6 +182,57 @@ class WalkForwardReportTests(unittest.TestCase):
         for stale in ("0.6072", "0.5602", "0.0558"):
             self.assertNotIn(stale, accuracy)
             self.assertNotIn(stale, readme)
+
+
+class RetainedBaselineReportTests(unittest.TestCase):
+    def test_ep_next_sentinel_does_not_drop_real_negative_forecasts(self) -> None:
+        frame = pd.DataFrame(
+            {
+                "ep_next": [-1.0, -1.5, 0.0, np.nan],
+                "player_fpl_points_1": [-1.0, np.nan, 2.0, 3.0],
+            }
+        )
+
+        ep_next = available_rows(frame, BASELINES[0])
+        recent_points = available_rows(frame, BASELINES[1])
+
+        self.assertEqual(ep_next.index.tolist(), [1, 2])
+        self.assertEqual(recent_points.index.tolist(), [0, 2, 3])
+
+    def test_return_buckets_follow_openfpl_participation_definition(self) -> None:
+        frame = pd.DataFrame(
+            {
+                "minutes": [0, 90, 90, 90],
+                "actual": [-1, 2, 4, 5],
+            }
+        )
+
+        self.assertEqual(
+            return_bucket(frame).tolist(),
+            ["zeros", "blanks", "tickers", "haulers"],
+        )
+
+    def test_retained_predictions_and_published_comparison_are_paired(self) -> None:
+        report = json.loads((ROOT / "docs" / "baseline_benchmark.json").read_text())
+        predictions = pd.read_parquet(ROOT / "docs" / "walkforward_predictions.parquet")
+
+        self.assertEqual(report["schema_version"], 2)
+        self.assertEqual(report["protocol"]["seeds"], [42, 7, 2026])
+        self.assertEqual(report["protocol"]["player_gameweeks"], 17_622)
+        self.assertEqual(len(predictions), 17_622)
+        self.assertFalse(
+            predictions.duplicated(["season", "gameweek", "fpl_code"]).any()
+        )
+        self.assertIn("dastan_without_ep_next", predictions)
+
+        comparison = report["comparisons"]["FPL ep_next"]
+        self.assertEqual(comparison["coverage"]["rows"], 17_307)
+        for cohort in ("all", "starters"):
+            results = comparison["results"][cohort]
+            self.assertEqual(results["dastan"]["rows"], results["baseline"]["rows"])
+
+        no_ep = report["ep_next_feature_check"]["without_ep_next_vs_fpl"]
+        self.assertEqual(no_ep["coverage"]["rows"], 17_307)
 
 
 if __name__ == "__main__":

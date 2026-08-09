@@ -15,6 +15,7 @@ python -m pip install -r requirements.txt
 python -m dastan.verify
 python -m dastan.datasets verify
 python -m dastan.artifacts
+python -m dastan.benchmark_baselines --check
 python -m dastan.reproduce
 ```
 
@@ -32,6 +33,7 @@ gitignored `experiments/` directory:
 ```bash
 python -m dastan.train --out experiments/candidate
 python -m dastan.evaluate --seeds 3 --out experiments/evaluation.json
+python -m dastan.benchmark_baselines --seeds 3 --n-jobs 8
 ```
 
 Changes to the model architecture belong in `dastan/model.py`. Feature-family changes
@@ -40,6 +42,7 @@ should be expressed through `dastan/data.py` and documented with their provenanc
 ## Evidence required
 
 - Score predictions within each gameweek at player-gameweek grain.
+- Score every head-to-head on identical rows and report baseline coverage.
 - Report both the all-player and 60-plus-minute starter cohorts.
 - Use the three published seeds: 42, 7, and 2026.
 - Compare the effect with the measured 0.0061 keep margin.
@@ -72,8 +75,8 @@ Include:
 5. Any provenance or licensing implications.
 
 Run `python -m dastan.verify`, `python -m dastan.artifacts`,
-`python -m dastan.datasets verify`, and `python -m unittest discover -v` before
-opening the pull request. Changes to training
+`python -m dastan.datasets verify`, `python -m dastan.benchmark_baselines --check`,
+and `python -m unittest discover -v` before opening the pull request. Changes to training
 code, dependencies, features, or released weights must also pass
 `python -m dastan.reproduce`. Changes to FPL/Understat identities must pass
 `python -m dastan.mappings`.
