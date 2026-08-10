@@ -15,7 +15,7 @@ required. Optional public-source reconstruction code is documented in
 | `data/mappings/fpl_understat_training_snapshot.csv` | 1,564 | 84 KB |
 | `data/mappings/fpl_understat_training_assignments.csv` | 4,199 | 115 KB |
 | `data/mappings/fpl_understat_players.csv` | 1,564 | 84 KB |
-| `data/mappings/fpl_understat_current.csv` | 573 | 54 KB |
+| `data/mappings/fpl_understat_current.csv` | 577 | 51 KB |
 | `docs/walkforward_predictions.parquet` | 17,622 | 539 KB |
 
 The walk-forward file is an evaluation artifact rather than training input. It retains
@@ -77,7 +77,7 @@ for release reconstruction.
 `data/mappings/fpl_understat_players.csv` applies the evidence-backed audit and is the
 map recommended for new joins. Load it with `dastan.mappings.load()`. Use
 `load_training()` and `load_training_assignments()` only when reproducing the historical
-release. The 2026-27 roster map covers 517 of 573 players and keeps 56 unresolved rather
+release. The 2026-27 roster map covers 518 of 577 players and keeps 59 unresolved rather
 than guessing by name.
 
 The exact snapshot contains three Understat IDs associated with six FPL-code rows. Two

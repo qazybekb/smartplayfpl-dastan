@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "release_id": "mapping-2026-08-08-39670a709787",
-  "generated_at": "2026-08-08T20:05:28.614957+00:00",
-  "canonical_sha256": "39670a7097874b787b327661f7fbf818d508510399e28612dde785d8b7b2dc93",
+  "release_id": "mapping-2026-08-10-ce3e9eb5b754",
+  "generated_at": "2026-08-10T19:39:44.175232+00:00",
+  "canonical_sha256": "ce3e9eb5b754dc0268d0f52f375cbe609fd3b6d798103e241828026a4690ff83",
   "files": {
     "current_fpl_understat_players.csv": {
-      "sha256": "cd105f6293f2787ee4d5f19df912b90b7838b4ff05f6eef1af5c8ebac95b021b",
-      "bytes": 61045
+      "sha256": "370670559214837706581414b61f118b68de695a76fa86dd04eb24df1d1ff1ad",
+      "bytes": 61152
     },
     "current_fpl_understat_clubs.csv": {
       "sha256": "9d722ecdf64634ef9150a5a0736ddc138afa384e56f6cbfc5d40c8f495b8948a",
@@ -15,16 +15,16 @@
   },
   "coverage": {
     "players": {
-      "total": 1681,
+      "total": 1684,
       "mapped": 1598,
-      "unmapped": 83,
+      "unmapped": 86,
       "unique_understat_ids": 1597,
       "shared_understat_ids": 1,
       "confidence": {
         "HIGH": 1460,
         "LOW": 6,
         "MEDIUM": 132,
-        "NONE": 83
+        "NONE": 86
       }
     },
     "clubs": {

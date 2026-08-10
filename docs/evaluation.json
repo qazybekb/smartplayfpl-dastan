@@ -18,7 +18,7 @@
   },
   "provenance": {
     "data_release_manifest_sha256": "08111cac5252486192adfcc420c6a745f506777ab39b60297b0c3dbb7577830a",
-    "model_artifact_manifest_sha256": "dd26752f97a59c1558d1d3570c22b06adeb21111a27e56fc941dd614fead7a24",
+    "model_artifact_manifest_sha256": "b6476d18097cca32d2d1debe44e66e54d369cb95fce2c54144cb669de44b42d7",
     "code": {
       "evaluate": {
         "path": "dastan/evaluate.py",

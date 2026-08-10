@@ -27,7 +27,17 @@ class MappingTests(unittest.TestCase):
         frames = mappings.verify()
         self.assertEqual(len(frames["training"]), 1_564)
         self.assertEqual(len(frames["assignments"]), 4_199)
-        self.assertEqual(int(frames["current"]["understat_id"].notna().sum()), 517)
+        current = frames["current"]
+        roster = mappings.load_roster()
+        operational = mappings.load_operational_players()
+        mapped_codes = set(
+            operational.loc[
+                operational["understat_player_id"].notna(), "fpl_code"
+            ].astype(int)
+        )
+        expected_mapped = int(roster["fpl_code"].isin(mapped_codes).sum())
+        self.assertEqual(len(current), len(roster))
+        self.assertEqual(int(current["understat_id"].notna().sum()), expected_mapped)
         training = frames["training"].set_index("fpl_code")["understat_id"]
         corrected = frames["corrected"].set_index("fpl_code")["understat_id"]
         self.assertEqual(int(training.loc[437688]), 9082)

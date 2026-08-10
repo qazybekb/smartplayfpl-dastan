@@ -1486,6 +1486,7 @@ fpl_code,understat_player_id,fpl_player_name,fpl_position,confidence_level,mappi
 551499,13279,Munoz,MID,MEDIUM,mapped
 552425,12251,Peck,MID,HIGH,mapped
 552427,13127,Lankshear,FWD,HIGH,mapped
+552946,,Hjertø-Dahl,MID,NONE,unmapped
 553299,14279,Takai,DEF,MEDIUM,mapped
 553746,13572,Shahar,DEF,MEDIUM,mapped
 553783,,Zambrano,MID,NONE,unmapped
@@ -1601,6 +1602,7 @@ fpl_code,understat_player_id,fpl_player_name,fpl_position,confidence_level,mappi
 606921,13387,Esse,MID,HIGH,mapped
 607464,11281,Kayode,DEF,HIGH,mapped
 608181,14028,Tzimas,FWD,HIGH,mapped
+608227,,Stroud,MID,NONE,unmapped
 609640,12808,Amougou,MID,HIGH,mapped
 609873,12757,Armstrong,MID,HIGH,mapped
 610799,13725,Vuskovic,DEF,MEDIUM,mapped
@@ -1671,6 +1673,7 @@ fpl_code,understat_player_id,fpl_player_name,fpl_position,confidence_level,mappi
 660392,12726,Uche,FWD,HIGH,mapped
 661712,14057,D.Leon,DEF,MEDIUM,mapped
 661800,,McCarthy,DEF,NONE,unmapped
+661888,,Yirenkyi,MID,NONE,unmapped
 664015,14265,Leon Routh,DEF,MEDIUM,mapped
 666607,14273,Alabi,MID,MEDIUM,mapped
 672492,14263,Drakes-Thomas,MID,HIGH,mapped

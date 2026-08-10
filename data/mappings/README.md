@@ -48,8 +48,8 @@ The audit also records why FPL code 431248 remains mapped to Understat 12721. Ev
 URLs and review notes are in `fpl_understat_identity_audit.csv`.
 
 Use `dastan.mappings.load_operational_players()` for the latest complete registry and
-`load_current()` for the captured 2026-27 roster. The roster currently maps 517 of
-573 players; the other 56 are explicit `unmapped`/`NONE` records. Absence is safer
+`load_current()` for the captured 2026-27 roster. The roster currently maps 518 of
+577 players; the other 59 are explicit `unmapped`/`NONE` records. Absence is safer
 than a name-based guess.
 
 For a newly active season, `assignments_for_seasons()` combines immutable assignments

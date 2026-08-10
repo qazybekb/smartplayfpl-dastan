@@ -144,7 +144,7 @@ season,fpl_code,element,player_name,position,team_name
 2026-27,207189,265,Berge,MID,Fulham
 2026-27,207283,97,Jensen,MID,Brentford
 2026-27,208481,292,Ömür,MID,Hull City
-2026-27,208706,452,Bruno G.,MID,Newcastle
+2026-27,208706,452,Bruno G.,MID,Arsenal
 2026-27,209036,388,Guéhi,DEF,Man City
 2026-27,209046,482,Hudson-Odoi,MID,Nott'm Forest
 2026-27,209244,398,Foden,MID,Man City
@@ -153,7 +153,7 @@ season,fpl_code,element,player_name,position,team_name
 2026-27,209400,214,Kamada,MID,Crystal Palace
 2026-27,210156,492,Awoniyi,FWD,Nott'm Forest
 2026-27,210462,488,Sangaré,MID,Nott'm Forest
-2026-27,212314,267,Lukić,MID,Fulham
+2026-27,212314,267,Lukić,MID,Ipswich Town
 2026-27,212319,527,Richarlison,FWD,Spurs
 2026-27,213292,296,Akintola,MID,Hull City
 2026-27,214225,329,Rodon,DEF,Leeds
@@ -194,6 +194,7 @@ season,fpl_code,element,player_name,position,team_name
 2026-27,223340,12,Saka,MID,Arsenal
 2026-27,223434,118,Igor,DEF,Brighton
 2026-27,223541,370,Chiesa,MID,Liverpool
+2026-27,223723,577,Tomiyasu,DEF,Crystal Palace
 2026-27,223827,532,Ballard,DEF,Sunderland
 2026-27,224117,25,Gyökeres,FWD,Arsenal
 2026-27,224967,233,Mykolenko,DEF,Everton
@@ -496,6 +497,7 @@ season,fpl_code,element,player_name,position,team_name
 2026-27,551262,196,Markelo,FWD,Coventry City
 2026-27,551466,569,García,FWD,Fulham
 2026-27,551499,377,Munoz,MID,Liverpool
+2026-27,552946,574,Hjertø-Dahl,MID,Hull City
 2026-27,553783,294,Zambrano,MID,Hull City
 2026-27,554197,548,Rigg,MID,Sunderland
 2026-27,554578,444,Jaouen,GKP,Newcastle
@@ -542,6 +544,7 @@ season,fpl_code,element,player_name,position,team_name
 2026-27,606921,216,Esse,MID,Crystal Palace
 2026-27,607464,88,Kayode,DEF,Brentford
 2026-27,608181,137,Tzimas,FWD,Brighton
+2026-27,608227,576,Stroud,MID,Hull City
 2026-27,609873,244,Armstrong,MID,Everton
 2026-27,610799,504,Vuskovic,DEF,Brighton
 2026-27,611665,461,Touré,MID,Newcastle
@@ -568,6 +571,7 @@ season,fpl_code,element,player_name,position,team_name
 2026-27,653481,52,Alysson,MID,Aston Villa
 2026-27,660392,225,Uche,FWD,Crystal Palace
 2026-27,661800,284,McCarthy,DEF,Hull City
+2026-27,661888,575,Yirenkyi,MID,Coventry City
 2026-27,672492,221,Drakes-Thomas,MID,Crystal Palace
 2026-27,684268,189,Shepherd,MID,Coventry City
 2026-27,699989,550,Jocelin.T,MID,Sunderland

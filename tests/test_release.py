@@ -85,7 +85,14 @@ class NewSeasonMappingTests(unittest.TestCase):
         with patch.object(mappings, "assert_operational_clubs_ready"):
             assignments = mappings.assignments_for_seasons(["2025-26", "2026-27"])
         current = assignments[assignments["season"].eq("2026-27")]
-        self.assertEqual(len(current), 517)
+        published_current = mappings.load_current()
+        mapped_current = published_current[
+            published_current["understat_id"].notna()
+        ]
+        self.assertEqual(
+            set(current["fpl_code"].astype(int)),
+            set(mapped_current["fpl_code"].astype(int)),
+        )
         self.assertTrue(current["first_gameweek"].eq(1).all())
         self.assertTrue(current["last_gameweek"].eq(38).all())
         self.assertFalse(current["fpl_code"].duplicated().any())

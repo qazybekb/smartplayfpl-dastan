@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-08T22:03:19.183183+00:00",
+  "generated_at": "2026-08-10T20:36:09.072076+00:00",
   "model_version": "dastan",
   "public_version": "1.1.0",
   "production_source": {
@@ -10,8 +10,8 @@
     "equivalence": "all 38 runtime files are byte-for-byte copies of the production artifact contract at this commit"
   },
   "mapping_release": {
-    "release_id": "mapping-2026-08-08-39670a709787",
-    "canonical_sha256": "39670a7097874b787b327661f7fbf818d508510399e28612dde785d8b7b2dc93"
+    "release_id": "mapping-2026-08-10-ce3e9eb5b754",
+    "canonical_sha256": "ce3e9eb5b754dc0268d0f52f375cbe609fd3b6d798103e241828026a4690ff83"
   },
   "contract": {
     "files": 40,
